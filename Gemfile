@@ -35,7 +35,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
-  gem 'annotate', '~> 2.6.5'
   gem 'net-ssh', '~> 2.9.0'
 end
 

@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sprockets-rails', '>= 2.1.4'
+gem 'slim-rails'
 
 # Server and database stacks
 gem 'pg'
@@ -21,22 +22,28 @@ gem 'rails_12factor', group: :production
 gem 'figaro'
 
 # Authentication
-gem 'devise_token_auth'
 gem 'pundit'
+gem 'sorcery'
 
 # Responders
 gem 'responders'
 
-# Active Model Serializer
-gem 'active_model_serializers'
-
+# Development and Test gems
 group :development, :test do
-  gem 'pry-rails'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'annotate', '~> 2.6.5'
+  gem 'net-ssh', '~> 2.9.0'
+end
+
+group :development, :test do
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails'
+  gem 'rb-fsevent'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 # Documentation

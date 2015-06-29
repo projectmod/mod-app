@@ -45,5 +45,9 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
+group :development, :production do
+  gem 'rails_admin'
+end
+
 # Documentation
 gem 'sdoc', '~> 0.4.0', group: :doc

@@ -22,7 +22,7 @@ gem 'rails_12factor', group: :production
 gem 'figaro'
 
 # Authentication
-gem 'pundit'
+gem 'cancancan', '~> 1.10'
 gem 'sorcery'
 
 # Responders

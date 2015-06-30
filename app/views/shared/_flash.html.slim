@@ -1,0 +1,5 @@
+#flash-messages.container
+  - if flash[:notice]
+    .alert
+      button.close data-dismiss="alert" type="button"  &times;
+      = flash[:notice] 

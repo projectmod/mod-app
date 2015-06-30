@@ -44,5 +44,9 @@ group :development, :test do
   gem 'launchy'
 end
 
+group :development, :production do
+  gem 'rails_admin'
+end
+
 # Documentation
 gem 'sdoc', '~> 0.4.0', group: :doc

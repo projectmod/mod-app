@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+
   get 'password_resets/create'
 
   get 'password_resets/edit'
 
   get 'password_resets/update'
+
+  mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
 
   root 'static_pages#landing'
 

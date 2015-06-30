@@ -36,13 +36,12 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'net-ssh', '~> 2.9.0'
-end
-
-group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
   gem 'rb-fsevent'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'letter_opener'
+  gem 'launchy'
 end
 
 # Documentation

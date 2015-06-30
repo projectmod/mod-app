@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			UserMailer.activation_needed_email(@user).deliver_now
-			redirect_to (login_path, notice: "User was successfully created."
+			redirect_to login_path, notice: "User was successfully created."
 		else
 			redirect_to root_path
 			flash[:notice] = "Sign up unsuccessful, please try again."

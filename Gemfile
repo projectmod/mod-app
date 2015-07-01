@@ -28,6 +28,9 @@ gem 'sorcery'
 # Responders
 gem 'responders'
 
+# Social Media Wrappers
+gem 'koala'
+
 # Development and Test gems
 group :development, :test do
   gem 'spring'

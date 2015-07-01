@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
- 
+
+  after_initialize :set_default_password, if: :new_record?
+
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
@@ -18,10 +20,6 @@ class User < ActiveRecord::Base
   has_many :payments
   has_many :bookings
   has_many :merchants
-
-  def name
-  	self.email
-  end
 
   def admin?
   	self.role?
@@ -42,4 +40,12 @@ class User < ActiveRecord::Base
   def set_as_consumer
   end
 
+  private
+
+  def set_default_password
+    return unless self.password.nil?
+    password = SecureRandom.hex
+    self.password = password
+    self.password_confirmation = password
+  end
 end

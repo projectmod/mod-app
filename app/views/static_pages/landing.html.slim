@@ -8,8 +8,5 @@
       = f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true, class: 'form-control'
     .form-group
       = f.submit "Sign Up", class: 'btn btn-block'
-      p
-        small
-          = link_to "Forgot Password", password_resets_create_path
     .form-group
       = link_to raw("#{fa_icon 'facebook', text: 'Facebook'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-primary"

@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
 
-  get 'password_resets/create'
+  # ==============================================================================================
+  # Static Pages
+  # ==============================================================================================
+  root 'static_pages#landing'
 
-  get 'password_resets/edit'
 
-  get 'password_resets/update'
-
+  # ==============================================================================================
+  # Rails Admin
+  # ==============================================================================================
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
 
-  root 'static_pages#landing'
+
+  # ==============================================================================================
+  # Resources
+  # ==============================================================================================
+  resources :password_resets
 
   resources :users do
   	member do
@@ -17,11 +24,17 @@ Rails.application.routes.draw do
   end
 
   resources :user_sessions
-  resources :password_resets
 
+  # ==============================================================================================
+  # User Sessions/Login/Logout
+  # ==============================================================================================
   get 'login', to: 'user_sessions#new', as: :login
 	post 'logout', to: 'user_sessions#destroy', as: :logout
 
+
+  # ==============================================================================================
+  # Sorcery/Omniauth
+  # ==============================================================================================
   post "oauth/callback", to: "oauth#callback"
   get "oauth/callback", to: "oauth#callback"
   get "oauth/:provider", to: "oauth#oauth", as: :auth_at_provider

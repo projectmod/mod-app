@@ -23,13 +23,14 @@ Rails.application.routes.draw do
   	end
   end
 
+  resources :user_sessions
 
   # ==============================================================================================
   # User Sessions/Login/Logout
   # ==============================================================================================
   get 'login', to: 'user_sessions#new', as: :login
 	post 'logout', to: 'user_sessions#destroy', as: :logout
-  
+
 
   # ==============================================================================================
   # Sorcery/Omniauth

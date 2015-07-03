@@ -16,3 +16,8 @@ user.activate
 user.set_as_user
 user.save!
 
+merchant_1 =  admin.merchants.find_or_create_by!(name: "Toni and Guy")
+merchant_1.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                  type_of_service: "Haircut",
+                  address: "99, Jalan 99, 99999, K.L",
+                  price_range: "RM 50 - 100")

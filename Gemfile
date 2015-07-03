@@ -31,6 +31,13 @@ gem 'responders'
 # Social Media Wrappers
 gem 'koala'
 
+# Image uploaders
+gem 'carrierwave'
+gem 'mini_magick'
+
+# S3 Amazon
+gem 'fog'
+
 # Development and Test gems
 group :development, :test do
   gem 'spring'

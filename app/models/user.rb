@@ -21,23 +21,34 @@ class User < ActiveRecord::Base
   has_many :bookings
   has_many :merchants
 
+  def activate
+    self.activation_state = "active"
+  end
+  
+  #Checking for roles
   def admin?
-  	self.role?
+    self.role == "admin"
   end
 
-  def service?
+  def merchant?
+    self.role == "merchant"
   end
 
-  def consumer?
+  def user?
+    self.role == "user"
   end
 
+  #Setting roles
   def set_as_admin
+    self.role = "admin"
   end
 
-  def set_as_service
+  def set_as_merchant
+    self.role = "merchant"
   end
 
-  def set_as_consumer
+  def set_as_user
+    self.role = "user"
   end
 
   private

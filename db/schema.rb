@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702032635) do
+ActiveRecord::Schema.define(version: 20150703042914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150702032635) do
     t.string   "uid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "token"
     t.string   "secret"
+    t.string   "token"
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150702032635) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.string   "price_range"
   end
 
   create_table "payment_transactions", force: :cascade do |t|
@@ -66,13 +67,13 @@ ActiveRecord::Schema.define(version: 20150702032635) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
     t.string   "activation_state"
     t.string   "activation_token"
     t.datetime "activation_token_expires_at"
     t.integer  "failed_logins_count",             default: 0
     t.datetime "lock_expires_at"
     t.string   "unlock_token"
-    t.string   "role"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string   "reset_password_token"

@@ -15,3 +15,4 @@ user.update(password: 'password', password_confirmation: 'password', name: "Kean
 user.activate
 user.set_as_user
 user.save!
+

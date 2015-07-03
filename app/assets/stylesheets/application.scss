@@ -1,8 +1,9 @@
 /* Components */
+@import "components/*";
 
- /* Bootstrap CSS */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+/* Bootstrap CSS */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /* Views */
 @import "views/**/*";

@@ -1,43 +1,21 @@
-.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-        
-      = link_to "Brand", '#', class: 'navbar-brand'
-      
-    .collapse.navbar-collapse#bs-exmaple-navbar-collapse-1
-      ul.nav.navbar-nav
-        li.active
-        = link_to "Link", "#"
-        span.sr-only (current)
-        
-        li 
-        = link_to "Link", "#"
-        
-        li.dropdown
-          a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-          | Dropdown
-          span.caret
-          
-          ul.dropdown-menu
-            li 
-            = link_to "Action", "#"
-            li 
-            = link_to "Another action", "#"
-            li 
-            = link_to "Something else here", "#"
-            li.divider role="separator"
-            li 
-            = link_to "Separated link", "#"
-            li.divider role="separator"
-            li 
-            = link_to "One more separated link", "#"
-      h
-        
+.header
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
 
-        
-    
+      #navbar.navbar-collapse.collapse.nav-margin.header-alignment
+        ul.nav.navbar-nav.pull-left.desktop
+          li
+            = link_to "I AM A BEAUTY OWNER", "#", class: 'underline red'
+          
+        ul.nav.navbar-nav.navbar-right
+          li.mobile
+            = link_to "I AM BEAUTY OWNER", '#', class: 'red'
+          li 
+            = link_to "ABOUT MOD", "#", class: 'alignment red'
+          li 
+            = link_to "SIGN IN", "#", class: 'border-outline red'

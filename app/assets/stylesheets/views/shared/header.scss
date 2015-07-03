@@ -1,3 +1,60 @@
 .header {
-  
+  width: 100%;
+
+  .mobile {
+    display: none;
+  }
+
+  .navbar {
+    height: 27vh;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .center-align {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 55px;
+  }
+
+  .underline {
+    border-bottom: 1px solid #B0344E;
+    padding: 7px 0px 7px 0px;
+  }
+
+  .header-alignment {
+    padding-top: 5%;
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  .border-outline {
+    border: 1px solid #E4A955;
+    padding: 7px 15px 7px 15px;
+  }
+
+  .alignment {
+    padding: 7px 45px 7px 15px;
+  }
+
+  .red {
+    font-family: 'brandon-med' !important;
+    color: #B0344E !important;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .header {
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+  }
 }

@@ -373,6 +373,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   figaro
   fog
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   koala

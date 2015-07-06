@@ -1,2 +1,50 @@
 .landing
-  
+  .hero-unit
+    .slogan
+      .container-fluid
+        .row
+          .col-md-12.text-center
+            h1.slogan-main 
+              | WANT TO LOOK GOOD?
+            h3.punchline 
+              | GET IT DONE. RIGHT HERE. RIGHT NOW
+        .row
+          .col-md-8-offset-2
+            .col-md-4
+              .dropdown
+                button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                  | PICK A SERVICE  
+                  span.caret
+                ul.dropdown-menu aria-labelledby="dropdownMenu1"
+                  li
+                    = link_to "BLOWOUT", "#"
+                  li  
+                    = link_to "HAIRCUT", "#"
+                  li  
+                    = link_to "NAILS", "#"
+                  li  
+                    = link_to "MASSAGE", "#"
+                  li  
+                    = link_to "MAKEUP", "#"
+                  li  
+                    = link_to "BROWS / LASHES", "#"
+                  li  
+                    = link_to "WAXING", "#"
+                  li  
+                    = link_to "FACIAL", "#"
+                    
+            .col-md-4
+              .dropdown
+                button.btn.btn-default.dropdown-toggle#dropdownMenu2 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                  | SET A BUDGET  
+                  span.caret
+                ul.dropdown-menu aria-labelledby="dropdownMenu2"
+                  li
+                    = link_to "RM 0 - 50", "#"
+                  li  
+                    = link_to "RM 50 - 100", "#"
+                  li  
+                    = link_to "ABOVE RM 100", "#"
+                  
+            .col-md-4
+              = link_to "FIND A SALON", "#", class:"btn btn-find"

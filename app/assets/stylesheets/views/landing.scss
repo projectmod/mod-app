@@ -1,3 +1,83 @@
 .landing {
-  
+
+
+  .hero-unit {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    width: 100%;
+
+    .slogan {
+      padding-top: 6%;
+    }
+  }
+
+  .hero-unit:before {
+    content: ' ';
+    background-image:image-url("landing_banner.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: .3;
+    height: 60vh;
+    position: absolute;
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-rm-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  }
+
+  .btn-find {
+  color: #FFFFFF;
+  background-color: #E4A955;
+  border-color: #E4A955;
+  border-radius: 0px;
+  }
+
+  // .btn-find:hover,
+  // .btn-find:focus,
+  // .btn-find:active,
+  // .btn-find.active,
+  // .open .dropdown-toggle.btn-find {
+  //   color: #FFFFFF;
+  //   background-color: #E4A955;
+  //   border-color: #E4A955;
+  // }
+  //
+  // .btn-find:active,
+  // .btn-find.active,
+  // .open .dropdown-toggle.btn-find {
+  //   background-image: none;
+  // }
+  //
+  // .btn-find.disabled,
+  // .btn-find[disabled],
+  // fieldset[disabled] .btn-find,
+  // .btn-find.disabled:hover,
+  // .btn-find[disabled]:hover,
+  // fieldset[disabled] .btn-find:hover,
+  // .btn-find.disabled:focus,
+  // .btn-find[disabled]:focus,
+  // fieldset[disabled] .btn-find:focus,
+  // .btn-find.disabled:active,
+  // .btn-find[disabled]:active,
+  // fieldset[disabled] .btn-find:active,
+  // .btn-find.disabled.active,
+  // .btn-find[disabled].active,
+  // fieldset[disabled] .btn-find.active {
+  //   background-color: #E4A955;
+  //   border-color: #E4A955;
+  // }
+  //
+  // .btn-find .badge {
+  //   color: #E4A955;
+  //   background-color: #FFFFFF;
+  // }
+
 }

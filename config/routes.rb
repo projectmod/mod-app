@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   # User Sessions/Login/Logout
   # ==============================================================================================
   get 'login', to: 'user_sessions#new', as: :login
-	post 'logout', to: 'user_sessions#destroy', as: :logout
+	
+  match 'logout', to: 'user_sessions#destroy', via: [:get, :delete]
 
 
   # ==============================================================================================
@@ -38,5 +39,7 @@ Rails.application.routes.draw do
   post "oauth/callback", to: "oauth#callback"
   get "oauth/callback", to: "oauth#callback"
   get "oauth/:provider", to: "oauth#oauth", as: :auth_at_provider
+
+  resources :outlets
 
 end

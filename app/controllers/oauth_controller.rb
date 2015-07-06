@@ -6,6 +6,7 @@ class OauthController < ApplicationController
   end
 
   def callback
+    
     provider = auth_params[:provider]
     @user = login_from(provider)
     auth = Users::Oauth.new(@access_token, provider)

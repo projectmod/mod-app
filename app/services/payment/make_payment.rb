@@ -27,4 +27,4 @@ x = { TransactionType: 'SALE',
    CustIP: '127.0.0.1', CustName: 'Lim', CustEmail: 'eldrethlim@gmail.com', CustPhone: 7552525, MerchantName: 'MOD',
     CustMAC: '1231', LanguageCode: 'EN', PageTimeout: '900', IssuingBank: 'Maybank', BillAddr: '99, ss99/99' }
 
-link_to 'https://test2pay.ghl.com/IPGSG/Payment.aspx?' + 'TransactionType=${TransactionType}’
+link_to 'https://test2pay.ghl.com/IPGSG/Payment.aspx?' + 'TransactionType=${TransactionType}'

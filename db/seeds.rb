@@ -18,20 +18,35 @@ user.save!
  
 merchant_1 =  admin.merchants.find_or_create_by!(name: "Toni and Guy")
 merchant_1.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                  type_of_service: "HAIRCUT",
-                  address: "99, Jalan 99, 99999, K.L",
-                  price_range: "RM 50 - 100")
+                  type_of_service: "HAIRCUT")
 
 
 merchant_2 =  admin.merchants.find_or_create_by!(name: "A Cut Above")
 merchant_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                  type_of_service: "BLOWOUT",
-                  address: "99, Jalan 99, 99999, K.L",
-                  price_range: "RM 0 - 50")
+                  type_of_service: "BLOWOUT")
 
 
 merchant_3 =  admin.merchants.find_or_create_by!(name: "Barber")
 merchant_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                  type_of_service: "MASSAGE",
-                  address: "99, Jalan 99, 99999, K.L",
-                  price_range: "ABOVE RM 100")
+                  type_of_service: "MASSAGE")
+
+outlet_1 = merchant_1.outlets.find_or_create_by!(name: "Toni and Guy")
+outlet_1.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                type_of_service: "HAIRCUT",
+                address: "99, Jalan 99, 99999, K.L",
+                price_range: "RM 50 - 100",
+                state: "Kuala Lumpur")
+
+outlet_2 = merchant_2.outlets.find_or_create_by!(name: "A Cut Above")
+outlet_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                type_of_service: "BLOWOUT",
+                address: "99, Jalan 99, 99999, K.L",
+                price_range: "RM 50 - 100",
+                state: "Selagor")
+
+outlet_3 = merchant_3.outlets.find_or_create_by!(name: "Barber")
+outlet_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                type_of_service: "MASSAGE",
+                address: "99, Jalan 99, 99999, K.L",
+                price_range: "RM 50 - 100",
+                state: "Cyberjaya")

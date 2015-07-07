@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'pg'
 gem 'puma'
 gem 'rails_12factor', group: :production
+gem 'activerecord-postgis-adapter'
 
 # Environment
 gem 'figaro'

@@ -18,4 +18,6 @@
   = form_tag list_path, method: 'get'
     = select_tag  "type_of_service", options_for_select(["BLOWOUT", "HAIRCUT"], "HAIRCUT")
     = select_tag  "price_range", options_for_select(["RM 0 - 50", "RM 50 - 100", "ABOVE RM 100"], "RM 0 - 50")
+    = hidden_field_tag :longitude
+    = hidden_field_tag :latitude
     = submit_tag "Enter", class: "btn btn-primary"

@@ -9,6 +9,7 @@ class OutletsController < ApplicationController
         @final << outlet if params[:type_of_service].include?(service)
       end
     end 
+    @final = Outlet.within_range(params[:longitude], params[:latitude], @final)
   end
 
   def show

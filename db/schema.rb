@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706061043) do
+ActiveRecord::Schema.define(version: 20150707061552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 20150706061043) do
     t.float    "longitude"
     t.string   "price_range"
     t.string   "avatar"
-    t.string   "type_of_service"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "type_of_service", default: [],              array: true
   end
 
   create_table "payment_transactions", force: :cascade do |t|

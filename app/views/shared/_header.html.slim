@@ -1,0 +1,21 @@
+.header
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+      #navbar.navbar-collapse.collapse.nav-margin.header-alignment
+        ul.nav.navbar-nav.pull-left.desktop
+          li
+            = link_to "I AM A BEAUTY OWNER", "#", class: 'underline red'
+          
+        ul.nav.navbar-nav.navbar-right
+          li.mobile
+            = link_to "I AM BEAUTY OWNER", '#', class: 'red'
+          li 
+            = link_to "ABOUT MOD", "#", class: 'alignment red'
+          li 
+            = link_to "SIGN IN", "#", class: 'border-outline red'

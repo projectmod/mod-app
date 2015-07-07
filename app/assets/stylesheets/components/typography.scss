@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'brandon-med';
+  src: asset-url('Brandon_med.otf');
+}
+
+@font-face {
+  font-family: 'brandon-light';
+  src: asset-url('Brandon_light.otf')
+}
+
+@font-face {
+  font-family: 'brandon-bold';
+  src: asset-url('Brandon_bld.otf')
+}
+
+@font-face {
+  font-family: 'brandon-reg';
+  src: asset-url('Brandon_reg.otf')
+}
+
+.slogan-main {
+  font-family: 'brandon-bold';
+  font-size: 60px;
+  letter-spacing: 0.31px;
+  color: #000000;
+}
+
+.punchline {
+  font-family: 'brandon-reg';
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: #000000;
+}

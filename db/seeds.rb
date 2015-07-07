@@ -32,21 +32,21 @@ merchant_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/
 
 outlet_1 = merchant_1.outlets.find_or_create_by!(name: "Toni and Guy")
 outlet_1.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: "HAIRCUT",
+                type_of_service: ["BLOWOUT", "HAIRCUT", "MASSAGE"],
                 address: "99, Jalan 99, 99999, K.L",
                 price_range: "RM 50 - 100",
                 state: "Kuala Lumpur")
 
 outlet_2 = merchant_2.outlets.find_or_create_by!(name: "A Cut Above")
 outlet_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: "BLOWOUT",
+                type_of_service: ["BLOWOUT"],
                 address: "99, Jalan 99, 99999, K.L",
                 price_range: "RM 50 - 100",
                 state: "Selagor")
 
 outlet_3 = merchant_3.outlets.find_or_create_by!(name: "Barber")
 outlet_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: "MASSAGE",
+                type_of_service: ["MASSAGE"],
                 address: "99, Jalan 99, 99999, K.L",
                 price_range: "RM 50 - 100",
                 state: "Cyberjaya")

@@ -1,10 +1,9 @@
+/* Components */
+@import "components/*";
+
 /* Bootstrap CSS */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "font-awesome";
 
-@import "admin/*";
-
-/* Shared */
-@import "shared/*";
-
+/* Views */
+@import "views/**/*";

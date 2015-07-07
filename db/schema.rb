@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629111024) do
+ActiveRecord::Schema.define(version: 20150706061043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20150629111024) do
     t.string   "uid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "secret"
+    t.string   "token"
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
@@ -36,13 +38,25 @@ ActiveRecord::Schema.define(version: 20150629111024) do
 
   create_table "merchants", force: :cascade do |t|
     t.string   "name"
-    t.string   "address"
     t.string   "type_of_service"
-    t.float    "latitute"
-    t.float    "longitude"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.string   "avatar"
+  end
+
+  create_table "outlets", force: :cascade do |t|
+    t.integer  "merchant_id"
+    t.string   "name"
+    t.string   "address"
+    t.string   "state"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "price_range"
+    t.string   "avatar"
+    t.string   "type_of_service"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "payment_transactions", force: :cascade do |t|
@@ -64,18 +78,20 @@ ActiveRecord::Schema.define(version: 20150629111024) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
     t.string   "activation_state"
     t.string   "activation_token"
     t.datetime "activation_token_expires_at"
     t.integer  "failed_logins_count",             default: 0
     t.datetime "lock_expires_at"
     t.string   "unlock_token"
+    t.string   "role"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "name"
+    t.string   "avatar"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

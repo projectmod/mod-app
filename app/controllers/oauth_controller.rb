@@ -6,20 +6,30 @@ class OauthController < ApplicationController
   end
 
   def callback
+    
     provider = auth_params[:provider]
-    if @user = login_from(provider)
-      redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+    @user = login_from(provider)
+    auth = Users::Oauth.new(@access_token, provider)
+
+    # Log in user
+
+    if logged_in?
+      flash[:notice] = "Logged in from #{provider.titleize}."
+
+    # Register user
+
     else
-      begin
-        @user = create_from(provider)
-        @user.activate!
-        reset_session
-        auto_login(@user)
-        redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
-      rescue
-        redirect_to root_path, alert: "Failed to log in from #{provider.titleize}!"
-      end
+      new_user = auth.register
+
+      new_user.activate!
+      reset_session
+
+      auto_login(new_user)
+
+      flash[:notice] = "You've registered through #{provider.titleize}."
     end
+
+    redirect_to root_path
   end
 
   def auth_params

@@ -1,3 +1,4 @@
 class Booking < ActiveRecord::Base
-  belongs_to :merchant, :user
+  belongs_to :outlet
+  belongs_to :user
 end

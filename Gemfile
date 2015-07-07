@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sprockets-rails', '>= 2.1.4'
 gem 'slim-rails'
@@ -27,6 +28,16 @@ gem 'sorcery'
 
 # Responders
 gem 'responders'
+
+# Social Media Wrappers
+gem 'koala'
+
+# Image uploaders
+gem 'carrierwave'
+gem 'mini_magick'
+
+# S3 Amazon
+gem 'fog'
 
 # Development and Test gems
 group :development, :test do

@@ -1,28 +1,71 @@
 .landing {
 
+  /* View Specific Overrides */
 
-  .hero-unit {
-    height: 80vh;
-    width: 100%;
+  .btn.dropdown-toggle.btn-default {
+    background-color: #B0344E !important;
+    border-radius: 0px;
+    border-color: #B0344E;
+    padding: 25px;
+    color: #FFF;
+    font-size: 14px;
+    letter-spacing: 1.9px;
+    font-family: 'brandon-reg';
 
-    .slogan {
-      padding-top: 3%;
+    &:focus {
+      color: white;
     }
   }
 
-  .hero-unit:before {
-    content: ' ';
-    background-image:image-url("landing_banner.jpg");
+  .bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+  }
+
+  .btn-group.bootstrap-select {
+    width: 100% !important;
+  }
+
+  .dropdown-menu.inner {
+    background-color: #B0344E;
+    width: 100%;
+    border-radius: 0px;
+    font-size: 14px;
+    color: #FFF;
+    letter-spacing: 1.9px;
+
+    a {
+      color: white;
+      padding: 3%;
+      outline: none;
+    }
+  }
+
+  .dropdown-menu.open {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .dropdown-menu li a:hover, .dropdown-menu li a:focus {
+    color: white;
+    background-color: #E4A955;
+    transition: 0.3s;
+  }
+
+  /* End */
+
+  .hero-unit {
+    height: 60vh;
+    width: 100vw;
+    background-image:image-url("landing_banner_opacity.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    opacity: .3;
-    height: 60vh;
-    position: absolute;
-    width: 100%;
-    display: block;
-    align-items: center;
-    justify-content: center;
+    display: table;
+
+    .slogan {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 
   .hero-rm-padding {
@@ -42,46 +85,11 @@
     font-family: 'brandon-reg';
   }
 
-  .dropdown-styling {
-    background-color: #B0344E !important;
-    border-radius: 0px;
-    border-color: #B0344E;
-    padding: 25px;
-    color: #FFF;
-    font-size: 14px;
-    letter-spacing: 1.9px;
-    font-family: 'brandon-reg';
-
-    &:focus {
-      color: white;
-    }
-  }
-
-  .dropdown-list {
-    background-color: #B0344E;
-    width: 100%;
-    border-radius: 0px;
-    font-size: 14px;
-    color: #FFF;
-    letter-spacing: 1.9px;
-
-    a {
-      color: white;
-      padding: 3%;
-    }
-  }
-
-  .dropdown-menu li a:hover, .dropdown-menu li a:focus {
-    color: white;
-    background-color: #E4A955;
-    transition: 0.3s;
-  }
-
   .dropdown-padding {
-    padding-top: 35px;
+    padding-top: 2%;
   }
 
-  .margin-left-4 {
-    margin-left: 4%;
+  .padding-top-5 {
+    padding-top: 5%;
   }
 }

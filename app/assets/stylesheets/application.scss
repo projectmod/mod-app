@@ -4,6 +4,10 @@
 /* Bootstrap CSS */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-select.css";
+
+/* Font Awesome */
+@import "font-awesome";
 
 /* Views */
 @import "views/**/*";

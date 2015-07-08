@@ -10,41 +10,12 @@
               | GET IT DONE. RIGHT HERE. RIGHT NOW
         .row
           .col-md-8.col-md-offset-2.dropdown-padding
-            .col-xs-4.text-center.margin-left-4
-              .dropdown
-                button.btn.btn-default.btn-lg.btn-block.dropdown-toggle#dropdownMenu1.dropdown-styling type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                  | PICK A SERVICE  
-                  span.caret
-                ul.dropdown-menu.dropdown-list aria-labelledby="dropdownMenu1"
-                  li
-                    = link_to "BLOWOUT", "#"
-                  li  
-                    = link_to "HAIRCUT", "#"
-                  li  
-                    = link_to "NAILS", "#"
-                  li  
-                    = link_to "MASSAGE", "#"
-                  li  
-                    = link_to "MAKEUP", "#"
-                  li  
-                    = link_to "BROWS / LASHES", "#"
-                  li  
-                    = link_to "WAXING", "#"
-                  li  
-                    = link_to "FACIAL", "#"
+            = form_for :user do |f|
+              .col-md-4.col-sm-4.text-center
+                = f.select "Service", options_for_select(['BLOWOUT', 'HAIRCUT', 'NAILS', 'MASSAGE', 'MAKEUP', 'BROWS / LASHES', 'WAXING', 'FACIAL']), {}, { title: 'PICK A SERVICE', class: 'selectpicker' }
                     
-            .col-xs-4.text-center
-              .dropdown
-                button.btn.btn-default.btn-lg.btn-block.dropdown-toggle#dropdownMenu2.dropdown-styling type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                  | SET A BUDGET  
-                  span.caret
-                ul.dropdown-menu.dropdown-list aria-labelledby="dropdownMenu2"
-                  li
-                    = link_to "RM 0 - 50", "#"
-                  li  
-                    = link_to "RM 50 - 100", "#"
-                  li  
-                    = link_to "ABOVE RM 100", "#"
+              .col-md-4.col-sm-4.text-center
+                = f.select "Budget", options_for_select(['RM 0 - 50', 'RM 50 - 100', 'ABOVE RM 100']), {}, {title: 'SET A BUDGET', class: 'selectpicker'}
                   
-            .col-xs-3.text-center
-              = link_to "FIND A SALON", "#", class:"btn btn-find btn-lg btn-block"
+              .col-md-4.col-sm-4
+                = f.submit "FIND A SALON", class:"btn btn-find btn-lg btn-block"                

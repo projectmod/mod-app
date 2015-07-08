@@ -66,7 +66,7 @@
       = link_to raw("#{fa_icon 'facebook', text: 'Facebook'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
 
   
-  = form_tag list_path, method: 'get'
+  = form_tag outlets_path, method: 'get'
     = select_tag  "type_of_service", options_for_select(["BLOWOUT", "HAIRCUT"], "HAIRCUT")
     = select_tag  "price_range", options_for_select(["RM 0 - 50", "RM 50 - 100", "ABOVE RM 100"], "RM 0 - 50")
     = hidden_field_tag :longitude

@@ -11,9 +11,7 @@ class Outlet < ActiveRecord::Base
     outlets.each do |outlet|
       if rgeo_factory.point(outlet.longitude, outlet.latitude).distance(user_point) < 5000000
         final << outlet
-      end 
+      end
     end
-    binding.pry
-    
   end
 end

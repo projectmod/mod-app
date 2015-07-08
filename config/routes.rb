@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   # ==============================================================================================
   # Outlets
   # ==============================================================================================
-  get 'list', to: 'outlets#list', as: 'list'
+  resources :outlets
+  resources :bookings
 
 end

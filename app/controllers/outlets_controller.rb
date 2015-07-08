@@ -14,7 +14,7 @@ class OutletsController < ApplicationController
 
 
   def show
-    @booking =  Booking.new
+    @booking = Booking.new
   end
 
   private

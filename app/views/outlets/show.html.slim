@@ -1,0 +1,4 @@
+h1 Test shit
+= form_for @booking do |f|
+  = f.text_field :phone_no, value: @outlet.phone_no, readonly: true
+  = f.submit "Book", class: "btn btn-primary"

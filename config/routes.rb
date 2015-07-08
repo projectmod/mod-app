@@ -44,6 +44,10 @@ Rails.application.routes.draw do
   get "oauth/callback", to: "oauth#callback"
   get "oauth/:provider", to: "oauth#oauth", as: :auth_at_provider
 
+  # ==============================================================================================
+  # Outlets
+  # ==============================================================================================
   resources :outlets
+  resources :bookings
 
 end

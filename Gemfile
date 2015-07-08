@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'pg'
 gem 'puma'
 gem 'rails_12factor', group: :production
+gem 'activerecord-postgis-adapter'
 
 # Environment
 gem 'figaro'
@@ -28,6 +29,9 @@ gem 'sorcery'
 
 # Responders
 gem 'responders'
+
+# Twilio
+gem 'twilio-ruby', '~> 4.1.0'
 
 # Social Media Wrappers
 gem 'koala'

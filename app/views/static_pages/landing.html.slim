@@ -9,13 +9,13 @@
             h3.punchline 
               | GET IT DONE. RIGHT HERE. RIGHT NOW
         .row
-          .col-md-8-offset-2
-            .col-md-4
+          .col-md-8.col-md-offset-2
+            .col-xs-4.text-center
               .dropdown
-                button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                button.btn.btn-default.btn-lg.btn-block.dropdown-toggle#dropdownMenu1.dropdown-styling type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                   | PICK A SERVICE  
                   span.caret
-                ul.dropdown-menu aria-labelledby="dropdownMenu1"
+                ul.dropdown-menu.dropdown-list aria-labelledby="dropdownMenu1"
                   li
                     = link_to "BLOWOUT", "#"
                   li  
@@ -33,12 +33,12 @@
                   li  
                     = link_to "FACIAL", "#"
                     
-            .col-md-4
+            .col-xs-4.text-center
               .dropdown
-                button.btn.btn-default.dropdown-toggle#dropdownMenu2 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                button.btn.btn-default.btn-lg.btn-block.dropdown-toggle#dropdownMenu2.dropdown-styling type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                   | SET A BUDGET  
                   span.caret
-                ul.dropdown-menu aria-labelledby="dropdownMenu2"
+                ul.dropdown-menu.dropdown-list aria-labelledby="dropdownMenu2"
                   li
                     = link_to "RM 0 - 50", "#"
                   li  
@@ -46,5 +46,5 @@
                   li  
                     = link_to "ABOVE RM 100", "#"
                   
-            .col-md-4
-              = link_to "FIND A SALON", "#", class:"btn btn-find"
+            .col-xs-3.text-center
+              = link_to "FIND A SALON", "#", class:"btn btn-find btn-lg btn-block"

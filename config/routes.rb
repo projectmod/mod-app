@@ -17,10 +17,14 @@ Rails.application.routes.draw do
   # ==============================================================================================
   resources :password_resets
 
-  resources :users do
+  resources :users, except: :show do
   	member do
   		get :activate
   	end
+  end
+
+  namespace :dashboard do
+    get 'account', to: 'account#index'
   end
 
   resources :user_sessions
@@ -29,7 +33,7 @@ Rails.application.routes.draw do
   # User Sessions/Login/Logout
   # ==============================================================================================
   get 'login', to: 'user_sessions#new', as: :login
-	
+
   match 'logout', to: 'user_sessions#destroy', via: [:get, :delete]
 
 

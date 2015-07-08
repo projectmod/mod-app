@@ -2,8 +2,6 @@
 
 
   .hero-unit {
-    position: relative;
-    overflow: hidden;
     height: 80vh;
     width: 100%;
 
@@ -28,56 +26,30 @@
   }
 
   .hero-rm-padding {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
   }
 
   .btn-find {
-  color: #FFFFFF;
-  background-color: #E4A955;
-  border-color: #E4A955;
-  border-radius: 0px;
+    color: #FFFFFF;
+    background-color: #E4A955;
+    border-color: #E4A955;
+    border-radius: 0px;
+    padding: 15px;
   }
 
-  // .btn-find:hover,
-  // .btn-find:focus,
-  // .btn-find:active,
-  // .btn-find.active,
-  // .open .dropdown-toggle.btn-find {
-  //   color: #FFFFFF;
-  //   background-color: #E4A955;
-  //   border-color: #E4A955;
-  // }
-  //
-  // .btn-find:active,
-  // .btn-find.active,
-  // .open .dropdown-toggle.btn-find {
-  //   background-image: none;
-  // }
-  //
-  // .btn-find.disabled,
-  // .btn-find[disabled],
-  // fieldset[disabled] .btn-find,
-  // .btn-find.disabled:hover,
-  // .btn-find[disabled]:hover,
-  // fieldset[disabled] .btn-find:hover,
-  // .btn-find.disabled:focus,
-  // .btn-find[disabled]:focus,
-  // fieldset[disabled] .btn-find:focus,
-  // .btn-find.disabled:active,
-  // .btn-find[disabled]:active,
-  // fieldset[disabled] .btn-find:active,
-  // .btn-find.disabled.active,
-  // .btn-find[disabled].active,
-  // fieldset[disabled] .btn-find.active {
-  //   background-color: #E4A955;
-  //   border-color: #E4A955;
-  // }
-  //
-  // .btn-find .badge {
-  //   color: #E4A955;
-  //   background-color: #FFFFFF;
-  // }
+  .dropdown-styling {
+    background-color: #B0344E !important;
+    border-radius: 0px;
+    border-color: #B0344E;
+    padding: 15px;
+  }
 
+  .dropdown-list {
+    background-color: #B0344E;
+    width: 100%;
+    border-radius: 0px;
+    font-size: 18px;
+  }
 }

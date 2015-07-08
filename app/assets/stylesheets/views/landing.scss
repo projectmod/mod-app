@@ -6,7 +6,7 @@
     width: 100%;
 
     .slogan {
-      padding-top: 6%;
+      padding-top: 3%;
     }
   }
 
@@ -36,20 +36,52 @@
     background-color: #E4A955;
     border-color: #E4A955;
     border-radius: 0px;
-    padding: 15px;
+    padding: 25px;
+    font-size: 14px;
+    letter-spacing: 1.9px;
+    font-family: 'brandon-reg';
   }
 
   .dropdown-styling {
     background-color: #B0344E !important;
     border-radius: 0px;
     border-color: #B0344E;
-    padding: 15px;
+    padding: 25px;
+    color: #FFF;
+    font-size: 14px;
+    letter-spacing: 1.9px;
+    font-family: 'brandon-reg';
+
+    &:focus {
+      color: white;
+    }
   }
 
   .dropdown-list {
     background-color: #B0344E;
     width: 100%;
     border-radius: 0px;
-    font-size: 18px;
+    font-size: 14px;
+    color: #FFF;
+    letter-spacing: 1.9px;
+
+    a {
+      color: white;
+      padding: 3%;
+    }
+  }
+
+  .dropdown-menu li a:hover, .dropdown-menu li a:focus {
+    color: white;
+    background-color: #E4A955;
+    transition: 0.3s;
+  }
+
+  .dropdown-padding {
+    padding-top: 35px;
+  }
+
+  .margin-left-4 {
+    margin-left: 4%;
   }
 }

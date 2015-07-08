@@ -9,7 +9,7 @@ class Outlet < ActiveRecord::Base
     # distance in meters
     final = []
     outlets.each do |outlet|
-      if rgeo_factory.point(outlet.longitude, outlet.latitude).distance(user_point) < 2000000
+      if rgeo_factory.point(outlet.longitude, outlet.latitude).distance(user_point) < 5000000
         final << outlet
       end 
     end

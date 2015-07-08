@@ -30,6 +30,9 @@ gem 'sorcery'
 # Responders
 gem 'responders'
 
+# Twilio
+gem 'twilio-ruby', '~> 4.1.0'
+
 # Social Media Wrappers
 gem 'koala'
 

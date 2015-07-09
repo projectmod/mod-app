@@ -13,5 +13,6 @@ class Outlet < ActiveRecord::Base
         final << outlet
       end
     end
+    return final
   end
 end

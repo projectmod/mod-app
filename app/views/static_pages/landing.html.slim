@@ -10,36 +10,15 @@
               | GET IT DONE. RIGHT HERE. RIGHT NOW
         .row
           .col-md-8.col-md-offset-2.dropdown-padding
-            = form_for :user do |f|
+            = form_tag outlets_path, method: 'get'
               .col-md-4.col-sm-4.text-center
-                = f.select "Service", options_for_select(['BLOWOUT', 'HAIRCUT', 'NAILS', 'MASSAGE', 'MAKEUP', 'BROWS / LASHES', 'WAXING', 'FACIAL']), {}, { title: 'PICK A SERVICE', class: 'selectpicker' }
+                = select_tag "type_of_service", options_for_select(['BLOWOUT', 'HAIRCUT', 'NAILS', 'MASSAGE', 'MAKEUP', 'BROWS / LASHES', 'WAXING', 'FACIAL']), { title: 'PICK A SERVICE', class: 'selectpicker' }
                     
               .col-md-4.col-sm-4.text-center
-                = f.select "Budget", options_for_select(['RM 0 - 50', 'RM 50 - 100', 'ABOVE RM 100']), {}, {title: 'SET A BUDGET', class: 'selectpicker'}
+                = select_tag "price_range", options_for_select(['RM 0 - 50', 'RM 50 - 100', 'ABOVE RM 100']), { title: 'SET A BUDGET', class: 'selectpicker' }
                   
               .col-md-4.col-sm-4
-                = f.submit "FIND A SALON", class:"btn btn-find btn-lg btn-block"                
+                = hidden_field_tag :longitude
+                = hidden_field_tag :latitude
+                = submit_tag "FIND A SALON", class:"btn btn-find btn-lg btn-block"                
 
-- if current_user
-  = image_tag current_user.avatar
-
-.container style="width: 300px; padding-top: 100px"
-  = form_for User.new, class: 'form' do |f|
-    .form-group
-      = f.text_field :email, placeholder: 'youremail@example.com', required: true, class: 'form-control'
-    .form-group
-      = f.password_field :password, placeholder: 'Password', required: true, class: 'form-control'
-    .form-group
-      = f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true, class: 'form-control'
-    .form-group
-      = f.submit "Sign Up", class: 'btn btn-block btn-social btn-pinterest'
-    .form-group
-      = link_to raw("#{fa_icon 'facebook', text: 'Facebook'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
-
-  
-  = form_tag outlets_path, method: 'get'
-    = select_tag  "type_of_service", options_for_select(["BLOWOUT", "HAIRCUT"], "HAIRCUT")
-    = select_tag  "price_range", options_for_select(["RM 0 - 50", "RM 50 - 100", "ABOVE RM 100"], "RM 0 - 50")
-    = hidden_field_tag :longitude
-    = hidden_field_tag :latitude
-    = submit_tag "Enter", class: "btn btn-primary"

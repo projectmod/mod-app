@@ -2,6 +2,7 @@ class OutletsController < ApplicationController
   before_action :set_outlet, only: :show
 
   def index
+    binding.pry
     @outlets = Outlet.where(price_range: params[:price_range])
     @final = []
     @outlets.each do |outlet|

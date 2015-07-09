@@ -1,0 +1,99 @@
+footer {
+  width: 100%;
+  background-color: #F2F2F2 !important;
+
+  hr {
+    border-color: #B0B0B0;
+  }
+
+  .no-side-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .border {
+    width: 50px;
+    height: 1px;
+    margin: 1em 0;
+    background-color: #eee;
+  }
+
+  .tablet {
+    display: none;
+  }
+
+  .padding-top-13 {
+    padding-top: 13px;
+  }
+
+  .footer-main-padding {
+    padding-top: 7%;
+    padding-bottom: 4%;
+  }
+
+  .footer-sub-padding {
+    padding-bottom: 2%;
+  }
+
+  .email-padding {
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
+
+  .number-padding {
+    padding-bottom: 6%;
+  }
+
+  .copyright-background {
+    background-color: #B0344E;
+    padding: 1%;
+  }
+
+  .footer-hover {
+    text-decoration: none;
+
+    &:hover {
+      color: #848484 !important;
+    }
+  }
+
+  .fb-button-color {
+    color: #848484;
+
+    &:hover {
+      color: #3b5998 !important;
+    }
+  }
+
+  .tw-button-color {
+    color: #848484;
+
+    &:hover {
+      color: #00aced !important;
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  footer {
+    .tablet {
+      display: block;
+    }
+
+    .normal {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  footer {
+    .tablet {
+      display: none;
+    }
+
+    .normal {
+      display: block;
+    }
+  }
+}

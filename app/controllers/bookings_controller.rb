@@ -5,7 +5,7 @@ class BookingsController < ActionController::Base
     @client.messages.create(
       from: '+18885809742',
       to: to_phone,
-      body: 'Hey there!'
+      body: 'Twilio says hey there!'
     )
     redirect_to outlets_path
   end
@@ -13,7 +13,7 @@ class BookingsController < ActionController::Base
   private
 
   def booking_params
-    params.require(:booking).permit(:phone_no, :user_id, :merchant_id, :confirmed)
+    params.require(:booking).permit(:phone_no, :user_id, :merchant_id, :confirmed, :outlet_attributes [:phone_no])
   end
 
 end

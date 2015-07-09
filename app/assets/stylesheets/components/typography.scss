@@ -20,14 +20,42 @@
 
 .slogan-main {
   font-family: 'brandon-bold';
-  font-size: 60px;
+  font-size: 4vmax;
   letter-spacing: 0.31px;
   color: #000000;
 }
 
 .punchline {
   font-family: 'brandon-reg';
-  font-size: 25px;
+  font-size: 4vmin;
   letter-spacing: 2px;
   color: #000000;
+}
+
+.footer-main {
+  font-family: 'brandon-med';
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  color: #B0344E;
+}
+
+.footer-sub {
+  font-family: 'brandon-light';
+  font-size: 12px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.email-font {
+  font-family: 'brandon-light';
+  font-size: 12px;
+  color: #B0344E !important;
+  letter-spacing: 2.4px;
+}
+
+.copyright-font {
+  font-family: 'brandon-light';
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  color: #F2F2F2;
 }

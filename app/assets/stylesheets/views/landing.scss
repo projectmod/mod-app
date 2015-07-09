@@ -56,6 +56,7 @@
   .hero-unit {
     height: 60vh;
     width: 100vw;
+    margin-bottom: 2%;
     background-image:image-url("landing_banner_opacity.jpg");
     background-size:cover;
     background-repeat: no-repeat;
@@ -91,5 +92,9 @@
 
   .padding-top-5 {
     padding-top: 5%;
+  }
+
+  .margin-top-3 {
+    margin-top: 3px;
   }
 }

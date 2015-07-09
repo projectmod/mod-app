@@ -1,0 +1,51 @@
+footer
+  .container-fluid
+    .row
+      .col-md-4.col-md-offset-4
+        .row.footer-main-padding
+          .col-xs-4.text-center
+            = link_to "ABOUT", "#", class: "footer-main footer-hover"
+          
+          .col-xs-4.text-center
+            = link_to "FAQ", "#", class: "footer-main footer-hover"
+            
+          .col-xs-4.text-center
+             = link_to "PARTNERS", "#", class: "footer-main footer-hover"
+             
+        .row.footer-sub-padding
+          
+          // Desktop & Mobiel view
+          .col-xs-3.no-side-padding.normal
+            hr
+          
+          // Tablet View
+          .col-xs-3.col-xs-offset-1.no-side-padding.tablet
+            hr
+            
+          // Desktop & Mobile view
+          .col-xs-6.footer-sub.text-center.padding-top-13.normal
+            | Get in touch with MOD
+          
+          // Tablet View
+          .col-xs-4.footer-sub.text-center.padding-top-13.tablet
+            | Get in touch with MOD
+            
+          .col-xs-3.no-side-padding
+            hr
+        
+        .row
+          .col-xs-1.col-xs-offset-5
+            = link_to "#", class: 'fb-button-color', target: '_blank' do
+              i.fa.fa-facebook
+          .col-xs-1
+            = link_to "#", class: 'tw-button-color', target: '_blank' do
+              i.fa.fa-twitter
+              
+        .row.email-padding.text-center
+          = link_to "carmen_julian@mod.com.my", "mailto:carmen_julian@mod.com.my", class: "email-font footer-hover"
+          
+        .row.text-center.email-font.number-padding
+          | +60 3 8976 5432
+          
+    .row.copyright-font.copyright-background.text-center
+      | © 2015 MOD. All rights reserved

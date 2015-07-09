@@ -48,6 +48,9 @@ Rails.application.routes.draw do
   # Outlets
   # ==============================================================================================
   resources :outlets
-  resources :bookings
-
+  resources :bookings do
+    member do
+        get :pending
+      end
+  end
 end

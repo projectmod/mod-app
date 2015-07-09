@@ -1,4 +1,13 @@
-h1 Merchant page 
-= form_for @booking do |f|
-  = f.text_field :phone_no, value: @outlet.phone_no, readonly: true
-  = f.submit "Book", class: "btn btn-primary"
+.container style="padding 20px"
+  h1 Merchant page 
+  p 
+    = @outlet.name
+  p
+    = @outlet.address
+  p
+    = @outlet.price_range
+  p
+    = @outlet.phone_no
+  = form_for @booking do |f|
+    = f.text_field :phone_no, value: @outlet.phone_no, readonly: true
+    = f.submit "Book", class: "btn btn-primary"

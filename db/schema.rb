@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20150709065059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "postgis"
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -23,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150709065059) do
     t.string   "uid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "secret"
     t.string   "token"
+    t.string   "secret"
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree

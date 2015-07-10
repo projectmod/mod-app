@@ -35,6 +35,10 @@ footer {
     padding-bottom: 2%;
   }
 
+  .footer-sub {
+    padding-left: -1px;
+    padding-right: 0px;
+  }
   .email-padding {
     padding-top: 5%;
     padding-bottom: 2%;
@@ -65,11 +69,19 @@ footer {
     }
   }
 
-  .tw-button-color {
+  .ins-button-color {
     color: #848484;
 
     &:hover {
-      color: #00aced !important;
+      color: #125688 !important;
+    }
+  }
+
+  .pint-button-color {
+    color: #848484;
+
+    &:hover {
+      color: #C92228 !important;
     }
   }
 }

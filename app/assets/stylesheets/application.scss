@@ -1,5 +1,5 @@
 /* Components */
-@import "components/*";
+@import "components/variables";
 
 /* Bootstrap CSS */
 @import "bootstrap-sprockets";
@@ -11,3 +11,6 @@
 
 /* Views */
 @import "views/**/*";
+
+/* Components */
+@import "components/typography";

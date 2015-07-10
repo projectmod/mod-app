@@ -8,6 +8,12 @@
     = @outlet.price_range
   p
     = @outlet.phone_no
-  = form_for @booking do |f|
-    = f.text_field :phone_no, value: @outlet.phone_no, readonly: true
-    = f.submit "Book", class: "btn btn-primary"
+    
+  = form_for Booking.new do |f|
+    - if current_user.present?
+      = f.text_field :phone_no, value: @outlet.phone_no, readonly: true
+      = f.hidden_field :merchant_id, value: @outlet.merchant.id
+      = f.hidden_field :user_id, value: current_user.id
+      = f.submit "Book Now!", class: "btn btn-primary"
+    - else
+      = link_to "Please login/ sign up to book", new_user_session_path, class: "btn btn-primary"

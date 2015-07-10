@@ -45,11 +45,13 @@ outlet_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac
                 type_of_service: ["BLOWOUT"],
                 address: "99, Jalan 99, 99999, K.L",
                 price_range: "RM 50 - 100",
-                state: "Selagor")
+                state: "Selagor",
+                phone_no: "0126832814")
 
 outlet_3 = merchant_3.outlets.find_or_create_by!(name: "Barber")
 outlet_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
                 type_of_service: ["MASSAGE", "HAIRCUT"],
                 address: "99, Jalan 99, 99999, K.L",
                 price_range: "RM 50 - 100",
-                state: "Cyberjaya")
+                state: "Cyberjaya",
+                phone_no: "0126832814")

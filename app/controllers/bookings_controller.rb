@@ -6,22 +6,27 @@ class BookingsController < ActionController::Base
     binding.pry
     @booking = Booking.new(booking_params)
 
-    to_phone = "+6"+params[:booking][:phone_no]
-    @client = Twilio::REST::Client.new
-    @client.messages.create(
-      from: '+18885809742',
-      to: to_phone,
-      body: 'Twilio says hey there!' 
-    )
-    redirect_to pending_booking_path
+    # to_phone = "+6"+params[:booking][:phone_no]
+    # @client = Twilio::REST::Client.new
+    # @client.messages.create(
+    #   from: '+18885809742',
+    #   to: to_phone,
+    #   body: 'Twilio says hey there!' 
+    # )
+    if @booking.save
+      redirect_to pending_booking_path(@booking)
+    else 
+      redirect_to :back, notice: "Booking unsuccessful, please try again"
+    end
   end
 
   def pending
-    
+  end
+
+  def success
   end
 
   def update
-
   end
 
   private
@@ -31,7 +36,7 @@ class BookingsController < ActionController::Base
   end
 
   def booking_params
-    params.require(:booking).permit(:phone_no, :user_id, :merchant_id, :confirmed, :outlet_attributes [:phone_no])
+    params.require(:booking).permit(:phone_no, :user_id, :merchant_id, :confirmed)
   end
 
 end

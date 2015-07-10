@@ -51,17 +51,22 @@
     transition: 0.3s;
   }
 
+  span.filter-option {
+    text-align: center !important;
+  }
+
   /* End */
 
   .hero-unit {
     height: 60vh;
     width: 100vw;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     background-image:image-url("landing_banner_opacity.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
     display: table;
+    position: relative;
 
     .slogan {
       display: table-cell;

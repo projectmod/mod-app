@@ -34,12 +34,17 @@ footer
             hr
         
         .row
-          .col-xs-1.col-xs-offset-5
-            = link_to "#", class: 'fb-button-color', target: '_blank' do
-              i.fa.fa-facebook
-          .col-xs-1
-            = link_to "#", class: 'tw-button-color', target: '_blank' do
-              i.fa.fa-twitter
+          .col-xs-4.col-xs-offset-4
+            .row
+              .col-xs-4.text-center
+                = link_to "#", class: 'fb-button-color', target: '_blank'
+                  i.fa.fa-facebook
+              .col-xs-4.text-center
+                = link_to "#", class: 'ins-button-color', target: '_blank'
+                  i.fa.fa-instagram
+              .col-xs-4.text-center
+                = link_to "#", class: 'pint-button-color', target: '_blank'
+                  i.fa.fa-pinterest-p
               
         .row.email-padding.text-center
           = link_to "carmen_julian@mod.com.my", "mailto:carmen_julian@mod.com.my", class: "email-font footer-hover"

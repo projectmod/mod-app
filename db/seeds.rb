@@ -1,11 +1,11 @@
 admin = User.find_or_create_by!(email: "admin@mod.com")
-admin.update(password: "password", password_confirmation: "password", role: "admin", name: "Admin")
+admin.update(password: "password", password_confirmation: "password", role: "admin", name: "Admin", phone_no: "0126832814")
 admin.activate
 admin.set_as_admin
 admin.save!
 
 merchant = User.find_or_create_by!(email: "merchant@mod.com")
-merchant.update(password: "password", password_confirmation: "password", role: "merchant", name: "Merchant")
+merchant.update(password: "password", password_confirmation: "password", role: "merchant", name: "Merchant", phone_no: "0126832814")
 merchant.activate
 merchant.set_as_merchant
 merchant.save!

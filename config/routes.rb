@@ -53,7 +53,7 @@ Rails.application.routes.draw do
     member do
         get :pending
         get :outlet_confirmed
-        get :user_confirmed
+        get :user_cancellation
       end
   end
 end

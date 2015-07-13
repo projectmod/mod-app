@@ -15,4 +15,9 @@ class Outlet < ActiveRecord::Base
     end
     return final
   end
+
+  def confirmation_code
+    SecureRandom.urlsafe_base64(6)
+  end
+
 end

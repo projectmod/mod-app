@@ -6,7 +6,7 @@ class BookingsController < ActionController::Base
     @booking = Booking.new(booking_params)
 
     if @booking.save
-      # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm"
+      # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
       # to_outlet_number = "+6"+params[:booking][:outlet_number]
       # @client = Twilio::REST::Client.new
       # @client.messages.create(
@@ -26,7 +26,9 @@ class BookingsController < ActionController::Base
   def outlet_confirmed
     if @booking.created_at < 1.minute 
       @booking.update_attribute(:outlet_confirmed, true)
-      # @message = "Merchant has gotten back to you, Click on #{user_confirmed_booking_url(@booking)} to confirm"
+      total = @booking.outlet.credits - 1
+      @booking.outlet.update_attribute(:credits, total)
+      # @message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_booking_url(@booking)} to cancel the booking"
       # to_user_number = "+6"+ @booking.user_number
       # @client = Twilio::REST::Client.new
       # @client.messages.create(
@@ -37,10 +39,10 @@ class BookingsController < ActionController::Base
     end
   end
 
-  def user_confirmed
-    @booking.update_attribute(:user_confirmed, true)    
-    total = @booking.outlet.credits - 1
-    @booking.outlet.update_attribute(:credits, total)
+  def user_cancellation
+    @booking.update_attribute(:user_cancellation, true)  
+    total = @booking.outlet.credits + 1
+    @booking.outlet.update_attribute(:credits, total)  
   end
 
   private
@@ -50,7 +52,7 @@ class BookingsController < ActionController::Base
   end
 
   def booking_params
-    params.require(:booking).permit(:oulet_number, :user_number, :user_confirmed, :outlet_confirmed, :user_id, :outlet_id)
+    params.require(:booking).permit(:outlet_number, :user_number, :user_cancellation, :outlet_confirmed, :user_id, :outlet_id, :confirmation_code)
   end
 
 end

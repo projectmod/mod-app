@@ -1,0 +1,4 @@
+- if @booking.created_at < 1.minute
+  = "Congrats you have confirmed, go to your profile page to see your booking"
+- else 
+  = "We're sorry but you took more than 1 minute to reply, the booking is no longer valid"

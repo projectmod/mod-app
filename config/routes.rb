@@ -52,7 +52,8 @@ Rails.application.routes.draw do
   resources :bookings do
     member do
         get :pending
-        get :confirm
+        get :outlet_confirmed
+        get :user_confirmed
       end
   end
 end

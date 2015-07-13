@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713035825) do
+ActiveRecord::Schema.define(version: 20150713071953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(version: 20150713035825) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "merchant_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "confirmation_code"
-    t.boolean  "user_confirmed"
-    t.boolean  "merchant_confirmed"
-    t.string   "users_number"
-    t.string   "merchants_number"
+    t.boolean  "user_confirmed",    default: false
+    t.integer  "outlet_id"
+    t.integer  "outlet_number"
+    t.integer  "outlet_confirmed"
+    t.integer  "user_number"
   end
 
   create_table "merchants", force: :cascade do |t|
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150713035825) do
     t.datetime "reset_password_email_sent_at"
     t.string   "name"
     t.string   "avatar"
+    t.integer  "phone_no"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

@@ -1,6 +1,6 @@
 class BookingsController < ActionController::Base
   before_action :require_login
-  before_action :set_booking, only: [:pending, :update]
+  before_action :set_booking, only: [:pending, :result, :outlet_confirmed, :user_cancellation]
 
   def create
     @booking = Booking.new(booking_params)
@@ -21,6 +21,9 @@ class BookingsController < ActionController::Base
   end
 
   def pending
+  end
+
+  def result
   end
 
   def outlet_confirmed

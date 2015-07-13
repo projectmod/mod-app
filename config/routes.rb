@@ -49,11 +49,16 @@ Rails.application.routes.draw do
   # Outlets
   # ==============================================================================================
   resources :outlets
+
+  # ==============================================================================================
+  # Bookings
+  # ==============================================================================================
   resources :bookings do
     member do
-        get :pending
         get :outlet_confirmed
         get :user_cancellation
+        get :pending
+        get :result
       end
   end
 end

@@ -6,12 +6,13 @@ class BookingsController < ActionController::Base
     binding.pry
     @booking = Booking.new(booking_params)
 
+    @message = "Someone wants to book with you, Click on #{confirm_booking_url(@booking)} to confirm"
     # to_phone = "+6"+params[:booking][:phone_no]
     # @client = Twilio::REST::Client.new
     # @client.messages.create(
     #   from: '+18885809742',
     #   to: to_phone,
-    #   body: 'Twilio says hey there!' 
+    #   body: @message.html_safe 
     # )
     if @booking.save
       redirect_to pending_booking_path(@booking)
@@ -20,13 +21,13 @@ class BookingsController < ActionController::Base
     end
   end
 
+  def update
+  end
+
   def pending
   end
 
-  def success
-  end
-
-  def update
+  def confirm
   end
 
   private

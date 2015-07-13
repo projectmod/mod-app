@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709065059) do
+ActiveRecord::Schema.define(version: 20150713034131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -22,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150709065059) do
     t.string   "uid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "token"
     t.string   "secret"
+    t.string   "token"
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
@@ -31,11 +32,12 @@ ActiveRecord::Schema.define(version: 20150709065059) do
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "merchant_id"
-    t.boolean  "confirmed",         default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "phone_no"
     t.string   "confirmation_code"
+    t.boolean  "user_confirmed"
+    t.boolean  "merchant_confirmed"
   end
 
   create_table "merchants", force: :cascade do |t|

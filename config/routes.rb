@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   resources :bookings do
     member do
         get :pending
+        get :confirm
       end
   end
 end

@@ -12,7 +12,6 @@ class OutletsController < ApplicationController
     @final = Outlet.within_range(params[:longitude], params[:latitude], @final)
   end
 
-
   def show
   end
 

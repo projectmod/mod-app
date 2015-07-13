@@ -2,10 +2,19 @@
   nav.navbar.navbar-default
     .container-fluid
       .navbar-header
-        button.navbar-toggle.collapsed aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        button.no-borders.navbar-toggle.collapsed aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
           span.icon-bar
           span.icon-bar
           span.icon-bar
+
+        .navbar-brand.desktop
+          = link_to root_path
+            = image_tag 'MOD_logo01.png', class: "logo-size"
+
+        .navbar-brand.mobile.pull-left
+          = link_to root_path
+            = image_tag 'MOD_logo01.png', class: "logo-size"
+
 
       #navbar.navbar-collapse.collapse.nav-margin.header-alignment
         ul.nav.navbar-nav.pull-left.desktop

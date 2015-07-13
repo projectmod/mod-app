@@ -11,10 +11,10 @@
         .row
           .col-md-8.col-md-offset-2.dropdown-padding
             = form_tag outlets_path, method: 'get'
-              .col-md-4.col-sm-4.text-center
+              .col-md-4.col-sm-4
                 = select_tag "type_of_service", options_for_select(['BLOWOUT', 'HAIRCUT', 'NAILS', 'MASSAGE', 'MAKEUP', 'BROWS / LASHES', 'WAXING', 'FACIAL']), { title: 'PICK A SERVICE', class: 'selectpicker margin-top-3' }
                     
-              .col-md-4.col-sm-4.text-center
+              .col-md-4.col-sm-4
                 = select_tag "price_range", options_for_select(['RM 0 - 50', 'RM 50 - 100', 'ABOVE RM 100']), { title: 'SET A BUDGET', class: 'selectpicker margin-top-3' }
                   
               .col-md-4.col-sm-4

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713034131) do
+ActiveRecord::Schema.define(version: 20150713035825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20150713034131) do
     t.integer  "merchant_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "phone_no"
     t.string   "confirmation_code"
     t.boolean  "user_confirmed"
     t.boolean  "merchant_confirmed"
+    t.string   "users_number"
+    t.string   "merchants_number"
   end
 
   create_table "merchants", force: :cascade do |t|
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150713034131) do
     t.datetime "updated_at",                   null: false
     t.string   "type_of_service", default: [],              array: true
     t.string   "phone_no"
+    t.integer  "credits"
   end
 
   create_table "payment_transactions", force: :cascade do |t|

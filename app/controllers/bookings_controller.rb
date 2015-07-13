@@ -7,7 +7,7 @@ class BookingsController < ActionController::Base
     @booking = Booking.new(booking_params)
 
     @message = "Someone wants to book with you, Click on #{confirm_booking_url(@booking)} to confirm"
-    # to_phone = "+6"+params[:booking][:phone_no]
+    # to_phone = "+6"+params[:booking][:merchants_numbers]
     # @client = Twilio::REST::Client.new
     # @client.messages.create(
     #   from: '+18885809742',

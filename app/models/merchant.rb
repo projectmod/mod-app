@@ -1,6 +1,8 @@
 class Merchant < ActiveRecord::Base
   has_many :outlets
-  belongs_to :user
+  
+  has_many :roles
+  has_many :users, through: :roles
 
   mount_uploader :avatar, ImageUploader
 end

@@ -21,7 +21,9 @@ class User < ActiveRecord::Base
 
   has_many :payments
   has_many :bookings
-  has_many :merchants
+
+  has_many :roles
+  has_many :merchants, through: :roles
 
   def activate
     self.activation_state = "active"

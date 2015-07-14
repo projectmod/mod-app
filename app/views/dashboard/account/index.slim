@@ -2,7 +2,7 @@
   .row
     .col-md-8.col-md-offset-2
       .panel.panel-default.no-border
-        .panel-heading.panel-header
+        .panel-heading.current-panel-header
           h3.panel-title.current-panel-title CURRENT APPOINTMENT
 
         .panel-body.text-center
@@ -19,7 +19,7 @@
   .row
     .col-md-8.col-md-offset-2
       .panel.panel-default.no-border#prev-appointment-accordian
-        .panel-heading.prev-panel-header
+        .panel-heading.panel-header
           h3.panel-title.prev-panel-title
             | PREVIOUS APPOINTMENTS
             span.pull-right
@@ -28,3 +28,5 @@
         #prev-app-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
           .panel-body
             p Test
+
+  = render partial: "dashboard/account/edit"

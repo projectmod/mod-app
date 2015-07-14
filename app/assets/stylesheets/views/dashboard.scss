@@ -2,7 +2,7 @@
 
   /* Curent appointment */
 
-  .panel-header {
+  .current-panel-header {
     background-color: #B0344E;
     border-radius: 0px;
   }
@@ -53,13 +53,59 @@
   }
 
   .icon-padding {
-    padding-right: 4vmax;
+    padding-right: 3vmax;
   }
 
-  .prev-panel-header {
+  .panel-header {
     background-color: #ECECEC;
     border-radius: 0px;
     border-color: #ECECEC;
+  }
+
+/* Profile Details */
+
+  .margin-top-4 {
+    margin-top: 4%;
+  }
+
+  .btn-save{
+    color: #B0344E;
+    background-color: #FBFBFB;
+    border-color: #B0344E;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+    border-width: 1.5px;
+
+    &:hover {
+      color: #848484;
+      transition: 0.2s;
+      border-color: #848484;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .form-control {
+    border-radius: 0px;
+    border-color: #E4A955;
+    color: #848484;
+
+    &:focus {
+      border-color: #848484;
+      box-shadow: none;
+    }
+  }
+
+  .mobile-border {
+    border: none;
+    background-color: #FBFBFB;
+    color: #848484;
   }
 
 }

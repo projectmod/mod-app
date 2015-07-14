@@ -1,0 +1,30 @@
+.dashboard.container-fluid
+  .row
+    .col-md-8.col-md-offset-2
+      .panel.panel-default.no-border
+        .panel-heading.panel-header
+          h3.panel-title.current-panel-title CURRENT APPOINTMENT
+
+        .panel-body.text-center
+          .container-fluid
+            .row
+              .col-md-12.no-padding
+                | YOU HAVE NO APPOINTMENTS AT THE MOMENT !
+            .row
+              .col-md-12
+                .row
+                  .col-md-4.col-md-offset-4
+                    = link_to "MAKE A BOOKING NOW", root_path, class: "btn btn-panel btn-alignment center-block"
+
+  .row
+    .col-md-8.col-md-offset-2
+      .panel.panel-default.no-border#prev-appointment-accordian
+        .panel-heading.prev-panel-header
+          h3.panel-title.prev-panel-title
+            | PREVIOUS APPOINTMENTS
+            span.pull-right
+              a role="button" data-toggle="collapse" data-parent="#prev-appointment-accordian" href="#prev-app-collapse" aria-expanded="true" aria-controls="prev-app-collapse"
+                i#prev-app-icon.fa.red.icon-padding.fa-minus
+        #prev-app-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
+          .panel-body
+            p Test

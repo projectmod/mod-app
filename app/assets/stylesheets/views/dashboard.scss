@@ -1,0 +1,65 @@
+.dashboard {
+
+  /* Curent appointment */
+
+  .panel-header {
+    background-color: #B0344E;
+    border-radius: 0px;
+  }
+
+  .panel-body {
+    border-radius: 0px;
+    background-color: #FBFBFB;
+    color: #B0B0B0;
+    font-family: 'brandon-reg';
+    font-size: 14px;
+    letter-spacing: 2.4px;
+    padding-top: 7%;
+  }
+
+  .btn-panel {
+    color: #F0F0F0;
+    background-color: #E4A955;
+    border-color: #E4A955;
+    border-radius: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+  }
+
+  .btn-alignment {
+    margin-top: 10%;
+    margin-bottom: 30%;
+  }
+
+  .panel-background {
+    background-color: #FBFBFB;
+  }
+
+  .no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .no-border {
+    border: none;
+  }
+
+/* Previous appointment */
+
+  .fa.red {
+    color: #B0344E !important;
+  }
+
+  .icon-padding {
+    padding-right: 4vmax;
+  }
+
+  .prev-panel-header {
+    background-color: #ECECEC;
+    border-radius: 0px;
+    border-color: #ECECEC;
+  }
+
+}

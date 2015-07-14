@@ -2,10 +2,21 @@
   width: 100%;
   padding-bottom: 2%;
 
+  /* View Specific Overrides */
+
+  .navbar-nav li a {
+    color: #B0344E;
+  }
+
+
   #navbar {
     .mobile {
       display: none;
     }
+  }
+
+  .active {
+    color: #848484 !important;
   }
 
   .navbar-toggle {
@@ -72,10 +83,10 @@
     padding: 7px 45px 7px 15px;
   }
 
+
   .red {
     font-family: 'brandon-light' !important;
     font-size: 12px;
-    color: #B0344E !important;
     letter-spacing: 1.5px;
 
     &:hover {

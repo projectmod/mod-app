@@ -1,6 +1,6 @@
 class Merchants::OutletsController < ApplicationController
   before_action :require_login
-  before_action :set_merchant, only: [:show, :edit]
+  before_action :set_outlet, only: [:show, :edit]
 
   def show
   end
@@ -11,8 +11,10 @@ class Merchants::OutletsController < ApplicationController
   private
 
   def set_outlet 
-    @outlet = Role.find(current_user.id).merchant.outlets.map do |outlet| 
-      outlet if outlet.phone_no == current_user.phone_no 
+    Role.find(current_user.id).merchant.outlets.each do |outlet| 
+      if outlet.phone_no == current_user.phone_no 
+        @outlet = outlet
+      end
     end
   end
 

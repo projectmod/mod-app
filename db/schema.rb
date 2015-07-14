@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714061017) do
+ActiveRecord::Schema.define(version: 20150714065401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,18 +35,16 @@ ActiveRecord::Schema.define(version: 20150714061017) do
     t.datetime "updated_at",                        null: false
     t.string   "confirmation_code"
     t.integer  "outlet_id"
-    t.integer  "outlet_number"
-    t.integer  "user_number"
+    t.string   "outlet_number"
+    t.string   "user_number"
     t.boolean  "outlet_confirmed",  default: false
     t.boolean  "user_cancellation", default: false
   end
 
   create_table "merchants", force: :cascade do |t|
     t.string   "name"
-    t.string   "type_of_service"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "outlets", force: :cascade do |t|
@@ -79,11 +77,11 @@ ActiveRecord::Schema.define(version: 20150714061017) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string   "role"
     t.integer  "merchant_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -106,7 +104,7 @@ ActiveRecord::Schema.define(version: 20150714061017) do
     t.datetime "reset_password_email_sent_at"
     t.string   "name"
     t.string   "avatar"
-    t.integer  "phone_no"
+    t.string   "phone_no"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

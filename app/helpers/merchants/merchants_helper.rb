@@ -1,2 +1,0 @@
-module Merchants::MerchantsHelper
-end

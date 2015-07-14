@@ -11,7 +11,9 @@ class Merchants::OutletsController < ApplicationController
   private
 
   def set_outlet 
-    @merchant = Role.find(current_user.id).merchant
+    @outlet = Role.find(current_user.id).merchant.outlets.map do |outlet| 
+      outlet if outlet.phone_no == current_user.phone_no 
+    end
   end
 
   def outlet_params

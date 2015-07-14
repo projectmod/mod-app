@@ -1,0 +1,21 @@
+= form_for [:merchants, @outlet] do |f|
+  - if @outlet.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@outlet.errors.count, "error")} prohibited this outlet from being saved:"
+      ul
+        - @outlet.errors.full_messages.each do |message|
+          li = message
+
+  .table
+    table.table-striped.table-bordered.table-condensed.table-hover
+      tr
+        td width="200px" 
+          = f.label :name
+        td 
+          = f.text_field :name, required: true, placeholder: "Outlet Name"
+      tr
+        td width="200px"
+          = f.label :address
+        td
+          = f.text_area :address
+    = f.submit

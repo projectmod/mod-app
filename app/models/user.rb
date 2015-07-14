@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   
   #Checking for roles
   def admin?
-    self.role == "admin"
+    self.roles == "admin"
   end
 
   def merchant?

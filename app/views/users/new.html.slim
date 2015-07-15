@@ -1,6 +1,8 @@
 .login-page-container
   = form_for @user, class: 'form' do |f|
     .form-group
+      = f.text_field :name, placeholder: 'Name', required: true
+    .form-group
       = f.text_field :email, placeholder: 'youremail@example.com', required: true
     .form-group
       = f.password_field :password, placeholder: 'Password', required: true

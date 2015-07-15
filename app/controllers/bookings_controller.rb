@@ -12,10 +12,10 @@ class BookingsController < ActionController::Base
       # @client.messages.create(
       #   from: '+18885809742',
       #   to: to_outlet_number,
-      #   body: @message.html_safe 
+      #   body: @message.html_safe
       # )
       redirect_to pending_booking_path(@booking)
-    else 
+    else
       redirect_to :back, notice: "Booking unsuccessful, please try again"
     end
   end
@@ -27,7 +27,7 @@ class BookingsController < ActionController::Base
   end
 
   def outlet_confirmed
-    if @booking.created_at < 1.minute 
+    if @booking.created_at < 1.minute
       @booking.update_attribute(:outlet_confirmed, true)
       total = @booking.outlet.credits - 1
       @booking.outlet.update_attribute(:credits, total)
@@ -37,15 +37,15 @@ class BookingsController < ActionController::Base
       # @client.messages.create(
       #   from: '+18885809742',
       #   to: to_user_number,
-      #   body: @message.html_safe 
+      #   body: @message.html_safe
       # )
     end
   end
 
   def user_cancellation
-    @booking.update_attribute(:user_cancellation, true)  
+    @booking.update_attribute(:user_cancellation, true)
     total = @booking.outlet.credits + 1
-    @booking.outlet.update_attribute(:credits, total)  
+    @booking.outlet.update_attribute(:credits, total)
   end
 
   private

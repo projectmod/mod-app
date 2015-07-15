@@ -2,7 +2,7 @@ class OutletsController < ApplicationController
   before_action :set_outlet, only: :show
 
   def index
-    @outlets = Outlet.where(price_range: params[:price_range])
+    @outlets = Outlet.where(price_range: params[:price_range], availability: true)
     @final = []
     @outlets.each do |outlet|
       outlet.type_of_service.each do |service|

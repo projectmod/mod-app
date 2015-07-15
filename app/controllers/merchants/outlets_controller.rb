@@ -1,11 +1,19 @@
 class Merchants::OutletsController < ApplicationController
   before_action :require_login
-  before_action :set_outlet, only: [:show, :edit]
+  before_action :set_outlet, only: [:show, :edit, :update]
 
   def show
   end
 
   def edit
+  end
+
+  def update
+    if @outlet.update(outlet_params)
+      redirect_to show_outlet_path(@outlet), notice: "Update was successful"
+    else
+      render :edit, notice: "Update failed. Please try again."
+    end
   end
 
   private

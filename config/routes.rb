@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   resources :outlets
 
   namespace :merchants do
-    resource :outlets, only: [:show, :edit]
+    resource :outlets, only: [:show, :edit, :update]
   end
 
   # ==============================================================================================

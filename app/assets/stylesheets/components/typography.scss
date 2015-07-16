@@ -53,9 +53,99 @@
   letter-spacing: 2.4px;
 }
 
+.red-text {
+  font-family: 'brandon-light' !important;
+  font-size: 12px;
+  color: #B0344E !important;
+  letter-spacing: 1.5px;
+}
+
 .copyright-font {
   font-family: 'brandon-light';
   font-size: 11px;
   letter-spacing: 2.4px;
   color: #F2F2F2;
+}
+
+.copyright-link {
+  font-family: 'brandon-light';
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  color: #F2F2F2;
+  text-decoration: none;
+  border-right: 1px solid #F2F2F2;
+  padding-right: 1%;
+  margin-right: 1%;
+  line-height: 70%;
+}
+
+.current-panel-title {
+  font-family: 'brandon-reg';
+  font-size: 16px;
+  color: #f0f0f0;
+  letter-spacing: 2.4px;
+  padding-left: 6%;
+}
+
+.prev-panel-title {
+  font-family: 'brandon-reg';
+  font-size: 16px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+  padding-left: 6%;
+}
+
+.header-name {
+  font-family: 'brandon-med';
+  font-size: 12px;
+}
+
+.edit-profile {
+  font-family: 'brandon-med';
+  font-size: 14px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.prev-booking-title {
+  color: black;
+  font-size: 14px;
+  font-family: 'brandon-med';
+  letter-spacing: 2.4px;
+}
+
+.current-appt-body {
+  border-radius: 0px;
+  background-color: #FBFBFB;
+  color: #B0B0B0;
+  font-family: 'brandon-reg';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  padding-top: 7%;
+}
+
+.edit-body {
+  border-radius: 0px;
+  background-color: #FBFBFB;
+  color: #B0B0B0;
+  font-family: 'brandon-med';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  padding-top: 7%;
+}
+
+.edit-field {
+  border-radius: 0px;
+  background-color: #FBFBFB;
+  color: #848484;
+  font-family: 'brandon-light';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+}
+
+.prev-panel-body {
+  color: #848484;
+  font-size: 14px;
+  font-family: 'brandon-light';
+  letter-spacing: 2.4px;
 }

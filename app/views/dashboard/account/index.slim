@@ -1,0 +1,58 @@
+.dashboard.container-fluid
+  .row
+    .col-md-8.col-md-offset-2
+      .panel.panel-default.no-border
+        .panel-heading.current-panel-header
+          h3.panel-title.current-panel-title CURRENT APPOINTMENT
+
+        .panel-body.current-appt-body
+
+          - if @current_booking.present?
+            = image_tag @current_booking.outlet.avatar
+            p = @current_booking.outlet.name
+            p = @current_booking.outlet.area
+            p = @current_booking.outlet.phone_no
+            p = @current_booking.created_at.time + 15.minutes
+            p = @current_booking.confirmation_code
+
+          - else
+            .container-fluid.text-center
+              .row
+                .col-md-12.no-padding
+                  | YOU HAVE NO APPOINTMENTS AT THE MOMENT !
+              .row
+                .col-md-12
+                  .row
+                    .col-md-4.col-md-offset-4
+                      = link_to "MAKE A BOOKING NOW", root_path, class: "btn btn-panel btn-alignment center-block"
+
+  .row
+    .col-md-8.col-md-offset-2
+      .panel.panel-default.no-border#prev-appointment-accordian
+        .panel-heading.panel-header
+          h3.panel-title.prev-panel-title
+            | PREVIOUS APPOINTMENTS
+            span.pull-right
+              a role="button" data-toggle="collapse" data-parent="#prev-appointment-accordian" href="#prev-app-collapse" aria-expanded="true" aria-controls="prev-app-collapse"
+                i#prev-app-icon.fa.red.icon-padding.fa-minus
+        #prev-app-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
+          .panel-body.text-left.prev-panel-body.prev-panel-padding
+            - @previous_bookings.each do |booking|
+              
+              - outlet = booking.outlet
+              p.prev-booking-title = outlet.name.upcase
+              p = outlet.area.upcase
+              = "(BOOKED ON "
+              = outlet.created_at.strftime("%d %B %Y").upcase
+              = ")"
+
+  = render partial: "dashboard/account/edit"
+
+  .row
+    .col-md-8.col-md-offset-2
+      .col-sm-6.col-sm-offset-3.text-center
+        = link_to logout_path
+          button.btn.btn-logout.margin-logout LOGOUT
+        = link_to logout_path
+          button.btn.btn-arrow.margin-arrow
+            i.fa.fa-play.fa-lg

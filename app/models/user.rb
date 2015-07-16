@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :payments
+
   has_many :bookings
 
   has_many :roles
@@ -28,7 +29,7 @@ class User < ActiveRecord::Base
   def activate
     self.activation_state = "active"
   end
-  
+
   #Checking for roles
   def admin?
     self.roles == "admin"

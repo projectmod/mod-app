@@ -5,25 +5,44 @@
         .panel-heading.current-panel-header
           h3.panel-title.current-panel-title CURRENT APPOINTMENT
 
-        .panel-body.current-appt-body
+        .panel-body.current-appt-title.current-panel-padding
 
           - if @current_booking.present?
-            = image_tag @current_booking.outlet.avatar
-            p = @current_booking.outlet.name
-            p = @current_booking.outlet.area
-            p = @current_booking.outlet.phone_no
-            p = @current_booking.created_at.time + 15.minutes
-            p = @current_booking.confirmation_code
+            .container-fluid
+              .row
+                .col-md-3
+                  = image_tag @current_booking.outlet.avatar
+
+                .col-md-9.padding-left-5
+                  .row
+                    p = @current_booking.outlet.name.upcase
+                    p.current-appt-text = @current_booking.outlet.area.upcase
+                    p.current-appt-text = "+60 " + @current_booking.outlet.phone_no
+
+                  .row.margin-top-8
+                    .col-md-8
+                    .col-md-4
+                      p.current-appt-code.pull-right 
+                        | CODE: 
+                        span.code-text = @current_booking.confirmation_code.upcase
+
+                  .row
+                    .col-md-7.no-padding
+                      p.current-appt-text
+                        | ARRIVAL TIME: 
+                        = (@current_booking.created_at.time + 15.minutes).strftime("%I.%M%p")
+                    .col-md-5.no-padding.padding-left-5
+                        p = link_to "VIEW MY BOOKING >>", "#", class: "view-booking booking-link"
 
           - else
             .container-fluid.text-center
               .row
-                .col-md-12.no-padding
+                .col-md-12.no-padding.no-appt-title
                   | YOU HAVE NO APPOINTMENTS AT THE MOMENT !
               .row
                 .col-md-12
                   .row
-                    .col-md-4.col-md-offset-4
+                    .col-md-6.col-md-offset-3
                       = link_to "MAKE A BOOKING NOW", root_path, class: "btn btn-panel btn-alignment center-block"
 
   .row
@@ -37,14 +56,15 @@
                 i#prev-app-icon.fa.red.icon-padding.fa-minus
         #prev-app-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
           .panel-body.text-left.prev-panel-body.prev-panel-padding
-            - @previous_bookings.each do |booking|
-              
-              - outlet = booking.outlet
-              p.prev-booking-title = outlet.name.upcase
-              p = outlet.area.upcase
-              = "(BOOKED ON "
-              = outlet.created_at.strftime("%d %B %Y").upcase
-              = ")"
+            .content-scroll
+              - @previous_bookings.each do |booking|
+                
+                - outlet = booking.outlet
+                p.prev-booking-title = outlet.name.upcase
+                p = outlet.area.upcase
+                = "(BOOKED ON "
+                = outlet.created_at.strftime("%d %B %Y").upcase
+                = ")"
 
   = render partial: "dashboard/account/edit"
 

@@ -9,13 +9,13 @@
         = form_for @user, class: 'form' do |f|
           .container-fluid
             .row.form-group
-              .col-sm-4.col-sm-offset-1
+              .col-sm-4.col-sm-offset-1.padding-top-1
                 = f.label :name, 'FULL NAME'
               .col-sm-6
                 = f.text_field :name, required: true, class: 'form-control edit-field'
 
             .row.form-group
-              .col-sm-4.col-sm-offset-1
+              .col-sm-4.col-sm-offset-1.padding-top-1
                 = f.label :phone_no, 'MOBILE NUMBER'
               .col-sm-6
                 .input-group
@@ -23,25 +23,25 @@
                   = f.text_field :phone_no, required: true, class: 'form-control edit-field', "aria-describedby": "addonPlay1"
 
             .row.form-group
-              .col-sm-4.col-sm-offset-1
+              .col-sm-4.col-sm-offset-1.padding-top-1
                 = f.label :email, 'EMAIL'
               .col-sm-6
                 = f.text_field :email, required: true, class: 'form-control edit-field'
 
             .row.form-group
-              .col-sm-4.col-sm-offset-1
+              .col-sm-4.col-sm-offset-1.padding-top-1
                 = f.label :current_password, 'CURRENT PASSWORD'
               .col-sm-6
                 = f.password_field :current_password, class: 'form-control edit-field'
 
             .row.form-group
-              .col-sm-4.col-sm-offset-1
+              .col-sm-4.col-sm-offset-1.padding-top-1
                 = f.label :password, 'NEW PASSWORD'
               .col-sm-6
                 = f.password_field :password, class: 'form-control edit-field'
 
             .row.form-group
-              .col-sm-4.col-sm-offset-1
+              .col-sm-4.col-sm-offset-1.padding-top-1
                 = f.label :password_confirmation, 'CONFIRM NEW PASSWORD'
               .col-sm-6
                 = f.password_field :password_confirmation, class: 'form-control edit-field'

@@ -2,6 +2,11 @@
 
   /* Curent appointment */
 
+  img {
+  width: 180px;
+  height: 200px;
+  }
+
   .current-panel-header {
     background-color: #B0344E;
     border-radius: 0px;
@@ -16,6 +21,7 @@
     font-size: 16px;
     letter-spacing: 2.4px;
     font-family: 'brandon-reg';
+    // width: 80%;
   }
 
   .btn-alignment {
@@ -34,6 +40,32 @@
 
   .no-border {
     border: none;
+  }
+
+  .current-panel-padding {
+    padding-left: 7%;
+    padding-right: 4%;
+    padding-bottom: 7%;
+  }
+
+  .padding-left-5 {
+    padding-left: 5%;
+  }
+
+  .margin-top-8 {
+    margin-top: 8%;
+  }
+
+  .booking-link {
+    text-decoration: none;
+
+    &:hover {
+      color: #848484;
+    }
+
+    &:focus {
+      color: #B0344E;
+    }
   }
 
 /* Previous appointment */
@@ -56,6 +88,15 @@
     padding-top: 4%;
     padding-left: 7%;
     padding-bottom: 4%;
+  }
+
+  .prev-panel-text {
+    padding-bottom: 3%;
+  }
+
+  .content-scroll {
+    height: 400px;
+    overflow-y: scroll;
   }
 
 /* Profile Details */
@@ -136,6 +177,10 @@
 
   .edit-background {
   background-color: #FBFBFB;
+  }
+
+  .padding-top-1 {
+    padding-top: 1%;
   }
 
 }

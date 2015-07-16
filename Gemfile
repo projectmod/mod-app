@@ -43,6 +43,9 @@ gem 'mini_magick'
 # S3 Amazon
 gem 'fog'
 
+#Background worker
+gem "resque"
+
 # Development and Test gems
 group :development, :test do
   gem 'spring'

@@ -44,7 +44,9 @@ gem 'mini_magick'
 gem 'fog'
 
 #Background worker
-gem "resque"
+gem 'rufus-scheduler'
+gem 'resque', require: 'resque/server'
+gem 'redis'
 
 # Development and Test gems
 group :development, :test do

@@ -65,4 +65,6 @@ Rails.application.routes.draw do
         get :result
       end
   end
+
+  mount Resque::Server, at: "/resque"
 end

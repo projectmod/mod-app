@@ -16,21 +16,21 @@
                 .col-sm-9.padding-left-5.mobile
                   .container-fluid.no-padding
                     .row
-                      p = @current_booking.outlet.name.upcase
-                      p.current-appt-text = @current_booking.outlet.area.upcase
-                      p.current-appt-text = "+60 " + @current_booking.outlet.phone_no
+                      p = @current_booking.outlet_name
+                      p.current-appt-text = @current_booking.outlet_area
+                      p.current-appt-text = @current_booking.outlet_phone_no
 
                     .row.margin-top-8
                       .col-sm-6.col-sm-offset-6
                         p.current-appt-code.alignment 
                           | CODE: 
-                          span.code-text = @current_booking.confirmation_code.upcase
+                          span.code-text = @current_booking.confirmation_code
 
                     .row
                       .col-sm-6.no-padding
                         p.current-appt-text
                           | ARRIVAL TIME: 
-                          = (@current_booking.created_at.time + 15.minutes).strftime("%I.%M%p")
+                          = @current_booking.arrival_time
                       .col-sm-6.alignment.no-padding
                           p = link_to "VIEW MY BOOKING >>", "#", class: "view-booking booking-link"
 
@@ -59,12 +59,11 @@
             .content-scroll
               - @previous_bookings.each do |booking|
                 
-                - outlet = booking.outlet
-                p.prev-booking-title = outlet.name.upcase
-                p = outlet.area.upcase
+                p.prev-booking-title = booking.outlet_name
+                p = booking.outlet_area
                 p.padding-bottom-1
                   | BOOKED ON 
-                  = outlet.created_at.strftime("%d %B %Y").upcase
+                  = booking.booked_on
 
   = render partial: "dashboard/account/edit"
 

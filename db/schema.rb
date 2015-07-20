@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715084143) do
+ActiveRecord::Schema.define(version: 20150720040132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,9 +60,17 @@ ActiveRecord::Schema.define(version: 20150715084143) do
     t.datetime "updated_at",                      null: false
     t.string   "type_of_service", default: [],                 array: true
     t.string   "phone_no"
-    t.integer  "credits"
     t.boolean  "availability",    default: false
     t.string   "area"
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.decimal  "price"
+    t.string   "description"
+    t.string   "title"
+    t.integer  "credits"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "payment_transactions", force: :cascade do |t|
@@ -70,12 +78,6 @@ ActiveRecord::Schema.define(version: 20150715084143) do
     t.datetime "updated_at",   null: false
     t.decimal  "price"
     t.string   "receipt_code"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "credit"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -107,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150715084143) do
     t.string   "name"
     t.string   "avatar"
     t.string   "phone_no"
+    t.integer  "credits"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-  has_many :payments
+  has_many :payment_transactions
+
 
   has_many :bookings
 
@@ -54,6 +55,12 @@ class User < ActiveRecord::Base
 
   def set_as_user
     self.role = "user"
+  end
+
+  def add_credits(credits)
+    if credits > 0
+      self.credits += credits
+    end
   end
 
   private

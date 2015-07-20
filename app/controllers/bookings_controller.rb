@@ -12,13 +12,13 @@ class BookingsController < ActionController::Base
         # @client.messages.create(
         #   from: '+18885809742',
         #   to: to_outlet_number,
-        #   body: @message.html_safe 
+        #   body: @message.html_safe
         # )
         redirect_to pending_booking_path(@booking)
-      else 
+      else
         redirect_to :back, notice: "Booking unsuccessful, please try again"
       end
-    else 
+    else
       redirect_to :back, notice: "Booking unsuccessful, merchant is not available"
     end
   end

@@ -10,29 +10,29 @@
           - if @current_booking.present?
             .container-fluid
               .row
-                .col-md-3
+                .col-sm-3.text-center
                   = image_tag @current_booking.outlet.avatar
 
-                .col-md-9.padding-left-5
-                  .row
-                    p = @current_booking.outlet.name.upcase
-                    p.current-appt-text = @current_booking.outlet.area.upcase
-                    p.current-appt-text = "+60 " + @current_booking.outlet.phone_no
+                .col-sm-9.padding-left-5.mobile
+                  .container-fluid.no-padding
+                    .row
+                      p = @current_booking.outlet.name.upcase
+                      p.current-appt-text = @current_booking.outlet.area.upcase
+                      p.current-appt-text = "+60 " + @current_booking.outlet.phone_no
 
-                  .row.margin-top-8
-                    .col-md-8
-                    .col-md-4
-                      p.current-appt-code.pull-right 
-                        | CODE: 
-                        span.code-text = @current_booking.confirmation_code.upcase
+                    .row.margin-top-8
+                      .col-sm-6.col-sm-offset-6
+                        p.current-appt-code.alignment 
+                          | CODE: 
+                          span.code-text = @current_booking.confirmation_code.upcase
 
-                  .row
-                    .col-md-7.no-padding
-                      p.current-appt-text
-                        | ARRIVAL TIME: 
-                        = (@current_booking.created_at.time + 15.minutes).strftime("%I.%M%p")
-                    .col-md-5.no-padding.padding-left-5
-                        p = link_to "VIEW MY BOOKING >>", "#", class: "view-booking booking-link"
+                    .row
+                      .col-sm-6.no-padding
+                        p.current-appt-text
+                          | ARRIVAL TIME: 
+                          = (@current_booking.created_at.time + 15.minutes).strftime("%I.%M%p")
+                      .col-sm-6.alignment.no-padding
+                          p = link_to "VIEW MY BOOKING >>", "#", class: "view-booking booking-link"
 
           - else
             .container-fluid.text-center
@@ -62,9 +62,9 @@
                 - outlet = booking.outlet
                 p.prev-booking-title = outlet.name.upcase
                 p = outlet.area.upcase
-                = "(BOOKED ON "
-                = outlet.created_at.strftime("%d %B %Y").upcase
-                = ")"
+                p.padding-bottom-1
+                  | BOOKED ON 
+                  = outlet.created_at.strftime("%d %B %Y").upcase
 
   = render partial: "dashboard/account/edit"
 

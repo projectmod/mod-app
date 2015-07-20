@@ -1,10 +1,15 @@
 .dashboard {
 
-  /* Curent appointment */
+  /* Current appointment */
 
   img {
-  width: 180px;
-  height: 200px;
+  max-width: 180px;
+  min-height: 200px;
+  width: 100%;
+  }
+
+  .alignment {
+    text-align: right;
   }
 
   .current-panel-header {
@@ -21,7 +26,6 @@
     font-size: 16px;
     letter-spacing: 2.4px;
     font-family: 'brandon-reg';
-    // width: 80%;
   }
 
   .btn-alignment {
@@ -86,8 +90,9 @@
 
   .prev-panel-padding {
     padding-top: 4%;
-    padding-left: 7%;
+    padding-left: 8.5%;
     padding-bottom: 4%;
+    line-height: 113%;
   }
 
   .prev-panel-text {
@@ -97,6 +102,10 @@
   .content-scroll {
     height: 400px;
     overflow-y: scroll;
+  }
+
+  .padding-bottom-1 {
+    padding-bottom: 1%;
   }
 
 /* Profile Details */
@@ -183,4 +192,17 @@
     padding-top: 1%;
   }
 
+}
+
+@media all and (max-width: 767px) {
+  .dashboard {
+    .mobile {
+      text-align: center;
+      padding-top: 3%;
+    }
+
+    .alignment {
+      text-align: center;
+    }
+  }
 }

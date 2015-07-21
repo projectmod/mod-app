@@ -18,6 +18,11 @@
   src: asset-url('Brandon_reg.otf')
 }
 
+@font-face {
+  font-family: 'brandon-light-it';
+  src: asset-url('Brandon_light_it.otf')
+}
+
 .slogan-main {
   font-family: 'brandon-bold';
   font-size: 4.2vmax;
@@ -174,7 +179,7 @@
 
 .edit-field {
   border-radius: 0px;
-  background-color: #FBFBFB;
+  background-color: #F8F8F8;
   color: #848484;
   font-family: 'brandon-light';
   font-size: 14px;
@@ -186,4 +191,57 @@
   font-size: 14px;
   font-family: 'brandon-light';
   letter-spacing: 2.4px;
+}
+
+.login-title {
+  font-family: 'brandon-light';
+  font-size: 22px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+  padding-bottom: 4%;
+}
+
+.login-field {
+  border-radius: 0px;
+  background-color: #F2F2F2;
+  color: #B0344E;
+  font-family: 'brandon-light';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  border-color: #E4A955;
+}
+
+.signup-link {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  color: #B0344E !important;
+  letter-spacing: 2.4px;
+}
+
+.signup-text {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.terms-text {
+  font-family: 'brandon-light';
+  font-size: 11px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.terms-link {
+  font-family: 'brandon-light';
+  font-size: 11px;
+  color: #B0344E !important;
+  letter-spacing: 2.4px;
+}
+
+.or-text {
+  font-family: 'brandon-light-it';
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  color: #E4A955;
 }

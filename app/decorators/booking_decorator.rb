@@ -13,7 +13,7 @@ class BookingDecorator < BaseDecorator
   end
 
   def outlet_phone_no
-    "+60" + model.outlet.phone_no
+    "+60 " + model.outlet.phone_no
   end
 
   def confirmation_code

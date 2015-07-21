@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 5 }, if: :password
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
+  validates :email, uniqueness: true, if: :email
 
-  validates :email, uniqueness: true
   has_many :authentications, dependent: :destroy
 
   mount_uploader :avatar, ImageUploader

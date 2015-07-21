@@ -1,22 +1,20 @@
-.signup
+.verify
   .container-fluid
     .row
       .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
-        p.text-center.step-text STEP 1 OF 3
+        p.text-center.step-text STEP 2 OF 3
   
     .row.padding-top-5
-      .col-md-4.col-md-offset-4
-        h3.text-center ENTER YOUR MOBILE NUMBER TO START USING MOD!
+      .col-md-6.col-md-offset-3
+        h3.text-center ENTER THE SIX DIGIT VERIFICATION CODE THAT WE JUST SENT TO YOUR PHONE
 
     .row
       .col-md-4.col-md-offset-4
-        = form_for @user, class: 'form' do |f|
-          .input-group
-            span.input-group-addon.number-text.number-field.mobile-border#addonPlay1 + 60 
-            = f.text_field :phone_no, required: true, class: 'form-control edit-field', "aria-describedby": "addonPlay1"
+        = form_for :phone, url: activate_user_path(@user), method: :post, class: 'form' do |f|
+          = f.text_field :verification_code, required: true, maxlength: 6, class: 'form-control verify-field text-center'
 
           .form-group.text-center
-            = f.submit "NEXT", class: "btn btn-next"
+            = f.submit "VERIFY", class: "btn btn-verify"
 
     .row
       p.text-center.signup-text

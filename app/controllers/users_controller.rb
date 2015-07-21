@@ -1,25 +1,43 @@
 class UsersController < ApplicationController
-
-	skip_before_action :require_login, only: [:index, :new, :create, :activate]
+	skip_before_action :require_login, except: [:update, :destroy]
+	before_action :set_user, only: [:activate, :verify, :edit]
 
 	def new
+		# Step 1
 		@user = User.new
+	end
+
+	def verify
+		# Step 2
+	end
+
+	def activate
+		verification_code = params[:phone][:verification_code]
+
+		activated = Users::Verify.new(verification_code, @user).check
+		# code; compare it with db, if match activate user!
+		if activated
+			redirect_to edit_user_path(@user)
+		end
 	end
 
 	def index
 	end
 
 	def edit
+		# Step 3
+		redirect_to verify_user_path(@user) unless @user.activated
 	end
 
 	def create
-		@user = User.new(user_params)
-		if @user.save
-			UserMailer.activation_needed_email(@user).deliver_now
-			redirect_to root_path, notice: "User was successfully created."
+		user = Users::Check.new(params[:phone_no]).exist
+		VerificationCode.new(user).deliver
+
+		if user
+			auto_login(user, should_remember=false)
+			redirect_to verify_user_path(user)
 		else
 			redirect_to root_path
-			flash[:notice] = "Sign up unsuccessful, please try again."
 		end
 	end
 
@@ -44,16 +62,11 @@ class UsersController < ApplicationController
 	def destroy
 	end
 
-	def activate
-		if (@user = User.load_from_activation_token(params[:id]))
-			@user.activate!
-			redirect_to(login_path, notice: 'User was successfully activated.')
-		else
-			not_authenticated
-		end
-	end
-
 	private
+
+	def set_user
+		@user = User.find(params[:id])
+	end
 
   def user_params
     params.require(:user).permit(:email, :name, :phone_no, :password, :password_confirmation)

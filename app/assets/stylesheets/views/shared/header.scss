@@ -24,6 +24,14 @@
 
   .active {
     color: #848484 !important;
+
+    &.sign-up {
+      border-color: #848484;
+    }
+
+    &.salon-owner {
+      border-color: #848484;
+    }
   }
 
   .navbar-toggle {

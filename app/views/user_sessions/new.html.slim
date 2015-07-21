@@ -43,6 +43,10 @@
 
     .row.padding-top-3
       p.text-center.signup-text
+        = link_to "FORGOT YOUR PASSWORD?", new_password_reset_path, class: 'signup-link login-hover'
+
+    .row.padding-top-1
+      p.text-center.signup-text
         | NOT A MEMBER? 
         = link_to "SIGN UP >>", new_user_path, class: 'signup-link login-hover'
 
@@ -51,7 +55,3 @@
         | BY SIGNING UP YOU ACCEPT THE 
         = link_to "TERMS AND CONDITIONS ", '#', class: "terms-link login-hover"
         | OF MOD.
-            
-/ p
-/   small
-/     = link_to "Forgot Password", new_password_reset_path

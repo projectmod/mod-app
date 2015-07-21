@@ -84,7 +84,7 @@
   font-size: 16px;
   color: #f0f0f0;
   letter-spacing: 2.4px;
-  padding-left: 6%;
+  padding-left: 7%;
 }
 
 .prev-panel-title {
@@ -92,7 +92,7 @@
   font-size: 16px;
   color: #B0344E;
   letter-spacing: 2.4px;
-  padding-left: 6%;
+  padding-left: 7%;
 }
 
 .header-name {
@@ -112,16 +112,54 @@
   font-size: 14px;
   font-family: 'brandon-med';
   letter-spacing: 2.4px;
+  padding-top: 3%;
 }
 
-.current-appt-body {
+.current-appt-code {
   border-radius: 0px;
   background-color: #FBFBFB;
-  color: #B0B0B0;
+  color: #848484;
   font-family: 'brandon-reg';
   font-size: 14px;
   letter-spacing: 2.4px;
+}
+
+.current-appt-title {
+  border-radius: 0px;
+  background-color: #FBFBFB;
+  color: #B0344E;
+  font-family: 'brandon-med';
+  font-size: 14px;
+  letter-spacing: 2.4px;
   padding-top: 7%;
+}
+
+.current-appt-text {
+  font-family: 'brandon-light';
+  color: #848484;
+  font-size: 14px;
+  letter-spacing: 2.4px;
+}
+
+.code-text {
+  font-family: 'brandon-reg';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  color: #B0344E;
+}
+
+.view-booking {
+  font-family: 'brandon-reg';
+  color: #B0344E;
+  letter-spacing: 2.4px;
+  font-size: 15px;
+}
+
+.no-appt-title {
+  font-size: 14px;
+  font-family: 'brandon-reg';
+  color: #B0B0B0;
+  letter-spacing: 2.4px;
 }
 
 .edit-body {

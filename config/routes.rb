@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   # ==============================================================================================
   root 'static_pages#landing'
   get 'about', to: 'static_pages#about'
-  post 'payment', to: 'static_pages#payment'
-  get 'new_payment', to: 'static_pages#new_payment'
 
   # ==============================================================================================
   # Rails Admin
@@ -67,5 +65,15 @@ Rails.application.routes.draw do
       end
   end
 
+  # ==============================================================================================
+  # Resque
+  # ==============================================================================================
   mount Resque::Server, at: "/resque"
+
+  # ==============================================================================================
+  # Payment
+  # ==============================================================================================
+  resources :payment_transactions, only: [:new, :create]
+  get 'success', to: 'payment_transactions#success'
+
 end

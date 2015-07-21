@@ -8,6 +8,10 @@ class PaymentTransactionsController < ApplicationController
     hash = Digest::SHA256.hexdigest 'asdasds'
   end
 
+  def success
+
+  end
+
   private
 
   def payment_transaction_params

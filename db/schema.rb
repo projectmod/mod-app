@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720040132) do
+ActiveRecord::Schema.define(version: 20150720095758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,14 +41,7 @@ ActiveRecord::Schema.define(version: 20150720040132) do
     t.boolean  "user_cancellation", default: false
   end
 
-  create_table "merchants", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "outlets", force: :cascade do |t|
-    t.integer  "merchant_id"
     t.string   "name"
     t.string   "address"
     t.string   "state"
@@ -62,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150720040132) do
     t.string   "phone_no"
     t.boolean  "availability",    default: false
     t.string   "area"
+    t.integer  "credits"
   end
 
   create_table "packages", force: :cascade do |t|
@@ -81,10 +75,9 @@ ActiveRecord::Schema.define(version: 20150720040132) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.integer  "merchant_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "name"
   end
 
@@ -100,7 +93,6 @@ ActiveRecord::Schema.define(version: 20150720040132) do
     t.integer  "failed_logins_count",             default: 0
     t.datetime "lock_expires_at"
     t.string   "unlock_token"
-    t.string   "role"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string   "reset_password_token"
@@ -109,7 +101,6 @@ ActiveRecord::Schema.define(version: 20150720040132) do
     t.string   "name"
     t.string   "avatar"
     t.string   "phone_no"
-    t.integer  "credits"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

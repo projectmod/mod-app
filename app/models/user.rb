@@ -24,8 +24,9 @@ class User < ActiveRecord::Base
 
   has_many :bookings
 
-  has_many :roles
-  has_many :merchants, through: :roles
+  has_one :role
+  has_one :outlet
+  
 
   def activate
     self.activation_state = "active"

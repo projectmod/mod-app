@@ -1,0 +1,5 @@
+.container
+  = @packages.each do |package| 
+    = render partial: "package", locals: { package: package, payment: @payment}
+    
+  

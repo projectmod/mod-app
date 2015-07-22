@@ -1,29 +1,29 @@
 class BookingsController < ActionController::Base
   before_action :require_login
-  before_action :set_booking, only: [:pending, :result, :outlet_confirmed, :user_cancellation]
+  before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation]
 
   def create
     @booking = Booking.new(booking_params)
-
-    if @booking.save
-      # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
-      # to_outlet_number = "+6"+params[:booking][:outlet_number]
-      # @client = Twilio::REST::Client.new
-      # @client.messages.create(
-      #   from: '+18885809742',
-      #   to: to_outlet_number,
-      #   body: @message.html_safe
-      # )
-      redirect_to pending_booking_path(@booking)
+    if @booking.outlet.availability == true
+      if @booking.save
+        # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+        # to_outlet_number = "+6"+params[:booking][:outlet_number]
+        # @client = Twilio::REST::Client.new
+        # @client.messages.create(
+        #   from: '+18885809742',
+        #   to: to_outlet_number,
+        #   body: @message.html_safe
+        # )
+        redirect_to pending_booking_path(@booking)
+      else
+        redirect_to :back, notice: "Booking unsuccessful, please try again"
+      end
     else
-      redirect_to :back, notice: "Booking unsuccessful, please try again"
+      redirect_to :back, notice: "Booking unsuccessful, merchant is not available"
     end
   end
 
   def pending
-  end
-
-  def result
   end
 
   def outlet_confirmed

@@ -16,6 +16,8 @@ user.activate
 user.set_as_user
 user.save!
 
+booking_1 = Booking.find_or_create_by!(outlet_id: 1, user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
+
 role_1 = Role.create(name: "merchant", user_id: 1, merchant_id: 1)
 
 merchant_1 =  admin.merchants.find_or_create_by!(name: "Toni and Guy")
@@ -33,7 +35,8 @@ outlet_1.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac
                 state: "Kuala Lumpur",
                 latitude: 3.167439,
                 longitude: 101.612685,
-                phone_no: "0126832814")
+                phone_no: "0126832814",
+                availability: true)
 
 outlet_2 = merchant_2.outlets.find_or_create_by!(name: "A Cut Above")
 outlet_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",

@@ -2,7 +2,7 @@ class PaymentTransactionsController < ApplicationController
 
   def new
     @packages = Package.all
-    @payment = Payment.new
+    @payment_transaction = PaymentTransaction.new
   end
 
   def create

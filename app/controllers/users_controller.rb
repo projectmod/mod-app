@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_action :require_login, except: [:update, :destroy]
-	before_action :set_user, only: [:activate, :verify, :edit]
+	before_action :set_user, only: [:activate, :verify, :edit, :success]
 
 	def new
 		# Step 1
@@ -21,12 +21,16 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def success
+
+	end
+
 	def index
 	end
 
 	def edit
 		# Step 3
-		redirect_to verify_user_path(@user) unless @user.activated
+		redirect_to verify_user_path(@user) unless @user.activated?
 	end
 
 	def create

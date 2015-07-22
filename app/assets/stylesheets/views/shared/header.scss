@@ -122,11 +122,11 @@
 
     &.desktop {
       position: absolute;
-      left: 50%;
-      top: 0;
+      left: 0;
+      right: 0;
       text-align: center;
       padding-top: 4%;
-      margin-left: -56px !important;
+      margin: 0 auto !important;
     }
   }
 

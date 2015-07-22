@@ -1,7 +1,5 @@
 .container
-  / = form_tag payment_transactions_path, method: 'post'
-  /   select
-  /     option value="CC"  Credit card
-  /     option value="DD"  Direct debit
-  = link_to "Pay here", '#?' + '&TransactionType=SALE' + '&PymtMethod=' + params[:payment_method] + '&ServiceID=sit' + '&PaymentID=' + params[:payment_id] + '&OrderNumber=' + params[:order_number] + '&PaymentDesc=' + params[:payment_desc] + '&MerchantReturnURL=' + success_url + '&Amount=' params[:amount] + '&CurrencyCode=MYR' + '&HashValue=' + params[:hash_value] + '&CustIP=' params[:cust_ip] + '&CustName=' + params[:cust_name] + '&CustEmail=' + params[:cust_email] + '&CustPhone=' + params[:cust_phone] + '&MerchantName=' + params[:merchant_name]  
-
+  = @packages.each do |package| 
+    = render partial: "package", locals: { package: package, payment: @payment}
+    
+  

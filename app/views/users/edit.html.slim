@@ -1,0 +1,52 @@
+.edit
+  .container-fluid
+    .row
+      .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
+        p.text-center.step-text STEP 3 OF 3
+
+      .col-md-6.col-md-offset-3.text-center
+        h3 ENTER YOUR DETAILS
+  
+    .row
+      .col-md-6.col-md-offset-3
+        = form_for @user, class: 'form' do |f|
+          .form-group
+          = f.text_field :name, required: true, placeholder: 'NAME', class: 'form-control edit-register'
+          .form-group
+          = f.text_field :email, required: true, placeholder: 'EMAIL', class: 'form-control edit-register'
+          .form-group
+          = f.text_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control edit-register'
+          .form-group
+          = f.text_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control edit-register'
+          .form-group.text-center
+            = f.submit "SIGN UP", class: "btn btn-register"
+
+    .row
+      .col-md-2.col-md-offset-5
+
+        // Desktop & Mobile View
+        .col-xs-2.col-xs-offset-3.no-side-padding.normal
+          hr
+
+        // Tablet view
+        .col-xs-2.col-xs-offset-3.no-side-padding.tablet
+          hr
+
+        // Desktop & Mobile view
+        .col-xs-2.text-center.or-padding.or-text.normal
+          | or 
+
+        // Tablet view
+        .col-xs-2.text-center.or-padding.or-text.tablet
+          | or 
+
+        .col-xs-2.no-side-padding
+          hr
+
+    .row.padding-top-1
+      .col-md-4.col-md-offset-4
+        .form-group
+          = button_tag auth_at_provider_path(provider: :facebook), class: 'btn btn-fb btn-block btn-lg'
+            span.padding-right-10
+              i.fa.fa-facebook
+            | Sign up with Facebook

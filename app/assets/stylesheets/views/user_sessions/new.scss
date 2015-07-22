@@ -1,0 +1,130 @@
+.log-in {
+  
+  .container-fluid {
+    background-color: #F8F8F8;
+    width: 100%;
+    padding-top: 3%;
+    margin-bottom: 2%;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #B0344E !important;
+  }
+
+  :-moz-placeholder {
+    color: #B0344E !important;
+  }
+
+  ::-moz-placeholder {
+    color: #B0344E !important;
+  }
+
+  :-ms-input-placeholder {
+    color: #B0344E !important;
+  }
+
+  hr {
+    border-color: #E4A955;
+  }
+
+  .form-control {
+    border-radius: 0px;
+
+    &:focus {
+      border-color: #848484;
+      box-shadow: none;
+    }
+  }
+
+  .btn-login {
+    border-radius: 0px;
+    background-color: #B0344E;
+    border: none;
+    color: #F3F3F3;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+    padding: 8px 67px;
+    margin-top: 5%;
+
+    &:hover {
+      color: #F3F3F3;
+      transition: 0.2s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .padding-right-10 {
+    padding-right: 10%;
+  }
+
+  .btn-fb {
+    border-radius: 4px;
+    background-color: #4366A6;
+    color: #F3F3F3;
+    font-family: 'brandon-reg';
+    font-size: 18px;
+
+    &:hover {
+      opacity: 0.9;
+      transition: 0.2s;
+      color: #F3F3F3;
+    }
+
+    &:focus {
+      color: #F3F3F3;
+      outline: none;
+    }
+  }
+
+  .padding-top-3 {
+    padding-top: 3%;
+  }
+
+  .padding-terms {
+    padding-top: 4%;
+    padding-bottom: 1%;
+  }
+
+  .login-hover {
+    text-decoration: none;
+
+    &:hover {
+      color: #848484 !important;
+    }
+  }
+
+  .or-padding {
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .no-side-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .padding-top-1 {
+    padding-top: 1%;
+  }
+
+  .tablet {
+    display: none;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .log-in {
+    .normal {
+      display: none;
+    }
+
+    .tablet {
+      display: block;
+    }
+  }
+}

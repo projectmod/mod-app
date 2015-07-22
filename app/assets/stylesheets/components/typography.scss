@@ -18,6 +18,18 @@
   src: asset-url('Brandon_reg.otf')
 }
 
+@font-face {
+  font-family: 'brandon-light-it';
+  src: asset-url('Brandon_light_it.otf')
+}
+
+@font-face {
+  font-family: 'brandon-thin';
+  src: asset-url('Brandon_thin.otf')
+}
+
+// Landing Page
+
 .slogan-main {
   font-family: 'brandon-bold';
   font-size: 4.2vmax;
@@ -31,6 +43,8 @@
   letter-spacing: 2px;
   color: #000000;
 }
+
+// Footer
 
 .footer-main {
   font-family: 'brandon-med';
@@ -79,6 +93,8 @@
   line-height: 70%;
 }
 
+// Dashboard
+
 .current-panel-title {
   font-family: 'brandon-reg';
   font-size: 16px;
@@ -93,11 +109,6 @@
   color: #B0344E;
   letter-spacing: 2.4px;
   padding-left: 7%;
-}
-
-.header-name {
-  font-family: 'brandon-med';
-  font-size: 12px;
 }
 
 .edit-profile {
@@ -174,7 +185,7 @@
 
 .edit-field {
   border-radius: 0px;
-  background-color: #FBFBFB;
+  background-color: #F8F8F8;
   color: #848484;
   font-family: 'brandon-light';
   font-size: 14px;
@@ -185,5 +196,92 @@
   color: #848484;
   font-size: 14px;
   font-family: 'brandon-light';
+  letter-spacing: 2.4px;
+}
+
+// Header
+
+.header-name {
+  font-family: 'brandon-med';
+  font-size: 12px;
+}
+
+// Login
+
+.login-title {
+  font-family: 'brandon-light';
+  font-size: 22px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+  padding-bottom: 4%;
+}
+
+.login-field {
+  border-radius: 0px;
+  background-color: #F2F2F2;
+  color: #B0344E;
+  font-family: 'brandon-light';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  border-color: #E4A955;
+}
+
+.signup-link {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  color: #B0344E !important;
+  letter-spacing: 2.4px;
+}
+
+.signup-text {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.terms-text {
+  font-family: 'brandon-light';
+  font-size: 11px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.terms-link {
+  font-family: 'brandon-light';
+  font-size: 11px;
+  color: #B0344E !important;
+  letter-spacing: 2.4px;
+}
+
+.or-text {
+  font-family: 'brandon-light-it';
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  color: #E4A955;
+}
+
+// Sign Up
+
+.step-text {
+  font-family: 'brandon-thin';
+  font-size: 11px;
+  color: #E4A955;
+  letter-spacing: 2.4px;
+}
+
+.number-text {
+  font-family: 'brandon-light';
+  font-size: 24px;
+  letter-spacing: 2.4px;
+  color: #B0344E;
+}
+
+// Edit
+
+.edit-register {
+  font-family: 'brandon-light';
+  font-size: 14px;
+  color: #B0344E;
   letter-spacing: 2.4px;
 }

@@ -18,7 +18,7 @@
       #navbar.navbar-collapse.collapse.nav-margin.header-alignment
         ul.nav.navbar-nav.pull-left.desktop
           li
-            = link_to "I AM A SALON OWNER", "#", class: 'underline red'
+            = link_to "I AM A SALON OWNER", "#", class: 'underline red salon-owner'
           
         ul.nav.navbar-nav.navbar-right
           li.mobile
@@ -28,4 +28,4 @@
           li 
             = link_to "LOG IN", new_user_session_path, class: "#{is_active?('user_sessions#new')} alignment red"        
           li 
-            = link_to "SIGN UP", new_user_path, class: 'border-outline red'
+            = link_to "SIGN UP", new_user_path, class: "#{is_active?('users#new')} border-outline red sign-up"

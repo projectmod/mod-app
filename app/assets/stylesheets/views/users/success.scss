@@ -1,0 +1,25 @@
+.success {
+  height: 78vh;
+  background-color: #F8F8F8;
+  margin-bottom: 2%;
+
+  .line-container {
+    .line {
+      height: 23vh;
+      border-left: 1px solid #B0344E;
+    }
+  }
+
+  .message {
+    .circle {
+      padding-top: 100px;
+      margin: 0 auto;
+      background-color: #B0344E;
+      text-align: center;
+      width: 355px;
+      height: 355px;
+      border-radius: 50%;
+      margin-top: 15px;
+    }
+  }
+}

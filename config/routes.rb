@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   	member do
       get :verify
   		post :activate
+      get :success
   	end
   end
 

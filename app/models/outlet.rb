@@ -1,5 +1,5 @@
 class Outlet < ActiveRecord::Base
-  belongs_to :merchant
+  belongs_to :user
   has_many :bookings
 
   def self.within_range(user_lon, user_lat, outlets)

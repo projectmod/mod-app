@@ -1,0 +1,6 @@
+.container
+  = form_for @payment, class: "form" do |f|
+    = package.price 
+    = package.title
+    = package.description
+    = f.hidden_field  

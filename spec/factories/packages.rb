@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :payment do
+  factory :package do
     
   end
 

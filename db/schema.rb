@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150721073611) do
 
   # These are extensions that must be enabled in order to support this database
@@ -41,14 +42,7 @@ ActiveRecord::Schema.define(version: 20150721073611) do
     t.boolean  "user_cancellation", default: false
   end
 
-  create_table "merchants", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "outlets", force: :cascade do |t|
-    t.integer  "merchant_id"
     t.string   "name"
     t.string   "address"
     t.string   "state"
@@ -56,12 +50,22 @@ ActiveRecord::Schema.define(version: 20150721073611) do
     t.float    "longitude"
     t.string   "price_range"
     t.string   "avatar"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "type_of_service", default: [],              array: true
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "type_of_service", default: [],                 array: true
     t.string   "phone_no"
-    t.integer  "credits"
+    t.boolean  "availability",    default: false
     t.string   "area"
+    t.integer  "credits"
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.decimal  "price"
+    t.string   "description"
+    t.string   "title"
+    t.integer  "credits"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "payment_transactions", force: :cascade do |t|
@@ -71,17 +75,10 @@ ActiveRecord::Schema.define(version: 20150721073611) do
     t.string   "receipt_code"
   end
 
-  create_table "payments", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "credit"
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.integer  "merchant_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.string   "name"
   end
 
@@ -97,7 +94,6 @@ ActiveRecord::Schema.define(version: 20150721073611) do
     t.integer  "failed_logins_count",             default: 0
     t.datetime "lock_expires_at"
     t.string   "unlock_token"
-    t.string   "role"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string   "reset_password_token"

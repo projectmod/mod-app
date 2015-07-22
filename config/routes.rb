@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root 'static_pages#landing'
   get 'about', to: 'static_pages#about'
 
-
   # ==============================================================================================
   # Rails Admin
   # ==============================================================================================
@@ -52,7 +51,7 @@ Rails.application.routes.draw do
   resources :outlets
 
   namespace :merchants do
-    resource :outlets, only: [:show, :edit]
+    resource :outlets, only: [:show, :edit, :update]
   end
 
   # ==============================================================================================
@@ -66,4 +65,16 @@ Rails.application.routes.draw do
         get :result
       end
   end
+
+  # ==============================================================================================
+  # Resque
+  # ==============================================================================================
+  mount Resque::Server, at: "/resque"
+
+  # ==============================================================================================
+  # Payment
+  # ==============================================================================================
+  resources :payment_transactions, only: [:new, :create]
+  get 'success', to: 'payment_transactions#success'
+
 end

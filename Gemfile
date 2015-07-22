@@ -43,6 +43,11 @@ gem 'mini_magick'
 # S3 Amazon
 gem 'fog'
 
+#Background worker
+gem 'rufus-scheduler'
+gem 'resque', require: 'resque/server'
+gem 'redis'
+
 # Development and Test gems
 group :development, :test do
   gem 'spring'

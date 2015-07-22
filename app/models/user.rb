@@ -19,12 +19,14 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-  has_many :payments
+  has_many :payment_transactions
+
 
   has_many :bookings
 
-  has_many :roles
-  has_many :merchants, through: :roles
+  has_one :role
+  has_one :outlet
+  
 
   def activate
     self.activation_state = "active"
@@ -54,6 +56,12 @@ class User < ActiveRecord::Base
 
   def set_as_user
     self.role = "user"
+  end
+
+  def add_credits(credits)
+    if credits > 0
+      self.credits += credits
+    end
   end
 
   private

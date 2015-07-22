@@ -6,7 +6,7 @@ class PaymentTransactionsController < ApplicationController
   end
 
   def create
-    if @payment = Payment.create(payment_transaction_params)
+    if @payment = PaymentTransaction.create(payment_transaction_params)
       redirect_to @payment_link = Payment.new(payment_transactions_params).get_link
     else
       redirect_to :back, notice: "Purchase unsuccesful, please try again"

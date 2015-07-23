@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150722042030) do
 
   # These are extensions that must be enabled in order to support this database
@@ -54,8 +53,8 @@ ActiveRecord::Schema.define(version: 20150722042030) do
     t.datetime "updated_at",                      null: false
     t.string   "type_of_service", default: [],                 array: true
     t.string   "phone_no"
-    t.boolean  "availability",    default: false
     t.string   "area"
+    t.boolean  "availability",    default: false
     t.integer  "credits"
   end
 

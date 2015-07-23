@@ -10,3 +10,8 @@
           .container-fluid
             p.success-text SUCCESS! 
             p.member-text YOU ARE NOW A MEMBER OF MOD!
+            hr
+            p.account-text 
+              | HEAD OVER TO YOUR 
+              = link_to "ACCOUNT", "dashboard_account_path(current_user)", class: 'account-link account-hover'
+              |  PAGE TO UPDATE YOUR DETAILS.

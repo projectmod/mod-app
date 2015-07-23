@@ -314,6 +314,30 @@
   letter-spacing: 2.4px;
 }
 
+.account-text {
+  font-family: 'brandon-light';
+  font-size: 14px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+  line-height: 175%;
+}
+
+.account-link {
+  border-bottom: 1px solid #F3F3F3;
+  padding-bottom: 0px;
+  color: #F3F3F3;
+  font-family: 'brandon-light';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+
+  &:hover {
+    color: #848484;
+    border-bottom: 1px solid #F3F3F3;
+    padding-bottom: 0px;
+    border-color: #848484;
+  }
+}
+
 // Salon list
 
 .salon-name {

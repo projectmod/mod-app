@@ -7,9 +7,15 @@
     padding-bottom: 5%;
   }
 
+  .mobile {
+    display: none;
+  }
+
+  .caption-background {
+    background-color: #F3F3F3;
+  }
+
   .thumbnail-size {
-    max-width: 320px !important;
-    min-height: 350px !important;
     width: 100%;
   }
 
@@ -35,4 +41,20 @@
     padding-bottom: 10%;
   }
 
+}
+
+@media all and (max-width: 992px) {
+  .outlets-index {
+    .thumbnail {
+
+      &.mobile {
+        display: block;
+      }
+
+      &.desktop {
+        display: none;
+      }
+    }
+
+  }
 }

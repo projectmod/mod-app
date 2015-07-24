@@ -6,30 +6,29 @@ class OauthController < ApplicationController
   end
 
   def callback
-    
+
     provider = auth_params[:provider]
-    @user = login_from(provider)
-    auth = Users::Oauth.new(@access_token, provider)
+
+    user = login_from(provider) || current_user
+    auth = Users::Oauth.new(@access_token, provider, user)
 
     # Log in user
 
-    if logged_in?
+    if logged_in? && user.email?
       flash[:notice] = "Logged in from #{provider.titleize}."
 
-    # Register user
+    # Link user to Facebook
 
     else
       new_user = auth.register
+      add_provider_to_user(provider) unless user.authentications.find_by(provider: provider)
 
-      new_user.activate!
       reset_session
-
       auto_login(new_user)
-
       flash[:notice] = "You've registered through #{provider.titleize}."
     end
 
-    redirect_to root_path
+    redirect_to request.referrer
   end
 
   def auth_params

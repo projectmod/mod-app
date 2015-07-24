@@ -36,7 +36,7 @@
     .row.padding-top-1
       .col-md-4.col-md-offset-4
         .form-group
-          = button_tag auth_at_provider_path(provider: :facebook), class: 'btn btn-fb btn-block btn-lg'
+          = link_to auth_at_provider_path(provider: :facebook), class: 'btn btn-fb btn-block btn-lg'
             span.padding-right-10
               i.fa.fa-facebook
             | Log in with Facebook

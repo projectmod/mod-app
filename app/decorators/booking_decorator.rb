@@ -1,7 +1,7 @@
 class BookingDecorator < BaseDecorator
 
   def outlet_avatar
-    model.outlet.avatar
+    model.outlet.avatar[0]
   end
 
   def outlet_name

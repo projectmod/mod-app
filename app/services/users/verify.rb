@@ -1,4 +1,4 @@
-class verify
+class Users::Verify
   attr_accessor :code, :user
 
   def initialize(code, user)

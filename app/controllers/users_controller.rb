@@ -34,8 +34,8 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user = Users::Check.new(params[:phone_no]).exist
-		VerificationCode.new(user).deliver
+		user = Users::Check.new(user_params[:phone_no]).exist
+		Users::VerificationCode.new(user).deliver
 
 		if user
 			auto_login(user, should_remember=false)
@@ -47,8 +47,9 @@ class UsersController < ApplicationController
 
 	def update
 		update_params = user_params.delete_if { |k,v| v.empty? }
+		type = params[:user][:edit_type]
 
-		if update_params[:password] || update_params[:password_confirmation]
+		if (update_params[:password] || update_params[:password_confirmation]) && type != "new_account"
 			user = User.authenticate(update_params[:email], params[:user][:current_password])
 		else
 			user = User.find(params[:id])

@@ -1,4 +1,4 @@
-class VerificationCode
+class Users::VerificationCode
   attr_accessor :user
 
   def initialize(user)
@@ -13,10 +13,10 @@ class VerificationCode
 
   def deliver
     message = "Hi! This is your 6 digit verification code: #{verification_code}"
-    client = Twillio::REST::Client.new
+    client = Twilio::REST::Client.new
     client.messages.create(
       from: '+18885809742',
-      to: user.phone_no,
+      to: "+60" + user.phone_no,
       body: message.html_safe
     )
   end

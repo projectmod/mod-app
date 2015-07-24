@@ -20,7 +20,7 @@
           li.red-text.padding-top-9
             p 
               | WELCOME 
-              span.header-name= current_user.name.upcase
+              span.header-name= current_user.try(:name).try(:upcase)
 
         ul.nav.navbar-nav.navbar-right
           li

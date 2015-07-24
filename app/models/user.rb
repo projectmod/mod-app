@@ -26,10 +26,10 @@ class User < ActiveRecord::Base
 
   has_one :role
   has_one :outlet
-  
+
 
   def activate
-    self.activation_state = "active"
+    update(activated: true)
   end
 
   #Checking for roles

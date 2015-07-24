@@ -23,7 +23,7 @@ class OutletsController < ApplicationController
   end
 
   def outlet_params
-    params.require(:outlet).permit(:name, :address, :type_of_service, :latitude, :longitude, :price_range, :avatar)
+    params.require(:outlet).permit(:name, :address, :type_of_service, :latitude, :longitude, :price_range, :avatar, :availability)
   end
 
 end

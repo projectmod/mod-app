@@ -1,6 +1,47 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
+function adjustCaptionHeight() {
+
+  var heights = [ ];
+
+  $(".caption").each(function() {
+    heights.push( $(this).height() );
+  });
+  var max = Math.max.apply(null, heights);
+
+  $(".caption").each(function() {
+    $(this).height(max);
+  });
+}
+
+function inheritCaptionHeight() {
+  $(".caption").each(function() {
+    $(this).css("height", "inherit");
+  });
+}
+
+function checkAdjustCaptionHeight() {
+  if ($("#mq-detector > span.visible-lg").is(":visible")) {
+    adjustCaptionHeight();
+  }
+  else if ($("#mq-detector > span.visible-md").is(":visible")) {
+    adjustCaptionHeight();
+  }
+  else if ($("#mq-detector > span.visible-sm").is(":visible")) {
+    inheritCaptionHeight();
+  }
+  else if ($("#mq-detector > span.visible-xs").is(":visible")) {
+    inheritCaptionHeight();
+  }
+  else { }
+}
+
+$(window).on('resize', checkAdjustCaptionHeight);
+
 $(document).ready(function(){
+
+  checkAdjustCaptionHeight();
 
   var options = {
     enableHighAccuracy: true,
@@ -23,7 +64,6 @@ $(document).ready(function(){
   }
 
   function error(err){
-
   }
 
   getLocation();

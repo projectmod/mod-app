@@ -1,6 +1,9 @@
 .outlets-index {
-
   padding-bottom: 8%;
+
+  #mq-detector {
+    visibility: hidden;
+  }
 
   .thumbnail {
     border: none;
@@ -41,20 +44,4 @@
     padding-bottom: 10%;
   }
 
-}
-
-@media all and (max-width: 992px) {
-  .outlets-index {
-    .thumbnail {
-
-      &.mobile {
-        display: block;
-      }
-
-      &.desktop {
-        display: none;
-      }
-    }
-
-  }
 }

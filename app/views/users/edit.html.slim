@@ -15,9 +15,9 @@
           .form-group
           = f.text_field :email, required: true, placeholder: 'EMAIL', class: 'form-control edit-register'
           .form-group
-          = f.text_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control edit-register'
+          = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control edit-register'
           .form-group
-          = f.text_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control edit-register'
+          = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control edit-register'
           .form-group.text-center
             = f.submit "SIGN UP", class: "btn btn-register"
 

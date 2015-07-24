@@ -43,3 +43,27 @@ outlet_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac
                 price_range: "RM 50 - 100",
                 state: "Cyberjaya",
                 phone_no: "543245465")
+
+outlet_4 = Outlet.find_or_create_by!(name: "Rainbow Salon")
+outlet_4.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                type_of_service: ["BLOWOUT", "HAIRCUT"],
+                area: "Hartamas",
+                address: "99, Jalan 99, 99999, K.L",
+                price_range: "RM 50 - 100",
+                state: "Kuala Lumpur",
+                latitude: 3.167439,
+                longitude: 101.612685,
+                phone_no: "0126832814",
+                availability: true)
+
+outlet_5 = Outlet.find_or_create_by!(name: "Mark and Guys")
+outlet_5.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                type_of_service: ["BLOWOUT", "HAIRCUT", "NAILS"],
+                area: "Ampang",
+                address: "99, Jalan 99, 99999, K.L",
+                price_range: "RM 50 - 100",
+                state: "Kuala Lumpur",
+                latitude: 3.167439,
+                longitude: 101.612685,
+                phone_no: "0126832814",
+                availability: true)

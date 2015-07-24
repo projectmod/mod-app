@@ -3,7 +3,7 @@ class CheckAvailabilityJob < ActiveJob::Base
 
   def perform
     Outlet.all.each do |outlet|
-      if outlet.bookings.where("created_at < ?", 1.hour.ago).empty?
+      if outlet.bookings.where("created_at > ?", 1.hour.ago).empty? && outlet.bookings.present?
         outlet.update(availability: false)
       end
     end

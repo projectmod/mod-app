@@ -1,6 +1,6 @@
 class BookingsController < ActionController::Base
   before_action :require_login
-  before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation]
+  before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation, :result]
 
   def create
     @booking = Booking.new(booking_params)
@@ -46,6 +46,9 @@ class BookingsController < ActionController::Base
     @booking.update_attribute(:user_cancellation, true)
     total = @booking.outlet.credits + 1
     @booking.outlet.update_attribute(:credits, total)
+  end
+
+  def result
   end
 
   private

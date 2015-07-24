@@ -1,0 +1,47 @@
+.outlets-index {
+  padding-bottom: 8%;
+
+  #mq-detector {
+    visibility: hidden;
+  }
+
+  .thumbnail {
+    border: none;
+    padding-bottom: 5%;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .caption-background {
+    background-color: #F3F3F3;
+  }
+
+  .thumbnail-size {
+    width: 100%;
+  }
+
+  .caption {
+    background-color: #F3F3F3;
+  }
+
+  .salon-hover {
+    text-decoration: none;
+
+    &:hover {
+      color: #848484 !important;
+    }
+  }
+
+  .no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .padding-info {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+}

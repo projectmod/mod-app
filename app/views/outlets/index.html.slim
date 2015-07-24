@@ -1,3 +1,25 @@
-- @final.each do |outlet|
-  = link_to "Show", outlet_path(outlet), class: "btn btn-primary"
-  
+.outlets-index
+  .container-fluid
+    .row
+      .col-md-8.col-md-offset-2
+        .row
+          .col-md-12
+            p.found-text WE FOUND #{pluralize(@final.count, 'SALON').upcase} NEAR YOU!
+        .row
+          - @final.each do |outlet|
+            .col-sm-6.height-check
+              .thumbnail.thumbnail-size
+                = link_to root_path
+                  = image_tag 'barber.jpg', class: 'img-responsive'
+                .caption.text-center
+                  p.salon-name = outlet.name.upcase
+                  p.salon-area = outlet.area.upcase
+                  p.padding-info = link_to "MORE INFO >>", outlets_path(outlet), class: 'salon-link salon-hover'
+
+
+  // Media Queries Detector
+  span#mq-detector
+    span.visible-xs
+    span.visible-sm
+    span.visible-md
+    span.visible-lg

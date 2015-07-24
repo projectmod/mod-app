@@ -1,21 +1,66 @@
-.container style="padding 20px"
-  h1 Merchant page 
-  p 
-    = @outlet.name
-  p
-    = @outlet.address
-  p
-    = @outlet.price_range
-  p
-    = @outlet.phone_no
-    
-  - if current_user.present?
-    = form_for @booking do |f|
-      = f.hidden_field :outlet_number, value: @outlet.phone_no, readonly: true
-      = f.hidden_field :user_number, value: current_user.phone_no, readonly: true
-      = f.hidden_field :outlet_id, value: @outlet.id
-      = f.hidden_field :user_id, value: current_user.id
-      = f.hidden_field :confirmation_code, value: @outlet.confirmation_code
-      = f.submit "Book Now!", class: "btn btn-primary"
-  - else
-    = link_to "Please login/ sign up to book", new_user_session_path, class: "btn btn-primary"
+/ .container style="padding 20px"
+/   h1 Merchant page 
+/   p 
+/     = @outlet.name
+/   p
+/     = @outlet.address
+/   p
+/     = @outlet.price_range
+/   p
+/     = @outlet.phone_no
+/     
+/   - if current_user.present?
+/     = form_for @booking do |f|
+/       = f.text_field :outlet_number, value: @outlet.phone_no, readonly: true
+/       = f.text_field :user_number, value: current_user.phone_no, readonly: true
+/       = f.hidden_field :outlet_id, value: @outlet.id
+/       = f.hidden_field :user_id, value: current_user.id
+/       = f.hidden_field :confirmation_code, value: @outlet.confirmation_code
+/       = f.submit "Book Now!", class: "btn btn-primary"
+/   - else
+/     = link_to "Please login/ sign up to book", new_user_session_path, class: "btn btn-primary"
+
+.outlet-info
+  #carousel-salon-info.carousel.slide data-ride="carousel"
+
+    / Indicators
+    ol.carousel-indicators
+      li.active data-target="#carousel-salon-info" data-slide-to="0"
+      li data-target="#carousel-salon-info" data-slide-to="1"
+      li data-target="#carousel-salon-info" data-slide-to="2"
+      li data-target="#carousel-salon-info" data-slide-to="3"
+      li data-target="#carousel-salon-info" data-slide-to="4"
+      li data-target="#carousel-salon-info" data-slide-to="5"
+
+    / Wrapper for slides
+    .carousel-inner role="listbox"
+      - @outlet.avatar.each_with_index do |avatar, i|
+        div class="item #{'active' if i == 1}"
+          = image_tag avatar, class: 'salon-image'
+          .carousel-caption Hello
+
+  .container-fluid
+    .row
+      .col-md-6.col-md-offset-3
+        .row
+          .col-md-12
+            p.salon-name.text-center = @outlet.name.upcase
+            p.salon-area.text-center.area-padding = @outlet.area.upcase
+        .row
+          .col-md-6
+            p.pull-right.info-title.title-padding ADDRESS
+          .col-md-6
+            p.pull-left.info-details.info-padding = @outlet.address.upcase
+
+        .row
+          .col-md-6
+            p.pull-right.info-title.title-padding CONTACT
+          .col-md-6
+            p.pull-left.info-details.info-padding = "+60 " + @outlet.phone_no
+
+        .row
+          .col-md-6
+            p.pull-right.info-title.title-padding WORKING HOURS
+          .col-md-6
+            p.pull-left.info-details = @outlet.opening_days.upcase
+            p.pull-left.info-details.info-padding = @outlet.opening_hours.upcase

@@ -15,7 +15,12 @@ booking_1 = Booking.find_or_create_by!(outlet_id: 1, user_id: 3, confirmation_co
 package_1 = Package.find_or_create_by!(price: 10, description: "10 for 100 credits", title: "Package 1", credits: 100)
 
 outlet_1 = Outlet.find_or_create_by!(name: "Toni and Guy")
-outlet_1.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+outlet_1.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
+                          "http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
+                          "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
+                          "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
+                          "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
+                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
                 type_of_service: ["BLOWOUT", "HAIRCUT", "MASSAGE"],
                 area: "Bangsar Baru",
                 address: "99, Jalan 99, 99999, K.L",

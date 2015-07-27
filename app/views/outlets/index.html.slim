@@ -10,7 +10,7 @@
             .col-md-6
               .thumbnail
                 .thumbnail-size
-                  = link_to root_path
+                  = link_to outlet_path(outlet)
                     = image_tag 'barber.jpg', class: 'image-size'
                   .caption.text-center
                     p.list-name = outlet.name.upcase

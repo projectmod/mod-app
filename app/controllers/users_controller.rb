@@ -35,9 +35,11 @@ class UsersController < ApplicationController
 
 	def create
 		user = Users::Check.new(user_params[:phone_no]).exist
-		Users::VerificationCode.new(user).deliver
 
-		if user
+		if user && user.activated?
+			redirect_to(new_user_session_path, notice: "This phone number is already tied to an account, please log in!")
+		elsif user
+			Users::VerificationCode.new(user).deliver
 			auto_login(user, should_remember=false)
 			redirect_to verify_user_path(user)
 		else
@@ -57,7 +59,13 @@ class UsersController < ApplicationController
 
 		if user && user.update(update_params)
 			flash[:notice] = "You've successfully updated your user details."
-			redirect_to dashboard_account_path
+			if session[:prebk_outlet]
+				outlet = Outlet.find(session[:prebk_outlet])
+				session[:prebk_outlet] = nil
+				redirect_to outlet_path(outlet)
+			else
+				redirect_to dashboard_account_path
+			end
 		else
 			flash[:alert] = "Something went wrong!"
 			redirect_to dashboard_account_path

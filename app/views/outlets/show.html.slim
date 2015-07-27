@@ -1,4 +1,9 @@
 .outlet-info
+  .container-fluid
+    .row.flash-msg.text-center
+      .col-md-12
+        p TAKE NOTE: YOU MUST ARRIVE AT THE SALON WITHIN 15 MINS AFTER CONFIRMATION!
+
   #carousel-salon-info.carousel.slide data-ride="carousel"
 
     / Indicators
@@ -15,35 +20,34 @@
       - @outlet.avatar.each_with_index do |avatar, i|
         div class="item #{'active' if i == 1}"
           = image_tag avatar, class: 'salon-image'
-          .carousel-caption Hello
 
   .container-fluid
     .row
-      .col-md-6.col-md-offset-3
+      .col-md-8.col-md-offset-2
         .row
           .col-md-12
-            p.salon-name.text-center = @outlet.name.upcase
-            p.salon-area.text-center.area-padding = @outlet.area.upcase
+            p.salon-name.settings.text-center = @outlet.name.upcase
+            p.salon-area.settings.text-center.area-padding = @outlet.area.upcase
         .row
-          .col-md-6
-            p.pull-right.info-title.title-padding ADDRESS
-          .col-md-6
-            p.pull-left.info-details.info-padding = @outlet.address.upcase
+          .col-sm-4.col-sm-offset-1
+            p.info-title.settings.title-padding ADDRESS
+          .col-sm-6
+            p.info-details.settings.info-padding = @outlet.address.upcase
 
         .row
-          .col-md-6
-            p.pull-right.info-title.title-padding CONTACT
-          .col-md-6
-            p.pull-left.info-details.info-padding = "+60 " + @outlet.phone_no
+          .col-sm-4.col-sm-offset-1
+            p.info-title.settings.title-padding CONTACT
+          .col-sm-6
+            p.info-details.settings.info-padding = "+60 " + @outlet.phone_no
 
         .row
-          .col-md-6
-            p.pull-right.info-title.title-padding WORKING HOURS
-          .col-md-6
-            p.pull-left.info-details = @outlet.working_hours.upcase
+          .col-sm-4.col-sm-offset-1
+            p.info-title.settings.title-padding WORKING HOURS
+          .col-sm-6
+            p.info-details.settings = @outlet.working_hours.upcase
 
         .row
-          .col-md-6.col-md-offset-3
+          .col-md-12.text-center
             - if current_user.present?
               = form_for @booking do |f|
                 = f.hidden_field :outlet_number, value: @outlet.phone_no, readonly: true
@@ -52,5 +56,10 @@
                 = f.hidden_field :user_id, value: current_user.id
                 = f.hidden_field :confirmation_code, value: @outlet.confirmation_code
                 = f.submit "CONFIRM THIS BOOKING", class: "btn btn-confirm"
+                = button_tag(type: "submit", class: "btn btn-point desktop") do
+                  i.fa.fa-play.fa-lg
+
             - else
-              = link_to "LOGIN / SIGN UP", new_user_session_path, class: "btn btn-confirm"        
+              = link_to "LOGIN", new_user_session_path(outlet: @outlet), class: "btn btn-confirm"
+              = button_tag(type: "submit", class: "btn btn-point") do
+                i.fa.fa-play.fa-lg

@@ -7,6 +7,11 @@
   .carousel-inner{
     width:100%;
     max-height: 500px !important;
+    margin-bottom: 50px;
+  }
+
+  .carousel-indicators {
+    bottom: -50px;
   }
 
   .info-padding {
@@ -15,6 +20,10 @@
 
   .title-padding {
     padding-right: 5%;
+  }
+
+  .info-title.settings {
+    float: right !important;
   }
 
   .area-padding {
@@ -39,10 +48,58 @@
     font-size: 16px;
     letter-spacing: 2.4px;
     font-family: 'brandon-reg';
+    margin-top: 15%;
+    margin-bottom: 25%;
 
     &:focus {
       outline: none;
     }
   }
 
+  .btn-point {
+    margin-left: 1px;
+    font-size: 16px;
+    color: #F0F0F0;
+    background-color: #B0344E;
+    border-color: #B0344E;
+    border-radius: 0px;
+    padding: 25px 30px;
+    margin-top: 15%;
+    margin-bottom: 25%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .flash-msg {
+    background-color: #000000;
+    color: #F3F3F3;
+    font-family: 'brandon-bold';
+    font-size: 20px;
+    border: 2px solid #E4A955;
+    padding-top: 1%;
+    letter-spacing: 2.4px;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .outlet-info {
+    .info-title.settings {
+      padding-left: 10%;
+      float: none !important;
+    }
+
+    .info-details.settings {
+      padding-left: 10%;
+    }
+
+    .desktop {
+      display: none;
+    }
+  }
 }

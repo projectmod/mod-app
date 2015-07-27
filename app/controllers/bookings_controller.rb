@@ -1,4 +1,4 @@
-class BookingsController < ActionController::Base
+class BookingsController < ApplicationController
   before_action :require_login
   before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation, :result]
 

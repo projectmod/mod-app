@@ -1,4 +1,4 @@
 - if @booking.outlet_confirmed == true && @booking.user_cancellation == false
-  = "CONGRATS you have succesfully booked the saloon!"
+  = render "bookings/partials/booking_success"
 - else
-  = "Sorry, booking was unsuccessful. Please try again."
+  = render "bookings/partials/booking_failed"

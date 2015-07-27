@@ -35,7 +35,6 @@ Rails.application.routes.draw do
   # User Sessions/Login/Logout
   # ==============================================================================================
   get 'login', to: 'user_sessions#new', as: :login
-
   match 'logout', to: 'user_sessions#destroy', via: [:get, :delete]
 
 
@@ -60,11 +59,11 @@ Rails.application.routes.draw do
   # ==============================================================================================
   resources :bookings do
     member do
-        get :outlet_confirmed
-        get :user_cancellation
-        get :pending
-        get :result
-      end
+      get :outlet_confirmed
+      get :user_cancellation
+      get :result
+      get :pending
+    end
   end
 
   # ==============================================================================================

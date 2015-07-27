@@ -55,8 +55,14 @@ ActiveRecord::Schema.define(version: 20150724080536) do
     t.string   "area"
     t.boolean  "availability",    default: false
     t.integer  "credits"
+<<<<<<< HEAD
     t.string   "avatar",          default: [],                 array: true
     t.string   "working_hours"
+=======
+    t.string   "opening_hours"
+    t.string   "opening_days"
+    t.string   "avatar",          default: [],                 array: true
+>>>>>>> 03a0feb550557193c608b8bf76566cd8504d2204
   end
 
   create_table "packages", force: :cascade do |t|

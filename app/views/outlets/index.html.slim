@@ -1,7 +1,7 @@
 .outlets-index
   .container-fluid
     .row
-      .col-md-6.col-md-offset-3
+      .col-md-8.col-md-offset-2
         .row
           .col-md-12
             p.found-text WE FOUND #{pluralize(@final.count, 'SALON').upcase} NEAR YOU!
@@ -16,3 +16,10 @@
                     p.list-name = outlet.name.upcase
                     p.list-area = outlet.area.upcase
                     p.padding-info = link_to "MORE INFO >>", outlet_path(outlet), class: 'salon-link salon-hover'
+
+  // Media Queries Detector
+  span#mq-detector
+    span.visible-xs
+    span.visible-sm
+    span.visible-md
+    span.visible-lg

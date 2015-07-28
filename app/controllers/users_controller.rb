@@ -67,7 +67,6 @@ class UsersController < ApplicationController
 				redirect_to dashboard_account_path
 			end
 		else
-			binding.pry
 			user.errors.full_messages.each do |message|
 				flash[:alert] = message
 			end

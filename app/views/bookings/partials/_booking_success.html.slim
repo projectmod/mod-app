@@ -1,1 +1,68 @@
-p Yay! Success!
+.booking-success
+  .success-container
+    .container-fluid
+      .row
+        .col-md-4.col-md-offset-4
+          p.confirmed-text.text-center.confirmed-padding CONFIRMED !
+          
+      .row
+        .col-md-6.col-md-offset-3.code-border
+          p.text-center.success-code-text.success-padding CONFIRMATION CODE :
+          
+      .row
+        .col-md-4.col-md-offset-4
+          p.text-center.success-code.code-settings = @booking.confirmation_code
+
+      .row
+        .col-md-6.col-md-offset-3.text-center
+          p.time-text.time-padding
+            | TIME TO ARRIVE : 
+            = (@booking.created_at.time + 15.minutes).strftime("%I.%M%p")
+            
+  .container-fluid
+    .row
+      .col-md-10.col-md-offset-1
+        .row
+          .col-sm-4.col-sm-offset-1
+            p.appt-title.alignment.pull-right.success-info SALON
+          .col-sm-4.col-sm-offset-1
+            p.appt-info.alignment.success-info = @booking.outlet.name.upcase
+            
+        .row
+          .col-sm-4.col-sm-offset-1
+            p.appt-title.alignment.pull-right.success-info ADDRESS
+          .col-sm-4.col-sm-offset-1
+            p.appt-info.alignment.success-info = @booking.outlet.address.upcase
+
+        .row
+          .col-sm-4.col-sm-offset-1
+            p.appt-title.alignment.pull-right.success-info CONTACT
+          .col-sm-4.col-sm-offset-1
+            p.appt-info.alignment.success-info = "+60 " + @booking.outlet.phone_no
+
+        .row
+          .col-sm-4.col-sm-offset-1
+            p.appt-title.alignment.pull-right.success-info TIME TO ARRIVE
+          .col-sm-5.col-sm-offset-1
+            p.arrival-text.alignment.success-info = (@booking.created_at.time + 15.minutes).strftime("%I.%M%p") + " ON " + @booking.outlet.created_at.strftime("%d %B %Y").upcase
+            
+        .row
+          .col-sm-4.col-sm-offset-1
+            p.appt-title.alignment.pull-right.success-info CANCELLATION
+          .col-sm-4.col-sm-offset-1
+            p.appt-info.alignment.success-info TO CANCEL THIS APPOINTMENT, FOLLOW THE INSTRUCTIONS YOU RECEIVED VIA SMS.
+
+        .row
+          .col-sm-4.col-sm-offset-1
+            p.appt-title.alignment.pull-right.success-info WORKING HOURS
+          .col-sm-4.col-sm-offset-1
+            p.appt-info.alignment.success-info = @booking.outlet.working_hours.upcase
+            
+  .container-fluid
+    .row
+      .col-md-10.col-md-offset-1
+        p.view-text.text-center.view-padding YOU MAY VIEW ALL YOUR BOOKINGS ON YOUR ACCOUNT PAGE.
+        
+    .row
+      .col-md-6.col-md-offset-3.text-center
+        = link_to "VIEW ALL BOOKINGS", dashboard_account_path, class: 'btn btn-view'

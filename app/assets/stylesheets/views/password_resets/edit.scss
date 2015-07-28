@@ -1,0 +1,63 @@
+.password-edit {
+  background-color: #F8F8F8;
+  margin-bottom: 2%;
+
+  ::-webkit-input-placeholder {
+    color: #B0344E !important;
+  }
+
+  :-moz-placeholder {
+    color: #B0344E !important;
+  }
+
+  ::-moz-placeholder {
+    color: #B0344E !important;
+  }
+
+  :-ms-input-placeholder {
+    color: #B0344E !important;
+  }
+
+  .form-control {
+    border-radius: 0px;
+    border-color: #E4A955;
+    font-family: 'brandon-light';
+    font-size: 14px;
+    letter-spacing: 2.4px;
+    color: #B0344E;
+
+    &:focus {
+      border-color: #848484;
+      box-shadow: none;
+    }
+  }
+
+  .btn-update {
+    background-color: #B0344E;
+    color: #F3F3F3;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    border-radius: 0px;
+    padding: 10px 40px;
+    margin-bottom: 40%;
+    margin-top: 10%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .set-password-padding {
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+
+  .new-password-padding {
+    padding-bottom: 6%;
+  }
+
+  .enter-padding {
+    margin: 0;
+  }
+}

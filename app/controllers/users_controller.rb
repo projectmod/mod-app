@@ -67,8 +67,15 @@ class UsersController < ApplicationController
 				redirect_to dashboard_account_path
 			end
 		else
-			flash[:alert] = "Something went wrong!"
-			redirect_to dashboard_account_path
+			user.errors.full_messages.each do |message|
+				flash[:alert] = message
+			end
+
+			if type == 'new_account'
+				redirect_to edit_user_path(user)
+			else
+				redirect_to dashboard_account_path
+			end
 		end
 	end
 

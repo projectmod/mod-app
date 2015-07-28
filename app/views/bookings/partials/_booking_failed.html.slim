@@ -1,1 +1,13 @@
-p Sorry! It Failed!
+.booking-failed
+  .container-fluid
+    .row
+      .col-md-4.col-md-offset-4
+        p.oops-text.text-center.failed-title OOPS!
+        
+    .row
+      .col-md-4.col-md-offset-4
+        p.unavailable-text.text-center.failed-text THE SALON IS CURRENTLY NOT AVAILABLE TO TAKE AN APPOINTMENT
+        
+    .row
+      .col-md-4.col-md-offset-4.text-center
+        = link_to "MAKE A NEW BOOKING", root_path, class: 'btn btn-new'

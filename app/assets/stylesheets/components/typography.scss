@@ -409,14 +409,14 @@
 
 .title-text {
   font-family: 'brandon-light';
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: 2.4px;
   color: #F3F3F3;
 }
 
 .wait-text {
   font-family: 'brandon-light';
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 2.4px;
   color: #F3F3F3;
 }
@@ -432,15 +432,128 @@
 
 .reset-text {
   font-family: 'brandon-light';
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 2.4px;
   color: #848484;
 }
 
 .password-field {
   font-family: 'brandon-light';
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 2.4px;
   color: #B0344E;
 }
- //Forgot password 2
+ // Forgot password 2
+
+ .set-text {
+   font-family: 'brandon-light';
+   color: #F3F3F3;
+   font-size: 23px;
+   letter-spacing: 2.4px;
+   padding-bottom: 1%;
+ }
+
+ .email-text {
+   font-family: 'brandon-light';
+   font-size: 16px;
+   color: #F3F3F3;
+   letter-spacing: 2.4px;
+ }
+
+ .check-text {
+   font-family: 'brandon-light';
+   font-size: 14px;
+   color: #F3F3F3;
+   letter-spacing: 2.4px;
+   line-height: 175%;
+ }
+
+ // Forgot password 3
+
+ .new-password-text {
+   font-family: 'brandon-light';
+   font-size: 15px;
+   letter-spacing: 2.4px;
+   color: #848484;
+ }
+
+ .set-password-text {
+   font-family: 'brandon-light';
+   font-size: 22px;
+   color: #B0344E;
+   letter-spacing: 2.4px;
+ }
+
+// Booking Failed
+
+.oops-text {
+  font-family: 'brandon-light';
+  font-size: 25px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+.unavailable-text {
+  font-family: 'brandon-light';
+  font-size: 18px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+// Booking success
+
+.confirmed-text {
+  font-family: 'brandon-med';
+  font-size: 15px;
+  letter-spacing: 2.4px;
+  color: #E4A955;
+}
+
+.success-code-text {
+  font-family: 'brandon-light';
+  font-size: 25px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+.success-code {
+  font-family: 'brandon-med';
+  font-size: 25px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+.time-text {
+  font-family: 'brandon-med';
+  font-size: 18px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+.appt-title {
+  font-family: 'brandon-med';
+  font-size: 18px;
+  color: #ACACAC;
+  letter-spacing: 2.4px;
+}
+
+.appt-info {
+  font-family: 'brandon-light';
+  font-size: 18px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.arrival-text {
+  font-family: 'brandon-med';
+  font-size: 18px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.view-text {
+  font-family: 'brandon-light';
+  font-size: 18px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}

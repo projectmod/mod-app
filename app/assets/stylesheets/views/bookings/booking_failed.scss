@@ -1,0 +1,29 @@
+.booking-failed {
+  background-color: #B0344E;
+  margin-bottom: 2%;
+
+  .btn-new {
+    background-color: #E4A955;
+    color: #F3F3F3 !important;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    border-radius: 0px;
+    padding: 10px 40px;
+    margin-bottom: 30%;
+    margin-top: 3%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .failed-title {
+    padding-top: 25%;
+    padding-bottom: 6%;
+  }
+
+  .failed-text {
+    padding-bottom: 12%;
+  }
+}

@@ -1,6 +1,7 @@
-.success {
+.password-success {
   background-color: #F8F8F8;
   margin-bottom: 2%;
+  height: 78vh;
 
   hr {
     border-color: #E4A955;
@@ -14,9 +15,9 @@
     }
   }
 
-  .message {
+  .message-text {
     .circle {
-      padding-top: 80px;
+      padding-top: 70px;
       margin: 0 auto;
       background-color: #B0344E;
       text-align: center;
@@ -33,5 +34,10 @@
     &:hover {
       color: #848484;
     }
+  }
+
+  .password-padding {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

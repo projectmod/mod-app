@@ -3,13 +3,16 @@ class OutletsController < ApplicationController
 
   def index
     @outlets = Outlet.where(price_range: params[:price_range], availability: true)
+    
     @final = []
     @outlets.each do |outlet|
       outlet.type_of_service.each do |service|
         @final << outlet if service == params[:type_of_service]
       end
     end
+    
     @final = Outlet.within_range(params[:longitude], params[:latitude], @final)
+    
   end
 
   def show

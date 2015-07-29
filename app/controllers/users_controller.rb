@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_action :require_login, except: [:update, :destroy]
-	before_action :set_user, only: [:activate, :verify, :edit, :success]
+	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_no]
 
 	def new
 		# Step 1
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	end
 
 	def verify
-		# Step 2
+		# Step 3
 	end
 
 	def activate
@@ -17,31 +17,37 @@ class UsersController < ApplicationController
 		activated = Users::Verify.new(verification_code, @user).check
 		# code; compare it with db, if match activate user!
 		if activated
-			redirect_to edit_user_path(@user)
+			redirect_to success_user_path(@user)
+		else
+			redirect_to root_path
 		end
 	end
 
 	def success
-
 	end
 
 	def index
 	end
 
 	def edit
-		# Step 3
-		redirect_to verify_user_path(@user) unless @user.activated?
+		# Step 2
 	end
 
 	def create
-		user = Users::Check.new(user_params[:phone_no]).exist
+		user = User.new(user_params)
 
-		if user && user.activated?
-			redirect_to(new_user_session_path, notice: "This phone number is already tied to an account, please log in!")
-		elsif user
-			Users::VerificationCode.new(user).deliver
+		if user.save
 			auto_login(user, should_remember=false)
-			redirect_to verify_user_path(user)
+			redirect_to edit_user_path(user)
+		else
+			redirect_to root_path
+		end
+	end
+
+	def update_phone_no
+		if @user.update(user_params)
+			Users::VerificationCode.new(@user).deliver
+			redirect_to verify_user_path(@user)
 		else
 			redirect_to root_path
 		end
@@ -67,7 +73,6 @@ class UsersController < ApplicationController
 				redirect_to dashboard_account_path
 			end
 		else
-			binding.pry
 			user.errors.full_messages.each do |message|
 				flash[:alert] = message
 			end

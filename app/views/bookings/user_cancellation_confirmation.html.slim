@@ -1,0 +1,20 @@
+.user-cancellation-confirmation
+  .container-fluid
+    .row
+      .col-md-4.col-md-offset-4
+        p.cancel-text.cancel-padding.text-center UH-OH!
+        
+    .row
+      .col-md-4.col-md-offset-4
+        p.opted-text.opted-padding.text-center YOU OPTED TO CANCEL THE SALON BOOKING YOU RECENTLY MADE.
+        hr
+        p.sure-text.sure-padding.text-center ARE YOU SURE YOU WISH TO CANCEL?
+
+    .row
+      .col-md-4.col-md-offset-4
+        .row
+          .col-md-6.col-xs-6.text-center.desktop
+            = form_tag("/bookings/#{@booking.id}/user_cancellation") do
+                = submit_tag "YES", class: 'btn btn-yes btn-block'
+          .col-md-6.col-xs-6.text-center.desktop
+             = link_to "NO", dashboard_account_path, class: 'btn btn-no btn-block'

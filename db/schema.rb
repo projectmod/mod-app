@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724080536) do
+ActiveRecord::Schema.define(version: 20150729040618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,15 +54,9 @@ ActiveRecord::Schema.define(version: 20150724080536) do
     t.string   "phone_no"
     t.string   "area"
     t.boolean  "availability",    default: false
-    t.integer  "credits"
-<<<<<<< HEAD
+    t.integer  "credits",         default: 0
     t.string   "avatar",          default: [],                 array: true
     t.string   "working_hours"
-=======
-    t.string   "opening_hours"
-    t.string   "opening_days"
-    t.string   "avatar",          default: [],                 array: true
->>>>>>> 03a0feb550557193c608b8bf76566cd8504d2204
   end
 
   create_table "packages", force: :cascade do |t|

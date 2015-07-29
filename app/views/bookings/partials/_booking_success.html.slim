@@ -17,7 +17,7 @@
         .col-md-6.col-md-offset-3.text-center
           p.time-text.time-padding
             | TIME TO ARRIVE : 
-            = (@booking.created_at.time + 15.minutes).strftime("%I.%M%p")
+            = @booking.arrival_time
             
   .container-fluid
     .row
@@ -26,25 +26,25 @@
           .col-sm-4.col-sm-offset-1
             p.appt-title.alignment.pull-right.success-info SALON
           .col-sm-4.col-sm-offset-1
-            p.appt-info.alignment.success-info = @booking.outlet.name.upcase
+            p.appt-info.alignment.success-info = @booking.outlet_name
             
         .row
           .col-sm-4.col-sm-offset-1
             p.appt-title.alignment.pull-right.success-info ADDRESS
           .col-sm-4.col-sm-offset-1
-            p.appt-info.alignment.success-info = @booking.outlet.address.upcase
+            p.appt-info.alignment.success-info = @booking.outlet_address
 
         .row
           .col-sm-4.col-sm-offset-1
             p.appt-title.alignment.pull-right.success-info CONTACT
           .col-sm-4.col-sm-offset-1
-            p.appt-info.alignment.success-info = "+60 " + @booking.outlet.phone_no
+            p.appt-info.alignment.success-info = @booking.outlet_phone_no
 
         .row
           .col-sm-4.col-sm-offset-1
             p.appt-title.alignment.pull-right.success-info TIME TO ARRIVE
           .col-sm-5.col-sm-offset-1
-            p.arrival-text.alignment.success-info = (@booking.created_at.time + 15.minutes).strftime("%I.%M%p") + " ON " + @booking.outlet.created_at.strftime("%d %B %Y").upcase
+            p.arrival-text.alignment.success-info = @booking.arrival_time + " ON " + @booking.arrival_date
             
         .row
           .col-sm-4.col-sm-offset-1
@@ -56,7 +56,7 @@
           .col-sm-4.col-sm-offset-1
             p.appt-title.alignment.pull-right.success-info WORKING HOURS
           .col-sm-4.col-sm-offset-1
-            p.appt-info.alignment.success-info = @booking.outlet.working_hours.upcase
+            p.appt-info.alignment.success-info = @booking.outlet_working_hours
             
   .container-fluid
     .row

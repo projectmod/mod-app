@@ -9,12 +9,16 @@ module Users
     end
 
     def register
-      profile = Users::Profile::Facebook.new(access_token).retrieve
+      new_user = User.create(name: profile.name, email: profile.email, remote_avatar_url: profile.avatar)
+      new_user.authentications.build(provider: provider, uid: profile.uid, token: access_token).save
 
-      user.update(name: profile.name, email: profile.email, remote_avatar_url: profile.avatar)
-      user.authentications.build(provider: provider, uid: profile.uid, token: access_token).save
+      new_user
+    end
 
-      user
+    private
+
+    def profile
+      Users::Profile::Facebook.new(access_token).retrieve
     end
   end
 end

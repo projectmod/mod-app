@@ -1,53 +1,30 @@
-.edit
+.phone-no
   .container-fluid
     .row
       .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
-        p.text-center.step-text STEP 3 OF 3
-
-      .col-md-6.col-md-offset-3.text-center
-        h3 ENTER YOUR DETAILS
+        p.text-center.step-text STEP 2 OF 3
   
-    .row
-      .col-md-6.col-md-offset-3
-        = form_for @user, class: 'form' do |f|
-          = f.hidden_field :edit_type, value: "new_account"
-          .form-group
-          = f.text_field :name, required: true, placeholder: 'NAME', class: 'form-control edit-register'
-          .form-group
-          = f.text_field :email, required: true, placeholder: 'EMAIL', class: 'form-control edit-register'
-          .form-group
-          = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control edit-register'
-          .form-group
-          = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control edit-register'
-          .form-group.text-center
-            = f.submit "SIGN UP", class: "btn btn-register"
-
-    .row
-      .col-md-2.col-md-offset-5
-
-        // Desktop & Mobile View
-        .col-xs-2.col-xs-offset-3.no-side-padding.normal
-          hr
-
-        // Tablet view
-        .col-xs-2.col-xs-offset-3.no-side-padding.tablet
-          hr
-
-        // Desktop & Mobile view
-        .col-xs-2.text-center.or-padding.or-text.normal
-          | or 
-
-        // Tablet view
-        .col-xs-2.text-center.or-padding.or-text.tablet
-          | or 
-
-        .col-xs-2.no-side-padding
-          hr
-
-    .row.padding-top-1
+    .row.padding-top-5
       .col-md-4.col-md-offset-4
-        .form-group
-          = link_to auth_at_provider_path(provider: :facebook), class: 'btn btn-fb btn-block btn-lg'
-            span.padding-right-10
-              i.fa.fa-facebook
-            | Sign up with Facebook
+        h3.text-center ENTER YOUR MOBILE NUMBER TO START USING MOD!
+
+    .row
+      .col-md-4.col-md-offset-4
+        = form_for @user, url: update_phone_no_user_path, method: :post, class: 'form' do |f|
+          .input-group
+            span.input-group-addon.number-text.number-field.mobile-border#addonPlay1 + 60 
+            = f.text_field :phone_no, required: true, class: 'form-control signup-field', "aria-describedby": "addonPlay1"
+
+          .form-group.text-center
+            = f.submit "NEXT", class: "btn btn-next"
+
+    .row
+      p.text-center.signup-text
+        | ALREADY A MEMBER? 
+        = link_to " LOG IN >>", new_user_session_path, class: 'signup-link signup-hover'
+
+    .row.padding-terms
+      p.text-center.terms-text
+        | BY SIGNING UP YOU ACCEPT THE 
+        = link_to "TERMS AND CONDITIONS ", '#', class: "terms-link signup-hover"
+        | OF MOD.

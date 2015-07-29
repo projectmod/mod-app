@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :require_login
-  before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation, :result]
+  before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation, :user_cancellation_confirmation, :result]
 
   def create
     @booking = Booking.new(booking_params)
@@ -29,9 +29,9 @@ class BookingsController < ApplicationController
   def outlet_confirmed
     if @booking.created_at < 1.minute
       @booking.update_attribute(:outlet_confirmed, true)
-      total = @booking.outlet.credits - 1
+      total = @booking.outlet.credits - 2
       @booking.outlet.update_attribute(:credits, total)
-      # @message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_booking_url(@booking)} to cancel the booking"
+      # @message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
       # to_user_number = "+6"+ @booking.user_number
       # @client = Twilio::REST::Client.new
       # @client.messages.create(
@@ -42,13 +42,20 @@ class BookingsController < ApplicationController
     end
   end
 
+  def user_cancellation_confirmation
+  end
+
   def user_cancellation
     @booking.update_attribute(:user_cancellation, true)
-    total = @booking.outlet.credits + 1
+    total = @booking.outlet.credits + 2
     @booking.outlet.update_attribute(:credits, total)
+
+    flash[:notice] = "You've successfully cancelled your booking!"
+    redirect_to dashboard_account_path
   end
 
   def result
+    @booking = BookingDecorator.new(@booking)
   end
 
   private

@@ -28,10 +28,6 @@ class BookingDecorator < BaseDecorator
     (model.created_at.time + 15.minutes).strftime("%I.%M%p")
   end
 
-  def arrival_date
-    model.outlet.created_at.strftime("%d %B %Y").upcase
-  end
-
   def booked_on
     model.outlet.created_at.strftime("%d %B %Y").upcase
   end

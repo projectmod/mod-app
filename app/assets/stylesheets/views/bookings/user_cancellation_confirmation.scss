@@ -1,0 +1,53 @@
+.user-cancellation-confirmation {
+  background-color: #B0344E;
+  margin-bottom: 2%;
+
+  hr {
+    border-color: #F3F3F3;
+    width: 20%;
+  }
+
+  .btn-yes {
+    background-color: #E4A955;
+    color: #F3F3F3;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    border-radius: 0px;
+    padding: 10px 40px;
+    margin-bottom: 50%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-no {
+    background-color: #E4A955;
+    color: #F3F3F3;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    border-radius: 0px;
+    padding: 10px 40px;
+    margin-bottom: 50%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .cancel-padding {
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+
+  .opted-padding {
+    padding-bottom: 3%;
+  }
+
+  .sure-padding {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+}

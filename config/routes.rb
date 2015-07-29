@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :users, except: :show do
   	member do
       get :verify
+      post :update_phone_no
   		post :activate
       get :success
   	end
@@ -60,7 +61,8 @@ Rails.application.routes.draw do
   resources :bookings do
     member do
       get :outlet_confirmed
-      get :user_cancellation
+      post :user_cancellation
+      get :user_cancellation_confirmation
       get :result
       get :pending
     end

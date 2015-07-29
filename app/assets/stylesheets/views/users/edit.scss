@@ -1,20 +1,4 @@
-.edit {
-
-  ::-webkit-input-placeholder {
-    color: #B0344E !important;
-  }
-
-  :-moz-placeholder {
-    color: #B0344E !important;
-  }
-
-  ::-moz-placeholder {
-    color: #B0344E !important;
-  }
-
-  :-ms-input-placeholder {
-    color: #B0344E !important;
-  }
+.phone-no {
 
   .container-fluid {
     background-color: #F8F8F8;
@@ -23,17 +7,12 @@
     margin-bottom: 2%;
   }
 
-  hr {
-    border-color: #E4A955;
-  }
-
   h3 {
     font-family: 'brandon-light';
     font-size: 22px;
     color: #B0344E;
     letter-spacing: 2.4px;
-    padding-top: 2%;
-    padding-bottom: 1%;
+    padding-bottom: 5%;
   }
 
   .step-text:before {
@@ -50,6 +29,7 @@
   .form-control {
     border-color: #E4A955;
     background-color: #F8F8F8;
+    padding: 25px 10px;
     border-radius: 0px;
 
     &:focus {
@@ -57,23 +37,29 @@
     }
   }
 
-  .btn-register {
+  .number-field {
+    border: none;
+    background-color: #F8F8F8;
+    padding: 15px 10px;
+  }
+
+  .btn-next {
     border-radius: 0px;
     background-color: #B0344E;
     font-family: 'brandon-reg';
     font-size: 16px;
     color: #F3F3F3;
     letter-spacing: 2.4px;
-    padding: 8px 60px;
-    margin-top: 5%;
-    margin-bottom: 1%;
+    padding: 8px 75px;
+    margin-top: 10%;
+    margin-bottom: 11%;
 
     &:focus {
       outline: none;
     }
   }
 
-  .login-hover {
+  .signup-hover {
     text-decoration: none;
 
     &:hover {
@@ -81,58 +67,12 @@
     }
   }
 
-  .or-padding {
-    padding-top: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
+  .padding-terms {
+    padding-top: 6%;
+    padding-bottom: 1%;
   }
 
-  .no-side-padding {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .padding-top-1 {
-    padding-top: 1%;
-  }
-
-  .padding-right-10 {
-    padding-right: 10%;
-  }
-
-  .btn-fb {
-    border-radius: 4px;
-    background-color: #4366A6;
-    color: #F3F3F3;
-    font-family: 'brandon-reg';
-    font-size: 18px;
-
-    &:hover {
-      opacity: 0.9;
-      transition: 0.2s;
-      color: #F3F3F3;
-    }
-
-    &:focus {
-      color: #F3F3F3;
-      outline: none;
-    }
-  }
-
-  .tablet {
-    display: none;
-  }
-
-}
-
-@media all and (max-width: 992px) {
-  .edit {
-    .normal {
-      display: none;
-    }
-
-    .tablet {
-      display: block;
-    }
+  .padding-top-5 {
+    padding-top: 5%;
   }
 }

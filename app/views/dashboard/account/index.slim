@@ -32,7 +32,7 @@
                           | ARRIVAL TIME: 
                           = @current_booking.arrival_time
                       .col-sm-6.alignment.no-padding
-                          p = link_to "VIEW MY BOOKING >>", "#", class: "view-booking booking-link"
+                          p = link_to "VIEW MY BOOKING >>", result_booking_path(@current_booking), class: "view-booking booking-link"
 
           - else
             .container-fluid.text-center

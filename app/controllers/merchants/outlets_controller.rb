@@ -1,6 +1,22 @@
 class Merchants::OutletsController < Merchants::BaseController
   before_action :require_login
   before_action :set_outlet, only: [:show, :edit, :update]
+  # before_action :user_is_merchant?
+
+  def new
+    @outlet = Outlet.new
+  end
+
+  def create
+    @outlet = Outlet.new(outlet_params)
+
+    if @outlet.save
+      # flash[:notice]
+      # redirect_to success path
+    else
+      # redirect_to error path
+    end
+  end
 
   def show
   end

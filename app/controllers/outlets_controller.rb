@@ -1,10 +1,6 @@
 class OutletsController < ApplicationController
   before_action :set_outlet, only: :show
 
-  def new
-    @outlet = Outlet.new
-  end
-
   def index
     @outlets = Outlet.where(price_range: params[:price_range], availability: true)
 
@@ -16,7 +12,6 @@ class OutletsController < ApplicationController
     end
 
     @final = Outlet.within_range(params[:longitude], params[:latitude], @final)
-
   end
 
   def show

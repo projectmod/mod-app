@@ -20,10 +20,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :payment_transactions
-
-
   has_many :bookings
-
   has_one :role
   has_one :outlet
 

@@ -12,47 +12,17 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, if: :email
 
   has_many :authentications, dependent: :destroy
+  has_many :payment_transactions
+  has_many :bookings
+  has_one :outlet
+
+  accepts_nested_attributes_for :authentications
+  enum role: [:user, :merchant, :admin]
 
   mount_uploader :avatar, ImageUploader
 
-  accepts_nested_attributes_for :authentications
-
-  authenticates_with_sorcery!
-
-  has_many :payment_transactions
-  has_many :bookings
-  has_one :role
-  has_one :outlet
-
-
   def activate
     update(activated: true)
-  end
-
-  #Checking for roles
-  def admin?
-    self.roles == "admin"
-  end
-
-  def merchant?
-    self.role == "merchant"
-  end
-
-  def user?
-    self.role == "user"
-  end
-
-  #Setting roles
-  def set_as_admin
-    self.role = "admin"
-  end
-
-  def set_as_merchant
-    self.role = "merchant"
-  end
-
-  def set_as_user
-    self.role = "user"
   end
 
   def add_credits(credits)

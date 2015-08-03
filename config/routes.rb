@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   namespace :merchants do
     resource :outlets, except: :destroy
     resource :sessions, only: [:new, :create, :destroy]
+    resource :users, except: [:destroy]
   end
 
   # ==============================================================================================

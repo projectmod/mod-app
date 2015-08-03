@@ -1,6 +1,6 @@
 class OutletsController < ApplicationController
   before_action :set_outlet, only: :show
-
+  
   def index
     @outlets = Outlet.where(price_range: params[:price_range], availability: true)
 

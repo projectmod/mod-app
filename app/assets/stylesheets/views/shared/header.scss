@@ -98,22 +98,6 @@
     padding: 7px 45px 7px 15px;
   }
 
-
-  .red {
-    font-family: 'brandon-light' !important;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-
-    &:hover {
-      color: #848484 !important;
-      border-color: #848484;
-    }
-
-    &:active {
-      color: #848484 !important;
-    }
-  }
-
   .navbar-brand {
     &.mobile {
       display: none;

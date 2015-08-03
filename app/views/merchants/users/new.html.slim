@@ -1,1 +1,33 @@
-p This is the new merchant sign up page
+.merchant-new
+  .container-fluid
+    .row
+      .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
+        p.text-center.step-style STEP 1 OF 3
+
+      .col-md-6.col-md-offset-3.text-center
+        h3 CONTACT DETAILS
+        p.margin-remove.detail-text THESE DETAILS ARE SOLELY FOR MOD,
+        p.detail-text AND WILL NOT BE SHARED WITH YOUR CUSTOMERS.
+  
+    .row
+      .col-md-6.col-md-offset-3
+        = form_for @user, class: 'form' do |f|
+          = f.hidden_field :edit_type, value: "new_account"
+          .form-group
+          = f.text_field :name, required: true, placeholder: 'SALON NAME', class: 'form-control merchant-signup'
+          .form-group
+          = f.text_field :email, required: true, placeholder: 'EMAIL ADDRESS', class: 'form-control merchant-signup'
+          .form-group
+          = f.text_field :phone_no, required: true, placeholder: 'MOBILE NO. (to notify you of incoming appointments)', class: 'form-control merchant-signup'
+          .form-group
+          = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control merchant-signup'
+          .form-group
+          = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control merchant-signup'
+          .form-group.text-center
+            = f.submit "NEXT", class: "btn btn-signup"
+            
+    .row.terms-padding
+      p.text-center.terms-text
+        | BY SIGNING UP YOU ACCEPT THE 
+        = link_to "TERMS AND CONDITIONS ", '#', class: "terms-link terms-hover"
+        | OF MOD.

@@ -6,12 +6,12 @@ class Merchants::UsersController < Merchants::BaseController
   end
 
   def create
-    @user = User.new(user_params.merge({role: "merchant"})
+    @user = User.new(user_params.merge({ role: "merchant"}))
 
     if @user.save
-      # redirect_to success path
+      redirect_to edit_merchants_users_path
     else
-      # redirect_to error path
+      redirect_to new_merchants_users_path
     end
   end
 

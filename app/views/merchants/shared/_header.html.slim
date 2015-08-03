@@ -18,14 +18,14 @@
       #navbar.navbar-collapse.collapse.nav-margin.header-alignment
         ul.nav.navbar-nav.pull-left.desktop
           li
-            = link_to "I AM A SALON OWNER", new_merchants_sessions_path, class: 'underline red salon-owner'
+            = link_to "PRICING PLANS", "#", class: 'yellow-line red salon-owner'
           
         ul.nav.navbar-nav.navbar-right
           li.mobile
-            = link_to "I AM A SALON OWNER", new_merchants_sessions_path, class: 'red'
+            = link_to "PRICING PLANS", "#", class: 'red'
           li 
             = link_to "ABOUT MOD", about_path, class: "#{is_active?('static_pages#about')} alignment red"
           li 
-            = link_to "LOG IN", new_user_session_path, class: "#{is_active?('user_sessions#new')} alignment red"        
+            = link_to "LOG IN", new_merchants_sessions_path, class: "#{is_active?('merchants/sessions#new')} alignment red"        
           li 
-            = link_to "SIGN UP", new_user_path, class: "#{is_active?('users#new')} border-outline red sign-up"
+            = link_to "SIGN UP", new_outlet_path, class: "#{is_active?('outlets#new')} border-outline red sign-up"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803090627) do
+ActiveRecord::Schema.define(version: 20150803091459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20150803090627) do
     t.datetime "updated_at",                      null: false
     t.string   "type_of_service", default: [],                 array: true
     t.string   "phone_no"
-    t.boolean  "availability",    default: false
     t.string   "area"
+    t.boolean  "availability",    default: false
     t.integer  "credits",         default: 0
     t.string   "avatar",          default: [],                 array: true
     t.string   "working_hours"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150803090627) do
     t.string   "phone_no"
     t.string   "verification_code"
     t.boolean  "activated",                       default: false
-    t.string   "role"
+    t.integer  "role",                            default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

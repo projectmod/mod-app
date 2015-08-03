@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
-  accepts_nested_attributes_for :authentications
 
   validates :password, length: { minimum: 5 }, if: :password
   validates :password, confirmation: true, if: :password
@@ -16,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :payment_transactions
   has_many :bookings
   has_one :outlet
+
+  accepts_nested_attributes_for :authentications
+  enum role: [:user, :merchant, :admin]
 
   mount_uploader :avatar, ImageUploader
 

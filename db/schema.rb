@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20150803091459) do
     t.datetime "updated_at",                      null: false
     t.string   "type_of_service", default: [],                 array: true
     t.string   "phone_no"
-    t.string   "area"
     t.boolean  "availability",    default: false
+    t.string   "area"
     t.integer  "credits",         default: 0
     t.string   "avatar",          default: [],                 array: true
     t.string   "working_hours"

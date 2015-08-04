@@ -1,15 +1,18 @@
 class Merchants::UsersController < Merchants::BaseController
   before_action :set_user, only: [:edit, :show, :update]
+  # skip_before_action :is_merchant?, only: [:new, :create]
 
   def new
     @user = User.new
   end
 
   def create
-    @user = User.new(user_params.merge({ role: "merchant"}))
+    @user = User.new(user_params.merge({role: "merchant"}))
 
     if @user.save
-      redirect_to edit_merchants_users_path
+      @outlet = Outlet.create
+      @user.outlet = @outlet
+      redirect_to merchants_outlet_step_path(@outlet, "salon_info")
     else
       redirect_to new_merchants_users_path
     end

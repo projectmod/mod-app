@@ -1,7 +1,5 @@
 class Merchants::OutletsController < Merchants::BaseController
-  before_action :require_login
   before_action :set_outlet, only: [:show, :edit, :update]
-  # before_action :user_is_merchant?
 
   def new
     @outlet = Outlet.new
@@ -12,9 +10,9 @@ class Merchants::OutletsController < Merchants::BaseController
 
     if @outlet.save
       # flash[:notice]
-      # redirect_to success path
+      redirect_to edit_merchants_outlets_path(@outlet, "services")
     else
-      # redirect_to error path
+      redirect_to new_merchants_outlets_path
     end
   end
 
@@ -35,11 +33,7 @@ class Merchants::OutletsController < Merchants::BaseController
   private
 
   def set_outlet
-    Role.find(current_user.id).merchant.outlets.each do |outlet|
-      if outlet.phone_no == current_user.phone_no
-        @outlet = outlet
-      end
-    end
+    # @outlet = current_user.outlet
   end
 
   def outlet_params

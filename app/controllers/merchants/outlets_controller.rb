@@ -33,7 +33,7 @@ class Merchants::OutletsController < Merchants::BaseController
   private
 
   def set_outlet
-    # @outlet = current_user.outlet
+    @outlet = current_user.outlet
   end
 
   def outlet_params

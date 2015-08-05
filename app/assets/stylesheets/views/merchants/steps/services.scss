@@ -18,6 +18,30 @@
     margin-bottom: 5px;
   }
 
+  .mod-select {
+  	-webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+  	background-color: #848484;
+  	border: none;
+  	box-shadow: none;
+  	padding: 6px;
+  	border-radius: 50%;
+  	display: inline-block;
+  	position: relative;
+    margin-right: 10%;
+  }
+
+  .mod-select:focus, .mod-select:checked:focus {
+  	outline: none;
+  }
+
+  .mod-select:checked {
+  	background-color: #B0344E;
+  	border: none;
+  	box-shadow: none;
+  }
+
   h3 {
     font-family: 'brandon-light';
     font-size: 22px;
@@ -29,6 +53,40 @@
 
   .margin-remove {
     margin: 0;
+  }
+
+  .free-credit-border {
+    border: 1px solid #E4A955;
+    width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .service-padding {
+    padding-top: 1%;
+  }
+
+  .btn-submit {
+    border-radius: 0px;
+    background-color: #B0344E;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    color: #F3F3F3;
+    letter-spacing: 2.4px;
+    padding: 8px 60px;
+    margin-top: 15%;
+    margin-bottom: 20%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .service-border {
+    border: 1px solid #E4A955;
+    padding: 10px 20px 20px 30px;
+    width: 300px;
+    margin: 0 auto;
   }
 
 }

@@ -6,7 +6,6 @@ class Merchants::SessionsController < Merchants::BaseController
 
   def create
     @user = login(params[:merchants_sessions][:email], params[:merchants_sessions][:password])
-
     if @user.active_merchant?
       flash[:success] = "Logged in!"
       redirect_to merchants_dashboard_path

@@ -17,7 +17,6 @@ class Merchants::StepsController < ApplicationController
   private
 
   def finish_wizard_path
-    flash[:success] = "Successfully registered"
     merchants_success_path
   end
 

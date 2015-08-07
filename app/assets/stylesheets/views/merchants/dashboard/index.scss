@@ -1,0 +1,156 @@
+.merchant-dashboard {
+
+  /* Current appointment */
+
+  .alignment {
+    text-align: right;
+  }
+
+  .merchant-current-header {
+    background-color: #B0344E;
+    border-radius: 0px;
+  }
+
+  .btn-merchant {
+    color: #F0F0F0;
+    background-color: #E4A955;
+    border-color: #E4A955;
+    border-radius: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+  }
+
+  .btn-position {
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+
+  .no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .no-border {
+    border: none;
+  }
+
+  .merchant-current-padding {
+    padding-top: 1%;
+  }
+
+  .merchant-current-position {
+    padding-top: 7%;
+  }
+
+  // .padding-left-5 {
+  //   padding-left: 5%;
+  // }
+  //
+  // .margin-top-8 {
+  //   margin-top: 8%;
+  // }
+  //
+  // .booking-link {
+  //   text-decoration: none;
+  //
+  //   &:hover {
+  //     color: #848484;
+  //   }
+  //
+  //   &:focus {
+  //     color: #B0344E;
+  //   }
+  // }
+
+/* Previous appointment */
+
+  .fa.red {
+    color: #B0344E !important;
+  }
+
+  .icon-padding {
+    padding-right: 3vmax;
+  }
+
+  .panel-header {
+    background-color: #ECECEC;
+    border-radius: 0px;
+    border-color: #ECECEC;
+  }
+
+  .merchant-prev-padding {
+    padding-top: 4%;
+    padding-left: 8.5%;
+    padding-bottom: 4%;
+    line-height: 113%;
+  }
+
+  .merchant-prev-text {
+    padding-bottom: 3%;
+  }
+
+  .content-scroll {
+    height: 300px;
+    overflow-y: scroll;
+  }
+
+  .padding-bottom-1 {
+    padding-bottom: 1%;
+  }
+
+/* Log out button */
+
+  .btn-logoff {
+    color: #F0F0F0;
+    background-color: #B0344E;
+    border-color: #B0344E;
+    border-radius: 0px;
+    padding: 25px 60px;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-point {
+    color: #F0F0F0;
+    background-color: #B0344E;
+    border-color: #B0344E;
+    border-radius: 0px;
+    padding: 26px 33px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .margin-logoff {
+    margin-bottom: 30%;
+    margin-top: 10%;
+  }
+
+  .margin-point {
+    margin-bottom: 30%;
+    margin-left: 1px;
+    margin-top: 10%;
+  }
+
+}
+
+@media all and (max-width: 767px) {
+  .dashboard {
+    .mobile {
+      text-align: center;
+      padding-top: 3%;
+    }
+
+    .alignment {
+      text-align: center;
+    }
+  }
+}

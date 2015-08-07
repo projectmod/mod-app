@@ -1,0 +1,69 @@
+.merchant-services
+  .container-fluid
+    .row
+      .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
+        p.text-center.step-style STEP 3 OF 3
+
+      .col-md-8.col-md-offset-2.text-center
+        h3 SERVICES
+        p.margin-remove.detail-text SELECT THE SERVICES YOUR SALON OFFERS.
+        p.detail-text THIS HELPS MOD LINK CUSTOMERS TO THE RIGHT SALON.
+        
+    = form_for @outlet, url: wizard_path, class: 'form' do |f|
+      .row
+        .col-md-2.col-md-offset-5
+          .form-group
+          = f.check_box :type_of_service, {}, value: "BLOWOUT"
+          = f.label "BLOWOUT"
+          
+          .form-group
+          = f.check_box :type_of_service, {}, value: "HAIRCUT"
+          = f.label "HAIRCUT"
+          
+          .form-group
+          = f.check_box :type_of_service, class: ''
+          = f.label "NAILS"
+          
+          .form-group
+          = f.check_box :type_of_service, class: ''
+          = f.label "WAXING"
+          
+          .form-group
+          = f.check_box :type_of_service, class: ''
+          = f.label "FACIAL"
+          
+          .form-group
+          = f.check_box :type_of_service, class: ''
+          = f.label "MASSAGE"
+          
+          .form-group
+          = f.check_box :type_of_service, class: ''
+          = f.label "BROW & LASHES"
+          
+          .form-group        
+          = f.check_box :type_of_service, class: ''
+          = f.label "MAKEUP"
+  
+      .row
+        .col-md-8.col-md-offset-2.text-center
+          h3 BUDGET
+          p.margin-remove.detail-text SELECT THE AVERAGE BUDGET OF THE SERVICES
+          p.detail-text OFFERED AT YOUR SALON.
+          
+      .row
+        .col-md-2.col-md-offset-5
+          .form-group        
+          = f.radio_button :price_range, "RM 0 - 50"
+          = f.label "RM 0 - 50"
+          
+          .form-group        
+          = f.radio_button :price_range, "RM 50 - 100"
+          = f.label "RM 50 - 100"
+          
+          .form-group        
+          = f.radio_button :price_range, "ABOVE RM 100"
+          = f.label "ABOVE RM 100"
+          
+      .row
+        .col-md-4.col-md-offset-4.text-center
+          = f.submit "SUBMIT", class: "btn btn-primary"

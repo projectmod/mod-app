@@ -13,7 +13,11 @@ class Merchants::SessionsController < Merchants::BaseController
       @outlet = @user.outlet
       redirect_to merchants_outlet_step_path(@outlet, "salon_info")
     end
+  rescue
+    flash[:error] = "You have entered the wrong email or password. Please try again!"
+    redirect_to root_path
   end
+
 
   def destroy
   end

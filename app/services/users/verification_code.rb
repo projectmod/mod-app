@@ -6,7 +6,7 @@ class Users::VerificationCode
   end
 
   def verification_code
-    user.update(verification_code: rand(10 ** 6))
+    user.update(verification_code: generate_random_code)
 
     user.verification_code
   end
@@ -19,5 +19,14 @@ class Users::VerificationCode
       to: "+60" + user.phone_no,
       body: message.html_safe
     )
+  end
+
+  private
+
+  def generate_random_code
+    code = loop do
+      number = rand(10**6)
+      break number if number.to_s.length == 6
+    end
   end
 end

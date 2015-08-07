@@ -10,60 +10,70 @@
         p.detail-text THIS HELPS MOD LINK CUSTOMERS TO THE RIGHT SALON.
         
     = form_for @outlet, url: wizard_path, class: 'form' do |f|
-      .row
-        .col-md-2.col-md-offset-5
+      .service-padding
+        .service-border
           .form-group
-          = f.check_box :type_of_service, {}, value: "BLOWOUT"
-          = f.label "BLOWOUT"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "BLOWOUT", nil
+          = f.label :type_of_service, "BLOWOUT", class: 'service-font'
           
           .form-group
-          = f.check_box :type_of_service, {}, value: "HAIRCUT"
-          = f.label "HAIRCUT"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "HAIRCUT", nil
+          = f.label :type_of_service, "HAIRCUT", class: 'service-font'
           
           .form-group
-          = f.check_box :type_of_service, class: ''
-          = f.label "NAILS"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "NAILS", nil
+          = f.label :type_of_service, "NAILS", class: 'service-font'
           
           .form-group
-          = f.check_box :type_of_service, class: ''
-          = f.label "WAXING"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "WAXING", nil
+          = f.label :type_of_service, "WAXING", class: 'service-font'
           
           .form-group
-          = f.check_box :type_of_service, class: ''
-          = f.label "FACIAL"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "FACIAL", nil
+          = f.label :type_of_service, "FACIAL", class: 'service-font'
           
           .form-group
-          = f.check_box :type_of_service, class: ''
-          = f.label "MASSAGE"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "MASSAGE", nil
+          = f.label :type_of_service, "MASSAGE", class: 'service-font'
           
           .form-group
-          = f.check_box :type_of_service, class: ''
-          = f.label "BROW & LASHES"
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "BROW & LASHES", nil
+          = f.label :type_of_service, "BROW & LASHES", class: 'service-font'
           
           .form-group        
-          = f.check_box :type_of_service, class: ''
-          = f.label "MAKEUP"
-  
+          = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "MAKEUP", nil
+          = f.label :type_of_service, "MAKEUP", class: 'service-font'
+    
       .row
         .col-md-8.col-md-offset-2.text-center
           h3 BUDGET
           p.margin-remove.detail-text SELECT THE AVERAGE BUDGET OF THE SERVICES
           p.detail-text OFFERED AT YOUR SALON.
           
+      .service-padding
+        .service-border
+          .form-group        
+          = f.radio_button :price_range, "RM 0 - 50", class: 'mod-select'
+          = f.label :price_range, "RM 0 - 50", class: 'service-font'
+          
+          .form-group        
+          = f.radio_button :price_range, "RM 50 - 100", class: 'mod-select'
+          = f.label :price_range, "RM 50 - 100", class: 'service-font'
+          
+          .form-group        
+          = f.radio_button :price_range, "ABOVE RM 100", class: 'mod-select'
+          = f.label :price_range, "ABOVE RM 100", class: 'service-font'
+          
       .row
-        .col-md-2.col-md-offset-5
-          .form-group        
-          = f.radio_button :price_range, "RM 0 - 50"
-          = f.label "RM 0 - 50"
+        .col-md-8.col-md-offset-2.text-center
+          h3 CREDITS
+          p.margin-remove.detail-text YOU RECEIVE 10 FREE BOOKINGS, FOR
+          p.detail-text SIGNING UP AS A MOD SALON !
           
-          .form-group        
-          = f.radio_button :price_range, "RM 50 - 100"
-          = f.label "RM 50 - 100"
-          
-          .form-group        
-          = f.radio_button :price_range, "ABOVE RM 100"
-          = f.label "ABOVE RM 100"
+      .service-padding
+        .free-credit-border.text-center
+          p.free-credit-text.margin-remove 10 BOOKINGS
           
       .row
         .col-md-4.col-md-offset-4.text-center
-          = f.submit "SUBMIT", class: "btn btn-primary"
+          = f.submit "SUBMIT", class: "btn btn-submit"

@@ -59,8 +59,11 @@ Rails.application.routes.draw do
     resources :outlets, except: :destroy do
       resources :steps, only: [:show, :update]
     end
-    resource :sessions, only: [:new, :create, :destroy]
-    resource :users, except: [:destroy]
+
+    get :dashboard, to: 'dashboard#index'
+    get :success, to: 'static_pages#success'
+    resources :sessions, only: [:new, :create, :destroy]
+    resources :users, except: [:destroy]
   end
 
   # ==============================================================================================

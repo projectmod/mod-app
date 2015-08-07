@@ -10,11 +10,13 @@ class Merchants::UsersController < Merchants::BaseController
     @user = User.new(user_params.merge({role: "merchant"}))
 
     if @user.save
-      @outlet = Outlet.create
-      @user.outlet = @outlet
+      @outlet = @user.create_outlet
       redirect_to merchants_outlet_step_path(@outlet, "salon_info")
     else
-      redirect_to new_merchants_users_path
+      @user.errors.full_messages.each do |message|
+        flash[:alert] = message
+      end
+      redirect_to new_merchants_user_path
     end
   end
 

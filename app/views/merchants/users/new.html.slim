@@ -13,15 +13,17 @@
       .col-md-6.col-md-offset-3
         = form_for [:merchants, @user], class: 'form' do |f|
           .form-group
-          = f.text_field :name, required: true, placeholder: 'SALON NAME', class: 'form-control merchant-signup'
+            = f.text_field :name, required: true, placeholder: 'SALON NAME', class: 'form-control merchant-signup'
           .form-group
-          = f.text_field :email, required: true, placeholder: 'EMAIL ADDRESS', class: 'form-control merchant-signup'
+            = f.text_field :email, required: true, placeholder: 'EMAIL ADDRESS', class: 'form-control merchant-signup'
           .form-group
-          = f.text_field :phone_no, required: true, placeholder: 'MOBILE NO.', class: 'form-control merchant-signup'
+            .input-group
+              span.input-group-addon.merchant-background.merchant-signup#addonPlay1 +60
+              = f.text_field :phone_no, required: true, placeholder: 'MOBILE NO.', class: 'form-control merchant-signup', "aria-describedby": "addonPlay1"
           .form-group
-          = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control merchant-signup'
+            = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control merchant-signup'
           .form-group
-          = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control merchant-signup'
+            = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control merchant-signup'
           .form-group.text-center
             = f.submit "NEXT", class: "btn btn-signup"
             

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Static Pages
   # ==============================================================================================
   root 'static_pages#landing'
-  get 'about', to: 'static_pages#about'
+  get :about, to: 'static_pages#about'
 
   # ==============================================================================================
   # Rails Admin
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :dashboard do
-    get 'account', to: 'account#index'
+    get :account, to: 'account#index'
   end
 
   resources :user_sessions
@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   # ==============================================================================================
   # User Sessions/Login/Logout
   # ==============================================================================================
-  get 'login', to: 'user_sessions#new', as: :login
-  match 'logout', to: 'user_sessions#destroy', via: [:get, :delete]
+  get :login, to: 'user_sessions#new'
+  match :logout, to: 'user_sessions#destroy', via: [:get, :delete]
 
 
   # ==============================================================================================
@@ -83,6 +83,6 @@ Rails.application.routes.draw do
   # Payment
   # ==============================================================================================
   resources :payment_transactions, only: [:new, :create]
-  get 'success', to: 'payment_transactions#success'
+  get :success, to: 'payment_transactions#success'
 
 end

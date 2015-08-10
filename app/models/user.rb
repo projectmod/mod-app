@@ -9,8 +9,9 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 5 }, if: :password
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
-  validates :email, uniqueness: true, if: :email
-
+  validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: [:create, :update] }
+  validates :phone_no, uniqueness: true
+  
   has_many :authentications, dependent: :destroy
   has_many :payment_transactions
   has_many :bookings

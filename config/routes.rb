@@ -11,13 +11,15 @@ Rails.application.routes.draw do
   # ==============================================================================================
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
 
+  # ==============================================================================================
+  # Password Reset
+  # ==============================================================================================  
+  resources :password_resets, only: [:create, :edit, :update]
 
   # ==============================================================================================
-  # Resources
+  # Users
   # ==============================================================================================
-  resources :password_resets
-
-  resources :users, except: :show do
+  resources :users, except: [:index,:show, :destroy] do
   	member do
       get :verify
       post :update_phone_no
@@ -30,14 +32,12 @@ Rails.application.routes.draw do
     get :account, to: 'account#index'
   end
 
-  resources :user_sessions
-
   # ==============================================================================================
   # User Sessions/Login/Logout
   # ==============================================================================================
+  resources :user_sessions, only: :create
   get :login, to: 'user_sessions#new'
   match :logout, to: 'user_sessions#destroy', via: [:get, :delete]
-
 
   # ==============================================================================================
   # Sorcery/Omniauth
@@ -63,7 +63,7 @@ Rails.application.routes.draw do
     get :dashboard, to: 'dashboard#index'
     get :success, to: 'static_pages#success'
     resources :sessions, only: [:new, :create, :destroy]
-    resources :users, except: [:destroy]
+    resources :users, except: [:index, :show, :destroy]
   end
 
   # ==============================================================================================

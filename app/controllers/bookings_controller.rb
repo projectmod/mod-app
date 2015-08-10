@@ -1,25 +1,24 @@
 class BookingsController < ApplicationController
   before_action :require_login
-  before_action :set_booking, only: [:pending, :outlet_confirmed, :user_cancellation, :user_cancellation_confirmation, :result]
+  before_action :set_booking, except: :create
 
   def create
     @booking = Booking.new(booking_params)
-    if @booking.outlet.availability == true
-      if @booking.save
-        # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
-        # to_outlet_number = "+6"+params[:booking][:outlet_number]
-        # @client = Twilio::REST::Client.new
-        # @client.messages.create(
-        #   from: '+18885809742',
-        #   to: to_outlet_number,
-        #   body: @message.html_safe
-        # )
-        redirect_to pending_booking_path(@booking)
-      else
-        redirect_to :back, notice: "Booking unsuccessful, please try again"
-      end
+
+    if @booking.outlet.availability == true && @booking.save
+      # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+      # to_outlet_number = "+6"+params[:booking][:outlet_number]
+      # @client = Twilio::REST::Client.new
+      # @client.messages.create(
+      #   from: '+18885809742',
+      #   to: to_outlet_number,
+      #   body: @message.html_safe
+      # )
+      redirect_to pending_booking_path(@booking)
     else
-      redirect_to :back, notice: "Booking unsuccessful, merchant is not available"
+
+      flash[:notice] = "Booking unsuccessful, merchant is not available"
+      redirect_to :back
     end
   end
 
@@ -28,9 +27,8 @@ class BookingsController < ApplicationController
 
   def outlet_confirmed
     if @booking.created_at < 1.minute
-      @booking.update_attribute(:outlet_confirmed, true)
-      total = @booking.outlet.credits - 2
-      @booking.outlet.update_attribute(:credits, total)
+      @booking.update(outlet_confirmed: true)
+      @booking.outlet.update(credits: @booking.outlet.credits - 2)
       # @message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
       # to_user_number = "+6"+ @booking.user_number
       # @client = Twilio::REST::Client.new

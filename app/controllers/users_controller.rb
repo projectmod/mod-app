@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
 			flash[:error] = compiled_message
 		end
-		
+
 		redirect_to dashboard_account_path
 	end
 
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 		# code; compare it with db, if match activate user!
 		if activated
 			return redirect_to outlet_path(outlet) if outlet
-			
+
 			redirect_to success_user_path(@user)
 		else
 			redirect_to root_path

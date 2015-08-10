@@ -3,17 +3,21 @@
     .col-md-8.col-md-offset-2
       .panel.panel-default.no-border
         .panel-heading.merchant-current-header
-          h3.panel-title.current-panel-title CURRENT APPOINTMENT
+          h3.panel-title.current-panel-title CURRENT APPOINTMENTS
 
         .panel-body.merchant-current-body
           .content-scroll
 
-            - if @current_bookings
+            - if @current_bookings.present?
               .container-fluid
-                - @current_bookings.each do |booking|
+                - @current_bookings.each_with_index do |booking, i|
                   .row
                     .col-sm-9.padding-left-5
                       .container-fluid.no-padding
+                        - if i != 0
+                          .row
+                            .col-md-2.no-padding
+                              hr
                         .row
                           p.merchant-current-name = booking.customer_name
                           
@@ -28,8 +32,6 @@
                             p.current-appt-code.code-padding
                               | CODE : 
                               span.code-text = booking.confirmation_code
-
-                        
 
             - else
               .container-fluid.text-center

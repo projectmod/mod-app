@@ -2,39 +2,9 @@ class UsersController < ApplicationController
 	skip_before_action :require_login, except: [:update, :destroy]
 	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_no]
 
+	# Step 1
 	def new
-		# Step 1
 		@user = User.new
-	end
-
-	def verify
-		# Step 3
-	end
-
-	def activate
-		verification_code = params[:phone][:verification_code]
-		outlet = Outlet.find_by(id: session[:prebk_outlet])
-		session[:prebk_outlet] = nil
-
-		activated = Users::Verify.new(verification_code, @user).check
-		# code; compare it with db, if match activate user!
-		if activated
-			return redirect_to outlet_path(outlet) if outlet
-			
-			redirect_to success_user_path(@user)
-		else
-			redirect_to root_path
-		end
-	end
-
-	def success
-	end
-
-	def index
-	end
-
-	def edit
-		# Step 2
 	end
 
 	def create
@@ -46,6 +16,10 @@ class UsersController < ApplicationController
 		else
 			redirect_to root_path
 		end
+	end
+
+	# Step 2
+	def edit
 	end
 
 	def update_phone_no
@@ -80,7 +54,28 @@ class UsersController < ApplicationController
 		redirect_to dashboard_account_path
 	end
 
-	def destroy
+	# Step 3
+	def verify
+	end
+
+	def activate
+		verification_code = params[:phone][:verification_code]
+		outlet = Outlet.find_by(id: session[:prebk_outlet])
+		session[:prebk_outlet] = nil
+
+		activated = Users::Verify.new(verification_code, @user).check
+		# code; compare it with db, if match activate user!
+		if activated
+			return redirect_to outlet_path(outlet) if outlet
+			
+			redirect_to success_user_path(@user)
+		else
+			redirect_to root_path
+		end
+	end
+
+	# Step 4
+	def success
 	end
 
 	private

@@ -6,6 +6,7 @@ class PaymentTransactionsController < ApplicationController
   end
 
   def create
+    # Needs refactoring
     if @payment_transaction = PaymentTransaction.create(payment_transaction_params)
       @package = Package.find(params[:payment_transaction][:package_id])
       new_params = OpenStruct.new(payment_method: params[:payment_transaction][:payment_method], 

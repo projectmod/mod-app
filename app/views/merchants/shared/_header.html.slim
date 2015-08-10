@@ -1,31 +1,4 @@
-.header
-  nav.navbar.navbar-default
-    .container-fluid
-      .navbar-header
-        button.no-borders.navbar-toggle.collapsed aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-
-        .navbar-brand.desktop
-          = link_to root_path
-            = image_tag 'MOD_logo01.png', class: "logo-size"
-
-        .navbar-brand.mobile.pull-left
-          = link_to root_path
-            = image_tag 'MOD_logo01.png', class: "logo-size"
-
-      #navbar.navbar-collapse.collapse.nav-margin.header-alignment
-        ul.nav.navbar-nav.pull-left.desktop
-          li
-            = link_to "PRICING PLANS", "#", class: 'nav-header nav-header-highlight salon-owner'
-          
-        ul.nav.navbar-nav.navbar-right
-          li.mobile
-            = link_to "PRICING PLANS", "#", class: 'nav-header-highlight'
-          li 
-            = link_to "ABOUT MOD", about_path, class: "#{is_active?('static_pages#about')} alignment nav-header-highlight"
-          li 
-            = link_to "LOG IN", new_merchants_session_path, class: "#{is_active?('merchants/sessions#new')} alignment nav-header-highlight"        
-          li 
-            = link_to "SIGN UP", new_merchants_user_path, class: "#{is_active?('outlets#new')} border-outline nav-header-highlight sign-up"
+- if current_user && current_user.try(:activated?)
+  = render partial: "merchants/shared/partials_header/header_logged_in"
+- else
+  = render partial: "merchants/shared/partials_header/header_logged_out"

@@ -1,6 +1,7 @@
 class Outlet < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
+  validates_presence_of :business_registration
 
   def self.within_range(user_lon, user_lat, outlets)
     rgeo_factory = RGeo::Geographic.spherical_factory(:srid => 4326)

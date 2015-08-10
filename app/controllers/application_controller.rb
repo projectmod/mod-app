@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   def not_authenticated
   # Make sure that we reference the route from the main app.
-  redirect_to '/login'
-end
-
+    redirect_to '/login'
+  end
 end

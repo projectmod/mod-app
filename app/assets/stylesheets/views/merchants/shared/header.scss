@@ -1,8 +1,42 @@
-.header {
+.merchant.header {
 
   .nav-header {
     border-bottom: 1px solid #E4A955;
     padding: 7px 0px 7px 0px;
+  }
+
+  .appointment-border {
+    border: 1px solid #B0344E;
+    padding: 7px;
+    margin-left: 30px;
+
+    &:hover {
+      border-color: #848484;
+    }
+  }
+
+  .btn-buy {
+    color: #F0F0F0 !important;
+    background-color: #E4A955;
+    border-color: #E4A955;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 9px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+    margin-right: 5%;
+
+    &:hover {
+      color: #E4A955 !important;
+      background-color: white;
+      border: 1px solid #E4A955;
+      transition: 0.2s;
+    }
+  }
+
+  .padding-points {
+    padding-top: 9px;
+    padding-left: 5px;
   }
 
 }

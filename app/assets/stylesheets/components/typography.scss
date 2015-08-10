@@ -50,6 +50,7 @@
   font-family: 'brandon-light' !important;
   font-size: 12px;
   letter-spacing: 1.5px;
+  color: #B0344E;
 
   &:hover {
     color: #848484 !important;
@@ -634,4 +635,20 @@
   font-size: 15px;
   letter-spacing: 2.4px;
   color: #848484;
+}
+
+// Merchant dashboard
+
+.merchant-current-name {
+  font-family: 'brandon-med';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+  color: #B0344E;
+}
+
+.merchant-time {
+  font-family: 'brandon-light';
+  color: #B0344E;
+  font-size: 14px;
+  letter-spacing: 2.4px;
 }

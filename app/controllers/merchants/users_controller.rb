@@ -3,14 +3,16 @@ class Merchants::UsersController < Merchants::BaseController
   # skip_before_action :is_merchant?, only: [:new, :create]
 
   def new
-    @user = User.new
   end
 
   def create
+    business_registration = user_params[:business_registration]
+    params[:user].delete(:business_registration)
+
     @user = User.new(user_params.merge({role: "merchant"}))
 
     if @user.save
-      @outlet = @user.create_outlet
+      @outlet = @user.create_outlet(business_registration: business_registration)
       redirect_to merchants_outlet_step_path(@outlet, "salon_info")
     else
       @user.errors.full_messages.each do |message|
@@ -24,6 +26,8 @@ class Merchants::UsersController < Merchants::BaseController
   end
 
   def edit
+    outlet = @user.outlet
+    @outlet = OutletDecorator.new(outlet)
   end
 
   def update
@@ -36,6 +40,6 @@ class Merchants::UsersController < Merchants::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :phone_no, :password, :password_confirmation)
+    params.require(:user).permit(:email, :name, :phone_no, :password, :password_confirmation, :business_registration)
   end
 end

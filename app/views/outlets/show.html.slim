@@ -4,33 +4,7 @@
       .col-md-12
         p TAKE NOTE: YOU MUST ARRIVE AT THE SALON WITHIN 15 MINS AFTER CONFIRMATION!
   
-  #carousel-salon-info.carousel.slide data-ride="carousel"
-
-    / Indicators
-    ol.carousel-indicators
-      li.active data-target="#carousel-salon-info" data-slide-to="0"
-      li data-target="#carousel-salon-info" data-slide-to="1"
-      li data-target="#carousel-salon-info" data-slide-to="2"
-      li data-target="#carousel-salon-info" data-slide-to="3"
-      li data-target="#carousel-salon-info" data-slide-to="4"
-      li data-target="#carousel-salon-info" data-slide-to="5"
-
-    / Wrapper for slides
-    .carousel-inner role="listbox"
-      - @outlet.avatar.each_with_index do |avatar, i|
-        div class="item #{'active' if i == 1}"
-          = image_tag avatar, class: 'salon-image'
-          
-    / Controls
-    a.left.carousel-control href="#carousel-salon-info" role="button" data-slide="prev"
-      span.glyphicon.glyphicon-chevron-left aria-hidden="true"
-      span.sr-only
-        | Previous
-          
-    a.right.carousel-control href="#carousel-salon-info" role="button" data-slide="next"
-      span.glyphicon.glyphicon-chevron-right aria-hidden="true"
-      span.sr-only
-        | Next
+  = render partial: 'partials/outlet/carousel', locals: { outlet: @outlet }
 
   .container-fluid
     .row

@@ -1,4 +1,4 @@
-.header
+.user.header
   nav.navbar.navbar-default
     .container-fluid
       .navbar-header
@@ -20,10 +20,10 @@
           li.red-text.padding-top-9
             p 
               | WELCOME 
-              span.header-name= current_user.try(:name).try(:upcase)
+              span.header-name = current_user.try(:name).try(:upcase)
 
         ul.nav.navbar-nav.navbar-right
           li
-            = link_to "ABOUT MOD", about_path, class: 'alignment nav-header-highlight'
+            = link_to "ABOUT MOD", about_path, class: "#{is_active?('static_pages#about')} alignment nav-header-highlight"
           li
-            = link_to "ACCOUNT", dashboard_account_path, class: 'alignment nav-header-highlight'
+            = link_to "ACCOUNT", dashboard_account_path, class: "#{is_active?('dashboard/account#index')} alignment nav-header-highlight"

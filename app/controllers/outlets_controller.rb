@@ -2,18 +2,21 @@ class OutletsController < ApplicationController
   before_action :set_outlet, only: :show
 
   def index
-    @outlets = Outlet.where(price_range: params[:price_range], availability: true)
+    outlets = Outlet.where(price_range: params[:price_range], availability: true)
 
-    @final = []
-    @outlets.each do |outlet|
+    @outlets = []
+    outlets.each do |outlet|
       outlet.type_of_service.each do |service|
-        @final << outlet if service == params[:type_of_service]
+        @outlets << outlet if service == params[:type_of_service]
       end
     end
-    @final = Outlet.within_range(params[:longitude], params[:latitude], @final)
+
+    @outlets = Outlet.within_range(params[:longitude], params[:latitude], @outlets)
+    @outlets = OutletDecorator.wrap(@outlets)
   end
 
   def show
+    @outlet = OutletDecorator.new(@outlet)
     @booking = Booking.new
   end
 

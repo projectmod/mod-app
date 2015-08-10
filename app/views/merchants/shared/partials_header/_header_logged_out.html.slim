@@ -1,4 +1,4 @@
-.user.header
+.header
   nav.navbar.navbar-default
     .container-fluid
       .navbar-header
@@ -16,16 +16,10 @@
             = image_tag 'MOD_logo01.png', class: "logo-size"
 
       #navbar.navbar-collapse.collapse.nav-margin.header-alignment
-        ul.nav.navbar-nav.pull-left.desktop
-          li
-            = link_to "I AM A SALON OWNER", new_merchants_session_path, class: 'underline nav-header-highlight salon-owner'
-          
         ul.nav.navbar-nav.navbar-right
-          li.mobile
-            = link_to "I AM A SALON OWNER", new_merchants_session_path, class: 'nav-header-highlight'
           li 
             = link_to "ABOUT MOD", about_path, class: "#{is_active?('static_pages#about')} alignment nav-header-highlight"
           li 
-            = link_to "LOG IN", new_user_session_path, class: "#{is_active?('user_sessions#new')} alignment nav-header-highlight"        
+            = link_to "LOG IN", new_merchants_session_path, class: "#{is_active?('merchants/sessions#new')} alignment nav-header-highlight"        
           li 
-            = link_to "SIGN UP", new_user_path, class: "#{is_active?('users#new')} border-outline nav-header-highlight sign-up"
+            = link_to "SIGN UP", new_merchants_user_path, class: "#{is_active?('outlets#new')} border-outline nav-header-highlight sign-up"

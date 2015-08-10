@@ -1,117 +1,90 @@
-admin = User.find_or_create_by!(email: "admin@mod.com")
-admin.update(password: "password", password_confirmation: "password", name: "Admin", phone_no: "0126832814", role: "admin")
-admin.save!
+# Admin
+User.create(email: "admin@mod.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Admin",
+  phone_no: "0126832814",
+  role: "admin")
 
-merchant = User.find_or_create_by!(email: "merchant@mod.com")
-merchant.update(password: "password", password_confirmation: "password", name: "Merchant", phone_no: "012345678")
-merchant.save!
+# Merchant
+User.create(email: "merchant@mod.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Merchant",
+  phone_no: "012345678")
 
-user = User.find_or_create_by!(email: "user@gmail.com")
-user.update(password: "password", password_confirmation: "password", name: "Kean Seng", phone_no: "12325435")
-user.save!
+# User
+User.create(email: "user@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Kean Seng",
+  phone_no: "012345678")
 
-booking_1 = Booking.find_or_create_by!(outlet_id: 1, user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
+Booking.create(user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
+Package.create(price: 10, description: "10 for 100 credits", title: "Package 1", credits: 100)
 
-package_1 = Package.find_or_create_by!(price: 10, description: "10 for 100 credits", title: "Package 1", credits: 100)
+Outlet.create(name: "Toni and Guy",
+  type_of_service: ["BLOWOUT", "HAIRCUT", "MASSAGE"],
+  area: "Bangsar Baru",
+  address: "99, Jalan 99, 99999, K.L",
+  price_range: "RM 50 - 100",
+  state: "Kuala Lumpur",
+  latitude: 3.167439,
+  longitude: 101.612685,
+  phone_no: "0126832814",
+  availability: true,
+  working_hours: "Monday - Friday")
 
-user.update(password: "password", password_confirmation: "password", name: "Kean Seng")
-user.save!
+Outlet.create(name: "A Cut Above",
+  type_of_service: ["BLOWOUT"],
+  area: "Bangsar Baru",
+  address: "99, Jalan 99, 99999, K.L",
+  price_range: "RM 50 - 100",
+  state: "Selangor",
+  latitude: 3.167439,
+  longitude: 101.612685,
+  phone_no: "124324264",
+  working_hours: "Monday - Friday",
+  availability: true)
 
-outlet_1 = Outlet.find_or_create_by!(name: "Toni and Guy")
-outlet_1.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                          "http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
-                          "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
-                          "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
-                          "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
-                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
-                type_of_service: ["BLOWOUT", "HAIRCUT", "MASSAGE"],
-                area: "Bangsar Baru",
-                address: "99, Jalan 99, 99999, K.L",
-                price_range: "RM 50 - 100",
-                state: "Kuala Lumpur",
-                latitude: 3.167439,
-                longitude: 101.612685,
-                phone_no: "0126832814",
-                availability: true,
-                working_hours: "Monday - Friday")
+Outlet.create(name: "Barber",
+  type_of_service: ["MASSAGE", "HAIRCUT"],
+  area: "Bangsar Baru",
+  address: "99, Jalan 99, 99999, K.L",
+  price_range: "RM 50 - 100",
+  state: "Cyberjaya",
+  phone_no: "543245465",
+  latitude: 3.167439,
+  longitude: 101.612685,
+  working_hours: "Monday - Friday",
+  availability: true)
 
-outlet_2 = Outlet.find_or_create_by!(name: "A Cut Above")
-outlet_2.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                          "http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
-                          "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
-                          "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
-                          "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
-                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
-                working_hours: "Monday - Friday")
+Outlet.create(name: "Rainbow Salon",
+  type_of_service: ["BLOWOUT", "HAIRCUT"],
+  area: "Hartamas",
+  address: "99, Jalan 99, 99999, K.L",
+  price_range: "RM 50 - 100",
+  state: "Kuala Lumpur",
+  latitude: 3.167439,
+  longitude: 101.612685,
+  phone_no: "0126832814",
+  working_hours: "Monday - Friday",
+  availability: true)
 
-outlet_2 = Outlet.find_or_create_by!(name: "A Cut Above")
-outlet_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: ["BLOWOUT"],
-                area: "Bangsar Baru",
-                address: "99, Jalan 99, 99999, K.L",
-                price_range: "RM 50 - 100",
-                state: "Selangor",
-                phone_no: "124324264",
-                working_hours: "Monday - Friday",
-                availability: true)
+Outlet.create(name: "Mark and Guys",
+  type_of_service: ["BLOWOUT", "HAIRCUT", "NAILS"],
+  area: "Ampang",
+  address: "99, Jalan 99, 99999, K.L",
+  price_range: "RM 50 - 100",
+  state: "Kuala Lumpur",
+  latitude: 3.167439,
+  longitude: 101.612685,
+  phone_no: "0126832814",
+  working_hours: "Monday - Friday",
+  availability: true)
 
-outlet_3 = Outlet.find_or_create_by!(name: "Barber")
-outlet_3.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                          "http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
-                          "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
-                          "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
-                          "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
-                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"])
-outlet_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: ["MASSAGE", "HAIRCUT"],
-                area: "Bangsar Baru",
-                address: "99, Jalan 99, 99999, K.L",
-                price_range: "RM 50 - 100",
-                state: "Cyberjaya",
-                phone_no: "543245465",
-                working_hours: "Monday - Friday",
-                availability: true)
-
-outlet_4 = Outlet.find_or_create_by!(name: "Rainbow Salon")
-outlet_4.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                          "http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
-                          "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
-                          "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
-                          "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
-                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
-                phone_no: "543245465")
-
-outlet_4 = Outlet.find_or_create_by!(name: "Rainbow Salon")
-outlet_4.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: ["BLOWOUT", "HAIRCUT"],
-                area: "Hartamas",
-                address: "99, Jalan 99, 99999, K.L",
-                price_range: "RM 50 - 100",
-                state: "Kuala Lumpur",
-                latitude: 3.167439,
-                longitude: 101.612685,
-                phone_no: "0126832814",
-                working_hours: "Monday - Friday",
-                availability: true)
-
-outlet_5 = Outlet.find_or_create_by!(name: "Mark and Guys")
-outlet_5.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                          "http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
-                          "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
-                          "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
-                          "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
-                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
-                availability: true)
-
-outlet_5 = Outlet.find_or_create_by!(name: "Mark and Guys")
-outlet_5.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
-                type_of_service: ["BLOWOUT", "HAIRCUT", "NAILS"],
-                area: "Ampang",
-                address: "99, Jalan 99, 99999, K.L",
-                price_range: "RM 50 - 100",
-                state: "Kuala Lumpur",
-                latitude: 3.167439,
-                longitude: 101.612685,
-                phone_no: "0126832814",
-                working_hours: "Monday - Friday",
-                availability: true)
+Outlet.update_all(credits: 20, avatar: ["http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",
+  "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
+  "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
+  "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
+  "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"])

@@ -35,4 +35,12 @@ class BookingDecorator < BaseDecorator
   def outlet_working_hours
     model.outlet.working_hours.upcase
   end
+
+  def customer_name
+    model.user.name.upcase
+  end
+
+  def booking_time
+    model.created_at.time.strftime("%I.%M%p")
+  end
 end

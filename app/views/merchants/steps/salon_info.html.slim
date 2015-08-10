@@ -21,6 +21,6 @@
           .form-group
           = f.text_field :phone_no, required: true, placeholder: 'SALON CONTACT NO.', class: 'form-control merchant-signup'
           .form-group
-          = f.text_area :working_hours, required: true, placeholder: 'WORKING HOURS', class: 'form-control merchant-signup'
+          = f.text_area :working_hours, required: true, placeholder: '', rows: 5, class: 'form-control merchant-signup', id: 'working-hour-input'
           .form-group.text-center
             = f.submit "NEXT", class: "btn btn-outlet"

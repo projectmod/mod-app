@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
   validates :email, uniqueness: true, if: :email
+  validates_numericality_of :phone_no, only_integer: true, message: "is not valid! Please enter only 0 to 9 digits for your phone number."
 
   has_many :authentications, dependent: :destroy
   has_many :payment_transactions

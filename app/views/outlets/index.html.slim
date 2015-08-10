@@ -4,15 +4,15 @@
       .col-md-8.col-md-offset-2
         .row
           .col-md-12
-            p.found-text WE FOUND #{pluralize(@final.count, 'SALON').upcase} NEAR YOU!
+            p.found-text WE FOUND #{pluralize(@outlets.count, 'SALON').upcase} NEAR YOU!
             
         .row
-          - @final.each do |outlet|
+          - @outlets.each do |outlet|
             .col-md-6
               .thumbnail
                 .thumbnail-size
                   = link_to outlet_path(outlet)
-                    = image_tag outlet.avatar.first, class: 'image-size'
+                    = image_tag outlet.images.first, class: 'image-size'
                   .caption.text-center
                     p.list-name = outlet.name.upcase
                     p.list-area = outlet.area.upcase

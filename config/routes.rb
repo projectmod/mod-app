@@ -56,9 +56,14 @@ Rails.application.routes.draw do
   # ==============================================================================================
 
   namespace :merchants do
-    resource :outlets, except: :destroy
-    resource :sessions, only: [:new, :create, :destroy]
-    resource :users, except: [:destroy]
+    resources :outlets, except: :destroy do
+      resources :steps, only: [:show, :update]
+    end
+
+    get :dashboard, to: 'dashboard#index'
+    get :success, to: 'static_pages#success'
+    resources :sessions, only: [:new, :create, :destroy]
+    resources :users, except: [:destroy]
   end
 
   # ==============================================================================================

@@ -5,6 +5,7 @@
         .row
           .col-md-12
             p.found-text WE FOUND #{pluralize(@final.count, 'SALON').upcase} NEAR YOU!
+            
         .row
           - @final.each do |outlet|
             .col-md-6

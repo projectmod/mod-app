@@ -14,6 +14,9 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sprockets-rails', '>= 2.1.4'
 gem 'slim-rails'
 
+# Nested Forms
+gem 'wicked'
+
 # Server and database stacks
 gem 'pg'
 gem 'puma'

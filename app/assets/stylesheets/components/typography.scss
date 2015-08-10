@@ -353,6 +353,7 @@
     border-bottom: 1px solid #F3F3F3;
     padding-bottom: 0px;
     border-color: #848484;
+    text-decoration: none;
   }
 }
 
@@ -596,4 +597,41 @@
   font-size: 18px;
   color: #F3F3F3;
   letter-spacing: 2.4px;
+}
+
+// Merchant sign up
+
+.step-style {
+  font-family: 'brandon-thin';
+  font-size: 11px;
+  color: #E4A955;
+  letter-spacing: 2.4px;
+}
+
+.detail-text {
+  font-family: 'brandon-light';
+  font-size: 13px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+.merchant-signup {
+  font-family: 'brandon-light';
+  font-size: 14px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.free-credit-text {
+  font-family: 'brandon-light';
+  font-size: 17px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.service-font {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  letter-spacing: 2.4px;
+  color: #848484;
 }

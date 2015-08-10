@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
     update(activated: true)
   end
 
+  def active_merchant?
+    activated? && outlet.present?
+  end
+
   def add_credits(credits)
     if credits > 0
       self.credits += credits

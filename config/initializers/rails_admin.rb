@@ -46,11 +46,11 @@ RailsAdmin.config do |config|
     show_in_app
 
     # Custom Actions
-    set_activated do
+    activate_user do
       only ['User']
     end
 
-    set_deactivated do
+    deactivate_user do
       only ['User']
     end
 

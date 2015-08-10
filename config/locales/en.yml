@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+
+en:
+  admin:
+    actions:
+      activate_user:
+        menu: 'Impersonate'
+        title: 'Impersonating user...'
+        breadcrumb: 'Impersonation'

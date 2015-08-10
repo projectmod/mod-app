@@ -5,7 +5,7 @@ module RailsAdmin
   module Config
     module Actions
       
-      class SetActivated < RailsAdmin::Config::Actions::Base
+      class ActivateUser < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
 
         register_instance_option :visible? do
@@ -30,7 +30,7 @@ module RailsAdmin
         end
       end
 
-      class SetDeactivated < RailsAdmin::Config::Actions::Base
+      class DeactivateUser < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
 
         register_instance_option :visible? do

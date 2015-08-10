@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 	def create
 		user = User.new(user_params)
 
+		binding.pry
 		if user.save
 			auto_login(user, should_remember=false)
 			redirect_to edit_user_path(user)

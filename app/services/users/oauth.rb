@@ -10,9 +10,7 @@ module Users
 
     def register
       new_user = User.create(name: profile.name, email: profile.email, remote_avatar_url: profile.avatar)
-      new_user.authentications.build(provider: provider, uid: profile.uid, token: access_token).save
-
-      new_user
+      new_user.authentications.create(provider: provider, uid: profile.uid, token: access_token)
     end
 
     private

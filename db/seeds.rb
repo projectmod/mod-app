@@ -88,3 +88,4 @@ Outlet.update_all(credits: 20, avatar: ["http://www.aquasalonnewportbeach.com/im
   "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
   "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
   "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"])
+

@@ -1,4 +1,5 @@
 RailsAdmin.config do |config|
+  require Rails.root.join('lib', 'rails_admin_activate_merchant.rb')
 
   ### Popular gems integration
 
@@ -17,6 +18,22 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
+  config.excluded_models = ['Authentication']
+
+  # Set local timezone
+  module Fields
+    module Types
+      class Datetime < RailsAdmin::Config::Fields::Base
+        def value
+          value_in_default_time_zone = bindings[:object].send(name)
+          return nil if value_in_default_time_zone.nil?
+          pacific_time_zone = ActiveSupport::TimeZone.new('Asia/Kuala_Lumpur')
+          value_in_default_time_zone.in_time_zone(pacific_time_zone)
+        end
+      end
+    end
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -27,6 +44,15 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+
+    # Custom Actions
+    activate_user do
+      only ['User']
+    end
+
+    deactivate_user do
+      only ['User']
+    end
 
     ## With an audit adapter, you can add:
     # history_index

@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin:
+    actions:
+      activate_user:
+        menu: 'Activate'
+        title: 'Activating user...'
+        breadcrumb: 'Activation'
+
+      deactivate_user:
+        menu: 'Deactivate'
+        title: 'Deactivating user...'
+        breadcrumb: 'Deactivation'

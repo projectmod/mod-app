@@ -4,20 +4,22 @@ Rails.application.routes.draw do
   # Static Pages
   # ==============================================================================================
   root 'static_pages#landing'
-  get 'about', to: 'static_pages#about'
+  get :about, to: 'static_pages#about'
 
   # ==============================================================================================
   # Rails Admin
   # ==============================================================================================
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
 
+  # ==============================================================================================
+  # Password Reset
+  # ==============================================================================================  
+  resources :password_resets, only: [:create, :edit, :update]
 
   # ==============================================================================================
-  # Resources
+  # Users
   # ==============================================================================================
-  resources :password_resets
-
-  resources :users, except: :show do
+  resources :users, except: [:index,:show, :destroy] do
   	member do
       get :verify
       post :update_phone_no
@@ -27,17 +29,15 @@ Rails.application.routes.draw do
   end
 
   namespace :dashboard do
-    get 'account', to: 'account#index'
+    get :account, to: 'account#index'
   end
-
-  resources :user_sessions
 
   # ==============================================================================================
   # User Sessions/Login/Logout
   # ==============================================================================================
-  get 'login', to: 'user_sessions#new', as: :login
-  match 'logout', to: 'user_sessions#destroy', via: [:get, :delete]
-
+  resources :user_sessions, only: :create
+  get :login, to: 'user_sessions#new'
+  match :logout, to: 'user_sessions#destroy', via: [:get, :delete]
 
   # ==============================================================================================
   # Sorcery/Omniauth
@@ -63,7 +63,7 @@ Rails.application.routes.draw do
     get :dashboard, to: 'dashboard#index'
     get :success, to: 'static_pages#success'
     resources :sessions, only: [:new, :create, :destroy]
-    resources :users, except: [:destroy]
+    resources :users, except: [:index, :show, :destroy]
   end
 
   # ==============================================================================================
@@ -88,6 +88,6 @@ Rails.application.routes.draw do
   # Payment
   # ==============================================================================================
   resources :payment_transactions, only: [:new, :create]
-  get 'success', to: 'payment_transactions#success'
+  get :success, to: 'payment_transactions#success'
 
 end

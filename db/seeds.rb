@@ -42,8 +42,7 @@ outlet_2.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/a
                           "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
                           "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
                           "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
-                opening_days: "Monday - Friday",
-                opening_hours: "9am - 6pm")
+                working_hours: "Monday - Friday")
 
 outlet_2 = Outlet.find_or_create_by!(name: "A Cut Above")
 outlet_2.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
@@ -62,7 +61,7 @@ outlet_3.update(avatar: ["http://media-cdn.tripadvisor.com/media/photo-s/05/26/a
                           "http://allergicliving.com/wp-content/uploads/2012/02/Nut-Allergy-Nail-Salon-1.jpg",
                           "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
                           "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
-                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"],
+                          "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"])
 outlet_3.update(avatar: "http://media-cdn.tripadvisor.com/media/photo-s/05/26/ac/f4/tgi-fridays.jpg",
                 type_of_service: ["MASSAGE", "HAIRCUT"],
                 area: "Bangsar Baru",

@@ -10,7 +10,6 @@ class OutletsController < ApplicationController
         @final << outlet if service == params[:type_of_service]
       end
     end
-
     @final = Outlet.within_range(params[:longitude], params[:latitude], @final)
   end
 

@@ -7,25 +7,26 @@
 
         .panel-body.merchant-current-position
 
-          - if @current_booking.present?
+          - if @current_bookings
             .container-fluid
-              .row
-                .col-sm-9.padding-left-5
-                  .container-fluid.no-padding
-                    .row
-                      p = @booking.user_id
-                      
-                    .row.margin-top-8
-                      .col-sm-6.col-sm-offset-6
-                        p.current-appt-code.alignment 
-                          | CODE: 
-                          span.code-text = @booking.confirmation_code
+              - @current_bookings.each do |booking|
+                .row
+                  .col-sm-9.padding-left-5
+                    .container-fluid.no-padding
+                      .row
+                        p = booking.user.name
+                        
+                      .row.margin-top-8
+                        .col-sm-6.col-sm-offset-6
+                          p.current-appt-code.alignment 
+                            | CODE: 
+                            span.code-text = booking.confirmation_code
 
-                    .row
-                      .col-sm-6.no-padding
-                        p.current-appt-text
-                          | DUE TO ARRIVE AT 
-                          = (@booking.created_at.time + 15.minutes).strftime("%I.%M%p")
+                      .row
+                        .col-sm-6.no-padding
+                          p.current-appt-text
+                            | DUE TO ARRIVE AT 
+                            = (booking.created_at.time + 15.minutes).strftime("%I.%M%p")
 
           - else
             .container-fluid.text-center

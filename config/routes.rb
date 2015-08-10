@@ -38,7 +38,6 @@ Rails.application.routes.draw do
   get :login, to: 'user_sessions#new'
   match :logout, to: 'user_sessions#destroy', via: [:get, :delete]
 
-
   # ==============================================================================================
   # Sorcery/Omniauth
   # ==============================================================================================

@@ -3,7 +3,7 @@ class Outlet < ActiveRecord::Base
   has_many :bookings
 
   def self.within_range(user_lon, user_lat, outlets)
-    rgeo_factory = RGeo::Geographic.spherical_factory(:srid => 4326)
+    rgeo_factory = RGeo::Geographic.spherical_factory(srid: 4326)
     # "101.123123 3.123123" in lon lat format
     user_point = rgeo_factory.point(user_lon, user_lat)
     # distance in meters

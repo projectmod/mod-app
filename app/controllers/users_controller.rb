@@ -10,11 +10,18 @@ class UsersController < ApplicationController
 	def create
 		user = User.new(user_params)
 
-		binding.pry
 		if user.save
 			auto_login(user, should_remember=false)
+
+			flash[:notice] = "All registered! Now we'll need you to key in your phone number to verify your account."
 			redirect_to edit_user_path(user)
 		else
+			compiled_message = ""
+			user.errors.full_messages.each do |message|
+				compiled_message = compiled_message + " " + message
+			end
+
+			flash[:error] = compiled_message
 			redirect_to root_path
 		end
 	end

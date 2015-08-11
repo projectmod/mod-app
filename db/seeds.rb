@@ -23,7 +23,9 @@ User.create(email: "user@gmail.com",
   phone_no: "012345678")
 
 Booking.create(user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
-Package.create(price: 10, description: "10 for 100 credits", title: "Package 1", credits: 100)
+Package.create(price: 20.00, description: "10 BOOKINGS", title: "RM 20", credits: 20)
+Package.create(price: 50.00, description: "25 BOOKINGS", title: "RM 50", credits: 50)
+Package.create(price: 100.00, description: "50 + 5 FREE BOOKINGS", title: "RM 100", credits: 110)
 
 merchant.create_outlet(name: "Toni and Guy",
   type_of_service: ["BLOWOUT", "HAIRCUT", "MASSAGE"],
@@ -95,4 +97,3 @@ Outlet.update_all(credits: 20, avatar: ["http://www.aquasalonnewportbeach.com/im
   "http://www.dudleycourt-beautysalon.co.uk/Images/dudleycourt-background1.jpg",
   "http://au.businessdirectoryformobile.com/blog/wp-content/uploads/2015/02/Hair-Beauty-Salon-Adelaide.jpg",
   "http://www.lafemmehairandbeautysalon.co.uk/wp-content/gallery/gallery1/salon5.jpg"])
-

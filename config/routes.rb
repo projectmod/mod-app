@@ -66,12 +66,12 @@ Rails.application.routes.draw do
     end
 
     # Payment
-    resources :payment_transactions, only: :create
-    resources :payments, only: [:new, :create] do
+    resources :payment_transactions, only: :create do
       member do
-        get :success, to: 'payment#success'
+        get :success, to: 'payment_transactions#success'
       end
     end
+    resources :pricings, only: [:index, :create]
 
     # Dashboard
     get :dashboard, to: 'dashboard#index'

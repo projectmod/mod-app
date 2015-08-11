@@ -7,10 +7,12 @@ User.create(email: "admin@mod.com",
   role: "admin")
 
 # Merchant
-User.create(email: "merchant@mod.com",
+merchant = User.create(email: "merchant@mod.com",
   password: "password",
   password_confirmation: "password",
   name: "Merchant",
+  role: "merchant",
+  activated: true,
   phone_no: "012345678")
 
 # User
@@ -23,7 +25,7 @@ User.create(email: "user@gmail.com",
 Booking.create(user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
 Package.create(price: 10, description: "10 for 100 credits", title: "Package 1", credits: 100)
 
-Outlet.create(name: "Toni and Guy",
+merchant.create_outlet(name: "Toni and Guy",
   type_of_service: ["BLOWOUT", "HAIRCUT", "MASSAGE"],
   area: "Bangsar Baru",
   address: "99, Jalan 99, 99999, K.L",
@@ -33,6 +35,7 @@ Outlet.create(name: "Toni and Guy",
   longitude: 101.612685,
   phone_no: "0126832814",
   availability: true,
+  business_registration: "test12",
   working_hours: "Monday - Friday")
 
 Outlet.create(name: "A Cut Above",
@@ -45,6 +48,7 @@ Outlet.create(name: "A Cut Above",
   longitude: 101.612685,
   phone_no: "124324264",
   working_hours: "Monday - Friday",
+  business_registration: "test123",
   availability: true)
 
 Outlet.create(name: "Barber",
@@ -57,6 +61,7 @@ Outlet.create(name: "Barber",
   latitude: 3.167439,
   longitude: 101.612685,
   working_hours: "Monday - Friday",
+  business_registration: "test1234",
   availability: true)
 
 Outlet.create(name: "Rainbow Salon",
@@ -69,6 +74,7 @@ Outlet.create(name: "Rainbow Salon",
   longitude: 101.612685,
   phone_no: "0126832814",
   working_hours: "Monday - Friday",
+  business_registration: "test12345",
   availability: true)
 
 Outlet.create(name: "Mark and Guys",
@@ -81,6 +87,7 @@ Outlet.create(name: "Mark and Guys",
   longitude: 101.612685,
   phone_no: "0126832814",
   working_hours: "Monday - Friday",
+  business_registration: "test12345",
   availability: true)
 
 Outlet.update_all(credits: 20, avatar: ["http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg",

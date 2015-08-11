@@ -1,0 +1,9 @@
+.container
+  = package.title
+  = package.description
+
+  = form_for :payment_transaction, url: merchants_payments_path, method: :post do |f|
+    = f.hidden_field :price, value: package.price
+    = f.hidden_field :package_id, value: package.id
+    = f.select :payment_method, payment_methods.map { |k,v| [k,v] }, prompt: 'What card?', required: true, placeholder: 'Card'
+    = f.submit 'Submit', class: "btn btn primary"

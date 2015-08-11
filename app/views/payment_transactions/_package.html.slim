@@ -1,9 +1,0 @@
-.container
-  = package.title
-  = package.description
-
-  = form_for payment_transaction do |f|
-    = f.hidden_field :price, value: package.price
-    = f.hidden_field :package_id, value: package.id
-    = f.select :payment_method,%w{DebitCard CreditCard}, :prompt => 'What card?', required: true, placeholder: 'Card'
-    = f.submit 'Submit', class: "btn btn primary"

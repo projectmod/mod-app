@@ -56,16 +56,30 @@ Rails.application.routes.draw do
   # ==============================================================================================
 
   namespace :merchants do
+    resources :users, except: [:index, :show, :destroy]
+
+    # Merchant Outlets
     resources :outlets, except: :destroy do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]
     end
 
+    # Payment
+    resources :payment_transactions, only: :create
+    resources :payments, only: [:new, :create] do
+      member do
+        get :success, to: 'payment#success'
+      end
+    end
+
+    # Dashboard
     get :dashboard, to: 'dashboard#index'
     get :success, to: 'static_pages#success'
+
+    # Merchant Sessions
     resources :sessions, only: [:new, :create, :destroy]
-    resources :users, except: [:index, :show, :destroy]
+
   end
 
   # ==============================================================================================
@@ -85,11 +99,5 @@ Rails.application.routes.draw do
   # Resque
   # ==============================================================================================
   mount Resque::Server, at: "/resque"
-
-  # ==============================================================================================
-  # Payment
-  # ==============================================================================================
-  resources :payment_transactions, only: [:new, :create]
-  get :success, to: 'payment_transactions#success'
 
 end

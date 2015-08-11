@@ -1,6 +1,6 @@
-class Merchants::PaymentsController < Merchants::BaseController
+class Merchants::PricingsController < Merchants::BaseController
 
-  def new
+  def index
     @packages = Package.all
     @payment_transaction = PaymentTransaction.new
     @payment_methods = Payment::Methods.new.fetch

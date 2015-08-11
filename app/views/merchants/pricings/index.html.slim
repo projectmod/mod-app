@@ -1,0 +1,33 @@
+.pricing
+  .pricing-container
+    .container-fluid
+      .row
+        .col-md-8.col-md-offset-2.text-center
+          p.plan-text.plan-padding FIND A PLAN THAT'S RIGHT FOR YOU
+  
+  .package-container
+    .container-fluid
+      .row
+        .col-md-8.col-md-offset-2
+          - @packages.each do |package|
+            .col-md-4.col-md-offset-0.col-sm-6.col-sm-offset-3.text-center
+              = form_for :payment_transaction, url: merchants_pricings_path, method: :post do |f|
+                .col-sm-12.pricing-card.no-padding
+                  
+                  p.package-title.title-padding.text-center
+                    = package.title
+                  hr.text-center
+                  
+                  p.package-description.description-padding.text-center 
+                    = package.description
+                  = f.hidden_field :price, value: package.price
+                  = f.hidden_field :package_id, value: package.id
+                  = f.hidden_field :payment_method, value: 'CC'
+                  = f.submit 'BUY NOW', class: "btn btn-lg btn-buy btn-block"
+
+  // Media Queries Detector
+  span#mq-detector
+    span.visible-xs
+    span.visible-sm
+    span.visible-md
+    span.visible-lg

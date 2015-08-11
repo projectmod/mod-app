@@ -18,7 +18,7 @@
       #navbar.navbar-collapse.collapse.nav-margin.header-alignment
         ul.nav.navbar-nav.pull-left.desktop
           li
-            = link_to "BUY", '#', class: "btn btn-buy"
+            = link_to "BUY", merchants_pricings_path, class: "btn btn-buy"
           li.red-text.padding-points
             p 
               | REMAINING, 
@@ -32,7 +32,7 @@
               span.header-name BLA BLA BOOKINGS
               / span.header-name = current_user.try(:name).try(:upcase)
           li.red-text.mobile
-            = link_to "BUY CREDITS", '#', class: "nav-header-highlight"
+            = link_to "BUY CREDITS", merchants_pricings_path, class: "nav-header-highlight"
           li
             = link_to "PROFILE", merchants_outlet_customize_path(current_user.outlet), class: "#{is_active?('merchants/users#edit')} alignment nav-header-highlight"
           li

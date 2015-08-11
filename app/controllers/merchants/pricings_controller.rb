@@ -3,7 +3,6 @@ class Merchants::PricingsController < Merchants::BaseController
   def index
     @packages = Package.all
     @payment_transaction = PaymentTransaction.new
-    @payment_methods = Payment::Methods.new.fetch
   end
 
   def create

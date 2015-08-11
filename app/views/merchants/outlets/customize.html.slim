@@ -1,0 +1,101 @@
+.merchant-profile
+  = render partial: 'partials/outlet/carousel', locals: { outlet: @outlet }
+        
+  .container-fluid
+    .row
+      .col-md-6.col-md-offset-3.text-center
+        = link_to "EDIT SALON PHOTOS", merchants_outlet_photos_path(current_user.outlet), class: 'btn btn-photos'
+  
+    .row
+      .col-md-8.col-md-offset-2
+        .row
+          .col-md-12
+            p.merchant-name.settings.text-center = @outlet.name.upcase
+            p.salon-area.settings.text-center.area-spacing = @outlet.area.upcase
+            
+  .container-fluid
+    .row
+      .col-md-8.col-md-offset-2
+        .panel.panel-default.no-border
+          .panel-heading.panel-header.no-border
+            h3.panel-title.prev-panel-title
+              | PROFILE DETAILS
+          
+          .panel-body.edit-body
+            = form_for @outlet, class: 'form' do |f|
+              .container-fluid
+                .row.form-group
+                  .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
+                    = f.label :name, 'SALON NAME'
+                  .col-sm-5.no-padding
+                    = f.text_field :name, required: true, class: 'form-control edit-field'
+
+                .row.form-group
+                  .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
+                    = f.label :area, 'AREA (example, Bangsar Village 2)'
+                  .col-sm-5.no-padding
+                    = f.text_field :area, required: true, class: 'form-control edit-field'
+
+                .row.form-group
+                  .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
+                    = f.label :address, 'ADDRESS'
+                  .col-sm-5.no-padding
+                    = f.text_area :address, class: 'form-control edit-field'
+
+                .row.form-group
+                  .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
+                    = f.label :phone_no, 'CONTACT NUMBER'
+                  .col-sm-5.no-padding
+                    = f.text_field :phone_no, required: true, class: 'form-control edit-field'
+
+                .row.form-group
+                  .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
+                    = f.label :type_of_service, 'SERVICES'
+                  .col-sm-5.service-style.service-padding
+                    p.pick-style PICK THE SERVICES YOU OFFER
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "BLOWOUT", nil
+                    = f.label :type_of_service, "BLOWOUT", class: 'service-font'
+                    
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "HAIRCUT", nil
+                    = f.label :type_of_service, "HAIRCUT", class: 'service-font'
+                    
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "NAILS", nil
+                    = f.label :type_of_service, "NAILS", class: 'service-font'
+                    
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "WAXING", nil
+                    = f.label :type_of_service, "WAXING", class: 'service-font'
+                    
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "FACIAL", nil
+                    = f.label :type_of_service, "FACIAL", class: 'service-font'
+                    
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "MASSAGE", nil
+                    = f.label :type_of_service, "MASSAGE", class: 'service-font'
+                    
+                    .form-group
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "BROW & LASHES", nil
+                    = f.label :type_of_service, "BROW & LASHES", class: 'service-font'
+                    
+                    .form-group        
+                    = f.check_box :type_of_service, { class: 'mod-select', multiple: true }, "MAKEUP", nil
+                    = f.label :type_of_service, "MAKEUP", class: 'service-font'
+
+                .row.form-group
+                  .col-sm-11
+                    = f.submit "SAVE CHANGES", class: 'btn btn-profile pull-right margin-top-4'
+                    
+    .row
+      .col-md-8.col-md-offset-2
+        .col-sm-6.col-sm-offset-3.text-center
+          = link_to logout_path
+            button.btn.btn-logout.margin-logout LOGOUT
+          = link_to logout_path
+            button.btn.btn-arrow.margin-arrow
+              i.fa.fa-play.fa-lg
+
+      

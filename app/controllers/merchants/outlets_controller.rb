@@ -1,5 +1,5 @@
 class Merchants::OutletsController < Merchants::BaseController
-  before_action :set_outlet, only: [:show, :edit, :update]
+  before_action :set_outlet, only: [:show, :edit, :update, :customize, :photos]
 
   def new
     @outlet = Outlet.new
@@ -28,6 +28,14 @@ class Merchants::OutletsController < Merchants::BaseController
     else
       render :edit, notice: "Update failed. Please try again."
     end
+  end
+
+  def customize
+    @outlet = OutletDecorator.new(@outlet)
+  end
+
+  def photos
+    @outlet = OutletDecorator.new(@outlet)
   end
 
   private

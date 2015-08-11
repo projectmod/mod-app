@@ -7,6 +7,6 @@ class OutletDecorator < BaseDecorator
   end
 
   def images
-    model.avatar || ["http://www.aquasalonnewportbeach.com/img/slides/slide-bg2.jpg"]
+    model.avatar || [ "merchant_default.jpg" ]
   end
 end

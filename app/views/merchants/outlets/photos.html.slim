@@ -1,0 +1,46 @@
+.photos
+  = render partial: 'partials/outlet/carousel', locals: { outlet: @outlet }
+        
+  .container-fluid
+    .row
+      .col-md-6.col-md-offset-3.text-center
+        = link_to "EDIT SALON PROFILE", merchants_outlet_customize_path(current_user.outlet), class: 'btn btn-merchant'
+        
+    .row
+      .col-md-8.col-md-offset-2
+        .panel.panel-default.no-border
+          .panel-heading.panel-header.no-border
+            h3.panel-title.prev-panel-title
+              | SELECT PHOTOS
+          
+          .panel-body.edit-body
+            = form_for @outlet, class: 'form' do |f|
+              .container-fluid
+                .row.form-group
+                  .col-sm-6.no-padding
+                    = f.file_field :name, required: true, class: 'form-control edit-field'
+                  .col-sm-6.no-padding
+                    = f.file_field :name, required: true, class: 'form-control edit-field'
+                .row.form-group
+                  .col-sm-6.no-padding
+                    = f.file_field :name, required: true, class: 'form-control edit-field'
+                  .col-sm-6.no-padding
+                    = f.file_field :name, required: true, class: 'form-control edit-field'
+                .row.form-group
+                  .col-sm-6.no-padding
+                    = f.file_field :name, required: true, class: 'form-control edit-field'
+                  .col-sm-6.no-padding
+                    = f.file_field :name, required: true, class: 'form-control edit-field'                    
+                    
+                .row.form-group
+                  .col-sm-11
+                    = f.submit "SAVE PHOTOS", class: 'btn btn-change pull-right margin-top-4'
+                    
+    .row
+      .col-md-8.col-md-offset-2
+        .col-sm-6.col-sm-offset-3.text-center
+          = link_to logout_path
+            button.btn.btn-logout.margin-logout LOGOUT
+          = link_to logout_path
+            button.btn.btn-arrow.margin-arrow
+              i.fa.fa-play.fa-lg

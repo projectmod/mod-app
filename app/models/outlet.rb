@@ -1,6 +1,7 @@
 class Outlet < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
+  has_many :working_hours
   validates_presence_of :business_registration
 
   def self.within_range(user_lon, user_lat, outlets)

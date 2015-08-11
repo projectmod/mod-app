@@ -34,14 +34,14 @@
   font-family: 'brandon-bold';
   font-size: 4.2vmax;
   letter-spacing: 0.31px;
-  color: #000000;
+  color: white;
 }
 
 .punchline {
   font-family: 'brandon-reg';
   font-size: 4vmin;
   letter-spacing: 2px;
-  color: #000000;
+  color: white;
 }
 
 // Header
@@ -651,4 +651,21 @@
   color: #B0344E;
   font-size: 14px;
   letter-spacing: 2.4px;
+}
+
+// Merchant Profile page
+
+.merchant-name {
+  font-family: 'brandon-bold';
+  font-size: 55px;
+  color: #000000;
+  letter-spacing: 2.4px;
+  padding-top: 5%;
+}
+
+.pick-text {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  letter-spacing: 2.4px;
+  color: #848484;
 }

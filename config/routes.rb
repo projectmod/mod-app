@@ -69,6 +69,7 @@ Rails.application.routes.draw do
     resources :payment_transactions, only: :create do
       member do
         get :success, to: 'payment_transactions#success'
+        get :failure, to: 'payment_transactions#failure'
       end
     end
     resources :pricings, only: [:index, :create]

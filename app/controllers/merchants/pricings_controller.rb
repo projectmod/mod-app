@@ -17,9 +17,6 @@ class Merchants::PricingsController < Merchants::BaseController
     end
   end
 
-  def success
-  end
-
   private
 
   def payment_transaction_params

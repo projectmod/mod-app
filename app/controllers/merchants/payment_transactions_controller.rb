@@ -13,4 +13,10 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
       redirect_to merchants_pricings_path
     end
   end
+
+  def success
+  end
+
+  def failure
+  end
 end

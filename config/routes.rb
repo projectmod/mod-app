@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # ==============================================================================================
   # Password Reset
-  # ==============================================================================================  
+  # ==============================================================================================
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   # ==============================================================================================
@@ -57,6 +57,8 @@ Rails.application.routes.draw do
 
   namespace :merchants do
     resources :outlets, except: :destroy do
+      get :customize, to: 'outlets#customize'
+      get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]
     end
 

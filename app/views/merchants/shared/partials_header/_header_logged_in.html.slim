@@ -21,11 +21,19 @@
             = link_to "BUY", '#', class: "btn btn-buy"
           li.red-text.padding-points
             p 
-              | REMAINING, BLA BLA POINTS
+              | REMAINING, 
+              span.header-name BLA BLA BOOKINGS
               / span.header-name = current_user.try(:name).try(:upcase)
 
         ul.nav.navbar-nav.navbar-right
+          li.red-text.padding-bookings.mobile
+            p 
+              | REMAINING, 
+              span.header-name BLA BLA BOOKINGS
+              / span.header-name = current_user.try(:name).try(:upcase)
+          li.red-text.mobile
+            = link_to "BUY CREDITS", '#', class: "nav-header-highlight"
           li
-            = link_to "PROFILE", edit_merchants_user_path(current_user), class: "#{is_active?('merchants/users#edit')} alignment nav-header-highlight"
+            = link_to "PROFILE", merchants_outlet_customize_path(current_user.outlet), class: "#{is_active?('merchants/users#edit')} alignment nav-header-highlight"
           li
-            = link_to "APPOINTMENTS", merchants_dashboard_path, class: "#{is_active?('merchants/dashboard#index')} nav-header-highlight appointment-border appointments"
+            = link_to "APPOINTMENTS", merchants_dashboard_path, class: "#{is_active?('merchants/dashboard#index')} alignment nav-header-highlight appointment-border appointments"

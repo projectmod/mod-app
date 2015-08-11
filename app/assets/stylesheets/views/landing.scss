@@ -61,10 +61,10 @@
     height: 60vh;
     width: 100vw;
     margin-bottom: 3%;
-    background-image:image-url("landing_banner_opacity.jpg");
+    background-image:image-url("MOD_landing_banner.jpg");
     background-size:cover;
     background-repeat: no-repeat;
-    background-position: 50% 0;
+    background-position: 50% 80%;
     display: table;
     position: relative;
 
@@ -92,6 +92,11 @@
 
     &:focus {
       outline: none;
+    }
+
+    &:hover {
+      background-color: #e7b266;
+      transition: 0.3s;
     }
   }
 

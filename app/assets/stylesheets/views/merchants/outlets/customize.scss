@@ -1,0 +1,189 @@
+.merchant-profile {
+
+  .panel-header {
+    border-radius: 0px;
+  }
+
+  .salon-image {
+    width: 100%;
+  }
+
+  .carousel-inner{
+    width:100%;
+    max-height: 500px !important;
+    margin-bottom: 50px;
+  }
+
+  .carousel-indicators {
+    bottom: -50px;
+  }
+
+  .carousel-indicators li {
+  background-color: #B0344E;
+  border-color: #B0344E;
+  }
+
+  .carousel-indicators .active {
+    background-color: #E4A955;
+    border-color: #E4A955;
+  }
+
+  .btn-photos {
+    color: #F0F0F0;
+    background-color: #E4A955;
+    border-color: #E4A955;
+    border-radius: 0px;
+    padding: 10px 60px;
+    margin-top: 5%;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #e7b266;
+      transition: 0.3s;
+    }
+  }
+
+  .mod-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    background-color: #D8D8D8;
+    border: none;
+    box-shadow: none;
+    padding: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    margin-right: 10%;
+  }
+
+  .mod-select:focus, .mod-select:checked:focus {
+    outline: none;
+  }
+
+  .mod-select:checked {
+    background-color: #B0344E;
+    border: none;
+    box-shadow: none;
+  }
+
+  .form-control {
+    border-color: #E4A955;
+    background-color: white;
+    padding: 25px 10px;
+    border-radius: 0px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .service-style {
+    border: 1px solid #E4A955;
+    padding: 10px 20px 20px 30px;
+    margin: 0 auto;
+    background-color: white;
+  }
+
+  .service-padding {
+    padding-top: 1%;
+  }
+
+  .budget-margin {
+    margin-top: 1%;
+  }
+
+  .no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .padding-top-1 {
+    padding-top: 1%;
+  }
+
+  .no-border {
+    border: none;
+  }
+
+  .btn-profile {
+    color: #B0344E;
+    background-color: #FBFBFB;
+    border-color: #B0344E;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+    border-width: 1.5px;
+
+    &:hover {
+      color: #848484;
+      transition: 0.2s;
+      border-color: #848484;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .margin-top-4 {
+    margin-top: 4%;
+  }
+
+  .btn-logout {
+    color: #F0F0F0;
+    background-color: #B0344E;
+    border-color: #B0344E;
+    border-radius: 0px;
+    padding: 25px 60px;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-arrow {
+    color: #F0F0F0;
+    background-color: #B0344E;
+    border-color: #B0344E;
+    border-radius: 0px;
+    padding: 26px 33px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .margin-logout {
+    margin-bottom: 30%;
+    margin-top: 10%;
+  }
+
+  .margin-arrow {
+    margin-bottom: 30%;
+    margin-left: 1px;
+    margin-top: 10%;
+  }
+
+  .pick-style {
+    padding-top: 4%;
+    padding-bottom: 8%;
+  }
+
+  .area-spacing {
+    padding-bottom: 5%;
+  }
+
+}

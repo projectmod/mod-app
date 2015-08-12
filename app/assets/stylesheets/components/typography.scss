@@ -528,13 +528,6 @@
   color: #E4A955;
 }
 
-.success-code-text {
-  font-family: 'brandon-light';
-  font-size: 25px;
-  color: #F3F3F3;
-  letter-spacing: 2.4px;
-}
-
 .success-code {
   font-family: 'brandon-med';
   font-size: 25px;
@@ -718,5 +711,21 @@
   font-family: 'brandon-light';
   font-size: 25px;
   color: #F2F2F2;
+  letter-spacing: 2.4px;
+}
+
+// Merchant Booking Success
+
+.success-code-text {
+  font-family: 'brandon-light';
+  font-size: 25px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+.view-booking-text {
+  font-family: 'brandon-light';
+  font-size: 17px;
+  color: #848484;
   letter-spacing: 2.4px;
 }

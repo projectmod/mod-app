@@ -28,35 +28,4 @@
       .row
         p.package-text.package-padding.text-center NOT SURE WHICH PACKAGE IS RIGHT FOR YOU?
           
-        .col-md-2.col-md-offset-5.text-center
-          = link_to '#'
-            button.btn.btn-scroll
-              i.fa.fa-caret-down.fa-lg
-              
-        .col-md-2.col-md-offset-5.text-center
-          p.contact-font.contact-padding CONTACT MOD
-          
-      .row
-        .col-xs-6.col-xs-offset-6.package-line
-        
-      .row.circle-margin
-        .col-xs-12
-          .package-circle
-            .container-fluid
-              p.contact-text.circle-padding CONTACT 
-              = link_to "makeover@mod.com.my", "mailto:makeover@mod.com.my", class: "email-link-text email-hover"
-              p.email-link-text.number-padding
-                | +60 3 2457 9087
-              
-              .row.number-padding
-                .col-xs-4.col-xs-offset-4
-                  .row
-                    .col-xs-4.text-center
-                      = link_to "http://facebook.com/modmeup", class: 'fb-button-color', target: '_blank'
-                        i.fa.fa-facebook
-                    .col-xs-4.text-center
-                      = link_to "http://instagram.com/modmeup", class: 'ins-button-color', target: '_blank'
-                        i.fa.fa-instagram
-                    .col-xs-4.text-center
-                      = link_to "http://pinterest.com/modmeup", class: 'pint-button-color', target: '_blank'
-                        i.fa.fa-pinterest-p
+        = render partial: 'shared/contact_ball'

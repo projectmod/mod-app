@@ -1,0 +1,62 @@
+.admin-login {
+
+  .container-fluid {
+    background-color: #F8F8F8;
+    width: 100%;
+    padding-top: 3%;
+    margin-bottom: 2%;
+    height: 400px;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #B0344E !important;
+  }
+
+  :-moz-placeholder {
+    color: #B0344E !important;
+  }
+
+  ::-moz-placeholder {
+    color: #B0344E !important;
+  }
+
+  :-ms-input-placeholder {
+    color: #B0344E !important;
+  }
+
+  hr {
+    border-color: #E4A955;
+  }
+
+  .form-control {
+    border-radius: 0px;
+
+    &:focus {
+      border-color: #848484;
+      box-shadow: none;
+    }
+  }
+
+  .btn-login {
+    border-radius: 0px;
+    background-color: #B0344E;
+    border: none;
+    color: #F3F3F3;
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    font-family: 'brandon-reg';
+    padding: 8px 67px;
+    margin-top: 5%;
+    // margin-bottom: 20%;
+
+    &:hover {
+      color: #F3F3F3;
+      transition: 0.2s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}

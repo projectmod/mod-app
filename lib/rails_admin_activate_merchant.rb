@@ -1,10 +1,10 @@
 require 'rails_admin/config/actions'
 require 'rails_admin/config/actions/base'
- 
+
 module RailsAdmin
   module Config
     module Actions
-      
+
       class ActivateUser < RailsAdmin::Config::Actions::Base
         RailsAdmin::Config::Actions.register(self)
 
@@ -23,6 +23,7 @@ module RailsAdmin
         register_instance_option :controller do
           Proc.new do
             @object.update(activated: true)
+
             flash[:notice] = "Merchant: #{@object.name} has been activated."
 
             redirect_to back_or_index
@@ -57,4 +58,3 @@ module RailsAdmin
     end
   end
 end
-

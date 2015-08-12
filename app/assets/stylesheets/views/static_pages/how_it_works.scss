@@ -1,0 +1,111 @@
+.how-it-works {
+
+  .hero-unit {
+    height: 55vh;
+    width: 100vw;
+    margin-bottom: 2%;
+    background-image:image-url("how_it_works.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 30% 12%;
+    display: table;
+    position: relative;
+
+    .slogan {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .btn-customer {
+    color: #E4A955;
+    background-color: #F3F3F3;
+    border-color: #F3F3F3;
+    border-radius: 0px;
+    padding: 15px;
+    font-size: 16px;
+    letter-spacing: 1.9px;
+    font-family: 'brandon-reg';
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #B0344E;
+      transition: 0.3s;
+      border-color: #B0344E;
+    }
+  }
+
+  .btn-salon {
+    color: #E4A955;
+    background-color: #F3F3F3;
+    border-color: #F3F3F3;
+    border-radius: 0px;
+    padding: 15px;
+    font-size: 16px;
+    letter-spacing: 1.9px;
+    font-family: 'brandon-reg';
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #B0344E;
+      transition: 0.3s;
+      border-color: #B0344E;
+    }
+  }
+
+  .steps-container {
+    background-color: #F2F2F2;
+    margin-bottom: 2%;
+    height: 55vh;
+    width: 100vw;
+    display: table;
+
+    .step-card {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .number-padding {
+      padding-bottom: 4%;
+    }
+
+    .step-title-padding {
+      padding-bottom: 3%;
+    }
+  }
+
+  .unsure-link{
+    border-bottom: 1px solid #B0344E;
+    text-decoration: none;
+
+    &:hover {
+      color: #848484;
+      border-bottom: 1px solid #848484;
+    }
+
+    &:focus {
+      color: #848484;
+      border-bottom: 1px solid #848484;
+    }
+  }
+
+  .scroll-margin {
+    margin-bottom: 5%;
+  }
+
+  .hero-padding {
+    padding-top: 5%;
+  }
+}

@@ -84,6 +84,10 @@
   .underline {
     border-bottom: 1px solid #B0344E;
     padding: 7px 0px 7px 0px;
+
+    &:focus {
+      border-color: #848484;
+    }
   }
 
   .header-alignment {

@@ -6,14 +6,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.outlet.availability == true && @booking.save
-      # @message = "Someone wants to book with you, Click on #{outlet_confirmed_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
-      # to_outlet_number = "+6"+params[:booking][:outlet_number]
-      # @client = Twilio::REST::Client.new
-      # @client.messages.create(
-      #   from: '+18885809742',
-      #   to: to_outlet_number,
-      #   body: @message.html_safe
-      # )
+
+      # message = "Someone wants to book with you, Click on #{confirm_merchants_booking(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+      # TwillioSMS.new(message, @booking.outlet_number)
       redirect_to pending_booking_path(@booking)
     else
 
@@ -23,21 +18,6 @@ class BookingsController < ApplicationController
   end
 
   def pending
-  end
-
-  def outlet_confirmed
-    if @booking.created_at < 1.minute
-      @booking.update(outlet_confirmed: true)
-      @booking.outlet.update(credits: @booking.outlet.credits - 2)
-      # @message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
-      # to_user_number = "+6"+ @booking.user_number
-      # @client = Twilio::REST::Client.new
-      # @client.messages.create(
-      #   from: '+18885809742',
-      #   to: to_user_number,
-      #   body: @message.html_safe
-      # )
-    end
   end
 
   def user_cancellation_confirmation

@@ -58,14 +58,14 @@ Rails.application.routes.draw do
   namespace :merchants do
     resources :users, except: [:index, :show, :destroy]
 
-    # Merchant Outlets
+    # Outlets
     resources :outlets, except: :destroy do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]
     end
 
-    # Payment
+    # Payments
     resources :payment_transactions, only: :create do
       member do
         get :success, to: 'payment_transactions#success'
@@ -78,15 +78,21 @@ Rails.application.routes.draw do
     get :dashboard, to: 'dashboard#index'
     get :success, to: 'static_pages#success'
 
-    # Merchant Sessions
+    # Sessions
     resources :sessions, only: [:new, :create, :destroy]
 
+    # Confirm Booking
+    resources :bookings, except: [:new, :create, :update, :edit, :destroy] do
+      member do
+        get :confirm
+      end
+    end
   end
 
   # ==============================================================================================
   # Bookings
   # ==============================================================================================
-  resources :bookings do
+  resources :bookings, only: :create do
     member do
       get :outlet_confirmed
       post :user_cancellation

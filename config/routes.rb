@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # Rails Admin
   # ==============================================================================================
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
+  get :admin_portal, to: 'admin_sessions#new'
+  post :admin_login, to: 'admin_sessions#create'
 
   # ==============================================================================================
   # Password Reset

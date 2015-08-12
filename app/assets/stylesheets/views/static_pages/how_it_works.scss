@@ -17,7 +17,7 @@
     }
   }
 
-  .btn-customer {
+  #btn-customer {
     color: #E4A955;
     background-color: #F3F3F3;
     border-color: #F3F3F3;
@@ -39,9 +39,14 @@
       transition: 0.3s;
       border-color: #B0344E;
     }
+
+    &.selected {
+      background-color: #B0344E;
+      border-color: #B0344E;
+    };
   }
 
-  .btn-salon {
+  #btn-salon {
     color: #E4A955;
     background-color: #F3F3F3;
     border-color: #F3F3F3;
@@ -61,6 +66,11 @@
     &:hover {
       background-color: #B0344E;
       transition: 0.3s;
+      border-color: #B0344E;
+    }
+
+    &.selected {
+      background-color: #B0344E;
       border-color: #B0344E;
     }
   }

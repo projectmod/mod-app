@@ -1,0 +1,41 @@
+.partners
+  .hero-unit
+    .slogan
+      .container-fluid
+        .row
+          .col-md-12.text-center
+            p.partners-title FEATURED PARTNERS
+        .row
+          .col-md-4.col-md-offset-4.text-center
+            = link_to "BECOME A PARTNER", new_merchants_user_path, class: "btn btn-partners"
+            
+  .partners-container
+    .container-fluid
+      .row
+        .col-md-8.col-md-offset-2
+          .col-md-6.col-sm-8.text-center
+            .partners-card
+              .card-image
+                / = image_tag outlet.images.first, class: 'card-image'
+                = image_tag 'how_it_works.jpg', class: 'card-image'
+              .card-content
+                p.card-title.no-margin.card-title-padding TONI AND GUY
+                p.card-area.card-area-padding BANGSAR BARU
+                
+          .col-md-6.col-sm-8.text-center
+            .partners-card
+              .card-image
+                / = image_tag outlet.images.first, class: 'card-image'
+                = image_tag 'how_it_works.jpg', class: 'card-image'
+              .card-content
+                p.card-title.no-margin.card-title-padding TONI AND GUY
+                p.card-area.card-area-padding BANGSAR BARU
+                
+          .col-md-6.col-sm-8.text-center
+            .partners-card
+              .card-image
+                / = image_tag outlet.images.first, class: 'card-image'
+                = image_tag 'how_it_works.jpg', class: 'card-image'
+              .card-content
+                p.card-title.no-margin.card-title-padding TONI AND GUY
+                p.card-area.card-area-padding BANGSAR BARU

@@ -1,4 +1,4 @@
- .outlets-index
+.outlets-index
   .container-fluid
     .row
       .col-md-8.col-md-offset-2
@@ -12,7 +12,7 @@
               .thumbnail
                 .thumbnail-size
                   = link_to outlet_path(outlet)
-                    = image_tag outlet.images.first, class: 'image-size'
+                    = image_tag outlet.images.first
                   .caption.text-center
                     p.list-name = outlet.name.upcase
                     p.list-area = outlet.area.upcase

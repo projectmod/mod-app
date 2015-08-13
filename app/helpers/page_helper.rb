@@ -8,4 +8,9 @@ module PageHelper
     return "col-md-offset-2" if i % 2 != 0 
     "col-md-offset-1"
   end
+
+  def fetch_image(image)
+    return image.content.url if image.content.url
+    "uploader.png"
+  end
 end

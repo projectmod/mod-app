@@ -19,10 +19,7 @@
               - @outlet.images.each_with_index do |image, i|
                 .col-sm-6.fixed-size
                   a id="button-image-uploader-#{i}" href="#"
-                    - if image.content.url
-                      = image_tag image.content.url, id: "image-previewer-#{i}", class: "locked-height center-block"
-                    - else
-                      = image_tag "uploader.png", id: "image-previewer-#{i}", class: "locked-height center-block"
+                    = image_tag fetch_image(image), id: "image-previewer-#{i}", class: "locked-height center-block"
             
             // Image Uploader
             = form_for [:merchants, @outlet], class: 'form', html: { novalidate: "novalidate" } do |f|

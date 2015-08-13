@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
   require Rails.root.join('lib', 'rails_admin_activate_merchant.rb')
+  require Rails.root.join('lib', 'rails_admin_set_featured.rb')
 
   ### Popular gems integration
 

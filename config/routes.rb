@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'static_pages#landing'
   get :about, to: 'static_pages#about'
   get :how_it_works, to: 'static_pages#how_it_works'
+  get :faq, to: 'static_pages#faq'
+  get :terms, to: 'static_pages#terms'
 
   # ==============================================================================================
   # Rails Admin

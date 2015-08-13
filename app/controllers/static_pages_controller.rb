@@ -9,4 +9,10 @@ class StaticPagesController < ApplicationController
 
   def how_it_works
   end
+
+  def faq
+  end
+
+  def terms
+  end
 end

@@ -1,7 +1,7 @@
 class OutletDecorator < BaseDecorator
 
   def uploaded_images
-    images = model.images.select { |i| !i.new_record? }
+    images = model.images.order("created_at ASC").select { |i| !i.new_record? }
 
     return [ "merchant_default.jpg" ] if images.empty?
 

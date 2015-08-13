@@ -35,11 +35,10 @@ class Merchants::OutletsController < Merchants::BaseController
   end
 
   def photos
-    @uploadable_photos = 6
     @outlet = OutletDecorator.new(@outlet)
 
-    buildable_number = @uploadable_photos - @outlet.images.length
-    buildable_number.times do
+    buildable_photos = 6 - @outlet.images.length
+    buildable_photos.times do
       @outlet.images.build
     end
   end

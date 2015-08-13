@@ -56,6 +56,14 @@ RailsAdmin.config do |config|
       only ['User']
     end
 
+    feature_outlet do
+      only ['Outlet']
+    end
+
+    unfeature_outlet do
+      only ['Outlet']
+    end
+
     ## With an audit adapter, you can add:
     # history_index
     # history_show

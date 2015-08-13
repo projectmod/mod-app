@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get :how_it_works, to: 'static_pages#how_it_works'
   get :faq, to: 'static_pages#faq'
   get :terms, to: 'static_pages#terms'
+  get :partners, to: 'static_pages#partners'
 
   # ==============================================================================================
   # Rails Admin
@@ -67,7 +68,6 @@ Rails.application.routes.draw do
     resources :outlets, except: :destroy do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
-      post :upload_photos, to: 'outlets#upload_photos'
       resources :steps, only: [:show, :update]
     end
 

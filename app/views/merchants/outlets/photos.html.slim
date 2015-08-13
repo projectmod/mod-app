@@ -16,18 +16,21 @@
           .panel-body.edit-body
             // Uploader Buttons
             .container-fluid.no-padding
-              - @uploadable_photos.times do |i|
+              - @outlet.images.each_with_index do |image, i|
                 .col-sm-6.fixed-size
                   a id="button-image-uploader-#{i}" href="#"
-                    = image_tag "uploader.png", id: "image-previewer-#{i}", class: "locked-height center-block"
+                    - if image.content.url
+                      = image_tag image.content.url, id: "image-previewer-#{i}", class: "locked-height center-block"
+                    - else
+                      = image_tag "uploader.png", id: "image-previewer-#{i}", class: "locked-height center-block"
             
             // Image Uploader
-            = form_for :outlet_images, url: merchants_outlet_upload_photos_path(@outlet), method: :post, class: 'form', html: { novalidate: "novalidate" } do |f|
+            = form_for [:merchants, @outlet], class: 'form', html: { novalidate: "novalidate" } do |f|
               .container-fluid
                 .hidden
-                  - @uploadable_photos.times do |i|
+                  = f.fields_for :images do |image|
                     .col-sm-6.no-padding
-                      = f.file_field :"photo#{i}", required: true, accept: 'image/png,image/gif,image/jpeg', id: "image-uploader-#{i}", class: "form-control edit-field"
+                      = image.file_field :content , required: true, accept: 'image/png,image/gif,image/jpeg', id: "image-uploader-#{image.index}", class: "form-control edit-field"
                     
                 .row.form-group
                   .col-sm-11

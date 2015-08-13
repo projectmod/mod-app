@@ -26,8 +26,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   process resize_to_fill: [800 , 600]
 
-  version :thumbnail do
-    process resize_to_fill: [400, 200]
+  version :banner do
+    process resize_to_fill: [800, 400]
   end
 
   # Create different versions of your uploaded files:

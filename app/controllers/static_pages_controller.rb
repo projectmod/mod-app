@@ -15,4 +15,9 @@ class StaticPagesController < ApplicationController
 
   def terms
   end
+
+  def partners
+    outlets = Outlet.where(featured: true)
+    @outlets = OutletDecorator.wrap(outlets)
+  end
 end

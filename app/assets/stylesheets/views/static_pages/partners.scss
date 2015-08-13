@@ -1,0 +1,68 @@
+.partners {
+  /* View Overrides */
+  
+  .thumbnail {
+    padding: 0;
+    border: none;
+  }
+
+  .caption {
+    background-color: #F3F3F3;
+  }
+
+  /* End */
+  .hero-unit {
+    height: 55vh;
+    width: 100vw;
+    margin-bottom: 2%;
+    background-image:image-url("partners.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 30% 32%;
+    display: table;
+    position: relative;
+
+    .slogan {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .btn-partners {
+    color: #E4A955;
+    background-color: #F3F3F3;
+    border-color: #F3F3F3;
+    border-radius: 0px;
+    padding: 10px 40px;
+    font-size: 16px;
+    letter-spacing: 1.9px;
+    font-family: 'brandon-reg';
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #B0344E;
+      transition: 0.3s;
+      border-color: #B0344E;
+    }
+  }
+
+  .card-content {
+    background-color: #F3F3F3;
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+
+  .card-title-padding {
+    padding-top: 5%;
+  }
+
+  .card-area-padding {
+    padding-bottom: 5%;
+  }
+
+}

@@ -1,7 +1,9 @@
 class Outlet < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
-  has_many :images
+  has_many :images, dependent: :destroy
+
+  accepts_nested_attributes_for :images
   
   # has_many :working_hours
   validates_presence_of :business_registration, uniqueness: true

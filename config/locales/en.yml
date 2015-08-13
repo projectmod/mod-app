@@ -31,3 +31,13 @@ en:
         menu: 'Deactivate'
         title: 'Deactivating user...'
         breadcrumb: 'Deactivation'
+
+      feature_outlet:
+        menu: 'Feature'
+        title: 'Featuring outlet...'
+        breadcrumb: 'Activation'
+
+      unfeature_outlet:
+        menu: 'Unfeature'
+        title: 'Unfeaturing outlet...'
+        breadcrumb: 'Deactivation'

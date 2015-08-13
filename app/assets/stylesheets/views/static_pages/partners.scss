@@ -1,5 +1,16 @@
 .partners {
+  /* View Overrides */
+  
+  .thumbnail {
+    padding: 0;
+    border: none;
+  }
 
+  .caption {
+    background-color: #F3F3F3;
+  }
+
+  /* End */
   .hero-unit {
     height: 55vh;
     width: 100vw;
@@ -36,17 +47,6 @@
       transition: 0.3s;
       border-color: #B0344E;
     }
-  }
-
-  .partners-card {
-    max-width: 400px;
-    height: 300px;
-    margin-bottom: 10%;
-  }
-
-  .card-image {
-    width: 100%;
-    height: 200px
   }
 
   .card-content {

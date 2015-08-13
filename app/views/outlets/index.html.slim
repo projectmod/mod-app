@@ -12,7 +12,7 @@
               .thumbnail
                 .thumbnail-size
                   = link_to outlet_path(outlet)
-                    = image_tag outlet.images.first
+                    = image_tag outlet.first_image
                   .caption.text-center
                     p.list-name = outlet.name.upcase
                     p.list-area = outlet.area.upcase

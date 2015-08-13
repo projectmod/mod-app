@@ -6,12 +6,7 @@ class Users::Check
   end
 
   def exist
-    user = User.find_by(phone_no: phone_no)
-
-    if user
-      user
-    else
-      User.new(phone_no: phone_no)
-    end
+    return user if user = User.find_by(phone_no: phone_no)
+    User.new(phone_no: phone_no)
   end
 end

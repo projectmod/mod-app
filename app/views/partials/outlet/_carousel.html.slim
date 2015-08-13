@@ -7,7 +7,7 @@
 
   / Wrapper for slides
   .carousel-inner role="listbox"
-    - outlet.images.each_with_index do |image, i|
+    - outlet.uploaded_images.each_with_index do |image, i|
       div class="item #{'active' if i == 0}"
         = image_tag image, class: 'salon-image'
         

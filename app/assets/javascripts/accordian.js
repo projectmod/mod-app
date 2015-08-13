@@ -10,12 +10,7 @@ var initializeAccordian = function(elem, icon) {
 };
 
 $(document).ready(function() {
-
+  
   // Initialize Previous Appointment Accordian
   initializeAccordian($('#prev-app-collapse'), $('#prev-app-icon'))
-
-  // Initialize FAQ Accordian
-  for (var x =  1; x < 8; x++) {
-    initializeAccordian($('#faq-collapse-' + x), $('#faq-icon-' + x));
-  };
 });

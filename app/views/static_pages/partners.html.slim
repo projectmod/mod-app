@@ -12,30 +12,11 @@
   .partners-container
     .container-fluid
       .row
-        .col-md-8.col-md-offset-2
-          .col-md-6.col-sm-8.text-center
-            .partners-card
-              .card-image
-                / = image_tag outlet.images.first, class: 'card-image'
-                = image_tag 'how_it_works.jpg', class: 'card-image'
-              .card-content
-                p.card-title.no-margin.card-title-padding TONI AND GUY
-                p.card-area.card-area-padding BANGSAR BARU
-                
-          .col-md-6.col-sm-8.text-center
-            .partners-card
-              .card-image
-                / = image_tag outlet.images.first, class: 'card-image'
-                = image_tag 'how_it_works.jpg', class: 'card-image'
-              .card-content
-                p.card-title.no-margin.card-title-padding TONI AND GUY
-                p.card-area.card-area-padding BANGSAR BARU
-                
-          .col-md-6.col-sm-8.text-center
-            .partners-card
-              .card-image
-                / = image_tag outlet.images.first, class: 'card-image'
-                = image_tag 'how_it_works.jpg', class: 'card-image'
-              .card-content
-                p.card-title.no-margin.card-title-padding TONI AND GUY
-                p.card-area.card-area-padding BANGSAR BARU
+        .col-md-8.col-md-offset-2.text-center
+          - @outlets.each_with_index do |outlet, i|
+            div class="col-md-4 #{get_offset(i)} col-xs-10 col-xs-offset-1"
+              .card
+                = image_tag outlet.first_banner, class: 'center-block img-responsive'
+                .card-content
+                  p.card-title.no-margin.card-title-padding = outlet.name
+                  p.card-area.card-area-padding = outlet.area

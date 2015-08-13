@@ -1,12 +1,28 @@
 class OutletDecorator < BaseDecorator
 
-  def last_image_index
-    model.avatar.length-1
-  rescue
-    0
+  def uploaded_images
+    images = model.images.select { |i| !i.new_record? }
+
+    return [ "merchant_default.jpg" ] if images.empty?
+
+    images.map { |i| i.content.url }
   end
 
-  def images
-    model.avatar || [ "merchant_default.jpg" ]
+  def first_image
+    model.images.first.content.url
+  rescue
+    "merchant_default.jpg"
+  end
+
+  def first_banner
+    model.images.first.content.banner.url
+  rescue
+    "merchant_default.jpg"
+  end
+
+  def last_image_index
+    uploaded_images.length - 1
+  rescue
+    0
   end
 end

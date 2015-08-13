@@ -1,4 +1,21 @@
 .photos {
+  
+  .hidden { 
+    display: none;
+  }
+
+  .locked-height {
+    display: block;
+    max-width: 310px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+  }
+
+  .fixed-size {
+    min-width: 310px;
+    min-height: 200px;
+  }
 
   .salon-image {
     width: 100%;

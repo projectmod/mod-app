@@ -43,7 +43,9 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    show_in_app do
+      only []
+    end
 
     # Custom Actions
     activate_user do
@@ -52,6 +54,14 @@ RailsAdmin.config do |config|
 
     deactivate_user do
       only ['User']
+    end
+
+    feature_outlet do
+      only ['Outlet']
+    end
+
+    unfeature_outlet do
+      only ['Outlet']
     end
 
     ## With an audit adapter, you can add:

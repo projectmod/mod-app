@@ -17,8 +17,9 @@ class User < ActiveRecord::Base
   has_many :payment_transactions
   has_many :bookings
   has_one :outlet
-
+  
   accepts_nested_attributes_for :authentications
+
   enum role: [:user, :merchant, :admin]
 
   mount_uploader :avatar, ImageUploader

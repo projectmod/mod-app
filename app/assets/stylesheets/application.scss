@@ -4,7 +4,7 @@
 /* Bootstrap CSS */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootstrap-select.css";
+@import "bootstrap-select";
 
 /* Font Awesome */
 @import "font-awesome";
@@ -14,5 +14,6 @@
 
 /* Components */
 @import "components/typography";
+@import "components/animate";
 
 @import "override";

@@ -5,15 +5,20 @@ Rails.application.routes.draw do
   # ==============================================================================================
   root 'static_pages#landing'
   get :about, to: 'static_pages#about'
+  get :how_it_works, to: 'static_pages#how_it_works'
+  get :faq, to: 'static_pages#faq'
+  get :terms, to: 'static_pages#terms'
 
   # ==============================================================================================
   # Rails Admin
   # ==============================================================================================
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
+  get :admin_portal, to: 'admin_sessions#new'
+  post :admin_login, to: 'admin_sessions#create'
 
   # ==============================================================================================
   # Password Reset
-  # ==============================================================================================  
+  # ==============================================================================================
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   # ==============================================================================================
@@ -56,20 +61,46 @@ Rails.application.routes.draw do
   # ==============================================================================================
 
   namespace :merchants do
+    resources :users, except: [:index, :show, :destroy]
+
+    # Outlets
     resources :outlets, except: :destroy do
+      get :customize, to: 'outlets#customize'
+      get :photos, to: 'outlets#photos'
+      post :upload_photos, to: 'outlets#upload_photos'
       resources :steps, only: [:show, :update]
     end
 
+    # Payments
+    resources :payment_transactions, only: :create do
+      member do
+        get :success, to: 'payment_transactions#success'
+        get :failure, to: 'payment_transactions#failure'
+      end
+    end
+    resources :pricings, only: [:index, :create]
+
+    # Dashboard
     get :dashboard, to: 'dashboard#index'
     get :success, to: 'static_pages#success'
+
+    # Sessions
     resources :sessions, only: [:new, :create, :destroy]
-    resources :users, except: [:index, :show, :destroy]
+
+    # Confirm Booking
+    resources :bookings, except: [:new, :create, :update, :edit, :destroy] do
+      member do
+        get :confirm
+        get :success
+        get :failure
+      end
+    end
   end
 
   # ==============================================================================================
   # Bookings
   # ==============================================================================================
-  resources :bookings do
+  resources :bookings, only: :create do
     member do
       get :outlet_confirmed
       post :user_cancellation
@@ -83,11 +114,5 @@ Rails.application.routes.draw do
   # Resque
   # ==============================================================================================
   mount Resque::Server, at: "/resque"
-
-  # ==============================================================================================
-  # Payment
-  # ==============================================================================================
-  resources :payment_transactions, only: [:new, :create]
-  get :success, to: 'payment_transactions#success'
 
 end

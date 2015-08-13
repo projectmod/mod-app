@@ -1,5 +1,25 @@
 .phone-no {
 
+  ::-webkit-input-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+  }
+
+  :-moz-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+  }
+
+  ::-moz-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+  }
+
+  :-ms-input-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+  }
+
   .container-fluid {
     background-color: #F8F8F8;
     width: 100%;
@@ -72,7 +92,7 @@
     padding-bottom: 1%;
   }
 
-  .padding-top-5 {
-    padding-top: 5%;
+  .padding-top-3 {
+    padding-top: 3%;
   }
 }

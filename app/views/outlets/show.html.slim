@@ -45,6 +45,6 @@
                   i.fa.fa-play.fa-lg
 
             - else
-              = link_to "LOGIN", new_user_session_path(outlet: @outlet), class: "btn btn-confirm"
+              = link_to "LOGIN", login_path(outlet: @outlet), class: "btn btn-confirm"
               = button_tag(type: "submit", class: "btn btn-point") do
                 i.fa.fa-play.fa-lg

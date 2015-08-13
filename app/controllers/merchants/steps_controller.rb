@@ -11,6 +11,10 @@ class Merchants::StepsController < ApplicationController
   def update
     @outlet.update(outlet_params(step))
 
+    if step == :services
+      @outlet.update(completed_registration: true)
+    end
+
     render_wizard @outlet
   end
 
@@ -32,6 +36,6 @@ class Merchants::StepsController < ApplicationController
   end
 
   def outlet_params(step)
-    params.require(:outlet).permit(:name, :area, :address, :phone_no, :working_hours, { type_of_service: [] }, :price_range)
+    params.require(:outlet).permit(:name, :area, :address, :phone_no, :working_hours, { type_of_service: [] }, :price_range, :completed_registration)
   end
 end

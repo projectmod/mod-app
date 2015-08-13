@@ -1,0 +1,97 @@
+.contact-ball {
+
+  .btn-scroll {
+    border-radius: 50%;
+    background-color: white;
+    color: #B0344E;
+    border-color: #B0344E;
+    opacity: 0.7;
+    margin-top: 5%;
+
+    &:hover {
+      background-color: white;
+      color: #B0344E;
+      border-color: #B0344E;
+      transition: 0.2s;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .contact-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .package-line {
+    height: 23vh;
+    border-left: 1px solid #B0344E;
+    margin-bottom: 15px;
+    opacity: 0.7;
+  }
+
+  .package-circle {
+    padding-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    background-color: #B0344E;
+    text-align: center;
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    margin-top: 15px;
+  }
+
+  .circle-margin {
+    margin-bottom: 10%;
+  }
+
+  .number-padding {
+    padding-top: 5%;
+  }
+
+  .circle-padding {
+    padding-bottom: 10%;
+  }
+
+  .email-hover {
+    text-decoration: none;
+
+    &:hover {
+      color: #E4A955;
+    }
+
+    &:focus {
+      color: #848484;
+    }
+  }
+
+  .fb-button-color {
+    color: #F2F2F2;
+
+    &:hover {
+      color: #E4A955 !important;
+    }
+  }
+
+  .ins-button-color {
+    color: #F2F2F2;
+
+    &:hover {
+      color: #E4A955 !important;
+    }
+  }
+
+  .pint-button-color {
+    color: #F2F2F2;
+
+    &:hover {
+      color: #E4A955 !important;
+    }
+  }
+
+}

@@ -26,4 +26,4 @@
           li
             = link_to "ABOUT MOD", about_path, class: "#{is_active?('static_pages#about')} alignment nav-header-highlight"
           li
-            = link_to "ACCOUNT", dashboard_account_path, class: "#{is_active?('dashboard/account#index')} alignment nav-header-highlight"
+            = render_account_link

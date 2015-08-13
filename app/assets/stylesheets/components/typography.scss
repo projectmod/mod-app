@@ -34,14 +34,14 @@
   font-family: 'brandon-bold';
   font-size: 4.2vmax;
   letter-spacing: 0.31px;
-  color: #000000;
+  color: white;
 }
 
 .punchline {
   font-family: 'brandon-reg';
   font-size: 4vmin;
   letter-spacing: 2px;
-  color: #000000;
+  color: white;
 }
 
 // Header
@@ -528,13 +528,6 @@
   color: #E4A955;
 }
 
-.success-code-text {
-  font-family: 'brandon-light';
-  font-size: 25px;
-  color: #F3F3F3;
-  letter-spacing: 2.4px;
-}
-
 .success-code {
   font-family: 'brandon-med';
   font-size: 25px;
@@ -651,4 +644,148 @@
   color: #B0344E;
   font-size: 14px;
   letter-spacing: 2.4px;
+}
+
+// Merchant Profile page
+
+.merchant-name {
+  font-family: 'brandon-bold';
+  font-size: 55px;
+  color: #000000;
+  letter-spacing: 2.4px;
+  padding-top: 5%;
+}
+
+.pick-text {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  letter-spacing: 2.4px;
+  color: #848484;
+}
+
+// Pricing plan
+
+.plan-text {
+  font-family: 'brandon-bold';
+  font-size: 5vmax;
+  color: #EEEEEE;
+  letter-spacing: 2.4px;
+}
+
+.package-title {
+  font-family: 'brandon-bold';
+  font-size: 25px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.package-description {
+  font-family: 'brandon-light';
+  font-size: 20px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.package-text {
+  font-family: 'brandon-light';
+  font-size: 20px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.contact-font {
+  font-family: 'brandon-reg';
+  font-size: 11px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.email-link-text {
+  font-family: 'brandon-light';
+  font-size: 15px;
+  color: #F2F2F2;
+  letter-spacing: 2.4px;
+}
+
+.contact-text {
+  font-family: 'brandon-light';
+  font-size: 25px;
+  color: #F2F2F2;
+  letter-spacing: 2.4px;
+}
+
+// Merchant Booking Success
+
+.success-code-text {
+  font-family: 'brandon-light';
+  font-size: 25px;
+  color: #F3F3F3;
+  letter-spacing: 2.4px;
+}
+
+.view-booking-text {
+  font-family: 'brandon-light';
+  font-size: 17px;
+  color: #848484;
+  letter-spacing: 2.4px;
+}
+
+// How It Works Page
+
+.how-it-works-title {
+  font-family: 'brandon-bold';
+  font-size: 5vmax;
+  letter-spacing: 2.4px;
+  color: #F3F3F3;
+}
+
+.step-number {
+  font-family: 'brandon-thin';
+  font-size: 75px;
+  color: #E4A955;
+}
+
+.step-title {
+  font-family: 'brandon-med';
+  font-size: 18px;
+  letter-spacing: 2.4px;
+  color: #696969;
+}
+
+.step-font {
+  font-family: 'brandon-thin';
+  font-size: 20px;
+  letter-spacing: 2.4px;
+  color: #696969;
+}
+
+.unsure-text {
+  font-family: 'brandon-light';
+  font-size: 20px;
+  letter-spacing: 2.4px;
+  color: #B0344E;
+}
+
+// FAQ page
+
+.faq-title {
+  font-family: 'brandon-bold';
+  font-size: 5vmax;
+  letter-spacing: 2.4px;
+  color: #F3F3F3;
+}
+
+.read-more-text {
+  font-family: 'brandon-light';
+  font-size: 22px;
+  letter-spacing: 2.4px;
+  color: #848484;
+}
+
+.faq-panel-title {
+  font-family: 'brandon-light';
+  font-size: 20px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+  padding-left: 7%;
 }

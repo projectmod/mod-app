@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810111300) do
+ActiveRecord::Schema.define(version: 20150812092002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20150810111300) do
     t.boolean  "user_cancellation", default: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.integer  "outlet_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "outlets", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -48,17 +55,17 @@ ActiveRecord::Schema.define(version: 20150810111300) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "price_range"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.string   "type_of_service",       default: [],                 array: true
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "type_of_service",        default: [],                 array: true
     t.string   "phone_no"
-    t.boolean  "availability",          default: false
+    t.boolean  "availability",           default: false
     t.string   "area"
-    t.integer  "credits",               default: 0
-    t.string   "avatar",                default: [],                 array: true
+    t.integer  "credits",                default: 20
     t.string   "working_hours"
     t.integer  "user_id"
     t.string   "business_registration"
+    t.boolean  "completed_registration", default: false
   end
 
   create_table "packages", force: :cascade do |t|
@@ -74,10 +81,11 @@ ActiveRecord::Schema.define(version: 20150810111300) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.decimal  "price"
-    t.string   "receipt_code"
     t.string   "payment_method"
     t.integer  "package_id"
     t.integer  "user_id"
+    t.string   "bank_ref_no"
+    t.string   "payment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,5 +113,13 @@ ActiveRecord::Schema.define(version: 20150810111300) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+
+  create_table "working_hours", force: :cascade do |t|
+    t.string   "days"
+    t.string   "time"
+    t.integer  "outlet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

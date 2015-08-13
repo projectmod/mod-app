@@ -1,5 +1,5 @@
 class Merchants::OutletsController < Merchants::BaseController
-  before_action :set_outlet, only: [:show, :edit, :update]
+  before_action :set_outlet, only: [:show, :edit, :update, :customize, :photos, :upload_photos]
 
   def new
     @outlet = Outlet.new
@@ -30,10 +30,31 @@ class Merchants::OutletsController < Merchants::BaseController
     end
   end
 
+  def customize
+    @outlet = OutletDecorator.new(@outlet)
+  end
+
+  def photos
+    @uploadable_photos = 6
+    @outlet = OutletDecorator.new(@outlet)
+  end
+
+  def upload_photos
+    photo_params.each do |photo|
+      @outlet.images.create(content: photo[1])
+    end
+
+    redirect_to merchants_outlet_photos_path(@outlet)
+  end
+
   private
 
   def set_outlet
     @outlet = current_user.outlet
+  end
+
+  def photo_params
+    params.require(:outlet_images).permit(:photo0, :photo1, :photo2, :photo3, :photo4, :photo5)
   end
 
   def outlet_params

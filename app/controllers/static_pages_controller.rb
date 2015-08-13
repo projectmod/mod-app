@@ -15,4 +15,7 @@ class StaticPagesController < ApplicationController
 
   def terms
   end
+
+  def partners
+  end
 end

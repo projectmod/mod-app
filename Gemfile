@@ -14,6 +14,9 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sprockets-rails', '>= 2.1.4'
 gem 'slim-rails'
 
+# Geokit
+gem 'geokit-rails'
+
 # Nested Forms
 gem 'wicked'
 

@@ -1,23 +1,27 @@
 class BookingDecorator < BaseDecorator
 
   def outlet_avatar
-    model.outlet.avatar[0]
+    outlet.avatar[0]
   end
 
   def outlet_name
-    model.outlet.name.upcase
+    outlet.name.upcase
   end
 
   def outlet_area
-    model.outlet.area.upcase
+    outlet.area.upcase
   end
 
   def outlet_address
-    model.outlet.address.upcase
+    outlet.address.upcase
   end
 
   def outlet_phone_no
-    "+60 " + model.outlet.phone_no
+    "+60 " + outlet.phone_no
+  end
+
+  def outlet_image
+    outlet.first_image
   end
 
   def confirmation_code
@@ -29,11 +33,11 @@ class BookingDecorator < BaseDecorator
   end
 
   def booked_on
-    model.outlet.created_at.strftime("%d %B %Y").upcase
+    outlet.created_at.strftime("%d %B %Y").upcase
   end
 
   def outlet_working_hours
-    model.outlet.working_hours.upcase
+    outlet.working_hours.upcase
   end
 
   def customer_name
@@ -42,5 +46,11 @@ class BookingDecorator < BaseDecorator
 
   def booking_time
     model.created_at.time.strftime("%I.%M%p")
+  end
+
+  private
+
+  def outlet
+    OutletDecorator.new(model.outlet)
   end
 end

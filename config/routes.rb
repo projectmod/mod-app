@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get :how_it_works, to: 'static_pages#how_it_works'
   get :faq, to: 'static_pages#faq'
   get :terms, to: 'static_pages#terms'
+  get :partners, to: 'static_pages#partners'
 
   # ==============================================================================================
   # Rails Admin

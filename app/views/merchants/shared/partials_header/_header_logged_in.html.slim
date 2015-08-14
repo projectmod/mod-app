@@ -22,13 +22,15 @@
           li.red-text.padding-points
             p 
               | REMAINING, 
-              span.header-name = "#{ bookings(current_user.outlet.credits) } BOOKINGS" 
+              span.header-name
+                | #{ bookings(current_user.outlet.credits) }
 
         ul.nav.navbar-nav.navbar-right
           li.red-text.padding-bookings.mobile
             p 
               | REMAINING, 
-              span.header-name = "#{ bookings(current_user.outlet.credits) } BOOKINGS" 
+              span.header-name 
+                | #{ bookings(current_user.outlet.credits) }
 
           li.red-text.mobile
             = link_to "BUY CREDITS", merchants_pricings_path, class: "nav-header-highlight"

@@ -14,6 +14,10 @@ class OutletDecorator < BaseDecorator
     "merchant_default.jpg"
   end
 
+  def salon_services
+    model.type_of_service
+  end
+
   def first_banner
     model.images.first.content.banner.url
   rescue

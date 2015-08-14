@@ -55,7 +55,11 @@ Rails.application.routes.draw do
   # ==============================================================================================
   # Outlets
   # ==============================================================================================
-  resources :outlets, only: [:index, :show]
+  resources :outlets, only: [:index, :show] do
+    member do
+      get :preview, to: 'outlets#preview'
+    end
+  end
 
   # ==============================================================================================
   # Merchants

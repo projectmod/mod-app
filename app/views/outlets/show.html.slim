@@ -6,45 +6,22 @@
   
   = render partial: 'partials/outlet/carousel', locals: { outlet: @outlet }
 
-  .container-fluid
-    .row
-      .col-md-8.col-md-offset-2
-        .row
-          .col-md-12
-            p.salon-name.settings.text-center = @outlet.name.upcase
-            p.salon-area.settings.text-center.area-padding = @outlet.area.upcase
-        .row
-          .col-sm-4.col-sm-offset-1
-            p.info-title.settings.title-padding ADDRESS
-          .col-sm-6
-            p.info-details.settings.info-padding = @outlet.address.upcase
+  = render partial: 'partials/outlet/details', locals: { outlet: @outlet }
 
-        .row
-          .col-sm-4.col-sm-offset-1
-            p.info-title.settings.title-padding CONTACT
-          .col-sm-6
-            p.info-details.settings.info-padding = "+60 " + @outlet.phone_no
-
-        .row
-          .col-sm-4.col-sm-offset-1
-            p.info-title.settings.title-padding WORKING HOURS
-          .col-sm-6
-            p.info-details.settings = @outlet.working_hours.upcase
-
-        .row
-          .col-md-12.text-center
-            - if current_user.present?
-              = form_for @booking do |f|
-                = f.hidden_field :outlet_number, value: @outlet.phone_no, readonly: true
-                = f.hidden_field :user_number, value: current_user.phone_no, readonly: true
-                = f.hidden_field :outlet_id, value: @outlet.id
-                = f.hidden_field :user_id, value: current_user.id
-                = f.hidden_field :confirmation_code, value: @outlet.confirmation_code
-                = f.submit "CONFIRM THIS BOOKING", class: "btn btn-confirm"
-                = button_tag(type: "submit", class: "btn btn-point desktop") do
-                  i.fa.fa-play.fa-lg
-
-            - else
-              = link_to "LOGIN", login_path(outlet: @outlet), class: "btn btn-confirm"
-              = button_tag(type: "submit", class: "btn btn-point") do
-                i.fa.fa-play.fa-lg
+  .row
+    .col-md-12.text-center
+      - if current_user.present?
+        = form_for @booking do |f|
+          = f.hidden_field :outlet_number, value: @outlet.phone_no, readonly: true
+          = f.hidden_field :user_number, value: current_user.phone_no, readonly: true
+          = f.hidden_field :outlet_id, value: @outlet.id
+          = f.hidden_field :user_id, value: current_user.id
+          = f.hidden_field :confirmation_code, value: @outlet.confirmation_code
+          = f.submit "CONFIRM THIS BOOKING", class: "btn btn-confirm"
+          = button_tag(type: "submit", class: "btn btn-point desktop") do
+            i.fa.fa-play.fa-lg
+  
+      - else
+        = link_to "LOGIN", login_path(outlet: @outlet), class: "btn btn-confirm"
+        = button_tag(type: "submit", class: "btn btn-point") do
+          i.fa.fa-play.fa-lg

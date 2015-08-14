@@ -73,6 +73,8 @@ Rails.application.routes.draw do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]
+      post :set_available, to: 'outlets#set_available'
+      post :set_unavailable, to: 'outlets#set_unavailable'
     end
 
     # Payments

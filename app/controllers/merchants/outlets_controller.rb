@@ -1,5 +1,6 @@
 class Merchants::OutletsController < Merchants::BaseController
   before_action :set_outlet, except: [:new, :create]
+  respond_to :js
 
   def new
     @outlet = Outlet.new
@@ -41,6 +42,18 @@ class Merchants::OutletsController < Merchants::BaseController
     buildable_photos.times do
       @outlet.images.build
     end
+  end
+
+  def set_available
+    @outlet.update(availability: true)
+
+    respond_with(@outlet)
+  end
+
+  def set_unavailable
+    @outlet.update(availability: false)
+
+    respond_with(@outlet)
   end
 
   private

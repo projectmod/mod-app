@@ -1,0 +1,4 @@
+$('#set-unavailable-link-desktop').remove()
+$('#set-unavailable-link-mobile').remove()
+$('#availability-container-desktop').html("<%= escape_javascript(render(partial: 'merchants/shared/partials_header/unavailable', locals: { outlet: current_user.outlet, device: 'desktop' })) %>")
+$('#availability-container-mobile').html("<%= escape_javascript(render(partial: 'merchants/shared/partials_header/unavailable', locals: { outlet: current_user.outlet, device: 'mobile' })) %>")

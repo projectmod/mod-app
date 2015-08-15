@@ -5,7 +5,7 @@ module PageHelper
   end
 
   def get_offset(i)
-    return "col-md-offset-2" if i % 2 != 0 
+    return "col-md-offset-0" if i % 2 != 0 
     "col-md-offset-1"
   end
 

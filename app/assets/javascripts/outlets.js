@@ -1,47 +1,47 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-function adjustCaptionHeight() {
+function adjustElementHeight(element) {
 
   var heights = [ ];
 
-  $(".caption").each(function() {
+  $(element).each(function() {
     heights.push( $(this).height() );
   });
   var max = Math.max.apply(null, heights);
 
-  $(".caption").each(function() {
+  $(element).each(function() {
     $(this).height(max);
   });
 }
 
-function inheritCaptionHeight() {
-  $(".caption").each(function() {
+function inheritElementHeight(element) {
+  $(element).each(function() {
     $(this).css("height", "inherit");
   });
 }
 
-function checkAdjustCaptionHeight() {
+function checkAdjustElementHeight(element) {
   if ($("#mq-detector > span.visible-lg").is(":visible")) {
-    adjustCaptionHeight();
+    adjustElementHeight(element);
   }
   else if ($("#mq-detector > span.visible-md").is(":visible")) {
-    adjustCaptionHeight();
+    adjustElementHeight(element);
   }
   else if ($("#mq-detector > span.visible-sm").is(":visible")) {
-    inheritCaptionHeight();
+    inheritElementHeight(element);
   }
   else if ($("#mq-detector > span.visible-xs").is(":visible")) {
-    inheritCaptionHeight();
+    inheritElementHeight(element);
   }
   else { }
 }
 
-$(window).on('resize', checkAdjustCaptionHeight);
+$(window).on('resize', checkAdjustElementHeight('.caption'));
 
 $(document).ready(function(){
 
-  checkAdjustCaptionHeight();
+  checkAdjustElementHeight('.caption');
 
   var options = {
     enableHighAccuracy: true,

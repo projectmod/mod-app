@@ -7,8 +7,8 @@ class BookingsController < ApplicationController
 
     if @booking.outlet.availability == true && @booking.save
 
-      # message = "Someone wants to book with you, Click on #{confirm_merchants_booking(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
-      # TwillioSMS.new(message, @booking.outlet_number)
+      message = "Someone wants to book with you, Click on #{confirm_merchants_booking(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+      TwillioSMS.new(message, @booking.outlet_number)
       redirect_to pending_booking_path(@booking)
     else
 

@@ -1,13 +1,33 @@
 .partners {
-  /* View Overrides */
-  
-  .thumbnail {
-    padding: 0;
-    border: none;
+
+  .flex-row {
+  	padding: 20px 0;
   }
 
-  .caption {
-    background-color: #F3F3F3;
+  .flex {
+  	display: flex;
+  }
+
+  .flex-wrap {
+  	justify-content: center;
+  	flex-wrap: wrap;
+  }
+
+  .flex-margin {
+  	margin: 10px;
+  }
+
+  .flex-child {
+  	width: 45%;
+  	margin-bottom: 2%;
+    background-color: #F7F7F7;
+  }
+
+  .add-partner {
+    background-image: image-url('add_partner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
 
   /* End */
@@ -50,7 +70,11 @@
   }
 
   .card-content {
-    background-color: #F3F3F3;
+    background-color: #F7F7F7;
+
+    &.padding-top {
+      padding-top: 10%;
+    }
   }
 
   .no-margin {
@@ -64,5 +88,13 @@
   .card-area-padding {
     padding-bottom: 5%;
   }
+}
 
+@media all and (max-width: 767px) {
+
+  .partners {
+    .flex-child {
+      width: 80%;
+    }
+  }
 }

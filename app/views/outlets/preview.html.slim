@@ -1,0 +1,14 @@
+.preview
+	= render partial: 'partials/outlet/carousel',  locals: { outlet: @outlet }
+	
+	= render partial: 'partials/outlet/details', locals: { outlet: @outlet }
+
+	.container-fluid
+		.row
+			.col-md-8.col-md-offset-2
+				.row.padding-bottom-15
+					.col-sm-4.col-sm-offset-1
+						p.info-title.settings.title-padding SERVICES
+					.col-sm-6
+						- @outlet.salon_services.each do |service|
+							p.info-details.settings = service

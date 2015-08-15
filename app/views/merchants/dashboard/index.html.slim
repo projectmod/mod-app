@@ -44,7 +44,7 @@
                 .row
                   .col-md-12
                     .row
-                      .col-md-6.col-md-offset-3
+                      .col-md-8.col-md-offset-2
                         = link_to "TURN ON YOUR AVAILABILITY", root_path, class: "btn btn-merchant btn-position center-block"
 
   .row
@@ -67,6 +67,28 @@
                   = booking.booked_on
                   | , 
                   = booking.booking_time
+                  
+  .row
+    .col-md-8.col-md-offset-2
+      .panel.panel-default.no-border#prev-appointment-accordian
+        .panel-heading.panel-header
+          h3.panel-title.prev-panel-title
+            | PREVIOUS PURCHASES
+            span.pull-right
+              a role="button" data-toggle="collapse" data-parent="#prev-appointment-accordian" href="#prev-app-collapse" aria-expanded="true" aria-controls="prev-app-collapse"
+                i#prev-app-icon.fa.red.icon-padding.fa-minus
+        #prev-app-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
+          .panel-body.text-left.prev-panel-body.merchant-prev-padding
+            .content-scroll
+              - @payment_transactions.each do |payment_transaction|
+                
+                p.prev-booking-title = payment_transaction.package_title
+                p.no-padding-top = payment_transaction.package_description
+                  
+                p.padding-bottom-1
+                  = payment_transaction.bought_at
+                  | , 
+                  = payment_transaction.purchase_time
                   
   .row
     .col-md-8.col-md-offset-2

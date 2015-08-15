@@ -1,7 +1,6 @@
 module UserHelper
-
   def bookings(credits)
-    credits / 2
+    pluralize(credits / 2, 'BOOKING').upcase
   end
 
   def render_account_link

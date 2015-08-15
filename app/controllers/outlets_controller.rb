@@ -1,5 +1,5 @@
 class OutletsController < ApplicationController
-  before_action :set_outlet, only: :show
+  before_action :set_outlet, only: [:show, :preview]
   before_action :check_user_location, only: :index
 
   def index
@@ -10,8 +10,10 @@ class OutletsController < ApplicationController
   end
 
   def show
-    @outlet = OutletDecorator.new(@outlet)
     @booking = Booking.new
+  end
+
+  def preview
   end
 
   private
@@ -25,6 +27,7 @@ class OutletsController < ApplicationController
 
   def set_outlet
     @outlet = Outlet.find(params[:id])
+    @outlet = OutletDecorator.new(@outlet)
   end
 
   def outlet_params

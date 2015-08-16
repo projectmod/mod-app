@@ -2,11 +2,13 @@ class Outlet < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
   has_many :images, dependent: :destroy
+  has_many :working_hours
+  
   before_create :search_address
 
   accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :working_hours
 
-  # has_many :working_hours
   validates_presence_of :business_registration, uniqueness: true
 
   def self.within_range(user_lon, user_lat, outlets)

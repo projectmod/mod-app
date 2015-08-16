@@ -1,0 +1,43 @@
+.merchant-outlet
+  .container-fluid
+    .row
+      .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
+        p.text-center.step-style STEP 2 OF 3
+
+      .col-md-8.col-md-offset-2.text-center
+        h3 SALON INFO
+        p.margin-remove.detail-text THESE DETAILS WILL APPEAR ON YOUR SALON PROFILE PAGE,
+        p.detail-text AND WILL BE VISIBLE TO ALL MOD USERS.
+  
+    .row
+      .col-md-6.col-md-offset-3
+        = form_for @outlet, url: wizard_path, class: 'form' do |f|
+          .form-group
+            = f.text_field :name, required: true, placeholder: 'SALON NAME', class: 'form-control merchant-signup'
+          .form-group
+            = f.text_field :area, required: true, placeholder: 'AREA (example, Bangsar Village II)', class: 'form-control merchant-signup'
+          .form-group
+            = f.text_field :address, required: true, placeholder: 'FULL ADDRESS', class: 'form-control merchant-signup'
+          .form-group
+            = f.text_field :phone_no, required: true, placeholder: 'SALON CONTACT NO.', class: 'form-control merchant-signup'
+          .form-group
+            .container-fluid
+              .row
+                .col-md-5
+                  = f.label :working_hours, 'WORKING HOURS', class: 'form-controler merchant-signup'
+                  p e.g: MON - FRI
+                  p 10AM - 8PM
+                  
+                .col-md-6.working-day-fields
+                  = f.fields_for :working_hours do |builder|
+                    = render( "partials/form/working_hours", builder: builder)
+
+                  = add_nested_form_fields(f, :working_hours)
+                    
+                .col-md-1
+                  - new_field = add_nested_form_fields(f, :working_hours)
+                  = link_to '#', class: 'add_fields', data: { fields: new_field.gsub("\n", "")}
+                    i.fa.fa-plus.fa-2x
+              
+          .form-group.text-center
+            = f.submit "NEXT", class: "btn btn-outlet"

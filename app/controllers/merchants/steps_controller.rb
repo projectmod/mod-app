@@ -1,6 +1,6 @@
 class Merchants::StepsController < ApplicationController
   include Wicked::Wizard
-  steps :salon_info, :services
+  steps :outlet_info, :services
   before_action :set_outlet
   before_action :verify_type_of_service, only: :update
 
@@ -36,6 +36,6 @@ class Merchants::StepsController < ApplicationController
   end
 
   def outlet_params(step)
-    params.require(:outlet).permit(:name, :area, :address, :phone_no, :working_hours, { type_of_service: [] }, :price_range, :completed_registration)
+    params.require(:outlet).permit(:name, :area, :address, :phone_no, { type_of_service: [] }, :price_range, :completed_registration, working_hours_attributes: [:id ,:days, :time])
   end
 end

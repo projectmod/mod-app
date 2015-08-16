@@ -13,7 +13,7 @@ class Merchants::UsersController < Merchants::BaseController
 
     if @user.save
       @outlet = @user.create_outlet(business_registration: business_registration)
-      redirect_to merchants_outlet_step_path(@outlet, "salon_info")
+      redirect_to merchants_outlet_step_path(@outlet, "outlet_info")
     else
       @user.errors.full_messages.each do |message|
         flash[:alert] = message

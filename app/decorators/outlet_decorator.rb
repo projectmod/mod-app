@@ -8,14 +8,14 @@ class OutletDecorator < BaseDecorator
     images.map { |i| i.content.url }
   end
 
+  def salon_services
+    model.type_of_service
+  end
+
   def first_image
     model.images.first.content.url
   rescue
     "merchant_default.jpg"
-  end
-
-  def salon_services
-    model.type_of_service
   end
 
   def first_banner

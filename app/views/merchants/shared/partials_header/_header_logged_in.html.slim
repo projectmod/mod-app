@@ -16,10 +16,7 @@
             = image_tag 'MOD_logo01.png', class: "logo-size"
             
         #availability-container-mobile.pull-right.margin-top-32
-          - if current_user.outlet.availability
-            = render partial: 'merchants/shared/partials_header/available', locals: { outlet: current_user.outlet, device: 'mobile' }
-          - else
-            = render partial: 'merchants/shared/partials_header/unavailable', locals: { outlet: current_user.outlet, device: 'mobile' }
+          = render_merchant_availability_link('mobile')
 
       #navbar.navbar-collapse.collapse.nav-margin.header-alignment
         ul.nav.navbar-nav.pull-left.desktop
@@ -43,9 +40,7 @@
           li
             = link_to "PROFILE", merchants_outlet_customize_path(current_user.outlet), class: "#{is_active?('merchants/users#edit')} profile-alignment nav-header-highlight"
           li#availability-container-desktop
-            - if current_user.outlet.availability
-              = render partial: 'merchants/shared/partials_header/available', locals: { outlet: current_user.outlet, device: 'desktop' }
-            - else
-              = render partial: 'merchants/shared/partials_header/unavailable', locals: { outlet: current_user.outlet, device: 'desktop' }
+            = render_merchant_availability_link('desktop')
+
           li
             = link_to "APPOINTMENTS", merchants_dashboard_path, class: "#{is_active?('merchants/dashboard#index')} alignment nav-header-highlight appointment-border appointments"

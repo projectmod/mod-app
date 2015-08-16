@@ -7,20 +7,13 @@
             p.found-text WE FOUND #{pluralize(@outlets.count, 'SALON').upcase} NEAR YOU!
             
         .row
-          - @outlets.each do |outlet|
-            .col-md-6
-              .thumbnail
-                .thumbnail-size
-                  = link_to outlet_path(outlet)
-                    = image_tag outlet.first_image
-                  .caption.text-center
-                    p.list-name = outlet.name.upcase
-                    p.list-area = outlet.area.upcase
-                    p.padding-info = link_to "MORE INFO >>", outlet_path(outlet), class: 'salon-link salon-hover'
-
-  // Media Queries Detector
-  span#mq-detector
-    span.visible-xs
-    span.visible-sm
-    span.visible-md
-    span.visible-lg
+          .col-md-12
+            .flex-container
+              - @outlets.each do |outlet|
+                  .thumbnail
+                    = link_to outlet_path(outlet)
+                      = image_tag outlet.first_image, class: 'img-responsive center-block'
+                    .caption.text-center
+                      p.list-name = outlet.name.upcase
+                      p.list-area = outlet.area.upcase
+                      p.padding-info = link_to "MORE INFO >>", outlet_path(outlet), class: 'salon-link salon-hover'

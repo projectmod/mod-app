@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.2.2"
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.3'
 
 # Front-end and javascript stacks
 gem 'sass-rails', '~> 5.0'

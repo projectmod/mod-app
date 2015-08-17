@@ -16,8 +16,8 @@ class BookingDecorator < BaseDecorator
     outlet.address.upcase
   end
 
-  def outlet_phone_no
-    "+60 " + outlet.phone_no
+  def outlet_phone_number
+    "+60 " + outlet.phone_number
   end
 
   def outlet_image

@@ -40,6 +40,6 @@ class Merchants::UsersController < Merchants::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :phone_no, :password, :password_confirmation, :business_registration)
+    params.require(:user).permit(:email, :name, :phone_number, :password, :password_confirmation, :business_registration)
   end
 end

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index,:show, :destroy] do
   	member do
       get :verify
-      post :update_phone_no
+      post :update_phone_number
   		post :activate
       get :success
   	end

@@ -25,7 +25,7 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def update
     if @outlet.update(outlet_params)
-      redirect_to(merchants_outlet_photos_path(@outlet), flash: { success: "You've updated your outlet!" })
+      redirect_to(:back, flash: { success: "You've updated your outlet!" })
     else
       render :edit, notice: "Update failed. Please try again."
     end
@@ -62,6 +62,6 @@ class Merchants::OutletsController < Merchants::BaseController
   end
 
   def outlet_params
-    params.require(:outlet).permit(:name, :address, :state, :price_range, :avatar, :type_of_service, :phone_no, images_attributes: [:id, :content])
+    params.require(:outlet).permit(:name, :address, :state, :price_range, :avatar, :type_of_service, :phone_number, images_attributes: [:id, :content], working_hours_attributes: [:id ,:days, :time])
   end
 end

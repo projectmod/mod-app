@@ -36,6 +36,6 @@ class Merchants::StepsController < ApplicationController
   end
 
   def outlet_params(step)
-    params.require(:outlet).permit(:name, :area, :address, :phone_no, { type_of_service: [] }, :price_range, :completed_registration, working_hours_attributes: [:id ,:days, :time])
+    params.require(:outlet).permit(:name, :area, :address, :phone_number, { type_of_service: [] }, :price_range, :completed_registration, working_hours_attributes: [:id ,:days, :time])
   end
 end

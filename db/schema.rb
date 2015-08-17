@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813152312) do
+ActiveRecord::Schema.define(version: 20150817025313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,11 +58,10 @@ ActiveRecord::Schema.define(version: 20150813152312) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "type_of_service",        default: [],                 array: true
-    t.string   "phone_no"
+    t.string   "phone_number"
     t.boolean  "availability",           default: false
     t.string   "area"
     t.integer  "credits",                default: 20
-    t.string   "working_hours"
     t.integer  "user_id"
     t.string   "business_registration"
     t.boolean  "completed_registration", default: false
@@ -105,7 +104,7 @@ ActiveRecord::Schema.define(version: 20150813152312) do
     t.datetime "reset_password_email_sent_at"
     t.string   "name"
     t.string   "avatar"
-    t.string   "phone_no"
+    t.string   "phone_number"
     t.string   "verification_code"
     t.boolean  "activated",                       default: false
     t.integer  "role",                            default: 0

@@ -47,6 +47,19 @@
                     = f.label :phone_no, 'CONTACT NUMBER'
                   .col-sm-5.no-padding
                     = f.text_field :phone_no, required: true, class: 'form-control edit-field'
+                
+                .row.form-group
+                  .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
+                    = f.label :working_Hours, 'WORKING HOURS'
+                  .col-sm-4.no-padding.working-day-fields
+                    = f.fields_for :working_hours do |builder|
+                      = render( "partials/form/working_hours", builder: builder)
+                  .col-sm-1
+                    - new_field = add_nested_form_fields(f, :working_hours)
+                    = link_to '#', class: 'add_fields', data: { fields: new_field.gsub("\n", "")}
+                      i.fa.fa-plus.fa-2x
+                
+                      
 
                 .row.form-group
                   .col-sm-5.col-sm-offset-1.padding-top-1.no-padding

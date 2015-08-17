@@ -5,23 +5,18 @@ class Users::VerificationCode
     @user = user
   end
 
-  def verification_code
-    user.update(verification_code: generate_random_code)
-
-    user.verification_code
-  end
-
   def deliver
     message = "Hi! This is your 6 digit verification code: #{verification_code}"
-    client = Twilio::REST::Client.new
-    client.messages.create(
-      from: '+18885809742',
-      to: "+60" + user.phone_no,
-      body: message.html_safe
-    )
+    number = "+60" + user.phone_no
+    TwillioSMS.new(message, number).send
   end
 
   private
+
+  def verification_code
+    user.update(verification_code: generate_random_code)
+    user.verification_code
+  end
 
   def generate_random_code
     code = loop do

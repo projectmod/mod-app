@@ -1,0 +1,11 @@
+- if current_user.outlet.availability
+  - message = "AVAILABLE"
+  - css_class = "availability-circle"
+- else
+  - message = "UNAVAILABLE"
+  - css_class = "unavailability-circle"
+  
+= link_to merchants_outlet_toggle_availability_path(current_user.outlet), method: :post, remote: true, id: "availability-links-#{device}", class: "no-hover profile-alignment availability-link-settings"
+  span.margin-right-10.availability-font = message
+  span class="#{css_class}"
+    i.fa.fa-circle

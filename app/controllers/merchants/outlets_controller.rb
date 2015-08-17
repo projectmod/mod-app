@@ -44,14 +44,13 @@ class Merchants::OutletsController < Merchants::BaseController
     end
   end
 
-  def set_available
-    @outlet.update(availability: true)
-
+  def refresh_availability
     respond_with(@outlet)
   end
 
-  def set_unavailable
-    @outlet.update(availability: false)
+  def toggle_availability
+    toggle = @outlet.availability ? false : true
+    @outlet.update(availability: toggle)
 
     respond_with(@outlet)
   end

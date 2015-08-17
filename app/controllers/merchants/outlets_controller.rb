@@ -50,9 +50,15 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def toggle_availability
     toggle = @outlet.availability ? false : true
-    @outlet.update(availability: toggle)
+
+    if @outlet.credits > 1
+      @outlet.update(availability: toggle)
+    else
+      flash[:error] = "You currently do not have enough credits to set your availability to true. Please purchase more credits."
+    end
 
     respond_with(@outlet)
+    flash.clear
   end
 
   private
@@ -62,6 +68,6 @@ class Merchants::OutletsController < Merchants::BaseController
   end
 
   def outlet_params
-    params.require(:outlet).permit(:name, :address, :state, :price_range, :avatar, :type_of_service, :phone_no, images_attributes: [:id, :content])
+    params.require(:outlet).permit(:name, :address, :state, :price_range, :avatar, :type_of_service, :phone_number, images_attributes: [:id, :content])
   end
 end

@@ -1,6 +1,5 @@
 class Merchants::BaseController < ApplicationController
   # before_action :is_merchant?
-  layout 'merchants'
 
   def is_merchant?
     if current_user.user?

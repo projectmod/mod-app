@@ -1,5 +1,6 @@
 class Merchants::PaymentTransactionsController < Merchants::BaseController
   protect_from_forgery with: :null_session
+  before_action :set_payment_transaction, except: :create
 
   def create
     transaction = PaymentTransaction.find_by(payment_id: params[:PaymentID])
@@ -11,7 +12,7 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
       current_credits = transaction.user.outlet.credits
       transaction.user.outlet.update(credits: current_credits + transaction.package.credits)
 
-      redirect_to merchants_dashboard_path
+      redirect_to success_merchants_payment_transaction_path(transaction)
     else
       redirect_to merchants_pricings_path
     end
@@ -21,5 +22,11 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
   end
 
   def failure
+  end
+
+  private
+
+  def set_payment_transaction
+    @payment_transaction = PaymentTransaction.find_by(id: params[:id])
   end
 end

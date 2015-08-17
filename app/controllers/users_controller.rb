@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_action :require_login, except: [:update, :destroy]
-	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_no]
+	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_number]
 
 	# Step 1
 	def new
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 	def edit
 	end
 
-	def update_phone_no
+	def update_phone_number
 		if @user.update(user_params)
 			Users::VerificationCode.new(@user).deliver
 			redirect_to verify_user_path(@user)
@@ -93,7 +93,7 @@ class UsersController < ApplicationController
 	end
 
   def user_params
-    params.require(:user).permit(:email, :name, :phone_no, :password, :password_confirmation)
+    params.require(:user).permit(:email, :name, :phone_number, :password, :password_confirmation)
   end
 
   def not_authenticated

@@ -37,8 +37,7 @@ merchant.create_outlet(name: "Toni and Guy",
   longitude: 101.612685,
   phone_number: "0126832814",
   availability: true,
-  business_registration: "test12",
-  working_hours: "Monday - Friday")
+  business_registration: "test12")
 
 Outlet.create(name: "A Cut Above",
   type_of_service: ["BLOWOUT"],
@@ -49,7 +48,6 @@ Outlet.create(name: "A Cut Above",
   latitude: 3.167439,
   longitude: 101.612685,
   phone_number: "124324264",
-  working_hours: "Monday - Friday",
   business_registration: "test123",
   availability: true)
 
@@ -62,7 +60,6 @@ Outlet.create(name: "Barber",
   phone_number: "543245465",
   latitude: 3.167439,
   longitude: 101.612685,
-  working_hours: "Monday - Friday",
   business_registration: "test1234",
   availability: true)
 
@@ -75,7 +72,6 @@ Outlet.create(name: "Rainbow Salon",
   latitude: 3.167439,
   longitude: 101.612685,
   phone_number: "0126832814",
-  working_hours: "Monday - Friday",
   business_registration: "test12345",
   availability: true)
 
@@ -88,7 +84,6 @@ Outlet.create(name: "Mark and Guys",
   latitude: 3.167439,
   longitude: 101.612685,
   phone_number: "0126832814",
-  working_hours: "Monday - Friday",
   business_registration: "test12345",
   availability: true)
 

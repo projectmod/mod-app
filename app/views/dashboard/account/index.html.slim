@@ -11,14 +11,14 @@
             .container-fluid
               .row
                 .col-sm-3.text-center
-                  = image_tag @current_booking.outlet_image
+                  = image_tag @current_booking.outlet.main_image
 
                 .col-sm-9.padding-left-5.mobile
                   .container-fluid.no-padding
                     .row
-                      p = @current_booking.outlet_name
-                      p.current-appt-text = @current_booking.outlet_area
-                      p.current-appt-text = @current_booking.outlet_phone_number
+                      p = @current_booking.outlet.name
+                      p.current-appt-text = @current_booking.outlet.area
+                      p.current-appt-text = @current_booking.outlet.phone_number
 
                     .row.margin-top-8
                       .col-sm-6.col-sm-offset-6
@@ -59,8 +59,8 @@
             .content-scroll
               - @previous_bookings.each do |booking|
                 
-                p.prev-booking-title = booking.outlet_name
-                p = booking.outlet_area
+                p.prev-booking-title = booking.outlet.name
+                p = booking.outlet.area
                 p.padding-bottom-1
                   | BOOKED ON 
                   = booking.booked_on

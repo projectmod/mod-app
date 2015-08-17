@@ -6,5 +6,7 @@ var refreshPartial = function() {
 }
 
 $(document).ready(function() {
-  setInterval(refreshPartial, 10000);
+  if ($('.availability-link-settings').length > 0) {
+    setInterval(refreshPartial, 10000);
+  };
 });

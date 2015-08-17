@@ -22,7 +22,7 @@
               | PROFILE DETAILS
           
           .panel-body.edit-body
-            = form_for @outlet, class: 'form' do |f|
+            = form_for [:merchants, @outlet], class: 'form' do |f|
               .container-fluid
                 .row.form-group
                   .col-sm-5.col-sm-offset-1.padding-top-1.no-padding
@@ -55,11 +55,7 @@
                     = f.fields_for :working_hours do |builder|
                       = render( "partials/form/working_hours", builder: builder)
                   .col-sm-1
-                    - new_field = add_nested_form_fields(f, :working_hours)
-                    = link_to '#', class: 'add_fields', data: { fields: new_field.gsub("\n", "")}
-                      i.fa.fa-plus.fa-2x
-                
-                      
+                    = add_nested_form_fields(f, :working_hours)
 
                 .row.form-group
                   .col-sm-5.col-sm-offset-1.padding-top-1.no-padding

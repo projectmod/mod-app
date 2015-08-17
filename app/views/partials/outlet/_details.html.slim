@@ -3,22 +3,22 @@
 		.col-md-8.col-md-offset-2
 			.row
 				.col-md-12
-					p.salon-name.settings.text-center = outlet.name.upcase
-					p.salon-area.settings.text-center.area-padding = outlet.area.upcase
+					p.salon-name.settings.text-center = outlet.name
+					p.salon-area.settings.text-center.area-padding = outlet.area
 			.row
 				.col-sm-4.col-sm-offset-1
 					p.info-title.settings.title-padding ADDRESS
 				.col-sm-6
-					p.info-details.settings.info-padding = outlet.address.upcase
+					p.info-details.settings.info-padding = outlet.address
 
 			.row
 				.col-sm-4.col-sm-offset-1
 					p.info-title.settings.title-padding CONTACT
 				.col-sm-6
-					p.info-details.settings.info-padding = "+60 " + outlet.phone_number
+					p.info-details.settings.info-padding = outlet.phone_number
 
 			.row
 				.col-sm-4.col-sm-offset-1
 					p.info-title.settings.title-padding WORKING HOURS
 				.col-sm-6
-					p.info-details.settings.info-padding = outlet.working_hours.upcase
+					/ p.info-details.settings.info-padding = outlet.working_hours.upcase

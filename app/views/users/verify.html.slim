@@ -19,6 +19,9 @@
 
     .row
       p.text-center.signup-text
+        | DID NOT RECEIVE YOU VERIFICATION CODE?
+        = link_to " RESEND CODE", resend_code_user_path, method: :post, remote: true, class: 'signup-link signup-hover'
+      p.text-center.signup-text
         | ALREADY A MEMBER? 
         = link_to " LOG IN >>", login_path, class: 'signup-link signup-hover'
 

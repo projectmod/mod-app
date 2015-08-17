@@ -3,11 +3,12 @@ class Outlet < ActiveRecord::Base
   has_many :bookings
   has_many :images, dependent: :destroy
   has_many :working_hours
-  
+
   before_create :search_address
 
   accepts_nested_attributes_for :images
-  accepts_nested_attributes_for :working_hours
+  accepts_nested_attributes_for :working_hours, allow_destroy: true,
+    reject_if: proc { |attr| attr['days'].blank? || attr['time'].blank? }
 
   validates_presence_of :business_registration, uniqueness: true
 

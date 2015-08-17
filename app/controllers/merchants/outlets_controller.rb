@@ -1,5 +1,6 @@
 class Merchants::OutletsController < Merchants::BaseController
   before_action :set_outlet, except: [:new, :create]
+  before_action :destroy_empty_working_hours, only: :update
   respond_to :js
 
   def new
@@ -25,7 +26,7 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def update
     if @outlet.update(outlet_params)
-      redirect_to(merchants_outlet_photos_path(@outlet), flash: { success: "You've updated your outlet!" })
+      redirect_to(:back, flash: { success: "You've updated your outlet!" })
     else
       render :edit, notice: "Update failed. Please try again."
     end
@@ -63,11 +64,20 @@ class Merchants::OutletsController < Merchants::BaseController
 
   private
 
+  def destroy_empty_working_hours
+    deleteable_working_hours = params[:outlet][:working_hours_attributes].select { |k,v| v["days"].blank? || v["time"].blank? }
+    deleteable_working_hours.each { |k,v| v["_destroy"] = "1" }
+  end
+
   def set_outlet
     @outlet = current_user.outlet
   end
 
   def outlet_params
+<<<<<<< HEAD
     params.require(:outlet).permit(:name, :address, :state, :price_range, :avatar, :type_of_service, :phone_number, images_attributes: [:id, :content])
+=======
+    params.require(:outlet).permit(:id, :name, :address, :state, :price_range, :avatar, :type_of_service, :phone_number, images_attributes: [:id, :content], working_hours_attributes: [:id ,:days, :time, :_destroy])
+>>>>>>> junxian/polish
   end
 end

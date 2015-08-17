@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	skip_before_action :require_login, except: [:update, :destroy]
-	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_number]
+	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_number, :resend_code]
+	respond_to :js
 
 	# Step 1
 	def new
@@ -31,6 +32,10 @@ class UsersController < ApplicationController
 	end
 
 	def update_phone_number
+		# Remove if first number is 0
+		number = params[:user][:phone_number]
+		params[:user][:phone_number].slice!(0) if number.first == "0"
+
 		if @user.update(user_params)
 			Users::VerificationCode.new(@user).deliver
 			redirect_to verify_user_path(@user)
@@ -64,6 +69,13 @@ class UsersController < ApplicationController
 
 	# Step 3
 	def verify
+	end
+
+	def resend_code
+		Users::VerificationCode.new(@user).deliver
+		flash[:notice] = "We've send your a new verification code. Please check out phone."
+		respond_with(@user, location: verify_user_path(@user))
+		flash.clear
 	end
 
 	def activate

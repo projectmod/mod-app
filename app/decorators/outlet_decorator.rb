@@ -8,17 +8,33 @@ class OutletDecorator < BaseDecorator
     images.map { |i| i.content.url }
   end
 
+  def name
+    model.name.upcase
+  end
+
+  def area
+    model.area.upcase
+  end
+
+  def address
+    model.address.upcase
+  end
+
+  def phone_number
+    "+60 " + model.phone_number
+  end
+
   def salon_services
     model.type_of_service
   end
 
-  def first_image
+  def main_image
     model.images.first.content.url
   rescue
     "merchant_default.jpg"
   end
 
-  def first_banner
+  def main_banner
     model.images.first.content.banner.url
   rescue
     "merchant_default.jpg"

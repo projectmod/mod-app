@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
     if @booking.outlet.availability == true && @booking.save
 
-      message = "Someone wants to book with you, Click on #{confirm_merchants_booking(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+      message = "Someone wants to book with you, Click on #{confirm_merchants_booking_path(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
       TwillioSMS.new(message, @booking.outlet_number)
       redirect_to pending_booking_path(@booking)
     else
@@ -34,6 +34,7 @@ class BookingsController < ApplicationController
 
   def result
     @booking = BookingDecorator.new(@booking)
+    @outlet = OutletDecorator.new(@booking.outlet)
   end
 
   private

@@ -5,7 +5,8 @@ class CreatePackages < ActiveRecord::Migration
       t.string :description
       t.string :title
       t.integer :credits
-      t.timestamps null: false
+
+      t.timestamps
     end
   end
 end

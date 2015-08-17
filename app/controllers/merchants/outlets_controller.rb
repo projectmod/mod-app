@@ -11,7 +11,6 @@ class Merchants::OutletsController < Merchants::BaseController
     @outlet = Outlet.new(outlet_params)
 
     if @outlet.save
-      # flash[:notice]
       redirect_to edit_merchants_outlets_path(@outlet, "services")
     else
       redirect_to new_merchants_outlets_path
@@ -74,10 +73,6 @@ class Merchants::OutletsController < Merchants::BaseController
   end
 
   def outlet_params
-<<<<<<< HEAD
-    params.require(:outlet).permit(:name, :address, :state, :price_range, :avatar, :type_of_service, :phone_number, images_attributes: [:id, :content])
-=======
     params.require(:outlet).permit(:id, :name, :address, :state, :price_range, :avatar, :type_of_service, :phone_number, images_attributes: [:id, :content], working_hours_attributes: [:id ,:days, :time, :_destroy])
->>>>>>> junxian/polish
   end
 end

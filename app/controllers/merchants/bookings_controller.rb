@@ -7,7 +7,7 @@ class Merchants::BookingsController < Merchants::BaseController
       @booking.outlet.update(credits: @booking.outlet.credits - 2)
 
       message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
-      TwillioSMS.new(message, @booking.user_number)
+      TwillioSMS.new(message, @booking.user.phone_number)
     end
   end
 

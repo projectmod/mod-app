@@ -31,13 +31,9 @@
                 .col-md-6.working-day-fields
                   = f.fields_for :working_hours do |builder|
                     = render( "partials/form/working_hours", builder: builder)
-
-                  = add_nested_form_fields(f, :working_hours)
                     
                 .col-md-1
-                  - new_field = add_nested_form_fields(f, :working_hours)
-                  = link_to '#', class: 'add_fields', data: { fields: new_field.gsub("\n", "")}
-                    i.fa.fa-plus.fa-2x
+                  = add_nested_form_fields(f, :working_hours)
               
           .form-group.text-center
             = f.submit "NEXT", class: "btn btn-outlet"

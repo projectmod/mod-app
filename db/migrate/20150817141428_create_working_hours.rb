@@ -5,7 +5,7 @@ class CreateWorkingHours < ActiveRecord::Migration
       t.string :time
       t.integer :outlet_id
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

@@ -3,7 +3,7 @@ User.create(email: "admin@mod.com",
   password: "password",
   password_confirmation: "password",
   name: "Admin",
-  phone_no: "0126832814",
+  phone_number: "0126832814",
   role: "admin")
 
 # Merchant
@@ -13,14 +13,14 @@ merchant = User.create(email: "merchant@mod.com",
   name: "Merchant",
   role: "merchant",
   activated: true,
-  phone_no: "012345678")
+  phone_number: "012345678")
 
 # User
 User.create(email: "user@gmail.com",
   password: "password",
   password_confirmation: "password",
   name: "Kean Seng",
-  phone_no: "012345678")
+  phone_number: "012345678")
 
 Booking.create(user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
 Package.create(price: 20.00, description: "10 BOOKINGS", title: "RM 20", credits: 20)
@@ -35,7 +35,7 @@ merchant.create_outlet(name: "Toni and Guy",
   state: "Kuala Lumpur",
   latitude: 3.167439,
   longitude: 101.612685,
-  phone_no: "0126832814",
+  phone_number: "0126832814",
   availability: true,
   business_registration: "test12",
   working_hours: "Monday - Friday")
@@ -48,7 +48,7 @@ Outlet.create(name: "A Cut Above",
   state: "Selangor",
   latitude: 3.167439,
   longitude: 101.612685,
-  phone_no: "124324264",
+  phone_number: "124324264",
   working_hours: "Monday - Friday",
   business_registration: "test123",
   availability: true)
@@ -59,7 +59,7 @@ Outlet.create(name: "Barber",
   address: "99, Jalan 99, 99999, K.L",
   price_range: "RM 50 - 100",
   state: "Cyberjaya",
-  phone_no: "543245465",
+  phone_number: "543245465",
   latitude: 3.167439,
   longitude: 101.612685,
   working_hours: "Monday - Friday",
@@ -74,7 +74,7 @@ Outlet.create(name: "Rainbow Salon",
   state: "Kuala Lumpur",
   latitude: 3.167439,
   longitude: 101.612685,
-  phone_no: "0126832814",
+  phone_number: "0126832814",
   working_hours: "Monday - Friday",
   business_registration: "test12345",
   availability: true)
@@ -87,7 +87,7 @@ Outlet.create(name: "Mark and Guys",
   state: "Kuala Lumpur",
   latitude: 3.167439,
   longitude: 101.612685,
-  phone_no: "0126832814",
+  phone_number: "0126832814",
   working_hours: "Monday - Friday",
   business_registration: "test12345",
   availability: true)

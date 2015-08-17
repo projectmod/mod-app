@@ -12,7 +12,7 @@
               - @outlets.each do |outlet|
                   .thumbnail
                     = link_to outlet_path(outlet)
-                      = image_tag outlet.first_image, class: 'img-responsive center-block'
+                      = image_tag outlet.main_image, class: 'img-responsive center-block'
                     .caption.text-center
                       p.list-name = outlet.name.upcase
                       p.list-area = outlet.area.upcase

@@ -1,1 +1,11 @@
 .payment-failure
+  .container-fluid
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        p.error-text.error-padding ERROR!
+        p.problem-text THERE WAS A PROBLEM IN PROCESSING YOUR ORDER.
+        p.problem-text.problem-padding SELECT A PLAN AND TRY AGAIN.
+        
+    .row
+      .col-md-2.col-md-offset-5.text-center
+        = link_to "TRY AGAIN", merchants_pricings_path, class: 'btn btn-try'

@@ -82,7 +82,10 @@
             .content-scroll
               - @payment_transactions.each do |payment_transaction|
                 
-                p.prev-booking-title = payment_transaction.package_title
+                p.prev-booking-title
+                  | PAYMENT ID: 
+                  = payment_transaction.payment_id
+                p = payment_transaction.package_title
                 p.no-padding-top = payment_transaction.package_description
                   
                 p.padding-bottom-1

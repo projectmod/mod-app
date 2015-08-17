@@ -1,3 +1,33 @@
 .payment-failure {
-  
+
+  .container-fluid {
+    background-color: #B0344E;
+    margin-bottom: 2%;
+  }
+
+  .btn-try {
+    background-color: #E4A955;
+    color: #F3F3F3 !important;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    letter-spacing: 2.4px;
+    border-radius: 0px;
+    padding: 10px 40px;
+    margin-bottom: 100px;
+    margin-top: 3%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .error-padding {
+    padding-top: 15%;
+    padding-bottom: 4%;
+  }
+
+  .problem-padding {
+    padding-bottom: 6%;
+  }
+
 }

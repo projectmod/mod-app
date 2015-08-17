@@ -1,1 +1,38 @@
 .payment-success
+  .container-fluid
+    .row
+      .col-sm-8.col-sm-offset-2.text-center
+        p.payment-success-title.payment-success-padding PAYMENT SUCCESSFUL!
+    .row
+      .col-sm-4.col-sm-offset-4.text-center
+        p.payment-success-text.bookings-padding YOU NOW HAVE:
+        p.bookings-text.bookings-border = bookings(current_user.outlet.credits)
+    .row.bought-padding
+      .col-md-8.col-md-offset-2
+        .col-xs-4
+          p.bought-text.text-right
+            | YOU BOUGHT
+        .col-xs-2.text-center
+          p.bought-text
+            | : 
+        .col-xs-6
+          p.bought-text = @payment_transaction.package.description
+    .row.price-padding
+      .col-md-8.col-md-offset-2
+        .col-xs-4
+          p.bought-text.text-right
+            | PRICE 
+        .col-xs-2.text-center
+          p.bought-text
+            | : 
+        .col-xs-6
+          p.bought-text = @payment_transaction.package.title
+    
+    / .row
+    /   .col-sm-8.col-sm-offset-2.text-center
+    /     p
+    /       | YOU BOUGHT : 
+    /       = @payment_transaction.package.description
+    /     p
+    /       | PRICE : 
+    /       = @payment_transaction.package.title

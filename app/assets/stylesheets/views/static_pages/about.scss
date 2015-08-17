@@ -1,0 +1,199 @@
+.about {
+
+  .hero-unit {
+    height: 60vh;
+    width: 100vw;
+    margin-bottom: 2%;
+    background-image: image-url("about.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 30% 46%;
+    display: table;
+    position: relative;
+
+    .slogan {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .btn-scroll {
+    border-radius: 50%;
+    background-color: white;
+    color: #B0344E;
+    border-color: #B0344E;
+    opacity: 0.7;
+    margin-top: 5%;
+
+    &:hover {
+      background-color: white;
+      color: #B0344E;
+      border-color: #B0344E;
+      transition: 0.2s;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .contact-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .package-line {
+    height: 23vh;
+    border-left: 1px solid #B0344E;
+    margin-bottom: 15px;
+    opacity: 0.7;
+  }
+
+  // What Is MOD
+
+  .what-is-mod-container {
+    background-color: #F2F2F2;
+  }
+
+  .what-is-mod-padding {
+    padding-top: 3%;
+    padding-bottom: 5%;
+  }
+
+  .no-padding {
+    padding: 0;
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+
+  .bad-hair-padding {
+    padding-bottom: 3%;
+  }
+
+  hr {
+    border: 1px solid #E4A955;
+    width: 15%;
+    opacity: 0.5;
+  }
+
+  .mod-padding {
+    padding-top: 3%;
+  }
+
+  // Services
+
+  .services-container {
+    background-color: #F2F2F2;
+  }
+
+  .services-padding {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  .services-circle {
+    padding-top: 65px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    background-color: #B0344E;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 15px;
+  }
+
+  .services-ball-padding {
+    padding-bottom: 5%;
+  }
+
+  .balls-padding {
+    padding-top: 2%;
+  }
+
+  // Benefits
+
+  .benefits-container {
+    background-color: #E9E9E9;
+  }
+
+  .partners-link {
+    color: #B0344E;
+    text-decoration: none;
+    border-bottom: 1px solid #B0344E;
+
+    &:hover {
+      color: #848484;
+      border-bottom: 1px solid #848484;
+    }
+  }
+
+  .benefits-title-padding {
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
+
+  .partners-padding {
+    padding-bottom: 2%;
+  }
+
+  .benefits-padding {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .benefits-card-padding {
+    padding-bottom: 7%;
+  }
+
+  // Founders
+
+  .founders-container {
+    background-color: #E9E9E9;
+  }
+
+  .founders-circle {
+    padding-top: 65px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    background-image: image-url("founders01.png");
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 15px;
+    background-position: 70% 5%;
+  }
+
+  .founders-name-padding {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  .hello-padding {
+    padding-top: 3%;
+    padding-bottom: 0;
+  }
+
+  .description-padding{
+    padding-bottom: 2%;
+  }
+
+  .founders-padding {
+    padding-bottom: 7%;
+  }
+
+  .scroll-margin {
+    margin-top: 1%;
+  }
+
+  .line-margin {
+    margin-bottom: 2%;
+  }
+
+}

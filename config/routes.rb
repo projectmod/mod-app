@@ -97,7 +97,7 @@ Rails.application.routes.draw do
     # Confirm Booking
     resources :bookings, except: [:new, :create, :update, :edit, :destroy] do
       member do
-        post :confirm
+        get :confirm
         get :success
         get :failure
       end

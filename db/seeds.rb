@@ -22,7 +22,6 @@ User.create(email: "user@gmail.com",
   name: "Kean Seng",
   phone_number: "012345678")
 
-Booking.create(user_id: 3, confirmation_code: "abc123", user_number: "32455", outlet_number: "24534231")
 Package.create(price: 20.00, description: "10 BOOKINGS", title: "RM 20", credits: 20)
 Package.create(price: 50.00, description: "25 BOOKINGS", title: "RM 50", credits: 50)
 Package.create(price: 100.00, description: "50 + 5 FREE BOOKINGS", title: "RM 100", credits: 110)

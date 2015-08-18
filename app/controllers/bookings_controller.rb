@@ -7,8 +7,8 @@ class BookingsController < ApplicationController
 
     if @booking.outlet.availability == true && @booking.save
 
-      message = "Someone wants to book with you, Click on #{confirm_merchants_booking_path(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
-      TwillioSMS.new(message, @booking.outlet_number)
+      message = "Someone wants to book with you, Click on #{confirm_merchants_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+      TwillioSMS.new(message, @booking.outlet.phone_number).send
       redirect_to pending_booking_path(@booking)
     else
 
@@ -44,7 +44,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:outlet_number, :user_number, :user_cancellation, :outlet_confirmed, :user_id, :outlet_id, :confirmation_code)
+    params.require(:booking).permit(:user_cancellation, :outlet_confirmed, :user_id, :outlet_id, :confirmation_code)
   end
-
 end

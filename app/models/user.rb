@@ -12,17 +12,15 @@ class User < ActiveRecord::Base
   validates :phone_number, uniqueness: true, if: :phone_number
   validates_numericality_of :phone_number, only_integer: true, message: "is not valid! Please enter only 0 to 9 digits for your phone number.", if: :phone_number
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: [:create, :update] }, if: :email
-  
+
   has_many :authentications, dependent: :destroy
-  has_many :payment_transactions
   has_many :bookings
+  has_many :payment_transactions, through: :outlet
   has_one :outlet
-  
+
   accepts_nested_attributes_for :authentications
 
   enum role: [:user, :merchant, :admin]
-
-  mount_uploader :avatar, ImageUploader
 
   def activate
     update(activated: true)

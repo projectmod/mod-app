@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   if (isMobile === false) {
     parallax = document.querySelectorAll('.parallax');
-    speed = 0.75;
+    speed = 0.5;
     [].slice.call(parallax).forEach(function(el,i){
       var startingPos = window.pageYOffset - $(el).position().top
       $(el).css('background-position', '50% ' + startingPos + 'px')

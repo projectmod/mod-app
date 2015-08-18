@@ -12,7 +12,7 @@
     .col-md-12.text-center
       - if current_user.present?
         = form_for @booking do |f|
-          = f.hidden_field :outlet_number, value: @outlet.display_phone_number, readonly: true
+          = f.hidden_field :outlet_number, value: @outlet.phone_number, readonly: true
           = f.hidden_field :user_number, value: current_user.phone_number, readonly: true
           = f.hidden_field :outlet_id, value: @outlet.id
           = f.hidden_field :user_id, value: current_user.id

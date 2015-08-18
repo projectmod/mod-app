@@ -2,7 +2,7 @@ class Merchants::BookingsController < Merchants::BaseController
   before_action :set_booking
 
   def confirm
-    if @booking.created_at < 3.minutes
+    if @booking.created_at > 3.minutes.ago
       @booking.update(outlet_confirmed: true)
       @booking.outlet.update(credits: @booking.outlet.credits - 2)
 

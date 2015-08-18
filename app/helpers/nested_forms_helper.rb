@@ -8,7 +8,7 @@ module NestedFormsHelper
       render( "partials/form/" + association.to_s, builder: builder)
     end
 
-    link = link_to "<i class='fa fa-plus fa-2x'></i>".html_safe, '#', class: 'add_fields', data: { id: id, fields: new_field.gsub("\n", "")}
+    link = link_to "<i class='fa fa-plus-circle fa-2x'></i>".html_safe, '#', class: 'add_fields', data: { id: id, fields: new_field.gsub("\n", "")}
 
     link.html_safe
   end

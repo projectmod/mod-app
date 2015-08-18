@@ -9,13 +9,13 @@ class Payment::Merchant
 
   def get_link
     @payment_id = create_payment_id
-    package.payment_transactions.create(payment_id: @payment_id, user_id: user.id)
+    package.payment_transactions.create(payment_id: @payment_id, outlet_id: user.outlet.id)
 
-    ( ENV['MERCHANT_URL'] + "?" + "TransactionType=SALE" + "&PymtMethod=" + 
-     params[:payment_method] + "&ServiceID=sit" + "&PaymentID=" + @payment_id + "&OrderNumber=" + 
-     @payment_id + "&PaymentDesc=" + package.description + "&MerchantReturnURL=" + ENV['MERCHANT_RETURN_URL'] + 
+    ( ENV['MERCHANT_URL'] + "?" + "TransactionType=SALE" + "&PymtMethod=" +
+     params[:payment_method] + "&ServiceID=sit" + "&PaymentID=" + @payment_id + "&OrderNumber=" +
+     @payment_id + "&PaymentDesc=" + package.description + "&MerchantReturnURL=" + ENV['MERCHANT_RETURN_URL'] +
      "&Amount=" + package_price + "&CurrencyCode=MYR" + "&HashValue=" + hash_value + "&CustIP=" +
-     ip + "&CustName=" + user.name + "&CustEmail=" + user.email + "&CustPhone=" + user.phone_number + 
+     ip + "&CustName=" + user.name + "&CustEmail=" + user.email + "&CustPhone=" + user.phone_number +
      "&MerchantName=MOD" + "&MerchantApprovalURL=" + ENV['MERCHANT_SUCCESS_URL'] + "&MerchantUnApprovalURL=" + ENV['MERCHANT_FAILURE_URL'] +
      "&PageTimeout=300")
   end

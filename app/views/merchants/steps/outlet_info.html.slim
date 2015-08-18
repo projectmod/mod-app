@@ -21,18 +21,42 @@
           .form-group
             = f.text_field :phone_number, required: true, placeholder: 'SALON CONTACT NO.', class: 'form-control merchant-signup'
           .form-group
-            .container-fluid
+            
+            // Working Hours Mobile
+            .container-fluid.mobile
               .row
-                .col-md-5
-                  = f.label :working_hours, 'WORKING HOURS', class: 'form-controler merchant-signup'
-                  p e.g: MON - FRI
-                  p 10AM - 8PM
+                .col-md-12
+                  .container-fluid.no-padding
+                    .col-xs-4.no-padding
+                      = f.label :working_hours, 'WORKING HOURS', class: 'merchant-signup'
+                    
+                    .col-xs-1.no-padding
+                      p e.g: 
+                    
+                    .col-xs-5.no-padding
+                      p MON - FRI
+                      p 10AM - 8PM
+                      
+                    .col-xs-2.no-padding.text-center
+                      = add_nested_form_fields(f, :working_hours)
+              .row.no-padding
+                .col-md-12.working-day-fields.no-padding
+                  = f.fields_for :working_hours do |builder|
+                    = render( "partials/form/working_hours", builder: builder)
+            
+            // Working Hours Desktop
+            .container-fluid.desktop.no-top-padding
+              .row
+                .col-sm-4
+                  = f.label :working_hours, 'WORKING HOURS', class: 'merchant-signup'
+                  p.hours-text e.g: MON - FRI
+                  p.hours-text 10AM - 8PM
                   
-                .col-md-6.working-day-fields
+                .col-sm-7.working-day-fields
                   = f.fields_for :working_hours do |builder|
                     = render( "partials/form/working_hours", builder: builder)
                     
-                .col-md-1
+                .col-sm-1
                   = add_nested_form_fields(f, :working_hours)
               
           .form-group.text-center

@@ -3,6 +3,7 @@ class Outlet < ActiveRecord::Base
   has_many :bookings
   has_many :images, dependent: :destroy
   has_many :working_hours
+  has_many :payment_transactions
 
   before_create :search_address
 

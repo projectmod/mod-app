@@ -46,5 +46,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:outlet_number, :user_number, :user_cancellation, :outlet_confirmed, :user_id, :outlet_id, :confirmation_code)
   end
-
 end

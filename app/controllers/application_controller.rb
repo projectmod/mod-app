@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
 
   def not_authenticated
     flash[:alert] = "Please login first"
+
+    return redirect_to main_app.admin_portal_path if request.script_name == "/superadmin"
     redirect_to login_path
   end
 end

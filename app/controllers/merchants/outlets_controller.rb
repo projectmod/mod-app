@@ -35,7 +35,7 @@ class Merchants::OutletsController < Merchants::BaseController
     @outlet = OutletDecorator.new(@outlet)
 
     # Create empty working hour
-    @outlet.working_hours.new
+    @outlet.working_hours.new if @outlet.working_hours.empty?
   end
 
   def photos

@@ -21,7 +21,7 @@ class OutletDecorator < BaseDecorator
   end
 
   def display_phone_number
-    "+60 " + model.phone_number
+    "+6" + model.phone_number
   end
 
   def salon_services

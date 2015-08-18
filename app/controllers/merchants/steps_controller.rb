@@ -6,7 +6,7 @@ class Merchants::StepsController < ApplicationController
 
   def show
     # Render new empty working hours
-    @outlet.working_hours.new
+    @outlet.working_hours.new if @outlet.working_hours.empty?
     render_wizard
   end
 

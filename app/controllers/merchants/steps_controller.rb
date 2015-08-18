@@ -5,6 +5,8 @@ class Merchants::StepsController < ApplicationController
   before_action :verify_type_of_service, only: :update
 
   def show
+    # Render new empty working hours
+    @outlet.working_hours.new
     render_wizard
   end
 

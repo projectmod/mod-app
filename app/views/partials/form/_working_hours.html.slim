@@ -1,0 +1,7 @@
+.flex-form
+  .flex-child.margin-right
+    = builder.text_field :days, placeholder: 'DAY', class: 'form-control edit-field', required: true
+    = builder.hidden_field :_destroy
+    
+  .flex-child
+    = builder.text_field :time, placeholder: 'TIME', class: 'form-control edit-field', required: true

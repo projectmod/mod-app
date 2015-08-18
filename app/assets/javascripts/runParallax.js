@@ -12,7 +12,7 @@ $(document).ready(function() {
     speed = 0.5;
     [].slice.call(parallax).forEach(function(el,i){
       var startingPos = window.pageYOffset - $(el).position().top
-      $(el).css('background-position', '50% ' + startingPos + 'px')
+      $(el).css('background-position', '50% ' + startingPos * speed + 'px')
       window.onscroll = function() {
         var windowYOffset = (window.pageYOffset - $(el).position().top)
         var elBackgrounPos = "50% " + windowYOffset * speed + "px";

@@ -9,7 +9,7 @@ module RailsAdmin
         RailsAdmin::Config::Actions.register(self)
 
         register_instance_option :visible? do
-          authorized? && !bindings[:object].activated
+          authorized? && !bindings[:object].featured
         end
 
         register_instance_option :member do
@@ -35,7 +35,7 @@ module RailsAdmin
         RailsAdmin::Config::Actions.register(self)
 
         register_instance_option :visible? do
-          authorized? && bindings[:object].activated
+          authorized? && bindings[:object].featured
         end
 
         register_instance_option :member do

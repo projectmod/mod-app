@@ -1,10 +1,12 @@
 class AdminSessionsController < ApplicationController
-    
+
 	def new
 	end
 
 	def create
-		if @user = login(params[:user_sessions][:email], params[:user_sessions][:password])
+		user = login(params[:user_sessions][:email], params[:user_sessions][:password])
+
+    if user && user.admin?
 			flash[:notice] = "You've succesfully logged in!"
 			redirect_to rails_admin_path
 		else

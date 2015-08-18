@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     setInterval(function() {
       checkOutletConfirmed(id)
-    }, 1000);
+    }, 10000);
 
     window.setTimeout(function() {
       window.location.href = 'result';

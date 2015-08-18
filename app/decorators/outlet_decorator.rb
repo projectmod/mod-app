@@ -20,7 +20,7 @@ class OutletDecorator < BaseDecorator
     model.address.upcase
   end
 
-  def phone_number
+  def display_phone_number
     "+60 " + model.phone_number
   end
 

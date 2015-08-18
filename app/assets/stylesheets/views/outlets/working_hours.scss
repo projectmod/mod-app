@@ -1,0 +1,33 @@
+.flex-form {
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .flex-child {
+    width: 46%;
+  }
+}
+
+.margin-right {
+  margin-right: 5px !important;
+}
+
+.add_fields {
+
+  i.fa {
+    margin-top: 5px;
+    color: #E4A955;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .flex-form {
+    .margin-right {
+    }
+
+    .flex-child {
+      margin: 0;
+      width: 49%;
+    }
+  }
+}

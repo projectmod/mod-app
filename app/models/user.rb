@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: [:create, :update] }, if: :email
 
   has_many :authentications, dependent: :destroy
-  has_many :payment_transactions
   has_many :bookings
+  has_many :payment_transactions, through: :outlet
   has_one :outlet
 
   accepts_nested_attributes_for :authentications

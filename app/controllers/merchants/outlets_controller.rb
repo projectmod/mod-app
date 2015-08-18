@@ -65,6 +65,7 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def destroy_empty_working_hours
     params[:outlet][:working_hours_attributes].select { |k,v| v["days"].blank? || v["time"].blank? ? v["_destroy"] = "1" : v["_destroy"] = "0" }
+  rescue
   end
 
   def set_outlet

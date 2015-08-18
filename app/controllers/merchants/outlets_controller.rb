@@ -33,6 +33,9 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def customize
     @outlet = OutletDecorator.new(@outlet)
+
+    # Create empty working hour
+    @outlet.working_hours.new
   end
 
   def photos

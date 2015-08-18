@@ -45,7 +45,8 @@
                   .col-md-12
                     .row
                       .col-md-8.col-md-offset-2
-                        = link_to "TURN ON YOUR AVAILABILITY", root_path, class: "btn btn-merchant btn-position center-block"
+                        - if !current_user.outlet.availability
+                          = link_to "TURN ON YOUR AVAILABILITY", merchants_outlet_toggle_availability_path(current_user.outlet), method: :post, remote: true, id: "merchant-availability-button", class: "btn btn-merchant btn-position center-block"
 
   .row
     .col-md-8.col-md-offset-2

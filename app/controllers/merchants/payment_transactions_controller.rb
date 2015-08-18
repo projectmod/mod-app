@@ -9,8 +9,8 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
       transaction.update(price: params[:Amount], payment_method: params[:PymtMethod],
                          payment_id: params[:PaymentID], bank_ref_no: params[:BankRefNo])
 
-      current_credits = transaction.user.outlet.credits
-      transaction.user.outlet.update(credits: current_credits + transaction.package.credits)
+      current_credits = transaction.outlet.credits
+      transaction.outlet.update(credits: current_credits + transaction.package.credits)
 
       redirect_to success_merchants_payment_transaction_path(transaction)
     else

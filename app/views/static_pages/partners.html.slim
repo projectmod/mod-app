@@ -22,6 +22,7 @@
                   p.card-area.card-area-padding = outlet.area   
           
             .flex-child.flex-margin
-              = image_tag "add_partner.png", class: 'center-block img-responsive'
+              = link_to new_merchants_user_path
+                = image_tag "add_partner.png", class: 'center-block img-responsive'
               .card-content.padding-top
                 p.card-area.card-area-padding Be a partner

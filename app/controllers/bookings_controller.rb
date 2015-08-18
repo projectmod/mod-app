@@ -18,6 +18,17 @@ class BookingsController < ApplicationController
   end
 
   def pending
+    if @booking.outlet_confirmed? || @booking.created_at < 3.minutes.ago
+      redirect_to result_booking_path(@booking)
+    end
+  end
+
+  def check
+    if @booking.outlet_confirmed
+      render json: { confirmed: true }, status: :ok
+    else
+      render json: { confirmed: false }, status: :ok
+    end
   end
 
   def user_cancellation_confirmation

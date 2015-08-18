@@ -109,6 +109,7 @@ Rails.application.routes.draw do
   # ==============================================================================================
   resources :bookings, only: :create do
     member do
+      post :check
       get :outlet_confirmed
       post :user_cancellation
       get :user_cancellation_confirmation

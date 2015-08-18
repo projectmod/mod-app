@@ -25,6 +25,7 @@ class Merchants::BookingsController < Merchants::BaseController
 
   def set_booking
     booking = Booking.find(params[:id])
+    authorize booking
     @booking = BookingDecorator.new(booking)
   end
 end

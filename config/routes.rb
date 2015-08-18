@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # ==============================================================================================
   # Users
   # ==============================================================================================
-  resources :users, except: [:index,:show, :destroy] do
+  resources :users, except: [:index, :show, :destroy] do
   	member do
       get :verify
       post :resend_code
@@ -70,7 +70,7 @@ Rails.application.routes.draw do
     resources :users, except: [:index, :show, :destroy]
 
     # Outlets
-    resources :outlets, except: :destroy do
+    resources :outlets, except: [:new, :create, :destroy] do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]

@@ -1,4 +1,6 @@
 class Merchants::SessionsController < Merchants::BaseController
+  skip_before_action :require_login, except: :destroy
+  skip_before_action :is_merchant?, except: :destroy
 
   def new
     @user = User.new

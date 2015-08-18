@@ -3,6 +3,8 @@ class Merchants::StepsController < ApplicationController
   steps :outlet_info, :services
   before_action :set_outlet
   before_action :verify_type_of_service, only: :update
+  skip_before_action :require_login
+  skip_before_action :is_merchant?
 
   def show
     # Render new empty working hours

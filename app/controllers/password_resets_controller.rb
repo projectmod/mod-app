@@ -1,10 +1,9 @@
 class PasswordResetsController < ApplicationController
-  skip_before_action :require_login
   before_action :set_token_and_user, only: [:edit, :update]
 
   def new
   end
-  
+
   def create
     @user = User.find_by_email(params[:password_resets][:email])
     @user.deliver_reset_password_instructions! if @user

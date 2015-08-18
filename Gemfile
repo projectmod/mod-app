@@ -30,8 +30,10 @@ gem 'activerecord-postgis-adapter'
 gem 'figaro'
 
 # Authentication
-gem 'cancancan', '~> 1.10'
 gem 'sorcery'
+
+# Authorization
+gem 'pundit'
 
 # Responders
 gem 'responders'

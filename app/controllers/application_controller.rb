@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # before_action :require_login
+  include Pundit
+
+  rescue_from Pundit::NotAuthorizedError do |exception|
+  	redirect_to root_path, alert: exception.message
+  end
 
   def not_authenticated
-  # Make sure that we reference the route from the main app.
-    redirect_to '/login'
+    flash[:alert] = "Please login first"
+    redirect_to login_path
   end
 end

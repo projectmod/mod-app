@@ -1,6 +1,5 @@
 class AdminSessionsController < ApplicationController
-  skip_before_action :require_login, [except: :destroy]
-
+    
 	def new
 	end
 
@@ -13,5 +12,4 @@ class AdminSessionsController < ApplicationController
 			render action: 'new'
 		end
 	end
-
 end

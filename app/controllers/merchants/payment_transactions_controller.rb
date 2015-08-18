@@ -4,6 +4,7 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
 
   def create
     transaction = PaymentTransaction.find_by(payment_id: params[:PaymentID])
+    authorize transaction
 
     if transaction && params[:TxnMessage] == "Transaction+Successful"
       transaction.update(price: params[:Amount], payment_method: params[:PymtMethod],
@@ -28,5 +29,6 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
 
   def set_payment_transaction
     @payment_transaction = PaymentTransaction.find_by(id: params[:id])
+    authorize @payment_transaction
   end
 end

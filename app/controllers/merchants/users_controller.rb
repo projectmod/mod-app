@@ -1,6 +1,6 @@
 class Merchants::UsersController < Merchants::BaseController
-  before_action :set_user, only: [:edit, :show, :update]
-  # skip_before_action :is_merchant?, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :is_merchant?, only: [:new, :create]
 
   def new
   end
@@ -20,17 +20,6 @@ class Merchants::UsersController < Merchants::BaseController
       end
       redirect_to new_merchants_user_path
     end
-  end
-
-  def show
-  end
-
-  def edit
-    outlet = @user.outlet
-    @outlet = OutletDecorator.new(outlet)
-  end
-
-  def update
   end
 
   private

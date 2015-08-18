@@ -1,21 +1,7 @@
 class Merchants::OutletsController < Merchants::BaseController
-  before_action :set_outlet, except: [:new, :create]
+  before_action :set_outlet
   before_action :destroy_empty_working_hours, only: :update
   respond_to :js
-
-  def new
-    @outlet = Outlet.new
-  end
-
-  def create
-    @outlet = Outlet.new(outlet_params)
-
-    if @outlet.save
-      redirect_to edit_merchants_outlets_path(@outlet, "services")
-    else
-      redirect_to new_merchants_outlets_path
-    end
-  end
 
   def show
   end
@@ -73,6 +59,7 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def set_outlet
     @outlet = current_user.outlet
+    authorize @outlet
   end
 
   def outlet_params

@@ -11,7 +11,7 @@ var checkOutletConfirmed = function(id) {
 
 $(document).ready(function(){
   if ($("#pending-booking").length > 0) {
-    var id = $('.outlet-id').text();
+    var id = window.location.href.split('/')[4];
 
     setInterval(function() {
       checkOutletConfirmed(id)

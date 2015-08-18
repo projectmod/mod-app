@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   rescue_from Pundit::NotAuthorizedError do |exception|
-  	redirect_to root_path, alert: exception.message
+    flash[:alert] = exception.message
+  	redirect_to root_path
   end
 
   def not_authenticated

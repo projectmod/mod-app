@@ -1,4 +1,4 @@
 class PaymentTransaction < ActiveRecord::Base
-	belongs_to :user
+	belongs_to :outlet
   belongs_to :package
 end

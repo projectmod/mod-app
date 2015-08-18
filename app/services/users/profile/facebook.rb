@@ -9,8 +9,7 @@ class Users::Profile::Facebook
     graph = Koala::Facebook::API.new(access_token)
 
     profile = graph.get_object("me", {}, api_version: "v2.3")
-    image = graph.get_picture("me", {type: "large"})
 
-    OpenStruct.new(name: profile["name"], email: profile["email"], uid: profile["id"], avatar: image)
+    OpenStruct.new(name: profile["name"], email: profile["email"], uid: profile["id"])
   end
 end

@@ -14,6 +14,4 @@
 |__|  |__|  \______/  |_______/
 </pre>
 
-Built on Ruby 2.2.2 and Ruby on Rails 4.2.1
-
-Just for fun!
+Built on Ruby 2.2.2 and Ruby on Rails 4.2.3

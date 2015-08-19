@@ -47,9 +47,6 @@ RailsAdmin.config do |config|
       field :phone_number
       field :credits
       field :activated
-      field :payment_transactions_count do
-        sortable true
-      end
     end
   end
 

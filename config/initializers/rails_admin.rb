@@ -1,7 +1,6 @@
 RailsAdmin.config do |config|
   require Rails.root.join('lib', 'rails_admin_activate_merchant.rb')
   require Rails.root.join('lib', 'rails_admin_set_featured.rb')
-
   ### Popular gems integration
 
   ## == Sorcery ==
@@ -34,6 +33,32 @@ RailsAdmin.config do |config|
           value_in_default_time_zone.in_time_zone(pacific_time_zone)
         end
       end
+    end
+  end
+
+  config.model Outlet do
+    list do
+      field :bookings_count do
+        sortable true
+      end
+      field :type_of_service do
+        searchable true
+      end
+      field :featured
+      field :name
+      field :phone_number
+      field :area
+      field :address
+      field :state
+      field :latitude
+      field :longitude
+      field :price_range
+      field :availability
+      field :credits do
+        sortable true
+      end
+      field :business_registration
+      field :completed_registration
     end
   end
 

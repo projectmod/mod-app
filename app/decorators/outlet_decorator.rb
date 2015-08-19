@@ -25,7 +25,7 @@ class OutletDecorator < BaseDecorator
   end
 
   def salon_services
-    model.type_of_service
+    model.type_of_service.split(', ')
   end
 
   def main_image

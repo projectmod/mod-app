@@ -1,6 +1,7 @@
 class Merchants::OutletsController < Merchants::BaseController
   before_action :set_outlet
   before_action :destroy_empty_working_hours, only: :update
+  before_action :verify_type_of_service, only: :update
   respond_to :js
 
   def show
@@ -51,6 +52,14 @@ class Merchants::OutletsController < Merchants::BaseController
   end
 
   private
+
+  def verify_type_of_service
+    params[:outlet][:type_of_service] = params[:outlet][:type_of_service].join(', ')
+    if outlet_params[:type_of_service].nil?
+      flash[:error] = "Please select at least one type of service before submitting."
+      redirect_to merchants_outlet_step_path(@outlet, "services")
+    end
+  end
 
   def destroy_empty_working_hours
     params[:outlet][:working_hours_attributes].select { |k,v| v["days"].blank? || v["time"].blank? ? v["_destroy"] = "1" : v["_destroy"] = "0" }

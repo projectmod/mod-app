@@ -24,7 +24,7 @@ class OutletDecorator < BaseDecorator
     "+6" + model.phone_number
   end
 
-  def salon_services
+  def type_of_service
     model.type_of_service.split(', ')
   end
 

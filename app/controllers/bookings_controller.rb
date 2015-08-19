@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
 
   def user_cancellation
     @booking.update_attribute(user_cancellation: true)
-    total = @booking.outlet.credits + 2
+    total = @booking.outlet.user.credits + 2
     @booking.outlet.update_attribute(credits: total)
 
     flash[:notice] = "You've successfully cancelled your booking!"

@@ -9,7 +9,7 @@ class PasswordResetsController < ApplicationController
     @user.deliver_reset_password_instructions! if @user
 
     flash[:notice] = "We've send you the instructions on how to reset your password to your email!"
-    redirect_to password_resets_path
+    redirect_to root_path
   end
 
   def edit

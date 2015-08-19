@@ -25,11 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def check
-    if @booking.outlet_confirmed
-      render json: { confirmed: true }, status: :ok
-    else
-      render json: { confirmed: false }, status: :ok
-    end
+    render json: { confirmed: @booking.outlet_confirmed }, status: :ok
   end
 
   def user_cancellation_confirmation

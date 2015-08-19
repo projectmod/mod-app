@@ -21,5 +21,4 @@ class PaymentTransactionsDecorator < BaseDecorator
   def package
     model.package
   end
-
 end

@@ -195,4 +195,151 @@
     margin-bottom: 2%;
   }
 
+  // signup container
+
+  .signup-container {
+
+    border: 1px solid #E4A955;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+
+    ::-webkit-input-placeholder {
+      color: #B0344E !important;
+      opacity: 0.5;
+    }
+
+    :-moz-placeholder {
+      color: #B0344E !important;
+      opacity: 0.5;
+    }
+
+    ::-moz-placeholder {
+      color: #B0344E !important;
+      opacity: 0.5;
+    }
+
+    :-ms-input-placeholder {
+      color: #B0344E !important;
+      opacity: 0.5;
+    }
+
+    hr {
+      border-color: #E4A955;
+    }
+
+    h3 {
+      font-family: 'brandon-light';
+      font-size: 18px;
+      color: #B0344E;
+      letter-spacing: 2.4px;
+      padding-top: 2%;
+      padding-bottom: 1%;
+    }
+
+    .signup-padding {
+      padding-top: 3%;
+    }
+
+    .step-text:before {
+      content: "";
+      position: absolute;
+      width: 20%;
+      height: 1px;
+      bottom: 0;
+      left: 40%;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      border-color: #E4A955;
+      background-color: #F8F8F8;
+      border-radius: 0px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .btn-about-signup {
+      border-radius: 0px;
+      background-color: #B0344E;
+      font-family: 'brandon-reg';
+      font-size: 16px;
+      color: #F3F3F3;
+      letter-spacing: 2.4px;
+      padding: 5px 60px;
+      margin-top: 5%;
+      margin-bottom: 1%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .login-hover {
+      text-decoration: none;
+
+      &:hover {
+        color: #848484 !important;
+      }
+    }
+
+    .or-padding {
+      padding-top: 10px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .no-side-padding {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .padding-top-1 {
+      padding-top: 1%;
+    }
+
+    .padding-right-10 {
+      padding-right: 10%;
+    }
+
+    .btn-fb {
+      border-radius: 4px;
+      background-color: #4366A6;
+      color: #F3F3F3;
+      font-family: 'brandon-reg';
+      font-size: 18px;
+      margin-bottom: 5%;
+
+      &:hover {
+        opacity: 0.9;
+        transition: 0.2s;
+        color: #F3F3F3;
+      }
+
+      &:focus {
+        color: #F3F3F3;
+        outline: none;
+      }
+    }
+
+    .tablet {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .edit {
+    .normal {
+      display: none;
+    }
+
+    .tablet {
+      display: block;
+    }
+  }
 }

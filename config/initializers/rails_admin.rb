@@ -36,7 +36,7 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model User do
+  config.model 'User' do
     list do
       field :email
       field :name
@@ -50,7 +50,7 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model Outlet do
+  config.model 'Outlet' do
     list do
       field :bookings_count do
         sortable true

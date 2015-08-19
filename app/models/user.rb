@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications, dependent: :destroy
   has_many :bookings
-  has_many :payment_transactions, through: :outlet
+  has_many :payment_transactions
   has_one :outlet
 
   accepts_nested_attributes_for :authentications

@@ -26,14 +26,14 @@
             p 
               | REMAINING, 
               span.header-name
-                | #{ bookings(current_user.outlet.credits) }
+                | #{ bookings(current_user.credits) }
 
         ul.nav.navbar-nav.navbar-right
           li.red-text.padding-bookings.mobile
             p 
               | REMAINING, 
               span.header-name 
-                | #{ bookings(current_user.outlet.credits) }
+                | #{ bookings(current_user.credits) }
 
           li.red-text.mobile
             = link_to "BUY CREDITS", merchants_pricings_path, class: "nav-header-highlight"

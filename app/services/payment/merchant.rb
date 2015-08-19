@@ -9,7 +9,7 @@ class Payment::Merchant
 
   def get_link
     @payment_id = create_payment_id
-    package.payment_transactions.create(payment_id: @payment_id, outlet_id: user.outlet.id)
+    package.payment_transactions.create(payment_id: @payment_id, user_id: user.id)
 
     ( ENV['MERCHANT_URL'] + "?" + "TransactionType=SALE" + "&PymtMethod=" +
      params[:payment_method] + "&ServiceID=sit" + "&PaymentID=" + @payment_id + "&OrderNumber=" +

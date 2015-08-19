@@ -1,7 +1,7 @@
 class PaymentTransactionPolicy < ApplicationPolicy
 
   def create?
-    user.present && user.merchant? && record.outlet == user.outlet
+    user.present? && user.merchant? && record.user == user
   end
 
   def success?

@@ -40,7 +40,8 @@ class UsersController < ApplicationController
 			Users::VerificationCode.new(@user).deliver
 			redirect_to verify_user_path(@user)
 		else
-			redirect_to root_path
+			flash[:error] = "Phone number is already in use. Please try again!"
+			redirect_to :back
 		end
 	end
 

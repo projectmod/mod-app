@@ -10,8 +10,6 @@ class ApplicationPolicy
     record.class
   end
 
-  private
-
   def record_exists?
     scope.where(id: record.id).exists?
   end

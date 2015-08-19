@@ -22,6 +22,10 @@ class BookingPolicy < ApplicationPolicy
     user_cancellation_confirmation?
   end
 
+  def check?
+    pending?
+  end
+
   # Merchant Booking Policies
   def confirm?
     user.present? && user.merchant? && record.outlet == user.outlet

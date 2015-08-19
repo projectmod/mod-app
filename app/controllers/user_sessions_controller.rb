@@ -24,7 +24,6 @@ class UserSessionsController < ApplicationController
 	end
 
 	def destroy
-		forget_me!
 		logout
 		flash[:notice] = "You've logged out, see you again!"
 		redirect_to root_path

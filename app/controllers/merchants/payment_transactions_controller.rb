@@ -1,5 +1,6 @@
 class Merchants::PaymentTransactionsController < Merchants::BaseController
-  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
+  skip_before_action :require_login
   before_action :set_payment_transaction, except: :create
 
   def create
@@ -10,8 +11,8 @@ class Merchants::PaymentTransactionsController < Merchants::BaseController
       transaction.update(price: params[:Amount], payment_method: params[:PymtMethod],
                          payment_id: params[:PaymentID], bank_ref_no: params[:BankRefNo])
 
-      current_credits = transaction.outlet.credits
-      transaction.outlet.update(credits: current_credits + transaction.package.credits)
+      current_credits = transaction.user.credits
+      transaction.user.update(credits: current_credits + transaction.package.credits)
 
       redirect_to success_merchants_payment_transaction_path(transaction)
     else

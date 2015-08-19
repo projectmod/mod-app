@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818235611) do
+ActiveRecord::Schema.define(version: 20150819022712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20150818235611) do
     t.string   "type_of_service",        default: ""
     t.string   "phone_number"
     t.boolean  "availability",           default: false
-    t.integer  "credits",                default: 20
     t.integer  "user_id"
     t.string   "business_registration",                  null: false
     t.boolean  "completed_registration", default: false
@@ -80,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150818235611) do
     t.decimal  "price"
     t.string   "payment_method"
     t.integer  "package_id"
-    t.integer  "outlet_id"
+    t.integer  "user_id"
     t.string   "bank_ref_no"
     t.string   "payment_id"
     t.datetime "created_at"
@@ -109,6 +108,8 @@ ActiveRecord::Schema.define(version: 20150818235611) do
     t.string   "verification_code"
     t.boolean  "activated",                       default: false
     t.integer  "role",                            default: 0
+    t.integer  "credits",                         default: 20
+    t.integer  "payment_transactions_count"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

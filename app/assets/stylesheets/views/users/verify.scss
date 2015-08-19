@@ -78,6 +78,13 @@
     &:focus {
       outline: none;
     }
+
+    &:hover {
+      border-color: #B0344E;
+      color: #B0344E;
+      transition: 0.2s;
+      background-color: #F3F3F3;
+    }
   }
 
   .signup-hover {

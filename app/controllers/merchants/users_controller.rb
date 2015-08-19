@@ -9,7 +9,7 @@ class Merchants::UsersController < Merchants::BaseController
     business_registration = user_params[:business_registration]
     params[:user].delete(:business_registration)
 
-    @user = User.new(user_params.merge({role: "merchant"}))
+    @user = User.new(user_params.merge({role: "merchant", credits: 20}))
 
     if @user.save
       @outlet = @user.create_outlet(business_registration: business_registration)

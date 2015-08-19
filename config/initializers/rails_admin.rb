@@ -36,6 +36,23 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model User do
+    list do
+      field :email
+      field :name
+      field :role do
+        sortable true
+        searchable true
+      end
+      field :phone_number
+      field :credits
+      field :activated
+      field :payment_transactions_count do
+        sortable true
+      end
+    end
+  end
+
   config.model Outlet do
     list do
       field :bookings_count do
@@ -54,9 +71,6 @@ RailsAdmin.config do |config|
       field :longitude
       field :price_range
       field :availability
-      field :credits do
-        sortable true
-      end
       field :business_registration
       field :completed_registration
     end

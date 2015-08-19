@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819022712) do
+ActiveRecord::Schema.define(version: 20150819025837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20150819022712) do
     t.string   "verification_code"
     t.boolean  "activated",                       default: false
     t.integer  "role",                            default: 0
-    t.integer  "credits",                         default: 20
+    t.integer  "credits",                         default: 0
     t.integer  "payment_transactions_count"
   end
 

@@ -34,12 +34,12 @@ class Merchants::StepsController < ApplicationController
   end
 
   def verify_type_of_service
-    return if @step == :services
+    return unless @step == :services
+    raise "Error" unless params[:outlet][:price_range]
     params[:outlet][:type_of_service] = params[:outlet][:type_of_service].join(', ')
-    if outlet_params(@step)[:type_of_service].nil?
-      flash[:error] = "Please select at least one type of service before submitting."
-      redirect_to merchants_outlet_step_path(@outlet, "services")
-    end
+  rescue
+    flash[:error] = "Please complete your registration before submitting."
+    redirect_to merchants_outlet_step_path(@outlet, "services")
   end
 
   def set_outlet

@@ -44,8 +44,11 @@
     }
 
     &:hover {
-      background-color: #e7b266;
-      transition: 0.3s;
+      // background-color: #e7b266;
+      transition: 0.2s;
+      color: #E4A955;
+      background-color: white;
+      border-color: #E4A955;
     }
   }
 

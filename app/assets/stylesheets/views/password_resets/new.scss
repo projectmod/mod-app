@@ -35,6 +35,13 @@
     &:focus {
       outline: none;
     }
+
+    &:hover {
+      transition: 0.2s;
+      color: #B0344E;
+      background-color: #F3F3F3;
+      border-color: #B0344E;
+    }
   }
 
   .password-padding {

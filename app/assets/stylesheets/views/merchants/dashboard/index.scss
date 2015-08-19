@@ -28,6 +28,13 @@
     font-size: 16px;
     letter-spacing: 2.4px;
     font-family: 'brandon-reg';
+
+    &:hover {
+      transition: 0.2s;
+      color: #E4A955;
+      background-color: #FBFBFB;
+      border-color: #E4A955;
+    }
   }
 
   .btn-position {

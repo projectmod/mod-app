@@ -50,6 +50,13 @@
     &:focus {
       outline: none;
     }
+
+    &:hover {
+      transition: 0.2s;
+      color: #B0344E;
+      background-color: #F8F8F8;
+      border-color: #B0344E;
+    }
   }
 
   .set-password-padding {

@@ -13,6 +13,8 @@ class Outlet < ActiveRecord::Base
 
   validates_presence_of :business_registration, uniqueness: true
 
+  scope :has_type_of_service, ->(type_of_service) { get_all_with_type_of_service(type_of_service) }
+
   def self.within_range(user_lon, user_lat, outlets)
 
     rgeo_factory = RGeo::Geographic.spherical_factory(srid: 4326)
@@ -22,6 +24,10 @@ class Outlet < ActiveRecord::Base
 
     # Distance in meters
     outlets.select { |outlet| rgeo_factory.point(outlet.longitude, outlet.latitude).distance(user_point) < 5000000 }
+  end
+
+  def self.get_all_with_type_of_service(type_of_service)
+    self.all.select { |s| s.type_of_service.include?(type_of_service) }
   end
 
   def confirmation_code

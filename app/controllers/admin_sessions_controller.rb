@@ -1,11 +1,12 @@
 class AdminSessionsController < ApplicationController
-  skip_before_action :require_login, [except: :destroy]
 
 	def new
 	end
 
 	def create
-		if @user = login(params[:user_sessions][:email], params[:user_sessions][:password])
+		user = login(params[:user_sessions][:email], params[:user_sessions][:password])
+
+    if user && user.admin?
 			flash[:notice] = "You've succesfully logged in!"
 			redirect_to rails_admin_path
 		else
@@ -13,5 +14,4 @@ class AdminSessionsController < ApplicationController
 			render action: 'new'
 		end
 	end
-
 end

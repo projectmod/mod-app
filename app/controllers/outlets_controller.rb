@@ -1,5 +1,5 @@
 class OutletsController < ApplicationController
-  before_action :set_outlet, only: [:show, :preview]
+  before_action :set_outlet, except: :index
   before_action :check_user_location, only: :index
 
   def index

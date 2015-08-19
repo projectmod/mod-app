@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-  belongs_to :outlet
+  belongs_to :outlet, counter_cache: true
   belongs_to :user
 
   scope :previously_booked, -> { where("created_at < ?", 15.minutes.ago) }

@@ -14,7 +14,6 @@
       .col-md-4.col-md-offset-4
         .row
           .col-md-6.col-xs-6.text-center.desktop
-            = form_tag("/bookings/#{@booking.id}/user_cancellation") do
-                = submit_tag "YES", class: 'btn btn-yes btn-block'
+            = link_to "YES", user_cancellation_booking_path(@booking), method: :post, class: 'btn btn-yes btn-block'
           .col-md-6.col-xs-6.text-center.desktop
              = link_to "NO", dashboard_account_path, class: 'btn btn-no btn-block'

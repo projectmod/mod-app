@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
 
     if @booking.outlet.availability == true && @booking.save
 
@@ -35,9 +36,9 @@ class BookingsController < ApplicationController
   end
 
   def user_cancellation
-    @booking.update_attribute(:user_cancellation, true)
+    @booking.update_attribute(user_cancellation: true)
     total = @booking.outlet.credits + 2
-    @booking.outlet.update_attribute(:credits, total)
+    @booking.outlet.update_attribute(credits: total)
 
     flash[:notice] = "You've successfully cancelled your booking!"
     redirect_to dashboard_account_path
@@ -52,6 +53,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params

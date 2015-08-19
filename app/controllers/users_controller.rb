@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-	skip_before_action :require_login, except: [:update, :destroy]
-	before_action :set_user, only: [:activate, :verify, :edit, :success, :update_phone_number, :resend_code]
+	before_action :require_login, except: [:new, :create]
+	before_action :set_user, except: [:new, :create, :update]
 	respond_to :js
 
 	# Step 1
 	def new
-		@user = User.new
 	end
 
 	def create
@@ -52,6 +51,8 @@ class UsersController < ApplicationController
 		else
 			user = current_user
 		end
+
+		authorize user
 
 		if user && user.update(update_params)
 			flash[:notice] = "You've successfully updated your user details."
@@ -102,6 +103,7 @@ class UsersController < ApplicationController
 
 	def set_user
 		@user = User.find(params[:id])
+		authorize @user
 	end
 
   def user_params

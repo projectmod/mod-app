@@ -26,6 +26,13 @@
     font-size: 16px;
     letter-spacing: 2.4px;
     font-family: 'brandon-reg';
+
+    &:hover {
+      border-color: #E4A955;
+      color: #E4A955;
+      transition: 0.2s;
+      background-color: #FBFBFB;
+    }
   }
 
   .btn-alignment {

@@ -75,6 +75,13 @@
     &:focus {
       outline: none;
     }
+
+    &:hover {
+      border-color: #B0344E;
+      color: #B0344E;
+      background-color: white;
+      transition: 0.2s;
+    }
   }
 
   .login-hover {
@@ -113,9 +120,10 @@
     margin-bottom: 20%;
 
     &:hover {
-      opacity: 0.9;
       transition: 0.2s;
-      color: #F3F3F3;
+      color: #4366A6;
+      background-color: #F3F3F3;
+      border-color: #4366A6;
     }
 
     &:focus {

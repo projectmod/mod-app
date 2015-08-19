@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
 	def resend_code
 		Users::VerificationCode.new(@user).deliver
-		flash[:notice] = "We've send your a new verification code. Please check out phone."
+		flash[:notice] = "We've sent you a new verification code. Please check your phone."
 		respond_with(@user, location: verify_user_path(@user))
 		flash.clear
 	end

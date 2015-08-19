@@ -40,7 +40,7 @@ class Merchants::OutletsController < Merchants::BaseController
   def toggle_availability
     toggle = @outlet.availability ? false : true
 
-    if @outlet.credits > 1
+    if current_user.credits > 1
       @outlet.update(availability: toggle)
     else
       flash[:error] = "You currently do not have enough credits to set your availability to true. Please purchase more credits."

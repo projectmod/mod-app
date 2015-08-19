@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
 	before_action :require_login, only: :destroy
-	
+
 	def new
 		@user = User.new
 
@@ -24,6 +24,7 @@ class UserSessionsController < ApplicationController
 	end
 
 	def destroy
+		forget_me!
 		logout
 		flash[:notice] = "You've logged out, see you again!"
 		redirect_to root_path

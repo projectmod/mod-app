@@ -20,11 +20,11 @@ class UserPolicy < ApplicationPolicy
     edit?
   end
 
-  def activate
+  def activate?
     edit?
   end
 
-  def success
+  def success?
     edit?
   end
 end

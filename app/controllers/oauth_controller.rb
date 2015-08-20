@@ -13,6 +13,12 @@ class OauthController < ApplicationController
 
     # Log in user
     if logged_in?
+
+      if !user.phone_number
+        session[:prebk_outlet] = outlet_id
+        return redirect_to edit_user_path(user)
+      end
+
       flash[:notice] = "Logged in from #{provider.titleize}."
 
       if outlet_id

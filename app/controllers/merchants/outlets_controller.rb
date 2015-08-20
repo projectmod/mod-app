@@ -2,7 +2,7 @@ class Merchants::OutletsController < Merchants::BaseController
   before_action :set_outlet
   before_action :destroy_empty_working_hours, only: :update
   before_action :verify_type_of_service, only: :update
-  respond_to :js
+  respond_to :js, :html
 
   def show
   end

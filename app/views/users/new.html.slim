@@ -11,13 +11,13 @@
       .col-md-6.col-md-offset-3
         = form_for @user, class: 'form' do |f|
           .form-group
-          = f.text_field :name, required: true, placeholder: 'NAME', class: 'form-control edit-register'
+            = f.text_field :name, required: true, placeholder: 'NAME', class: 'form-control edit-register'
           .form-group
-          = f.text_field :email, required: true, placeholder: 'EMAIL', class: 'form-control edit-register'
+            = f.text_field :email, required: true, placeholder: 'EMAIL', class: 'form-control edit-register'
           .form-group
-          = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control edit-register'
+            = f.password_field :password, required: true, placeholder: 'PASSWORD', class: 'form-control edit-register'
           .form-group
-          = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control edit-register'
+            = f.password_field :password_confirmation, required: true, placeholder: 'CONFIRM PASSWORD', class: 'form-control edit-register'
           .form-group.text-center
             = f.submit "SIGN UP", class: "btn btn-register"
 

@@ -1,14 +1,19 @@
 class OauthController < ApplicationController
+  respond_to :js
 
   def oauth
     login_at(auth_params[:provider])
+    binding.pry
+    respond_to do |f|
+      f.js
+    end
   end
 
   def callback
     outlet_id = session[:prebk_outlet]
     provider = auth_params[:provider]
 
-    user = login_from(provider) || current_user
+    user = login_from(provider)
     auth = Users::Oauth.new(@access_token, provider, user)
 
     # Log in user
@@ -24,13 +29,15 @@ class OauthController < ApplicationController
 
     # Register User
     else
-      new_user = auth.register
+      @new_user = auth.register
 
       reset_session
-      auto_login(new_user)
+      auto_login(@new_user)
       flash[:notice] = "You've registered through #{provider.titleize}."
 
-      redirect_to edit_user_path(new_user)
+      respond_with(@new_user) do |f|
+        f.html { redirect_to edit_user_path(@new_user) }
+      end
     end
   end
 

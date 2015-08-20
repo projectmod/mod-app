@@ -120,6 +120,7 @@ Rails.application.config.sorcery.configure do |config|
   config.facebook.callback_url = ENV["SERVER_URL"] + "oauth/callback?provider=facebook"
   config.facebook.user_info_mapping = { email: "email" }
   config.facebook.scope = "public_profile, email"
+  config.facebook.display = "popup"
   # config.facebook.access_permissions = ["email", "publish_actions"]
   # config.facebook.display = "page"
   # config.facebook.api_version = "v2.2"

@@ -1,0 +1,3 @@
+$('#signup-two').remove();
+$('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_three', locals: { user: current_user })) %>")
+$('#signup-three').removeClass('hidden');

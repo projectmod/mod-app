@@ -15,7 +15,10 @@ class UsersController < ApplicationController
 			auto_login(user, should_remember=false)
 
 			flash[:notice] = "All registered! Now we'll need you to key in your phone number to verify your account."
-			redirect_to edit_user_path(user)
+			respond_with(user) do |f|
+				flash.clear
+				f.html { redirect_to edit_user_path(user) }
+			end
 		else
 			compiled_message = ""
 			user.errors.full_messages.each do |message|
@@ -23,7 +26,7 @@ class UsersController < ApplicationController
 			end
 
 			flash[:error] = compiled_message
-			redirect_to root_path
+			redirect_to :back
 		end
 	end
 
@@ -38,10 +41,17 @@ class UsersController < ApplicationController
 
 		if @user.update(user_params)
 			Users::VerificationCode.new(@user).deliver
-			redirect_to verify_user_path(@user)
+
+			respond_with(@user) do |f|
+				f.html { redirect_to verify_user_path(@user) }
+			end
 		else
 			flash[:error] = "Phone number is already in use. Please try again!"
-			redirect_to :back
+
+			respond_with(@user) do |f|
+				flash.now
+				f.html { redirect_to :back }
+			end
 		end
 	end
 
@@ -91,9 +101,13 @@ class UsersController < ApplicationController
 		if activated
 			return redirect_to outlet_path(outlet) if outlet
 
-			redirect_to success_user_path(@user)
+			respond_with(@user) do |f|
+				f.html { redirect_to success_user_path(@user) }
+			end
 		else
-			redirect_to root_path
+			respond_with(@user) do |f|
+				f.html { redirect_to :back }
+			end
 		end
 	end
 

@@ -1,0 +1,23 @@
+- if current_user
+  .container-fluid#signup-three.hidden
+    .row
+      .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
+        p.text-center.step-text.stepthree-padding STEP 3 OF 3
+
+    .row.padding-top-3
+      .col-md-8.col-md-offset-2
+        h3.text-center.padding-top-3 ALL SET !
+        h3.text-center.code-padding ENTER THE SIX DIGIT VERIFICATION CODE THAT WE JUST SENT TO YOUR PHONE
+
+    .row
+      .col-md-6.col-md-offset-3
+        = form_for :phone, url: activate_user_path(@user), remote: true, method: :post, class: 'form' do |f|
+          = f.text_field :verification_code, required: true, maxlength: 6, placeholder: '******', class: 'form-control text-center'
+
+          .form-group.text-center
+            = f.submit "VERIFY", class: "btn btn-verify"
+
+    .row
+      p.text-center.signup-text
+        | DID NOT RECEIVE YOUR VERIFICATION CODE?
+        = link_to " RESEND CODE", resend_code_user_path(current_user), method: :post, remote: true, class: 'signup-link signup-hover'

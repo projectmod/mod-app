@@ -1,0 +1,91 @@
+#signup-three {
+
+  ::-webkit-input-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+    opacity: 0.5;
+  }
+
+  :-moz-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+    opacity: 0.5;
+  }
+
+  ::-moz-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+    opacity: 0.5;
+  }
+
+  :-ms-input-placeholder {
+    color: #B0344E !important;
+    letter-spacing: 6px;
+    opacity: 0.5;
+  }
+
+  .container-fluid {
+    background-color: #F8F8F8;
+    width: 100%;
+    padding-top: 3%;
+    margin-bottom: 2%;
+  }
+
+  h3 {
+    font-family: 'brandon-light';
+    font-size: 18px;
+    color: #B0344E;
+    letter-spacing: 2.4px;
+    padding-bottom: 5%;
+  }
+
+  .form-control {
+    border-color: #E4A955;
+    background-color: white;
+    padding: 15px 2px;
+    border-radius: 0px;
+    color: #B0344E;
+    font-family: 'brandon-light';
+    font-size: 24px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .btn-verify {
+    border-radius: 0px;
+    background-color: #B0344E;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    color: #F3F3F3;
+    letter-spacing: 2.4px;
+    padding: 8px 75px;
+    margin-top: 15%;
+    margin-bottom: 11%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      border-color: #B0344E;
+      color: #B0344E;
+      transition: 0.2s;
+      background-color: white;
+    }
+  }
+
+  .code-padding {
+    padding-bottom: 7%;
+  }
+
+  .padding-top-3 {
+    padding-top: 3%;
+  }
+
+  .stepthree-padding {
+    padding-top: 7%;
+  }
+
+}

@@ -1,0 +1,104 @@
+#signup-two {
+
+  ::-webkit-input-placeholder {
+    color: #B0344E !important;
+    opacity: 0.5;
+  }
+
+  :-moz-placeholder {
+    color: #B0344E !important;
+    opacity: 0.5;
+  }
+
+  ::-moz-placeholder {
+    color: #B0344E !important;
+    opacity: 0.5;
+  }
+
+  :-ms-input-placeholder {
+    color: #B0344E !important;
+    opacity: 0.5;
+  }
+
+  .number-field {
+    border: none;
+    background-color: #F8F8F8;
+    padding: 15px 10px;
+  }
+
+  .form-control {
+    border-color: #E4A955;
+    background-color: white;
+    padding: 15px 10px;
+    border-radius: 0px;
+    margin-top: 5px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  h3 {
+    font-family: 'brandon-light';
+    font-size: 18px;
+    color: #B0344E;
+    letter-spacing: 2.4px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+  }
+
+  .btn-next {
+    border-radius: 0px;
+    background-color: #B0344E;
+    font-family: 'brandon-reg';
+    font-size: 16px;
+    color: #F3F3F3;
+    letter-spacing: 2.4px;
+    padding: 8px 75px;
+    margin-top: 10%;
+    margin-bottom: 11%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      border-color: #B0344E;
+      color: #B0344E;
+      transition: 0.2s;
+      background-color: white;
+    }
+  }
+
+  .signup-hover {
+    text-decoration: none;
+
+    &:hover {
+      color: #848484 !important;
+    }
+  }
+
+  .padding-terms {
+    padding-top: 6%;
+    padding-bottom: 1%;
+  }
+
+  .padding-top-3 {
+    padding-top: 3%;
+  }
+
+  .mobile-border {
+    border: none;
+    background-color: white;
+    color: #B0344E;
+  }
+
+  .margin-top-5 {
+    margin-top: 5%;
+  }
+
+  .steptwo-padding {
+    padding-top: 7%;
+  }
+
+}

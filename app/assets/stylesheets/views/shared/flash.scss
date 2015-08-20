@@ -1,0 +1,21 @@
+#flash_messages {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  padding: 0;
+
+  .alert-info {
+    background-color: #B0344E;
+    border-radius: 0;
+    border-color: #B0344E;
+    color: #FFFFFF;
+    opacity: 0.8;
+  }
+
+  button.close {
+    opacity: 1;
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+
+}

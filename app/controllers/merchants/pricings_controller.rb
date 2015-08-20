@@ -12,7 +12,7 @@ class Merchants::PricingsController < Merchants::BaseController
     if payment_link
       redirect_to payment_link
     else
-      flash[:error] = "We ran into some issues contacting the payment gateway, please try again!"
+      flash[:notice] = "We ran into some issues contacting the payment gateway, please try again!"
       render :new
     end
   end

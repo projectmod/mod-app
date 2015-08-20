@@ -1,12 +1,7 @@
 class OauthController < ApplicationController
-  respond_to :js
 
   def oauth
     login_at(auth_params[:provider])
-    binding.pry
-    respond_to do |f|
-      f.js
-    end
   end
 
   def callback
@@ -35,9 +30,7 @@ class OauthController < ApplicationController
       auto_login(@new_user)
       flash[:notice] = "You've registered through #{provider.titleize}."
 
-      respond_with(@new_user) do |f|
-        f.html { redirect_to edit_user_path(@new_user) }
-      end
+      redirect_to edit_user_path(@new_user)
     end
   end
 

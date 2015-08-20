@@ -1,3 +1,10 @@
-$('#signup-three').remove();
-$('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_success', locals: { user: current_user })) %>")
-$('#signup-success').removeClass('hidden');
+<% if @user.activated %>
+  $('#signup-three').remove();
+  $('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_success', locals: { user: current_user })) %>")
+  $('#signup-success').removeClass('hidden');
+  $('#signup-success').addClass('animated-one fadeInRight')
+  $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+  $('#header_container').html("<%= escape_javascript(render(partial: 'shared/partials_header/header_logged_in')) %>")
+<% else %>
+  $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+<% end %>

@@ -38,7 +38,7 @@
           li.red-text.mobile
             = link_to "BUY CREDITS", merchants_pricings_path, class: "nav-header-highlight"
           li
-            = link_to "PROFILE", merchants_outlet_customize_path(current_user.outlet), class: "#{is_active?('merchants/outlets#customize')} profile-alignment nav-header-highlight"
+            = link_to "PROFILE", merchants_outlet_customize_path(current_user.outlet), class: "#{is_active?('merchants/outlets#customize')} #{is_active?('merchants/outlets#photos')} profile-alignment nav-header-highlight"
           li#availability-container-desktop
             = render partial: 'merchants/shared/partials_header/availability', locals: { outlet: current_user.outlet, device: 'desktop' }
           li

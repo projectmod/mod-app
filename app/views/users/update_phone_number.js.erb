@@ -1,3 +1,9 @@
-$('#signup-two').remove();
-$('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_three', locals: { user: current_user })) %>")
-$('#signup-three').removeClass('hidden');
+<% if @user.phone_number %>
+  $('#signup-two').remove();
+  $('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_three', locals: { user: current_user })) %>")
+  $('#signup-three').removeClass('hidden');
+  $('#signup-three').addClass('animated-one fadeInRight')
+  $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+<% else %>
+  $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+<% end %>

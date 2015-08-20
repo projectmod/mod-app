@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
 			redirect_back_or_to root_path
 		else
 
-			flash[:error] = 'We failed to log you in. Please try again!'
+			flash[:notice] = 'We failed to log you in. Please try again!'
 			render action: 'new'
 		end
 	end

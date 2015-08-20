@@ -44,7 +44,7 @@ class Merchants::OutletsController < Merchants::BaseController
     if current_user.credits > 1
       @outlet.update(availability: toggle)
     else
-      flash[:error] = "You currently do not have enough credits to set your availability to true. Please purchase more credits."
+      flash[:notice] = "You currently do not have enough credits to set your availability to true. Please purchase more credits."
     end
 
     respond_with(@outlet)
@@ -56,7 +56,7 @@ class Merchants::OutletsController < Merchants::BaseController
   def verify_type_of_service
     params[:outlet][:type_of_service] = params[:outlet][:type_of_service].join(', ')
     if outlet_params[:type_of_service].nil?
-      flash[:error] = "Please select at least one type of service before submitting."
+      flash[:notice] = "Please select at least one type of service before submitting."
       redirect_to merchants_outlet_step_path(@outlet, "services")
     end
   end

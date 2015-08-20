@@ -20,7 +20,7 @@ class OutletsController < ApplicationController
 
   def check_user_location
     if params[:longitude] == "" && params[:latitude] == ""
-      flash[:error] = "We could not retrieve your current location. Please enable your browser to acquire your current location before searching."
+      flash[:notice] = "We could not retrieve your current location. Please enable your browser to acquire your current location before searching."
       redirect_to root_path
     end
   end

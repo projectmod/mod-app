@@ -1,30 +1,27 @@
 - if current_user
-  .container-fluid#signup-two.hidden
+  div id="signup-two" class="container-fluid #{'hidden' unless current_user}"
     .row
-      .col-md-2.col-md-offset-5.col-xs-4.col-xs-offset-4
+      .col-md-6.col-md-offset-3.col-xs-6.col-xs-offset-3
         p.text-center.step-text.steptwo-padding STEP 2 OF 3
 
     .row.padding-top-3
       .col-md-8.col-md-offset-2
-        h3.text-center PROVIDE A NUMBER FOR US TO CONFIRM THE BOOKINGS YOU MAKE WITH MOD !
+        h3.text-center.provide-padding PROVIDE A NUMBER FOR US TO CONFIRM THE BOOKINGS YOU MAKE WITH MOD !
 
     .row.margin-top-5
       .col-md-6.col-md-offset-3
-        = form_for @user, url: update_phone_number_user_path(current_user), method: :post, remote: true, class: "form" do |f|
+        = form_for current_user, url: update_phone_number_user_path(current_user), method: :post, remote: true, class: "form" do |f|
           .input-group
             span.input-group-addon.signup-number.number-field.mobile-border#addonPlay1 + 60 
             = f.text_field :phone_number, required: true, placeholder: '** *** ****', class: 'form-control signup-number-field', "aria-describedby": "addonPlay1"
 
           .form-group.text-center
-            = f.submit "NEXT", class: "btn btn-next"
+            .container-fluid
+              .row
+                .col-md-6.col-md-offset-3
+                  = f.submit "NEXT", id: 'signup-two-button', class: "btn btn-block btn-next"
+                  button.hidden.btn.btn-next.btn-block#signup-two-loading(disabled)
+                    i.fa.fa-spinner.fa-pulse
 
-    .row
-      p.text-center.signup-text
-        | ALREADY A MEMBER? 
-        = link_to " LOG IN >>", login_path, class: 'signup-link signup-hover'
-
-    .row.padding-terms
-      p.text-center.terms-text
-        | BY SIGNING UP YOU ACCEPT THE 
-        = link_to "TERMS AND CONDITIONS ", '#', class: "terms-link signup-hover"
-        | OF MOD.
+  javascript:
+    showLoading(('#signup-two-button'), ('#signup-two-loading'));

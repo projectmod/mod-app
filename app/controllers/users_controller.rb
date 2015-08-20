@@ -9,24 +9,30 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user = User.new(user_params)
+		reset_session if current_user
+		@user = User.new(user_params)
 
-		if user.save
-			auto_login(user, should_remember=false)
+		if @user.save
+			auto_login(@user, should_remember=false)
 
 			flash[:notice] = "All registered! Now we'll need you to key in your phone number to verify your account."
-			respond_with(user) do |f|
-				flash.clear
-				f.html { redirect_to edit_user_path(user) }
+			respond_with(@user) do |f|
+				f.html { redirect_to edit_user_path(@user) }
 			end
+
+			flash.clear
 		else
 			compiled_message = ""
-			user.errors.full_messages.each do |message|
+			@user.errors.full_messages.each do |message|
 				compiled_message = compiled_message + " " + message
 			end
 
-			flash[:error] = compiled_message
-			redirect_to :back
+			flash[:notice] = compiled_message
+			respond_with(@user) do |f|
+				f.html { redirect_to :back }
+			end
+
+			flash.clear
 		end
 	end
 
@@ -46,12 +52,12 @@ class UsersController < ApplicationController
 				f.html { redirect_to verify_user_path(@user) }
 			end
 		else
-			flash[:error] = "Phone number is already in use. Please try again!"
-
+			flash[:notice] = "Phone number is already in use. Please try again!"
 			respond_with(@user) do |f|
-				flash.now
 				f.html { redirect_to :back }
 			end
+
+			flash.clear
 		end
 	end
 
@@ -74,7 +80,7 @@ class UsersController < ApplicationController
 				compiled_message = compiled_message + " " + message
 			end
 
-			flash[:error] = compiled_message
+			flash[:notice] = compiled_message
 		end
 
 		redirect_to dashboard_account_path

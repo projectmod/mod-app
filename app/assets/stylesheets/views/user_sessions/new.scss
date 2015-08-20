@@ -81,8 +81,10 @@
     }
 
     &:focus {
-      color: #F3F3F3;
+      color: #4366A6;
       outline: none;
+      border-color: #4366A6;
+      background-color: white;
     }
   }
 

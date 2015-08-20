@@ -9,7 +9,8 @@ html
     = favicon_link_tag "MOD_logo01.png"
 
   body
-    = render_header
     = render 'shared/flash'
+    #header_container
+      = render_header
     = yield
     = render 'shared/footer'

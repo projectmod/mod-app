@@ -33,7 +33,7 @@ class Merchants::StepsController < ApplicationController
     raise "Error" unless params[:outlet][:price_range]
     params[:outlet][:type_of_service] = params[:outlet][:type_of_service].join(', ')
   rescue
-    flash[:error] = "Please complete your registration before submitting."
+    flash[:notice] = "Please complete your registration before submitting."
     redirect_to merchants_outlet_step_path(@outlet, "services")
   end
 

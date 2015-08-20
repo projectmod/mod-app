@@ -16,7 +16,7 @@ class Merchants::UsersController < Merchants::BaseController
       redirect_to merchants_outlet_step_path(@outlet, "outlet_info")
     else
       @user.errors.full_messages.each do |message|
-        flash[:alert] = message
+        flash[:notice] = message
       end
       redirect_to new_merchants_user_path
     end

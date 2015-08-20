@@ -95,10 +95,6 @@
       .row
         .col-md-10.col-md-offset-1.text-center
           p.benefits-title.benefits-title-padding BENEFITS
-          p.benefits-text.partners-padding
-            | BECOME A 
-            = link_to "PARTNER", new_merchants_user_path, class: 'partners-link'
-            |  AND LET US HELP YOU GROW YOUR BUSINESS!
           
     .benefits-card
       .container-fluid
@@ -106,14 +102,14 @@
           .col-lg-10.col-lg-offset-1
             .row.benefits-card-padding
               .col-md-4.text-center.benefits-padding
-                p.benefits-number.number-padding.number-padding 1
-                p.benefits-font Open your business to endless potential new clients.
+                p.benefits-number 1
+                p.benefits-font Explore our list of curated salons, using our simple search.
               .col-md-4.text-center.benefits-padding      
-                p.benefits-number.number-padding 2
-                p.step-font Get discovered and maximize your open slots in real time.
+                p.benefits-number 2
+                p.step-font Discover the best beauty spots in town.
               .col-md-4.text-center.benefits-padding
-                p.benefits-number.number-padding 3
-                p.step-font Save time and connect with clients directly. No more phone calls!
+                p.benefits-number 3
+                p.step-font Book your appointments instantly for FREE!
                 
   .container-fluid
     .row.scroll-margin
@@ -149,28 +145,27 @@
             | Looking and feeling good is an important treasure of everyday life. So to make it simple for
             | all, Carmen and Julian founded MOD - the simplest way to look good now.
             
-  .container-fluid
-    .row.scroll-margin.scroll-padding
-      .col-md-2.col-md-offset-5.text-center
-        = link_to '#signup', "data-scroll": true
-          button.btn.btn-scroll
-            i.fa.fa-caret-down.fa-lg
-            
-      .col-md-2.col-md-offset-5.text-center
-        p.contact-font.contact-padding GET STARTED
+  - unless current_user && current_user.try(:activated?)
+    .container-fluid
+      .row.scroll-margin.scroll-padding
+        .col-md-2.col-md-offset-5.text-center
+          = link_to '#signup', "data-scroll": true
+            button.btn.btn-scroll
+              i.fa.fa-caret-down.fa-lg
+              
+        .col-md-2.col-md-offset-5.text-center
+          p.contact-font.contact-padding GET STARTED
+          
+      .row
+        .col-xs-6.col-xs-offset-6.package-line.line-margin
         
-    .row
-      .col-xs-6.col-xs-offset-6.package-line.line-margin
-      
-    .row
-      .col-md-4.col-md-offset-4.text-center#signup
-        p.signup-now-text SIGN UP NOW
-        
-        
-    #signup-container
-      - if !current_user
+      .row
+        .col-md-4.col-md-offset-4.text-center#signup
+          p.signup-now-text SIGN UP NOW
+          
+      #signup-container
         = render 'partials/about/signup_one'
         = render 'partials/about/signup_two'
         = render 'partials/about/signup_three'
-    
-    = render partial: 'shared/contact_ball'
+        
+  = render partial: 'shared/contact_ball'

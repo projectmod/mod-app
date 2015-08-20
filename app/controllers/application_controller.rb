@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   rescue_from Pundit::NotAuthorizedError do |exception|
-    flash[:alert] = exception.message
+    flash[:notice] = exception.message
   	redirect_to root_path
   end
 
   def not_authenticated
-    flash[:alert] = "Please login first"
+    flash[:notice] = "Please login first"
 
     return redirect_to main_app.admin_portal_path if request.script_name == "/superadmin"
     redirect_to login_path

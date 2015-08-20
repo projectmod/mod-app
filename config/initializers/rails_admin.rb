@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
     require_login
   end
   config.current_user_method(&:current_user)
-
+  
   ## == Cancan ==
   config.authorize_with do |controller|
     redirect_to main_app.admin_login_path unless current_user.try(:admin?)

@@ -8,7 +8,7 @@ class Users::Oauth
   end
 
   def register
-    new_user = User.create(name: profile.name, email: profile.email)
+    new_user = User.create(name: profile.name, email: profile.email, role: "user")
     new_user.authentications.create(provider: provider, uid: profile.uid, token: access_token)
   end
 

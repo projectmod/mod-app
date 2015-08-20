@@ -8,7 +8,7 @@ class Users::VerificationCode
   def deliver
     message = "Hi! This is your 6 digit verification code: #{verification_code}"
     number = "+60" + user.phone_number
-    TwillioSMS.new(message, number).send
+    TwilioSMS.new(message, number).send
   end
 
   private

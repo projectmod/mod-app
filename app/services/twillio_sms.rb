@@ -1,4 +1,4 @@
-class TwillioSMS
+class TwilioSMS
   attr_accessor :message, :number
 
   def initialize(message, number)

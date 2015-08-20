@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     flash[:notice] = "Please login first."
 
     return redirect_to main_app.admin_portal_path if request.script_name == "/superadmin"
-    redirect_to root_path
+    return redirect_to new_merchants_session_path if self.class.parent == Merchants
+    redirect_to login_path
   end
 end

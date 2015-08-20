@@ -4,13 +4,14 @@ class Merchants::BookingsController < Merchants::BaseController
   def confirm
     @booking = Booking.find(params[:id])
     authorize @booking
-    
+
     if @booking.created_at > 3.minutes.ago
       @booking.update(outlet_confirmed: true)
       @booking.outlet.user.update(credits: @booking.outlet.user.credits - 2)
 
       message = "CONGRATS the merchant has confirmed with you. Here is your confirmation code: #{@booking.confirmation_code}. Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
       TwilioSMS.new(message, "+60" + @booking.user.phone_number).send
+      # binding.pry
 
       redirect_to success_merchants_booking_path(@booking)
     else

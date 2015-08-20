@@ -4,7 +4,7 @@ class Merchants::BookingsController < Merchants::BaseController
   def confirm
     if @booking.created_at > 3.minutes.ago
       @booking.update(outlet_confirmed: true)
-      @booking.outlet.update(credits: @booking.outlet.user.credits - 2)
+      @booking.outlet.user.update(credits: @booking.outlet.user.credits - 2)
 
       message = "CONGRATS, merchant has confirmed with you, Here is your confirmation code: #{@booking.confirmation_code} Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
       TwillioSMS.new(message, "+60" + @booking.user.phone_number).send

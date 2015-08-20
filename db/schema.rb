@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819033718) do
+ActiveRecord::Schema.define(version: 20150820003558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150819033718) do
     t.boolean  "featured",               default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "bookings_count"
+    t.integer  "bookings_count",         default: 0
   end
 
   create_table "packages", force: :cascade do |t|
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150819033718) do
     t.boolean  "activated",                       default: false
     t.integer  "role",                            default: 0
     t.integer  "credits",                         default: 0
+    t.integer  "payment_transactions_count",      default: 0
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

@@ -3,7 +3,6 @@ class Merchants::StepsController < ApplicationController
   steps :outlet_info, :services
   before_action :set_outlet
   before_action :verify_type_of_service, only: :update
-  # before_action :join_type_of_service
   skip_before_action :require_login
   skip_before_action :is_merchant?
 
@@ -24,10 +23,6 @@ class Merchants::StepsController < ApplicationController
   end
 
   private
-
-  def join_type_of_service
-  rescue
-  end
 
   def finish_wizard_path
     merchants_success_path

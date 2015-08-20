@@ -1,6 +1,6 @@
 class AdminSessionsController < ApplicationController
-
 	def new
+		return redirect_back_or_to root_path if current_user
 	end
 
 	def create

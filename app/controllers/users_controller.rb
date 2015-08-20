@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 	before_action :require_login, except: [:new, :create]
 	before_action :set_user, except: [:new, :create, :update]
-	respond_to :js
+	before_action :redirect_if_logged_in, only: [:new, :edit, :verify]
+	respond_to :js, :html
 
 	# Step 1
 	def new
@@ -16,11 +17,11 @@ class UsersController < ApplicationController
 			auto_login(@user, should_remember=false)
 
 			flash[:notice] = "All registered! Now we'll need you to key in your phone number to verify your account."
+
 			respond_with(@user) do |f|
 				f.html { redirect_to edit_user_path(@user) }
+				flash.clear
 			end
-
-			flash.clear
 		else
 			compiled_message = ""
 			@user.errors.full_messages.each do |message|
@@ -30,9 +31,8 @@ class UsersController < ApplicationController
 			flash[:notice] = compiled_message
 			respond_with(@user) do |f|
 				f.html { redirect_to :back }
+				flash.clear
 			end
-
-			flash.clear
 		end
 	end
 
@@ -122,6 +122,10 @@ class UsersController < ApplicationController
 	end
 
 	private
+
+	def redirect_if_logged_in
+		return redirect_back_or_to root_path if current_user && current_user.activated
+	end
 
 	def set_user
 		@user = User.find(params[:id])

@@ -4,12 +4,6 @@ class Merchants::OutletsController < Merchants::BaseController
   before_action :verify_type_of_service, only: :update
   respond_to :js, :html
 
-  def show
-  end
-
-  def edit
-  end
-
   def update
     if @outlet.update(outlet_params)
       redirect_to(:back, flash: { success: "You've updated your outlet!" })

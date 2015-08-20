@@ -1,7 +1,10 @@
 class Merchants::BookingsController < Merchants::BaseController
-  before_action :set_booking
+  before_action :set_booking, except: :confirm
 
   def confirm
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    
     if @booking.created_at > 3.minutes.ago
       @booking.update(outlet_confirmed: true)
       @booking.outlet.user.update(credits: @booking.outlet.user.credits - 2)

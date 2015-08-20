@@ -3,6 +3,7 @@ class Merchants::StepsController < ApplicationController
   steps :outlet_info, :services
   before_action :set_outlet
   before_action :verify_type_of_service, only: :update
+  before_action :redirect_if_activated
   skip_before_action :require_login
   skip_before_action :is_merchant?
 
@@ -26,6 +27,10 @@ class Merchants::StepsController < ApplicationController
 
   def finish_wizard_path
     merchants_success_path
+  end
+
+  def redirect_if_activated
+    redirect_back_or_to root_path if current_user.try(:activated)
   end
 
   def verify_type_of_service

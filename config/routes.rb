@@ -70,7 +70,7 @@ Rails.application.routes.draw do
     resources :users, except: [:index, :show, :destroy]
 
     # Outlets
-    resources :outlets, except: [:new, :create, :destroy] do
+    resources :outlets, except: [:update] do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]
@@ -92,7 +92,7 @@ Rails.application.routes.draw do
     get :success, to: 'static_pages#success'
 
     # Sessions
-    resources :sessions, only: [:new, :create, :destroy]
+    resources :sessions, only: [:new, :create]
 
     # Confirm Booking
     resources :bookings, except: [:new, :create, :update, :edit, :destroy] do

@@ -3,6 +3,7 @@ class Merchants::UsersController < Merchants::BaseController
   skip_before_action :is_merchant?, only: [:new, :create]
 
   def new
+    return redirect_back_or_to root_path if logged_in?
   end
 
   def create

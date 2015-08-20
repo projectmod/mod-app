@@ -44,17 +44,17 @@
   .btn-login {
     border-radius: 0px;
     background-color: #B0344E;
-    border: none;
     color: #F3F3F3;
     font-size: 16px;
     letter-spacing: 2.4px;
     font-family: 'brandon-reg';
     padding: 8px 67px;
     margin-top: 5%;
-    // margin-bottom: 20%;
 
     &:hover {
-      color: #F3F3F3;
+      color: #B0344E;
+      border-color: #B0344E;
+      background-color: #F8F8F8;
       transition: 0.2s;
     }
 

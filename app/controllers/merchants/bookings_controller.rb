@@ -11,7 +11,6 @@ class Merchants::BookingsController < Merchants::BaseController
 
       message = "CONGRATS the merchant has confirmed with you. Here is your confirmation code: #{@booking.confirmation_code}. Click on #{user_cancellation_confirmation_booking_url(@booking)} to cancel the booking"
       TwilioSMS.new(message, "+60" + @booking.user.phone_number).send
-      # binding.pry
 
       redirect_to success_merchants_booking_path(@booking)
     else

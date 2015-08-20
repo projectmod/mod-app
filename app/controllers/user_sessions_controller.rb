@@ -2,7 +2,13 @@ class UserSessionsController < ApplicationController
 	before_action :require_login, only: :destroy
 
 	def new
-		return redirect_back_or_to root_path if logged_in?
+		if logged_in?
+			return redirect_back_or_to root_path if current_user.activated
+
+			flash[:notice] = "Welcome back! Please completed your registration."
+			redirect_back_or_to edit_user_path(current_user)
+		end
+
 		@user = User.new
 		session[:prebk_outlet] = params[:outlet] if params[:outlet]
 	end

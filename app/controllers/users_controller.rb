@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 	# Step 1
 	def new
+		redirect_to edit_user_path(current_user)
 		@user = User.new
 	end
 

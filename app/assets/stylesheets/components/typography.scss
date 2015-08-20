@@ -1014,3 +1014,44 @@
   letter-spacing: 2.4px;
   border-color: #E4A955;
 }
+
+.success-mobile-text {
+  font-family: 'brandon-light';
+  color: #B0344E;
+  font-size: 23px;
+  letter-spacing: 2.4px;
+  padding-bottom: 1%;
+}
+
+.member-mobile-text {
+  font-family: 'brandon-light';
+  font-size: 16px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+}
+
+.account-mobile-text {
+  font-family: 'brandon-light';
+  font-size: 14px;
+  color: #B0344E;
+  letter-spacing: 2.4px;
+  line-height: 175%;
+}
+
+
+.account-mobile-link {
+  border-bottom: 1px solid #B0344E;
+  padding-bottom: 0px;
+  color: #B0344E;
+  font-family: 'brandon-light';
+  font-size: 14px;
+  letter-spacing: 2.4px;
+
+  &:hover {
+    color: #848484;
+    border-bottom: 1px solid #848484;
+    padding-bottom: 0px;
+    border-color: #848484;
+    text-decoration: none;
+  }
+}

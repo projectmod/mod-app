@@ -1,12 +1,21 @@
 .container-fluid#signup-success
   .line-container
-    .container-fluid
+    .container-fluid.desktop
       .col-xs-6.col-xs-offset-6.line
 
   .message
     .container-fluid
       .col-xs-12
-        .circle
+        .success-mobile.text-center
+          p.success-mobile-text SUCCESS! 
+          p.member-mobile-text YOU ARE NOW A MEMBER OF MOD!
+          hr
+          p.account-mobile-text 
+            | HEAD OVER TO YOUR 
+            = link_to "ACCOUNT", dashboard_account_path, class: 'account-mobile-link account-hover'
+            |  PAGE TO UPDATE YOUR DETAILS.
+
+        .circle.desktop
           .container-fluid
             p.success-text SUCCESS! 
             p.member-text YOU ARE NOW A MEMBER OF MOD!

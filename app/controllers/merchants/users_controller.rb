@@ -11,7 +11,6 @@ class Merchants::UsersController < Merchants::BaseController
     params[:user].delete(:business_registration)
 
     @user = User.new(user_params.merge({role: "merchant", credits: 20}))
-
     if @user.save
       @outlet = @user.create_outlet(business_registration: business_registration)
       redirect_to merchants_outlet_step_path(@outlet, "outlet_info")

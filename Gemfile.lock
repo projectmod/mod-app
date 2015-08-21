@@ -79,6 +79,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    faker (1.5.0)
+      i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
@@ -358,6 +360,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -413,6 +417,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
   carrierwave
   factory_girl_rails (~> 4.0)
+  faker
   figaro
   fog
   font-awesome-rails
@@ -441,6 +446,7 @@ DEPENDENCIES
   rufus-scheduler
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  shoulda-matchers
   slim-rails
   sorcery
   spring

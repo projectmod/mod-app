@@ -7,4 +7,5 @@
   $('#header_container').html("<%= escape_javascript(render(partial: 'shared/partials_header/header_logged_in')) %>")
 <% else %>
   $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+  $('#signup-three-button').removeAttr('disabled').attr('value', 'VERIFY').html("VERIFY")
 <% end %>

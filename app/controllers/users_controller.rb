@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 				flash.clear
 			end
 		else
+
 			compiled_message = ""
 			@user.errors.full_messages.each do |message|
 				compiled_message = compiled_message + " " + message
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
 				f.html { redirect_to :back }
 				flash.clear
 			end
+
 		end
 	end
 
@@ -104,6 +106,7 @@ class UsersController < ApplicationController
 		session[:prebk_outlet] = nil
 
 		activated = Users::Verify.new(verification_code, @user).check
+
 		# code; compare it with db, if match activate user!
 		if activated
 			return redirect_to outlet_path(outlet) if outlet
@@ -112,6 +115,8 @@ class UsersController < ApplicationController
 				f.html { redirect_to success_user_path(@user) }
 			end
 		else
+
+			flash[:notice] = "You've entered the wrong verification code. Please try again!"
 			respond_with(@user) do |f|
 				f.html { redirect_to :back }
 			end

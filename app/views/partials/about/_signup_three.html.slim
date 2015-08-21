@@ -18,14 +18,9 @@
             .container-fluid
               .row
                 .col-md-6.col-md-offset-3
-                  = f.submit "VERIFY", id: "signup-three-button", class: "btn btn-verify btn-block"
-                  button.hidden.btn.btn-verify.btn-block#signup-three-loading(disabled)
-                    i.fa.fa-spinner.fa-pulse
+                  = f.button "VERIFY", id: "signup-three-button", class: "btn btn-verify btn-block", data: { disable_with: "<i class='fa fa-spinner fa-pulse'></i>" }
 
     .row
       p.text-center.signup-text
         | DID NOT RECEIVE YOUR VERIFICATION CODE?
-        = link_to " RESEND CODE", resend_code_user_path(current_user), method: :post, remote: true, class: 'signup-link signup-hover'
-
-  javascript:
-    showLoading(('#signup-three-button'), ('#signup-three-loading'));
+        = link_to " RESEND CODE", resend_code_user_path(current_user), method: :post, remote: true, class: 'signup-link resend-hover'

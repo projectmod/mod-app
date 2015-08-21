@@ -74,6 +74,14 @@
     }
   }
 
+  .resend-hover {
+    text-decoration: none;
+
+    &:hover {
+      color: #848484 !important;
+    }
+  }
+
   .code-padding {
     padding-bottom: 7%;
   }

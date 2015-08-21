@@ -6,4 +6,5 @@
   $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
 <% else %>
   $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+  $('#signup-two-button').removeAttr('disabled').attr('value', 'NEXT').html("NEXT")
 <% end %>

@@ -7,6 +7,8 @@ class Users::Verify
   end
 
   def check
-    user.activate if user.verification_code == code
+    return user.activate if user.verification_code == code
+
+    false
   end
 end

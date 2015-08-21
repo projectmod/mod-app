@@ -1,6 +1,7 @@
 class AdminSessionsController < ApplicationController
+	before_action :redirect_if_logged_in
+
 	def new
-		return redirect_back_or_to root_path if current_user
 	end
 
 	def create
@@ -13,5 +14,11 @@ class AdminSessionsController < ApplicationController
 			flash[:notice] = 'We failed to log you in. Please try again!'
 			render action: 'new'
 		end
+	end
+
+	private
+
+	def redirect_if_logged_in
+		return redirect_back_or_to root_path if current_user
 	end
 end

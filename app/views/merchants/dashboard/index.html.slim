@@ -70,14 +70,14 @@
                   
   .row
     .col-md-8.col-md-offset-2
-      .panel.panel-default.no-border#prev-appointment-accordian
+      .panel.panel-default.no-border#prev-purchase-accordian
         .panel-heading.panel-header
           h3.panel-title.prev-panel-title
             | PREVIOUS PURCHASES
             span.pull-right
-              a role="button" data-toggle="collapse" data-parent="#prev-appointment-accordian" href="#prev-app-collapse" aria-expanded="true" aria-controls="prev-app-collapse"
-                i#prev-app-icon.fa.red.icon-padding.fa-minus
-        #prev-app-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
+              a role="button" data-toggle="collapse" data-parent="#prev-purchase-accordian" href="#prev-purchase-collapse" aria-expanded="true" aria-controls="prev-purchase-collapse"
+                i#prev-purchase-icon.fa.red.icon-padding.fa-minus
+        #prev-purchase-collapse.panel-collapse.collapse.in.text-center aria-labelledby="heading"
           .panel-body.text-left.prev-panel-body.merchant-prev-padding
             .content-scroll
               - @payment_transactions.each do |payment_transaction|

@@ -1,4 +1,5 @@
 class OauthController < ApplicationController
+  before_action :redirect_if_logged_in
 
   def oauth
     login_at(auth_params[:provider])
@@ -43,4 +44,10 @@ class OauthController < ApplicationController
   def auth_params
     params.permit(:code, :provider)
   end
+
+  private
+
+	def redirect_if_logged_in
+		return redirect_back_or_to root_path if current_user
+	end
 end

@@ -70,7 +70,7 @@ Rails.application.routes.draw do
     resources :users, except: [:index, :show, :destroy]
 
     # Outlets
-    resources :outlets, except: [:update] do
+    resources :outlets, only: [:update] do
       get :customize, to: 'outlets#customize'
       get :photos, to: 'outlets#photos'
       resources :steps, only: [:show, :update]

@@ -6,7 +6,7 @@ class Merchants::OutletsController < Merchants::BaseController
 
   def update
     if @outlet.update(outlet_params)
-      redirect_to(:back, flash: { success: "You've updated your outlet!" })
+      redirect_to(:back, flash: { notice: "You've updated your outlet!" })
     else
       render :edit, notice: "Update failed. Please try again."
     end

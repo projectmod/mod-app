@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :require_login, except: [:new, :create]
 	before_action :set_user, except: [:new, :create, :update]
-	before_action :redirect_if_logged_in, only: [:new, :edit, :verify]
+	before_action :redirect_if_logged_in_and_activated, only: [:new, :edit, :verify]
 	respond_to :js, :html
 
 	# Step 1
@@ -51,14 +51,14 @@ class UsersController < ApplicationController
 
 			respond_with(@user) do |f|
 				f.html { redirect_to verify_user_path(@user) }
+				flash.clear
 			end
 		else
 			flash[:notice] = "Phone number is already in use. Please try again!"
 			respond_with(@user) do |f|
 				f.html { redirect_to :back }
+				flash.clear
 			end
-
-			flash.clear
 		end
 	end
 
@@ -124,7 +124,7 @@ class UsersController < ApplicationController
 
 	private
 
-	def redirect_if_logged_in
+	def redirect_if_logged_in_and_activated
 		return redirect_back_or_to root_path if current_user && current_user.activated
 	end
 

@@ -1,6 +1,6 @@
 <% if @user.save %>
   $('#signup-one').remove();
-  $('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_two', locals: { user: current_user })) %>")
+  $('#signup-container').html("<%= escape_javascript(render(partial: 'partials/about/signup_two', locals: { user: current_user })) %>")
   $('#signup-two').removeClass('hidden');
   $('#signup-two').addClass('animated-one fadeInRight')
   $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")

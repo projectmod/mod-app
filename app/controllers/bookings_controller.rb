@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
     if @booking.outlet.availability == true && @booking.save
 
-      message = "Someone wants to book with you, Click on #{confirm_merchants_booking_url(@booking)} to confirm, here is the confirmation code: #{@booking.confirmation_code}"
+      message = "RM0.00: mod.com.my • You have a booking request! Click to confirm within 3 minutes: #{confirm_merchants_booking_url(@booking)}. Here is the confirmation code: #{@booking.confirmation_code}. RM2.00 will be deducted from your MOD account upon confirmation. To cancel, just ignore this message."
       TwilioSMS.new(message, "+6" + @booking.outlet.phone_number).send
       redirect_to pending_booking_path(@booking)
     else

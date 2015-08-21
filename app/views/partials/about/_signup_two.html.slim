@@ -19,9 +19,4 @@
             .container-fluid
               .row
                 .col-md-6.col-md-offset-3
-                  = f.submit "NEXT", id: 'signup-two-button', class: "btn btn-block btn-next"
-                  button.hidden.btn.btn-next.btn-block#signup-two-loading(disabled)
-                    i.fa.fa-spinner.fa-pulse
-
-  javascript:
-    showLoading(('#signup-two-button'), ('#signup-two-loading'));
+                  = f.button "NEXT", id: 'signup-two-button', class: "btn btn-block btn-next", data: { disable_with: "<i class='fa fa-spinner fa-pulse'></i>".html_safe }

@@ -71,11 +71,11 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'letter_opener'
   gem 'launchy'
+  gem 'faker'
+  gem 'shoulda-matchers'
 end
 
-group :development, :production do
-  gem 'rails_admin'
-end
+gem 'rails_admin'
 
 # Documentation
 gem 'sdoc', '~> 0.4.0', group: :doc

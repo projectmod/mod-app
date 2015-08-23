@@ -10,3 +10,7 @@ default: &default
 development:
   <<: *default
   database: project-mod_development
+
+test:
+  <<: *default
+  database: project-mod_test

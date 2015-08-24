@@ -53,13 +53,11 @@ class UsersController < ApplicationController
 
 			respond_with(@user) do |f|
 				f.html { redirect_to verify_user_path(@user) }
-				flash.clear
 			end
 		else
 			flash[:notice] = "Phone number is already in use. Please try again!"
 			respond_with(@user) do |f|
 				f.html { redirect_to :back }
-				flash.clear
 			end
 		end
 	end

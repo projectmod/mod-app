@@ -1,6 +1,6 @@
 class OutletsController < ApplicationController
   before_action :set_outlet, except: :index
-  before_action :check_user_location, only: :index
+  before_action :outlet_search_validation, only: :index
 
   def index
     outlets = Outlet.where(price_range: params[:price_range], availability: true)
@@ -18,9 +18,14 @@ class OutletsController < ApplicationController
 
   private
 
-  def check_user_location
-    if params[:longitude] == "" && params[:latitude] == ""
+  def outlet_search_validation
+    if params[:longitude].blank? && params[:latitude].blank?
       flash[:notice] = "We could not retrieve your current location. Please enable your browser to acquire your current location before searching."
+      redirect_to root_path
+    end
+
+    if params[:type_of_service].blank? || params[:price_range].blank?
+      flash[:notice] = "Please select both the type of service and price range before proceeding. Thank you!"
       redirect_to root_path
     end
   end

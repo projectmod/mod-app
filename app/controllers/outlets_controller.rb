@@ -21,12 +21,12 @@ class OutletsController < ApplicationController
   def outlet_search_validation
     if params[:longitude].blank? && params[:latitude].blank?
       flash[:notice] = "We could not retrieve your current location. Please enable your browser to acquire your current location before searching."
-      redirect_to root_path
+      return redirect_to root_path
     end
 
     if params[:type_of_service].blank? || params[:price_range].blank?
       flash[:notice] = "Please select both the type of service and price range before proceeding. Thank you!"
-      redirect_to root_path
+      return redirect_to root_path
     end
   end
 

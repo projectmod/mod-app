@@ -34,9 +34,10 @@ class OauthController < ApplicationController
       @new_user = auth.register
 
       reset_session
-      auto_login(@new_user)
-      flash[:notice] = "You've registered through #{provider.titleize}."
 
+      auto_login(@new_user, should_remember=false)
+
+      flash[:notice] = "You've registered through #{provider.titleize}."
       redirect_to edit_user_path(@new_user)
     end
   end

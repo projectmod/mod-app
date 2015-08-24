@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 		reset_session if current_user
 		@user = User.new(user_params)
 
-		if @user.save
+	if @user.save
 			auto_login(@user, should_remember=false)
 
 			flash[:notice] = "All registered! Now we'll need you to key in your phone number to verify your account."

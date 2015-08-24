@@ -18,12 +18,12 @@
           .form-group.text-center
             = f.submit "NEXT", class: "btn btn-next"
 
-    .row
+    .row.padding-terms
       p.text-center.signup-text
         | ALREADY A MEMBER? 
         = link_to " LOG IN >>", login_path, class: 'signup-link signup-hover'
 
-    .row.padding-terms
+    .row
       p.text-center.terms-text
         | BY SIGNING UP YOU ACCEPT THE 
         = link_to "TERMS AND CONDITIONS ", '#', class: "terms-link signup-hover"

@@ -113,7 +113,7 @@ class UsersController < ApplicationController
 			end
 		else
 			respond_with(@user) do |f|
-				f.html { redirect_to :back }
+				f.html { redirect_to update_phone_number_user_path(@user) }
 			end
 		end
 	end

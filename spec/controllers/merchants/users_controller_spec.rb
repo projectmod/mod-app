@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe Merchants::UsersController do
   describe 'POST /merchants/users' do
-    let (:password) { Faker::Internet.password }
+    let(:password) { Faker::Internet.password }
     let(:params) {
       {
         user: {
-          name: Faker::Internet.name,
+          name: Faker::Company.name,
           email: Faker::Internet.email,
           password: password,
           password_confirmation: password,

@@ -38,4 +38,22 @@ describe UsersController do
       expect(user.phone_number).to eq(@params[:phone_number])
     end
   end
+
+  describe 'POST /users/:id/activate' do
+    before(:each) do
+      @params = {
+        verification_code: "123456"
+      }
+      @user = create(:user, verification_code: "123456")
+
+      login_user
+    end
+
+    it 'activates the user if verification code matches' do
+      post :activate, id: @user.id, phone: @params
+      user = User.first
+      expect(user.verification_code).to eq(@params[:verification_code])
+      expect(user.activated).to eq(true)
+    end
+  end
 end

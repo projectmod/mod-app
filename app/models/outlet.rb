@@ -20,7 +20,7 @@ class Outlet < ActiveRecord::Base
     user_point = rgeo_factory.point(user_lon, user_lat)
 
     # Distance in meters
-    outlets.select { |outlet| rgeo_factory.point(outlet.longitude, outlet.latitude).distance(user_point) < 2000 }
+    outlets.select { |outlet| rgeo_factory.point(outlet.longitude, outlet.latitude).distance(user_point) < 50000 }
   end
 
   def confirmation_code

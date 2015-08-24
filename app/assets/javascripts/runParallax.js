@@ -11,11 +11,13 @@ $(document).ready(function() {
     parallax = document.querySelectorAll('.parallax');
     speed = 0.5;
     [].slice.call(parallax).forEach(function(el,i){
-      var startingPos = window.pageYOffset - $(el).position().top
+      var pxAdjustment = $('.parallax').data().posAdjustment || 0
+      console.log(pxAdjustment)
+      var startingPos = window.pageYOffset - $(el).position().top - pxAdjustment
       $(el).css('background-position', '50% ' + startingPos * speed + 'px')
       window.onscroll = function() {
         var windowYOffset = (window.pageYOffset - $(el).position().top)
-        var elBackgrounPos = "50% " + windowYOffset * speed + "px";
+        var elBackgrounPos = "50% " + (windowYOffset - pxAdjustment) * speed + "px";
         el.style.backgroundPosition = elBackgrounPos;
       };
     });

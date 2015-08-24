@@ -1,4 +1,4 @@
-<% if @user.phone_number %>
+<% if @user.save %>
   $('#signup-two').remove();
   $('#signup-container').html("<%= escape_javascript( render(partial: 'partials/about/signup_three', locals: { user: current_user })) %>")
   $('#signup-three').removeClass('hidden');
@@ -6,4 +6,5 @@
   $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
 <% else %>
   $('#flash_messages').html("<%= escape_javascript(render(partial: 'shared/flash')) %>")
+  $('#signup-two-button').removeAttr('disabled').attr('value', 'NEXT').html("NEXT")
 <% end %>

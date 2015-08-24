@@ -21,9 +21,7 @@ div id="signup-one" class="container-fluid #{'hidden' if current_user}"
           .container-fluid
             .row
               .col-md-6.col-md-offset-3
-                = f.submit "SUBMIT", id: "signup-one-button", class: "btn btn-block btn-about-signup"
-                button.hidden.btn.btn-about-signup.btn-block#signup-one-loading(disabled)
-                  i.fa.fa-spinner.fa-pulse
+                = f.button "SUBMIT", id: "signup-one-button", class: "btn btn-block btn-about-signup", data: { disable_with: "<i class='fa fa-spinner fa-pulse'><i>".html_safe }
 
   .row
     .col-md-2.col-md-offset-5

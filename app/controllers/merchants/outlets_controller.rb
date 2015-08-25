@@ -53,6 +53,7 @@ class Merchants::OutletsController < Merchants::BaseController
       flash[:notice] = "Please select at least one type of service before submitting."
       redirect_to merchants_outlet_step_path(@outlet, "services")
     end
+  rescue
   end
 
   def destroy_empty_working_hours

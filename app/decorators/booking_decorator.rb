@@ -13,7 +13,9 @@ class BookingDecorator < BaseDecorator
   end
 
   def customer_name
-    model.user.name.to_s.upcase
+    model.user.name.upcase
+  rescue
+    "Customer undefined"
   end
 
   def booking_time

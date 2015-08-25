@@ -4,7 +4,7 @@ class Outlet < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :working_hours
 
-  before_create :search_address
+  before_update :search_address
 
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :working_hours, allow_destroy: true,
@@ -30,9 +30,8 @@ class Outlet < ActiveRecord::Base
   private
 
   def search_address
+    return if !address
     res = Geokit::Geocoders::MultiGeocoder.geocode(address)
-    return if !res
-
     self.latitude, self.longitude = res.lat, res.lng
   end
 end

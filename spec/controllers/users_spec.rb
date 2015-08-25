@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe UsersController do
+
   describe 'POST /users' do
     let(:password) { Faker::Internet.password }
     let(:params) {
@@ -33,6 +34,7 @@ describe UsersController do
     end
 
     it 'saves user phone number' do
+      binding.pry
       post :update_phone_number, id: @user.id, user: @params
       user = User.first
       expect(user.phone_number).to eq(@params[:phone_number])

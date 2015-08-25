@@ -13,7 +13,7 @@ class BookingDecorator < BaseDecorator
   end
 
   def customer_name
-    model.user.name.upcase
+    model.user.name.to_s.upcase
   end
 
   def booking_time

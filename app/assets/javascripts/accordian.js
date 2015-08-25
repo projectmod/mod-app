@@ -10,9 +10,8 @@ var initializeAccordian = function(elem, icon) {
 };
 
 $(document).ready(function() {
-
+  
   // Initialize Previous Appointment Accordian
   initializeAccordian($('#prev-app-collapse'), $('#prev-app-icon'));
   initializeAccordian($('#prev-purchase-collapse'), $('#prev-purchase-icon'));
-
 });

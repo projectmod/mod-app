@@ -8,7 +8,6 @@ FactoryGirl.define do
     phone_number "0378834455"
     type_of_service ["HAIRCUT", "BLOWOUT", "MASSAGE"]
     price_range "RM 50 - 100"
-    # working_hours "9am - 5pm"
     latitude 3.167439
     longitude 101.612685
     business_registration "faker1234"

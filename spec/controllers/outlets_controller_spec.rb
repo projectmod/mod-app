@@ -15,8 +15,8 @@ RSpec.describe OutletsController do
     it 'shows list of outlets matching search criteria' do
       get :index
       outlet = Outlet.first
-      # expect(outlet.type_of_service).to include(params[:outlet][:type_of_service])
+      expect(outlet.type_of_service).to include(params[:outlet][:type_of_service].join())
       expect(outlet.price_range).to eq(params[:outlet][:price_range])
-   end
- end
+    end
+  end
 end

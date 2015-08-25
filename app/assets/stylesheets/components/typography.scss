@@ -363,6 +363,10 @@
     border-color: #848484;
     text-decoration: none;
   }
+
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 // Salon list

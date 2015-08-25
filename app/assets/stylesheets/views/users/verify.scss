@@ -93,6 +93,11 @@
     &:hover {
       color: #848484 !important;
     }
+
+    &:focus {
+      text-decoration: none;
+      color: #848484;
+    }
   }
 
   .padding-terms {

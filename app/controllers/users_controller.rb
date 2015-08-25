@@ -116,7 +116,7 @@ class UsersController < ApplicationController
 
 			flash[:notice] = "You've entered the wrong verification code. Please try again!"
 			respond_with(@user) do |f|
-				f.html { redirect_to :back }
+				f.html { redirect_to update_phone_number_user_path(@user) }
 			end
 		end
 	end

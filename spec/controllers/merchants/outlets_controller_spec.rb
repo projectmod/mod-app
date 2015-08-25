@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Merchants::OutletsController, type: :controller do
+RSpec.describe Merchants::OutletsController do
 
 end

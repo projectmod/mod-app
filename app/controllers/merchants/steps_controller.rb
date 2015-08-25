@@ -1,11 +1,11 @@
 class Merchants::StepsController < ApplicationController
   include Wicked::Wizard
   steps :outlet_info, :services
-  before_action :set_outlet
-  before_action :verify_type_of_service, only: :update
-  before_action :redirect_if_activated
-  skip_before_action :require_login
-  skip_before_action :is_merchant?
+  #before_action :set_outlet
+  #before_action :verify_type_of_service, only: :update
+  #before_action :redirect_if_activated
+  #skip_before_action :require_login
+  #skip_before_action :is_merchant?
 
   def show
     # Render new empty working hours

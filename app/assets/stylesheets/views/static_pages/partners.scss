@@ -5,11 +5,15 @@
   }
 
   .flex {
-  	display: flex;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
   }
 
   .flex-wrap {
-  	flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
   }
 
   .flex-margin {

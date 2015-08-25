@@ -4,11 +4,15 @@
 
   .flex-container {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
   }
 
   .thumbnail {
-    width: 40%;
+    width: 43%;
     border: none;
     margin: 1% auto;
     background-color: #F3F3F3;

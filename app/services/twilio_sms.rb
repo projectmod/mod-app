@@ -7,7 +7,7 @@ class TwilioSMS
   end
 
   def send
-    @client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTHTOKEN'])
+    @client = Twilio::REST::Client.new
     @client.messages.create(
       from: '+18885809742',
       to: number,

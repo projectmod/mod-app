@@ -21,4 +21,6 @@
 				.col-sm-4.col-sm-offset-1
 					p.info-title.settings.title-padding WORKING HOURS
 				.col-sm-6
-					/ p.info-details.settings.info-padding = outlet.working_hours.upcase
+					- outlet.working_hours.each do |working_hour|
+						span.info-details.settings = working_hour.days.to_s.upcase
+						span.info-details.settings.working-hour-time = working_hour.time.to_s.upcase

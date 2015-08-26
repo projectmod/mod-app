@@ -21,4 +21,11 @@ class Merchants::SessionsController < Merchants::BaseController
     return redirect_to(root_path, flash: { notice: "We're currently processing your registration, please check back later!"}) if @outlet.completed_registration?
     return redirect_to(merchants_outlet_step_path(@outlet, "outlet_info"), flash: { notice: "You've not completed your registration, please complete it now!" })
   end
+
+  def destroy
+    current_user.outlet.update(availability: false)
+		logout
+		flash[:notice] = "You've logged out, see you again!"
+		redirect_to root_path
+	end
 end

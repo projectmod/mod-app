@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 	def update
 		update_params = user_params.delete_if { |k,v| v.empty? }
 
-		if (update_params[:password] || update_params[:password_confirmation]) && type != "new_account"
+		if (update_params[:password] || update_params[:password_confirmation])
 			user = User.authenticate(update_params[:email], params[:user][:current_password])
 		else
 			user = current_user

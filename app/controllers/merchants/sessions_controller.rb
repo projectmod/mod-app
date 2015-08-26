@@ -23,7 +23,6 @@ class Merchants::SessionsController < Merchants::BaseController
   end
 
   def destroy
-    current_user.outlet.update(availability: false)
 		logout
 		flash[:notice] = "You've logged out, see you again!"
 		redirect_to root_path

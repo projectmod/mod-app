@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
 
 	def create
 		logout if current_user
-		
+
 		if @user = login(params[:user_sessions][:email], params[:user_sessions][:password])
 
 			if @user.merchant?
@@ -30,6 +30,10 @@ class UserSessionsController < ApplicationController
 	end
 
 	def destroy
+		if current_user.merchant?
+			current_user.outlet.update(availability: false)
+		end
+
 		logout
 		flash[:notice] = "You've logged out, see you again!"
 		redirect_to root_path

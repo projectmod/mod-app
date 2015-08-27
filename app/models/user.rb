@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 5 }, if: :password
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
-  validates :phone_number, uniqueness: true, if: :phone_number
   validates_numericality_of :phone_number, only_integer: true, message: "is not valid! Please enter only 0 to 9 digits for your phone number.", if: :phone_number
+  validates :phone_number, uniqueness: true, if: :phone_number
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: [:create, :update] }, if: :email
 
   has_many :authentications, dependent: :destroy

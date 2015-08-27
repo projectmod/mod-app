@@ -13,7 +13,7 @@
         = form_for @user, url: update_phone_number_user_path, method: :post, class: 'form' do |f|
           .input-group
             span.input-group-addon.number-text.number-field.mobile-border#addonPlay1 + 60 
-            = f.text_field :phone_number, required: true, placeholder: '** *** ****', class: 'form-control signup-field', "aria-describedby": "addonPlay1"
+            = f.text_field :phone_number, required: true, placeholder: '*********', class: 'form-control signup-field', "aria-describedby": "addonPlay1"
 
           .form-group.text-center
             = f.submit "NEXT", class: "btn btn-next"

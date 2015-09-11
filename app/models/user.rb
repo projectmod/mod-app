@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
 
   after_initialize :set_default_password, if: :new_record?
-
+  before_validation :set_default_email, if: :new_record?
+  
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
@@ -37,6 +38,14 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def set_default_email
+    return unless self.email.nil?
+    self.email = loop do
+      email = "#{SecureRandom.urlsafe_base64}@changeme.com"
+      break email unless User.where(email: email).exists?
+    end
+  end
 
   def set_default_password
     return unless self.password.nil?

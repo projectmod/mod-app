@@ -8,7 +8,6 @@ class Users::Oauth
   end
 
   def register
-    binding.pry
     new_user = User.create(name: profile.name, email: profile.email, role: "user")
     new_user.authentications.create(provider: provider, uid: profile.uid, token: access_token)
 
